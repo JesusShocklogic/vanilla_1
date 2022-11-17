@@ -1,0 +1,277 @@
+{
+    "key": "group_6374ed0948fec",
+    "title": "Shocklogic blog",
+    "fields": [
+        {
+            "key": "field_6374ed0a26882",
+            "label": "Shocklogic blog group",
+            "name": "shocklogic_blog_group",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 1,
+            "sub_fields": [
+                {
+                    "key": "field_63758d1cc0b90",
+                    "label": "Title tab",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_6374f15426884",
+                    "label": "title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
+                    "key": "field_6374ed6326883",
+                    "label": "Content tab",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_637529440c1bd",
+                    "label": "post types",
+                    "name": "post_types",
+                    "aria-label": "",
+                    "type": "acfe_post_types",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "field_type": "checkbox",
+                    "default_value": [],
+                    "return_format": "name",
+                    "layout": "horizontal",
+                    "toggle": 0,
+                    "allow_custom": 0,
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "choices": [],
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "search_placeholder": "",
+                    "other_choice": 0
+                },
+                {
+                    "key": "field_63752cb10c1bf",
+                    "label": "post categories",
+                    "name": "post_categories",
+                    "aria-label": "",
+                    "type": "acfe_taxonomy_terms",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": [
+                        "category"
+                    ],
+                    "allow_terms": "",
+                    "allow_level": "",
+                    "field_type": "checkbox",
+                    "default_value": [],
+                    "return_format": "id",
+                    "layout": "vertical",
+                    "toggle": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "choices": [],
+                    "ui": 0,
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "search_placeholder": "",
+                    "allow_custom": 0,
+                    "other_choice": 0
+                },
+                {
+                    "key": "field_63752d1e0c1c0",
+                    "label": "Posts per page",
+                    "name": "posts_per_page",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 3,
+                    "min": "",
+                    "max": "",
+                    "placeholder": "",
+                    "step": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_6374f16b26885",
+                    "label": "Settings tab",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_63758d8bc0b91",
+                    "label": "Background colour",
+                    "name": "background_colour",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#fff",
+                    "enable_opacity": 0,
+                    "return_format": "string"
+                },
+                {
+                    "key": "field_6375a838c513b",
+                    "label": "Bottom tab",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_6375a84ac513c",
+                    "label": "Bottom text",
+                    "name": "bottom_text",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                }
+            ],
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/shocklogic-blog"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "php",
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1668698437,
+    "acfe_categories": {
+        "shocklogic": "Shocklogic"
+    }
+}

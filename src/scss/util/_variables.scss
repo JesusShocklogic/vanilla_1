@@ -1,0 +1,32 @@
+//General spacing
+@mixin spacing {
+    padding: 3rem 5rem 4rem 5rem;
+}
+
+@mixin title_spacing {
+    padding-bottom: 1.5rem;
+}
+
+@mixin section_top_spacing {
+    padding-top: 3rem;
+}
+
+//Aspect radio function
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    width: 100%;
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: calc($height / $width) * 100%;
+        box-sizing: border-box;
+    }
+    > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}

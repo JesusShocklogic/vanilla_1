@@ -1,0 +1,21 @@
+/*
+Theme Name: Vanilla 1 - RCP
+Theme URI: https://shocklogic.com/
+Author: the Shocklogic team
+Author URI: https://shocklogic.com/
+Description: 
+Requires at least: 5.9
+*/
+
+
+/* mobile*/
+@media (min-width: 320px) {}
+/* tablet */
+@media (min-width: 481px) {}
+/* desktop small*/
+@media (min-width: 769px) {}
+/* desktop medium*/
+@media (min-width: 1025px) {}
+/* desktop large*/
+@media (min-width: 1201px) {}
+@media (min-width: 1401px) {}

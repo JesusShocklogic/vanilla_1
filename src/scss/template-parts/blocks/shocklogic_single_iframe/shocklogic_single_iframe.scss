@@ -1,0 +1,19 @@
+@use "../../../util/variables";
+@use "../../../util/breakpoints";
+.shocklogic_single_iframe {
+    @include variables.spacing;
+    &_wrapper {
+        &_iframe {
+            &.contain {
+                width: 80%;
+                margin: 0 auto;
+                @media (min-width: breakpoints.$desktop_small) {
+                    width: 50%;
+                }
+            }
+            &.fullwidth {
+                width: 100%;
+            }
+        }
+    }
+}

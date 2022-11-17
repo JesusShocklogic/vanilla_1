@@ -1,0 +1,25 @@
+@use "../../../util/variables";
+@use "../../../util/breakpoints";
+.shocklogic_testimonials {
+    @include variables.spacing;
+    &_wrapper {
+        &_title {
+            @include variables.title_spacing;
+        }
+        &_testimonials {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 2rem;
+
+            @media (min-width: breakpoints.$desktop_small) {
+                grid-template-columns: repeat(3,1fr);
+            }
+
+            &_testimonial {
+                background: #f8f8f9 0% 0% no-repeat padding-box;
+                box-shadow: 5px 5px 8px #00000029;
+                padding: 2rem;
+            }
+        }
+    }
+}
