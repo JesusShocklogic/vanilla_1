@@ -1,7 +1,12 @@
 @use "../../../util/variables";
 @use "../../../util/breakpoints";
 .shocklogic_banner {
-    @include variables.spacing;
-    &_wrapper { 
+    &.contain {
+        @include variables.spacing;
+    }
+    &.fullscreen {
+        padding: 0;
+    }
+    &_wrapper {
     }
 }

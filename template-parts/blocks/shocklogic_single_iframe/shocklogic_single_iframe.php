@@ -18,7 +18,7 @@ if (isset($shocklogic_single_iframe_group) && $shocklogic_single_iframe_group !=
                     <?= $shocklogic_single_iframe_group['iframe'] ?>
                 </div>
             <?php
-            }
+            } 
             ?>
         </div>
     </div>

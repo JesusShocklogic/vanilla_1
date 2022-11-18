@@ -3,11 +3,18 @@
 .shocklogic_single_iframe {
     @include variables.spacing;
     &_wrapper {
-        &_iframe {
+        &_iframe,
+        &_code {
             &.contain {
-                width: 80%;
+                width: 90%;
                 margin: 0 auto;
+                @media (min-width: breakpoints.$tablet) {
+                    width: 80%;
+                }
                 @media (min-width: breakpoints.$desktop_small) {
+                    width: 75%;
+                }
+                @media (min-width: breakpoints.$desktop_large) {
                     width: 50%;
                 }
             }
