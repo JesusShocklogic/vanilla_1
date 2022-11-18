@@ -1,7 +1,12 @@
+@use "util/variables";
 img {
-    max-width: 100%; 
+    max-width: 100%;
 }
 iframe {
     width: 100%;
     height: 100%;
-} 
+}
+
+.standard_padding {
+    @include variables.spacing("!important");
+}

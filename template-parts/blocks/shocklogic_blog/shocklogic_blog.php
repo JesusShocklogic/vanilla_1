@@ -21,7 +21,9 @@ if (isset($shocklogic_blog_group) && $shocklogic_blog_group != null) { ?>
 						$title = get_the_title();
 						$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : ""; ?>
 						<div class="shocklogic_blog_wrapper_blog_single">
-							<div class="shocklogic_blog_wrapper_blog_single_overlay"></div>
+							<div class="shocklogic_blog_wrapper_blog_single_title">
+								<?php the_title() ?>
+							</div>
 							<div class="shocklogic_blog_wrapper_blog_single_ratio">
 								<a href="<?= $permalink ?>">
 									<img src="<?= $image_url ?>" alt="">

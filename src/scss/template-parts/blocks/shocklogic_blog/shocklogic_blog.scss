@@ -15,8 +15,14 @@
             }
 
             &_single {
+                &_title {
+                    opacity: 0;
+                    transition: 0.5s;
+                }
                 &_ratio {
                     @include variables.aspect-ratio(16, 5);
+                    overflow: hidden;
+                    background-color: black;
                 }
 
                 & img {
@@ -24,10 +30,17 @@
                     object-fit: cover;
                     height: 100%;
                     object-position: center center;
+                    opacity: 1;
+                    transition: 0.5s;
+
+                    &:hover {
+                        opacity: 0.5;
+                        transition: 0.5s;
+                    }
                 }
             }
         }
-        &_bottom_text{
+        &_bottom_text {
             @include variables.section_top_spacing;
         }
     }
