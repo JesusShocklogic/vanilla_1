@@ -1,6 +1,11 @@
+@use "breakpoints";
 //General spacing
 @mixin spacing {
-    padding: 3rem 5rem 4rem 5rem;
+    padding: 3rem 3rem 4rem 3rem;
+    @media (min-width: breakpoints.$desktop_medium) {
+        padding: 3rem 5rem 4rem 5rem;
+    }
+
 }
 
 @mixin title_spacing {

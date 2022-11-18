@@ -38,9 +38,25 @@ function compileBootstrapJS(cb) {
         .pipe(dest('assets/js/'));
 }
 
+function compileSwipperJS(cb) {
+    //cb();
+    return src(['node_modules/swiper/swiper-bundle.min.js', 'src/js/swiper-settings.js'])
+        .pipe(babel())
+        .pipe(concat('swiper.js'))
+        .pipe(dest('assets/js/'));
+}
+
+function compileSwiperCss(cb) {
+    //cb();
+    return src('node_modules/swiper/swiper-bundle.min.css')
+        .pipe(sass())
+        .pipe(dest('assets/css/'));
+}
+
 //exports.build = build;
-//exports.default = series(compileCss, compilePartsCss);
-exports.default = function () {
+exports.default = series(compileBootstrapCss, compileBootstrapJS, compileSwiperCss, compileSwipperJS, compileCss, compilePartsCss);
+exports.watcher = function () {
     watch(['src/scss/*.scss', 'src/scss/**/*.scss', 'src/scss/template-parts/**/*.scss'], compileCss);
     watch(['src/scss/*.scss', 'src/scss/**/*.scss', 'src/scss/template-parts/**/*.scss'], compilePartsCss);
+    watch('src/js/swiper-settings.js', compileSwipperJS);
 };

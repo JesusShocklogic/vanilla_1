@@ -1,0 +1,16 @@
+@use "util/variables";
+@use "util/breakpoints";
+.footer {
+    @include variables.spacing;
+    &_wrapper {
+        display: grid;
+        justify-content: center;
+        align-items: start;
+        align-content: center;
+        grid-template-columns: 1fr;
+
+        @media (min-width: breakpoints.$desktop_medium) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}

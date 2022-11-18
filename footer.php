@@ -1,29 +1,18 @@
-<footer style="padding-top: 3rem;padding-bottom: 3rem;background-color: #4C77AD;">
-    <div class="container">
-        <div class="row">
-            <div class="col-4">
-                <strong>Venue address</strong>
-                <p>Venue</p>
-                <p>Venue</p>
-                <p>Venue</p>
-                <p>Venue</p>
-            </div>
-            <div class="col-4">
-                <div>
-                    <img src="http://localhost/vanilla_rcp/wp-content/uploads/2022/11/logo2019-semfyc-white@2x.png" alt="">
-                </div>
-            </div>
-            <div class="col-4">
-                <strong>Venue address</strong>
-                <p>Venue</p>
-                <p>Venue</p>
-                <p>Venue</p>
-                <p>Venue</p>
-            </div>
-        </div>
+<?php
+wp_enqueue_style("footer");
+$footer = get_field('footer_group', 'option'); ?>
+<footer class="footer">
+    <div class="footer_wrapper">
+        <div class="footer_wrapper_left"><?= $footer['left_column'] ?></div>
+        <div class="footer_wrapper_center"><img src="<?= $footer['logo']['url'] ?>" alt=""></div>
+        <div class="footer_wrapper_right"><?= $footer['right_column'] ?></div>
     </div>
-
 </footer>
+<style>
+    footer {
+        background-color: <?= $footer['background_colour'] ?>;
+    }
+</style>
 <?php
 wp_footer();
 ?>

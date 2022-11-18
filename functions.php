@@ -75,10 +75,13 @@ add_post_type_support('post', 'excerpt');
 add_action('init', function () {
     wp_register_style("style", get_template_directory_uri() . "/style.css", array(), true);
     wp_register_style("style-sass", get_template_directory_uri() . "/assets/css/style.css", array(), true);
+    wp_register_style("footer", get_template_directory_uri() . "/assets/css/footer.css", array(), true);
     wp_register_style("bootstrap", get_template_directory_uri() . "/assets/css/bootstrap.css", array(), true);
     wp_register_script("base", get_template_directory_uri() . "/assets/js/base.js", array(), true);
     wp_register_style("single_iframe", get_template_directory_uri() . "/assets/css/single_iframe/single_iframe.css", array(), true);
-    
+    wp_register_style("swiper-css", get_template_directory_uri() . "/assets/css/swiper-bundle.min.css", array(), true);
+    wp_register_script("swiper-js", get_template_directory_uri() . "/assets/js/swiper.js", array(), true);
+    wp_register_style("modal-css", get_template_directory_uri() . "/assets/css/modal.css", array(), true);
 });
 
 

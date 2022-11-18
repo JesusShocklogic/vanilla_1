@@ -4,7 +4,6 @@ get_header();
 if (have_posts()) {
     while (have_posts()) {
         the_post();
-        echo "<h1>Index</h1>";
         the_content();
     }
     wp_reset_postdata(); // end while
