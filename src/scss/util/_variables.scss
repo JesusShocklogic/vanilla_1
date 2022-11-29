@@ -6,15 +6,15 @@
 
 //General spacing
 @mixin spacing($important: false) {
-    padding: 3rem 1rem 4rem 1rem is-important($important);
+    padding: 4rem 1rem 4rem 1rem is-important($important);
     @media (min-width: breakpoints.$desktop_small) {
-        padding: 3rem 3rem 4rem 3rem is-important($important);
+        padding: 4rem 3rem 4rem 3rem is-important($important);
     }
     @media (min-width: breakpoints.$desktop_large) {
-        padding: 3rem 5rem 4rem 5rem is-important($important);
+        padding: 4rem 5rem 4rem 5rem is-important($important);
     }
     @media (min-width: breakpoints.$desktop_xlarge) {
-        padding: 3rem 200px 4rem 200px is-important($important);
+        padding: 4rem 200px 4rem 200px is-important($important);
     }
 } //spacing
 
