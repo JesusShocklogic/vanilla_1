@@ -70,8 +70,8 @@ acf_add_local_field_group(array(
 				),
 				array(
 					'key' => 'field_6377d20647d96',
-					'label' => 'image 2',
-					'name' => 'image_2',
+					'label' => 'image',
+					'name' => 'image',
 					'aria-label' => '',
 					'type' => 'image',
 					'instructions' => '',
@@ -102,6 +102,26 @@ acf_add_local_field_group(array(
 					'mime_types' => '',
 					'preview_size' => 'medium',
 					'library' => 'all',
+				),
+				array(
+					'key' => 'field_638df2ce545dc',
+					'label' => 'Content over banner',
+					'name' => 'content_over_banner',
+					'aria-label' => '',
+					'type' => 'wysiwyg',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'tabs' => 'all',
+					'toolbar' => 'full',
+					'media_upload' => 1,
+					'delay' => 0,
 				),
 				array(
 					'key' => 'field_6377d2c100fb5',
@@ -184,7 +204,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'shocklogic' => 'Shocklogic',
 	),
-	'modified' => 1668797204,
+	'modified' => 1670253705,
 ));
 
 endif;

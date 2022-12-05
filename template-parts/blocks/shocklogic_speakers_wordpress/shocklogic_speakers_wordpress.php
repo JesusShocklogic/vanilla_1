@@ -50,7 +50,7 @@ if (isset($shocklogic_speakers_wordpress_group) && $shocklogic_speakers_wordpres
 					?>
 				</div>
 			</div>
-
+ 
 			<div class="shocklogic_speakers_wordpress_wrapper_bottom_text">
 				<?= $shocklogic_speakers_wordpress_group['bottom_text'] ?>
 			</div>

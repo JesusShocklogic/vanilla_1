@@ -8,5 +8,12 @@
         padding: 0;
     }
     &_wrapper {
+        position: relative;
+
+        &_content {
+            position: absolute;
+            top: 0;
+            @include variables.spacing;
+        }
     }
 }

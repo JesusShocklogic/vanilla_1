@@ -14,9 +14,6 @@
                 @media (min-width: breakpoints.$desktop_small) {
                     width: 75%;
                 }
-                @media (min-width: breakpoints.$desktop_large) {
-                    width: 50%;
-                }
             }
             &.fullwidth {
                 width: 100%;

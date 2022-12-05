@@ -66,8 +66,8 @@
                 },
                 {
                     "key": "field_6377d20647d96",
-                    "label": "image 2",
-                    "name": "image_2",
+                    "label": "image",
+                    "name": "image",
                     "aria-label": "",
                     "type": "image",
                     "instructions": "",
@@ -98,6 +98,26 @@
                     "mime_types": "",
                     "preview_size": "medium",
                     "library": "all"
+                },
+                {
+                    "key": "field_638df2ce545dc",
+                    "label": "Content over banner",
+                    "name": "content_over_banner",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
                 },
                 {
                     "key": "field_6377d2c100fb5",
@@ -177,7 +197,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1668797204,
+    "modified": 1670253705,
     "acfe_categories": {
         "shocklogic": "Shocklogic"
     }
