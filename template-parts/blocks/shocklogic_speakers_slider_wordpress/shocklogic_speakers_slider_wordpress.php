@@ -1,22 +1,22 @@
 <?php
-wp_enqueue_style('shocklogic_speakers_wordpress');
+wp_enqueue_style('shocklogic_speakers_slider_wordpress');
 //Initialize Swiper
 wp_enqueue_style("swiper-css");
 wp_enqueue_script("swiper-js");
 wp_enqueue_style("modal-css");
 
-$shocklogic_speakers_wordpress_group = get_field('shocklogic_speakers_wordpress_group');
-$wp_query = get_query($shocklogic_speakers_wordpress_group);
+$shocklogic_speakers_slider_wordpress_group = get_field('shocklogic_speakers_slider_wordpress_group');
+$wp_query = get_query($shocklogic_speakers_slider_wordpress_group);
 $block_id = $block['id'];
-$background = $shocklogic_speakers_wordpress_group['background_colour'];
+$background = $shocklogic_speakers_slider_wordpress_group['background_colour'];
 
-if (isset($shocklogic_speakers_wordpress_group) && $shocklogic_speakers_wordpress_group != null) { ?>
-	<div class="shocklogic_speakers_wordpress" id="<?= $block_id ?>">
-		<div class="shocklogic_speakers_wordpress_wrapper">
-			<div class="shocklogic_speakers_wordpress_wrapper_title">
-				<?= $shocklogic_speakers_wordpress_group['title'] ?>
+if (isset($shocklogic_speakers_slider_wordpress_group) && $shocklogic_speakers_slider_wordpress_group != null) { ?>
+	<div class="shocklogic_speakers_slider_wordpress" id="<?= $block_id ?>">
+		<div class="shocklogic_speakers_slider_wordpress_wrapper">
+			<div class="shocklogic_speakers_slider_wordpress_wrapper_title">
+				<?= $shocklogic_speakers_slider_wordpress_group['title'] ?>
 			</div>
-			<div class="shocklogic_speakers_wordpress_wrapper_speakers">
+			<div class="shocklogic_speakers_slider_wordpress_wrapper_speakers">
 				<div class="swiper mySwiper">
 					<div class="swiper-wrapper">
 						<?php
@@ -30,7 +30,7 @@ if (isset($shocklogic_speakers_wordpress_group) && $shocklogic_speakers_wordpres
 									<a data-bs-toggle="modal" data-bs-target="#<?= "speaker" . get_the_ID() ?>">
 										<img src="<?= $image_url ?>" alt="">
 									</a>
-									<div class="shocklogic_speakers_wordpress_wrapper_speakers_name"><?= $title ?></div>
+									<div class="shocklogic_speakers_slider_wordpress_wrapper_speakers_name"><?= $title ?></div>
 								</div>
 
 						<?php
@@ -51,11 +51,11 @@ if (isset($shocklogic_speakers_wordpress_group) && $shocklogic_speakers_wordpres
 				</div>
 			</div>
  
-			<div class="shocklogic_speakers_wordpress_wrapper_bottom_text">
-				<?= $shocklogic_speakers_wordpress_group['bottom_text'] ?>
+			<div class="shocklogic_speakers_slider_wordpress_wrapper_bottom_text">
+				<?= $shocklogic_speakers_slider_wordpress_group['bottom_text'] ?>
 			</div>
 		</div>
-		<div class="shocklogic_speakers_wordpress_wrapper_modals">
+		<div class="shocklogic_speakers_slider_wordpress_wrapper_modals">
 			<?php
 			if ($wp_query->have_posts()) {
 				while ($wp_query->have_posts()) {
