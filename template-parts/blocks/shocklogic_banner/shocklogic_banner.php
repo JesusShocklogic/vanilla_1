@@ -8,13 +8,16 @@ if (isset($shocklogic_banner_group) && $shocklogic_banner_group != null) { ?>
             <?php
             if ($shocklogic_banner_group['banner_select'] == "image") { ?>
                 <div class="shocklogic_banner_wrapper_image">
-                    <img src="<?= ($shocklogic_banner_group['image_2']['url']) ?>" alt="">
+                    <img src="<?= ($shocklogic_banner_group['image']['url']) ?>" alt="">
                 </div>
             <?php
             } elseif ($shocklogic_banner_group['banner_select'] == "video") {
                 echo "video";
             }
             ?>
+            <div class="shocklogic_banner_wrapper_content">
+                <?= $shocklogic_banner_group['content_over_banner']?>
+            </div>
         </div>
     </div>
 <?php
