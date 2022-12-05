@@ -1,10 +1,10 @@
 @use "../../../util/variables";
 @use "../../../util/breakpoints";
 //This is just to hide the modals in the Dashboard editor. PENDING to make it better
-.acf-block-component .shocklogic_speakers_wordpress_wrapper_modals {
+.acf-block-component .shocklogic_speakers_slider_wordpress_wrapper_modals {
     display: none;
 }
-.shocklogic_speakers_wordpress {
+.shocklogic_speakers_slider_wordpress {
     @include variables.spacing;
     &_wrapper {
         &_title {
