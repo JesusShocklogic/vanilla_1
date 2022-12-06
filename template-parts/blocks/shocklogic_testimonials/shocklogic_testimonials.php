@@ -1,5 +1,4 @@
 <?php
-wp_enqueue_style('shocklogic_testimonials');
 $shocklogic_testimonials_group = get_field('shocklogic_testimonials_group');
 $testimonials = $shocklogic_testimonials_group['testimonials'];
 $block_id = $block['id'];

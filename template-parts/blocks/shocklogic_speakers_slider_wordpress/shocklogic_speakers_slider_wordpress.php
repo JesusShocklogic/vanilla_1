@@ -1,5 +1,4 @@
 <?php
-wp_enqueue_style('shocklogic_speakers_slider_wordpress');
 //Initialize Swiper
 wp_enqueue_style("swiper-css");
 wp_enqueue_script("swiper-js");

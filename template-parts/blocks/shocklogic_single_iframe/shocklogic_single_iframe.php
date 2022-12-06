@@ -1,5 +1,4 @@
 <?php
-wp_enqueue_style('shocklogic_single_iframe');
 $shocklogic_single_iframe_group = get_field('shocklogic_single_iframe_group');
 
 $width = $shocklogic_single_iframe_group['width'];
