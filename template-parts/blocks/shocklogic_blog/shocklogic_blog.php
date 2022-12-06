@@ -1,5 +1,4 @@
 <?php
-wp_enqueue_style('shocklogic_blog');
 $shocklogic_blog_group = get_field('shocklogic_blog_group');
 $wp_query = get_query($shocklogic_blog_group);
 $block_id = $block['id'];

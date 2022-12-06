@@ -1,5 +1,4 @@
 <?php
-wp_enqueue_style('shocklogic_speakers_wordpress');
 wp_enqueue_style("modal-css");
 
 $shocklogic_speakers_wordpress_group = get_field('shocklogic_speakers_wordpress_group');
