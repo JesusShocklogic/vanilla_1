@@ -16,7 +16,7 @@ if (isset($shocklogic_speakers_slider_wordpress_group) && $shocklogic_speakers_s
 				<?= $shocklogic_speakers_slider_wordpress_group['title'] ?>
 			</div>
 			<div class="shocklogic_speakers_slider_wordpress_wrapper_speakers">
-				<div class="swiper mySwiper">
+				<div class="swiper mySwiper"> 
 					<div class="swiper-wrapper">
 						<?php
 						if ($wp_query->have_posts()) {
