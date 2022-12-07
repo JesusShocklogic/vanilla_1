@@ -20,16 +20,14 @@ if (isset($shocklogic_blog_group) && $shocklogic_blog_group != null) { ?>
 						$title = get_the_title();
 						$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : ""; ?>
 						<div class="shocklogic_blog_wrapper_blog_single">
-							<div class="shocklogic_blog_wrapper_blog_single_title">
-								<?php the_title() ?>
-							</div>
-							<div class="shocklogic_blog_wrapper_blog_single_ratio">
-								<a href="<?= $permalink ?>">
+							<a href="<?= $permalink ?>">
+								<div class="shocklogic_blog_wrapper_blog_single_image">
 									<img src="<?= $image_url ?>" alt="">
-								</a>
-							</div>
-
-
+								</div>
+								<div class="shocklogic_blog_wrapper_blog_single_title title">
+									<h3><?php the_title() ?></h3>
+								</div>
+							</a>
 						</div>
 				<?php
 					}; //while
