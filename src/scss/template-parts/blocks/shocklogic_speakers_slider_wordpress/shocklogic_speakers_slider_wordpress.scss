@@ -18,20 +18,34 @@
             @include variables.title_spacing;
         }
         &_speakers {
+            & .swiper {
+                & .swiper-wrapper {
+                    margin: 1rem;
+                }
+                & a {
+                    @include variables.aspect-ratio(1, 1);
+                    display: block;
+                    width: 100%;
+                    transform: scale(1);
+                    transition: 0.5s;
+
+                    &:hover {
+                        transform: scale(1.1);
+                        transition: 0.5s;
+                    }
+                    & img {
+                        border-radius: 50%;
+                        object-fit: cover;
+                        object-position: center center;
+                        display: block;
+                        margin: 0 auto;
+                        height: 100%;
+                    }
+                }
+            }
             &_name {
                 text-align: center;
                 padding-top: 1rem;
-            }
-            & a {
-                display: block;
-                width: 100%;
-            }
-            & img {
-                border-radius: 50%;
-                object-fit: cover;
-                object-position: center center;
-                display: block;
-                margin: 0 auto;
             }
         }
         &_bottom_text {

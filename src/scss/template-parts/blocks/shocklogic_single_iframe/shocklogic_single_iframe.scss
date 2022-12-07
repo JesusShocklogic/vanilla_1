@@ -5,6 +5,7 @@
     &_wrapper {
         &_iframe,
         &_code {
+            @include variables.aspect-ratio(16, 9);
             &.contain {
                 width: 90%;
                 margin: 0 auto;
