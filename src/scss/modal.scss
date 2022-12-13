@@ -18,19 +18,17 @@
                 &_left {
                     text-align: center;
                     &_image {
-                        padding-bottom: .5rem;
+                        @include variables.aspect-ratio(1, 1);
+                        width: 70%;
+                        margin: 0 auto;
+                        margin-bottom: 1rem;
                         & img {
-                            @include variables.aspect-ratio(1, 1);
                             border-radius: 50%;
-                            width: 75%;
-                            margin: 0 auto;
+                            object-fit: cover;
+                            object-position: center center;
                             display: block;
-                            @media (min-width: breakpoints.$tablet) {
-                                width: 230px;
-                            }
-                            @media (min-width: breakpoints.$desktop_medium) {
-                                width: 75%;
-                            }
+                            margin: 0 auto;
+                            height: 100%;
                         }
                     }
                 }

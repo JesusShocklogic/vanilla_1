@@ -10,6 +10,12 @@
     &_wrapper {
         position: relative;
 
+        &_image {
+            & img {
+                width: 100%;
+            }
+        }
+
         &_content {
             position: absolute;
             top: 0;
