@@ -24,7 +24,7 @@ if (isset($shocklogic_speakers_wordpress_group) && $shocklogic_speakers_wordpres
 							<a data-bs-toggle="modal" data-bs-target="#<?= "speaker" . get_the_ID() ?>">
 								<img src="<?= $image_url ?>" alt="">
 							</a>
-							<div class="shocklogic_speakers_wordpress_wrapper_speakers_name"><?= $title ?></div>
+							<div class="shocklogic_speakers_wordpress_wrapper_speakers_speaker_name"><?= $title ?></div>
 						</div>
 
 				<?php
@@ -74,7 +74,7 @@ if (isset($shocklogic_speakers_wordpress_group) && $shocklogic_speakers_wordpres
 									</div>
 								</div>
 							</div>
-							<div class="modal-footer"></div>
+							<div class="modal-footer d-none"></div>
 						</div>
 					</div>
 				</div>
