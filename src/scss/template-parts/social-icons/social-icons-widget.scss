@@ -1,0 +1,26 @@
+@use "../../util/variables";
+@use "../../util/breakpoints";
+.shocklogic_social_media_bar {
+    background-color: #20202080;
+    position: fixed;
+    top: 85px;
+    right: 1rem;
+    width: 70px;
+    padding: 1rem;
+    border-radius: 25px;
+    z-index: 1;
+    &_container {
+        display: grid;
+        grid-gap: 15px;
+
+        &_image {
+            & a {
+                & img {
+                    display: block;
+                    width: 100%;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
