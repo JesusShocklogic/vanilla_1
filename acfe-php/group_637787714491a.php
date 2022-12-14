@@ -4,12 +4,12 @@ if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
 	'key' => 'group_637787714491a',
-	'title' => 'Theme footer',
+	'title' => 'General – Footer options',
 	'fields' => array(
 		array(
 			'key' => 'field_63778772fdfcb',
-			'label' => 'Footer group',
-			'name' => 'footer_group',
+			'label' => 'General footer options',
+			'name' => 'general_footer_options',
 			'aria-label' => '',
 			'type' => 'group',
 			'instructions' => '',
@@ -141,7 +141,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1668778778,
+	'modified' => 1670952496,
 ));
 
 endif;

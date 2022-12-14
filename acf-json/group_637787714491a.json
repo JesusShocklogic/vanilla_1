@@ -1,11 +1,11 @@
 {
     "key": "group_637787714491a",
-    "title": "Theme footer",
+    "title": "General – Footer options",
     "fields": [
         {
             "key": "field_63778772fdfcb",
-            "label": "Footer group",
-            "name": "footer_group",
+            "label": "General footer options",
+            "name": "general_footer_options",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -137,5 +137,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1668778778
+    "modified": 1670952496
 }

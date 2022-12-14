@@ -78,10 +78,10 @@ add_action('init', function () {
     wp_register_style("footer", get_template_directory_uri() . "/assets/css/footer.css", array(), true);
     wp_register_style("bootstrap", get_template_directory_uri() . "/assets/css/bootstrap.css", array(), true);
     wp_register_script("base", get_template_directory_uri() . "/assets/js/base.js", array(), true);
-    wp_register_style("single_iframe", get_template_directory_uri() . "/assets/css/single_iframe/single_iframe.css", array(), true);
     wp_register_style("swiper-css", get_template_directory_uri() . "/assets/css/swiper-bundle.min.css", array(), true);
     wp_register_script("swiper-js", get_template_directory_uri() . "/assets/js/swiper.js", array(), true);
     wp_register_style("modal-css", get_template_directory_uri() . "/assets/css/modal.css", array(), true);
+    wp_register_style("social-icon-widget", get_template_directory_uri() . "/template-parts/social-icons/social-icons-widget.css", array(), true);
 });
 
 
@@ -129,14 +129,20 @@ if (function_exists('acf_add_options_page')) {
     ));
 
     acf_add_options_sub_page(array(
-        'page_title'     => 'Theme Header Settings',
-        'menu_title'    => 'Header',
+        'page_title'     => 'Theme Menu Settings',
+        'menu_title'    => 'Menu',
         'parent_slug'    => 'theme-general-settings',
     ));
 
     acf_add_options_sub_page(array(
         'page_title'     => 'Theme Footer Settings',
         'menu_title'    => 'Footer',
+        'parent_slug'    => 'theme-general-settings',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title'     => 'Theme Social Icons Settings',
+        'menu_title'    => 'Social Icons',
         'parent_slug'    => 'theme-general-settings',
     ));
 } //ACF option menu in WP Dashboard
