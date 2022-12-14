@@ -1,6 +1,6 @@
 <?php
 wp_enqueue_style("footer");
-$footer = get_field('footer_group', 'option'); ?>
+$footer = get_field('general_footer_options', 'option'); ?>
 <footer class="footer">
     <div class="footer_wrapper">
         <div class="footer_wrapper_left"><?= $footer['left_column'] ?? '' ?></div>
