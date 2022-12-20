@@ -32,6 +32,7 @@
 	<style>
 		header .navbar {
 			background-color: <?= $general_menu_group['background_colour'] ?>;
+			box-shadow: 0px 5px 6px #00000029;
 		}
 
 		header .navbar .menu-item .nav-link {
@@ -49,7 +50,7 @@
 
 	<header>
 		<nav class="navbar navbar-expand-xl <?= $general_menu_group['menus_position'] ?>">
-			<div class="container">
+			<div class="container-fluid">
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>

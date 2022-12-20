@@ -25,8 +25,8 @@ function compilePartsCss(cb) {
 
 function compileBootstrapCss(cb) {
     //cb();
-    //return src('node_modules/bootstrap/scss/bootstrap.scss')
-    return src('src/scss/bootstrap.scss')
+    return src('node_modules/bootstrap/scss/bootstrap.scss')
+    //return src('src/scss/bootstrap.scss')
         .pipe(sass())
         .pipe(cleanCSS())
         .pipe(dest('assets/css/'));
