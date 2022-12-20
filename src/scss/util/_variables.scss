@@ -18,6 +18,20 @@
     }
 } //spacing
 
+//Spacing for text over banner
+@mixin banner_text_spacing {
+    padding: 4rem 1rem 4rem 1rem;
+    @media (min-width: breakpoints.$desktop_small) {
+        padding: 4rem 3rem 4rem 3rem;
+    }
+    @media (min-width: breakpoints.$desktop_large) {
+        padding: 4rem 5rem 4rem 5rem;
+    }
+    @media (min-width: breakpoints.$desktop_xlarge) {
+        padding: 4rem 3rem 4rem 3rem;
+    }
+} //spacing
+
 @mixin title_spacing {
     padding-bottom: 1.5rem;
 }

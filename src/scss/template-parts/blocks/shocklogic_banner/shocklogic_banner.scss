@@ -9,6 +9,7 @@
     }
     &_wrapper {
         position: relative;
+        z-index: 0;
 
         &_image {
             & img {
@@ -17,9 +18,14 @@
         }
 
         &_content {
-            position: absolute;
-            top: 0;
-            @include variables.spacing;
+            &_over{
+                position: absolute;
+                @include variables.banner_text_spacing;
+            }
+
+            &_top {
+                padding-top: 1rem;
+            }
         }
-    }
-}
+    }//wrapper
+}//shocklogic banner

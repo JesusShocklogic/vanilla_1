@@ -1,11 +1,27 @@
 @use "../../../util/variables";
 @use "../../../util/breakpoints";
 .shocklogic_single_iframe {
-    @include variables.spacing;
+    &.contain {
+        @include variables.spacing;
+    }
+    &.fullwidth {
+        width: 100%;
+        max-width: 100%;
+    }
     &_wrapper {
-        &_iframe,
-        &_code {
+        &_text_above,
+        &_text_below {
+            padding-bottom: 1rem;
+            padding-top: 1rem;
+        }
+        &_iframe {
+            position: relative;
             @include variables.aspect-ratio(16, 9);
+
+            &_text {
+                @include variables.banner_text_spacing;
+            }
+
             &.contain {
                 width: 90%;
                 margin: 0 auto;
