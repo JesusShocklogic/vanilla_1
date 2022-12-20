@@ -9,6 +9,7 @@ if ($args['link']) {
         .button_menu {
             background-color: <?= $args['button_background_colour'] ?>;
             color: <?= $args['button_text_colour'] ?>;
+            margin-left: 20px;
         }
 
         .button_menu:hover {

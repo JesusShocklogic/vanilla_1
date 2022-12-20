@@ -17,5 +17,4 @@ $footer = get_field('general_footer_options', 'option'); ?>
 wp_footer();
 ?>
 </body>
-
 </html>
