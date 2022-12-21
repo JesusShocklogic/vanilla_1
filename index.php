@@ -11,6 +11,4 @@ if (have_posts()) {
 else {
     //No content Found
 } // end else
-
-
 get_footer();
