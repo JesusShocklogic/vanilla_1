@@ -1,0 +1,31 @@
+@use "../../../util/variables";
+@use "../../../util/breakpoints";
+.shocklogic_vertical_swiper_banner {
+    &_wrapper {
+        position: relative;
+        z-index: 0;
+        height: 100dvh;
+
+        &_options {
+            position: absolute;
+            top: 25vh;
+            left: 1vw;
+
+            & img {
+                width: 50px;
+                height: 50px;
+                object-fit: contain;
+            }
+        }
+
+        &_content {
+            height: 100dvh;
+
+            &_iframe {
+                & iframe {
+                    height: 100dvh;
+                }
+            }
+        }
+    } //wrapper
+} //shocklogic banner

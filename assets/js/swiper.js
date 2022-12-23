@@ -1,5 +1,5 @@
 /**
- * Swiper 8.4.4
+ * Swiper 8.4.5
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: October 12, 2022
+ * Released on: November 21, 2022
  */
 
 !function (e, t) {
@@ -3733,7 +3733,7 @@
       b = () => {
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            t.a11y.clicked = !1;
+            t.destroyed || (t.a11y.clicked = !1);
           });
         });
       },
@@ -3743,7 +3743,7 @@
         if (!s || !t.slides.includes(s)) return;
         const a = t.slides.indexOf(s) === t.activeIndex,
           i = t.params.watchSlidesProgress && t.visibleSlides && t.visibleSlides.includes(s);
-        a || i || (t.isHorizontal() ? t.el.scrollLeft = 0 : t.el.scrollTop = 0, t.slideTo(t.slides.indexOf(s), 0));
+        a || i || e.sourceCapabilities && e.sourceCapabilities.firesTouchEvents || (t.isHorizontal() ? t.el.scrollLeft = 0 : t.el.scrollTop = 0, t.slideTo(t.slides.indexOf(s), 0));
       },
       y = () => {
         const e = t.params.a11y;
