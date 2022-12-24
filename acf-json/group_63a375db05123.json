@@ -107,9 +107,10 @@
                             },
                             "choices": {
                                 "iframe": "Iframe",
-                                "image": "Image"
+                                "image": "Image",
+                                "video": "Video file (not recommended)"
                             },
-                            "default_value": false,
+                            "default_value": "iframe",
                             "return_format": "value",
                             "multiple": 0,
                             "allow_null": 0,
@@ -185,6 +186,36 @@
                             "preview_size": "medium",
                             "library": "all",
                             "parent_repeater": "field_63a51f3183221"
+                        },
+                        {
+                            "key": "field_63a72c71ffea8",
+                            "label": "video",
+                            "name": "video",
+                            "aria-label": "",
+                            "type": "file",
+                            "instructions": "IMPORTANT: having a video file directly from the server may cause slower loading time on your site. We strongly suggest that you use an iframe for the reproduction of videos.",
+                            "required": 1,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_63a5baf3a04ac",
+                                        "operator": "==",
+                                        "value": "video"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "uploader": "",
+                            "return_format": "url",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": ".mp4,.ogg,.webm",
+                            "library": "all",
+                            "parent_repeater": "field_63a51f3183221"
                         }
                     ]
                 }
@@ -221,7 +252,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1671806914,
+    "modified": 1671900551,
     "acfe_categories": {
         "shocklogic": "Shocklogic"
     }

@@ -35,6 +35,20 @@ if (isset($shocklogic_vertical_swiper_banner_group) && $shocklogic_vertical_swip
                                         <?= $option['iframe'] ?>
                                     </div>
                                 <?php } ?>
+
+                                <?php
+                                if ($option['background_select'] == "image") { ?>
+                                    <div class="shocklogic_vertical_swiper_banner_wrapper_content_image">
+                                        <img src="<?= $option['image']['url'] ?>" alt="">
+                                    </div>
+                                <?php } ?>
+
+                                <?php
+                                if ($option['background_select'] == "video") { ?>
+                                    <div class="shocklogic_vertical_swiper_banner_wrapper_content_video">
+                                        <video src="<?= $option['video'] ?>" autoplay muted></video>
+                                    </div>
+                                <?php } ?>
                             </div>
                         <?php } ?>
                     </div>

@@ -112,8 +112,9 @@ acf_add_local_field_group(array(
 							'choices' => array(
 								'iframe' => 'Iframe',
 								'image' => 'Image',
+								'video' => 'Video file (not recommended)',
 							),
-							'default_value' => false,
+							'default_value' => 'iframe',
 							'return_format' => 'value',
 							'multiple' => 0,
 							'allow_null' => 0,
@@ -190,6 +191,36 @@ acf_add_local_field_group(array(
 							'library' => 'all',
 							'parent_repeater' => 'field_63a51f3183221',
 						),
+						array(
+							'key' => 'field_63a72c71ffea8',
+							'label' => 'video',
+							'name' => 'video',
+							'aria-label' => '',
+							'type' => 'file',
+							'instructions' => 'IMPORTANT: having a video file directly from the server may cause slower loading time on your site. We strongly suggest that you use an iframe for the reproduction of videos.',
+							'required' => 1,
+							'conditional_logic' => array(
+								array(
+									array(
+										'field' => 'field_63a5baf3a04ac',
+										'operator' => '==',
+										'value' => 'video',
+									),
+								),
+							),
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'uploader' => '',
+							'return_format' => 'url',
+							'min_size' => '',
+							'max_size' => '',
+							'mime_types' => '.mp4,.ogg,.webm',
+							'library' => 'all',
+							'parent_repeater' => 'field_63a51f3183221',
+						),
 					),
 				),
 			),
@@ -228,7 +259,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'shocklogic' => 'Shocklogic',
 	),
-	'modified' => 1671806914,
+	'modified' => 1671900551,
 ));
 
 endif;
