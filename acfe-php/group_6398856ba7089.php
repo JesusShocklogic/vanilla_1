@@ -410,6 +410,28 @@ acf_add_local_field_group(array(
 							'enable_opacity' => 0,
 							'return_format' => 'string',
 						),
+						array(
+							'key' => 'field_63a75bfccf2e3',
+							'label' => 'Button minimal width',
+							'name' => 'button_minimal_width',
+							'aria-label' => '',
+							'type' => 'number',
+							'instructions' => 'This option will only affect the button in the menu',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '50',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'min' => 0,
+							'max' => '',
+							'placeholder' => '',
+							'step' => 1,
+							'prepend' => '',
+							'append' => 'pixels',
+						),
 					),
 					'acfe_group_modal_close' => 0,
 					'acfe_group_modal_button' => '',
@@ -448,7 +470,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1671912023,
+	'modified' => 1671912617,
 ));
 
 endif;

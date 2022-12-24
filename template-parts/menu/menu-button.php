@@ -9,6 +9,7 @@ if ($args['link']) {
         .button_menu {
             background-color: <?= $args['button_background_colour'] ?>;
             color: <?= $args['button_text_colour'] ?>;
+            min-width: <?= $args['button_minimal_width'] ? ($args['button_minimal_width'] . "px") : "auto"; ?>;
             margin-left: 20px;
         }
 
