@@ -51,14 +51,12 @@
 		header a.navbar-brand img {
 			width: <?= $general_menu_group['logo_mobile_width'] . "%" ?? "100%"; ?>;
 		}
-
 		/* tablet */
 		@media (min-width: 769px) {
 			header a.navbar-brand img {
 				width: <?= $general_menu_group['logo_tablet_width'] . "%" ?? "100%"; ?>;
 			}
 		}
-
 		/* Desktop */
 		@media (min-width: 1200px) {
 			header a.navbar-brand img {
