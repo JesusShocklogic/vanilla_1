@@ -2,6 +2,29 @@
 include("includes/index.php");
 
 /*
+* Changing the Login logo
+*/
+function my_login_logo()
+{
+    if (get_field('general_theme_settings_group', "option")['login_image']) : ?>
+        <style type="text/css">
+            #login h1 a,
+            .login h1 a {
+                background-image: url("<?= get_field('general_theme_settings_group', "option")['login_image']['url'] ?>");
+                background-size: contain;
+                background-position: center center;
+                background-repeat: no-repeat;
+                padding-bottom: 30px;
+                width: 100%;
+                height: 70px;
+                margin: 0 auto;
+            }
+        </style>
+<?php endif;
+}
+add_action('login_enqueue_scripts', 'my_login_logo');
+
+/*
 * Remove the Wordpress Version Generator meta tag
 */
 //Remove the wordpress version generator
