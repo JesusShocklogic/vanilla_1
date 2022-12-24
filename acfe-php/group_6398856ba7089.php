@@ -91,7 +91,7 @@ acf_add_local_field_group(array(
 					'name' => 'logo',
 					'aria-label' => '',
 					'type' => 'image',
-					'instructions' => '',
+					'instructions' => 'This logo will be placed as the menu\'s logo and the Login page logo',
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
@@ -448,7 +448,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1671905068,
+	'modified' => 1671909976,
 ));
 
 endif;

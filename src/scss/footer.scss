@@ -2,6 +2,10 @@
 @use "util/breakpoints";
 .footer {
     @include variables.spacing;
+
+    & a {
+        text-decoration: none;
+    }
     &_wrapper {
         display: grid;
         justify-content: center;
