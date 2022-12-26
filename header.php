@@ -30,6 +30,15 @@
 	}
 	?>
 	<style>
+		a {
+			color: <?= $general_theme_settings['general_links_colour'] ?? "auto" ?>;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: <?= $general_theme_settings['general_links_colour_hover'] ?? "auto" ?>;
+		}
+
 		header .navbar {
 			background-color: <?= $general_menu_group['background_colour'] ?>;
 			box-shadow: 0px 5px 6px #00000029;
@@ -51,12 +60,14 @@
 		header a.navbar-brand img {
 			width: <?= $general_menu_group['logo_mobile_width'] . "%" ?? "100%"; ?>;
 		}
+
 		/* tablet */
 		@media (min-width: 769px) {
 			header a.navbar-brand img {
 				width: <?= $general_menu_group['logo_tablet_width'] . "%" ?? "100%"; ?>;
 			}
 		}
+
 		/* Desktop */
 		@media (min-width: 1200px) {
 			header a.navbar-brand img {

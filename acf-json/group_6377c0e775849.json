@@ -21,7 +21,7 @@
             "sub_fields": [
                 {
                     "key": "field_6377c106d707a",
-                    "label": "name",
+                    "label": "Name",
                     "name": "name",
                     "aria-label": "",
                     "type": "text",
@@ -81,7 +81,7 @@
                 },
                 {
                     "key": "field_6377c124d707d",
-                    "label": "Company\/organizarion",
+                    "label": "Company \/ Organizarion",
                     "name": "company_organizarion",
                     "aria-label": "",
                     "type": "text",
@@ -132,5 +132,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1668793119
+    "modified": 1672065799
 }

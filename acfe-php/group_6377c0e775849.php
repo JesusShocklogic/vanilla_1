@@ -25,7 +25,7 @@ acf_add_local_field_group(array(
 			'sub_fields' => array(
 				array(
 					'key' => 'field_6377c106d707a',
-					'label' => 'name',
+					'label' => 'Name',
 					'name' => 'name',
 					'aria-label' => '',
 					'type' => 'text',
@@ -85,7 +85,7 @@ acf_add_local_field_group(array(
 				),
 				array(
 					'key' => 'field_6377c124d707d',
-					'label' => 'Company/organizarion',
+					'label' => 'Company / Organizarion',
 					'name' => 'company_organizarion',
 					'aria-label' => '',
 					'type' => 'text',
@@ -136,7 +136,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1668793119,
+	'modified' => 1672065799,
 ));
 
 endif;
