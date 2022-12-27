@@ -16,15 +16,21 @@ if (isset($shocklogic_speakers_slider_wordpress_group) && $shocklogic_speakers_s
 				<?= $shocklogic_speakers_slider_wordpress_group['title'] ?>
 			</div>
 			<div class="shocklogic_speakers_slider_wordpress_wrapper_speakers">
-				<div class="swiper mySwiper"> 
+				<div class="swiper mySwiper">
 					<div class="swiper-wrapper">
 						<?php
 						if ($wp_query->have_posts()) {
 							$content = "";
 							while ($wp_query->have_posts()) {
 								$wp_query->the_post();
-								$title = get_the_title();
-								$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : ""; ?>
+								$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : "";
+
+								$speaker_wordpress_group = get_field('speaker_wordpress_group', get_the_ID());
+								if (((isset($speaker_wordpress_group['name']) && $speaker_wordpress_group['name'] != "") || (isset($speaker_wordpress_group['last_name']) && $speaker_wordpress_group['last_name'] != ""))) {
+									$title = ($speaker_wordpress_group['name'] ?? '') . " " . ($speaker_wordpress_group['last_name'] ?? '');
+								} else {
+									$title = get_the_title();
+								} ?>
 								<div class="swiper-slide">
 									<a data-bs-toggle="modal" data-bs-target="#<?= "speaker" . get_the_ID() ?>">
 										<img src="<?= $image_url ?>" alt="">
@@ -49,7 +55,7 @@ if (isset($shocklogic_speakers_slider_wordpress_group) && $shocklogic_speakers_s
 					?>
 				</div>
 			</div>
- 
+
 			<div class="shocklogic_speakers_slider_wordpress_wrapper_bottom_text">
 				<?= $shocklogic_speakers_slider_wordpress_group['bottom_text'] ?>
 			</div>
@@ -59,9 +65,13 @@ if (isset($shocklogic_speakers_slider_wordpress_group) && $shocklogic_speakers_s
 			if ($wp_query->have_posts()) {
 				while ($wp_query->have_posts()) {
 					$wp_query->the_post();
-					$title = get_the_title();
 					$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : "";
-					$speaker_wordpress_group = get_field('speaker_wordpress_group', get_the_ID()); ?>
+					$speaker_wordpress_group = get_field('speaker_wordpress_group', get_the_ID());
+					if (((isset($speaker_wordpress_group['name']) && $speaker_wordpress_group['name'] != "") || (isset($speaker_wordpress_group['last_name']) && $speaker_wordpress_group['last_name'] != ""))) {
+						$title = ($speaker_wordpress_group['name'] ?? '') . " " . ($speaker_wordpress_group['last_name'] ?? '');
+					} else {
+						$title = get_the_title();
+					} ?>
 
 					<!-- Modal -->
 					<div class="modal fade" id="<?= "speaker" . get_the_ID() ?>" tabindex="-1" aria-labelledby="<?= "speaker" . get_the_ID() ?>Label" aria-hidden="true">
@@ -75,7 +85,7 @@ if (isset($shocklogic_speakers_slider_wordpress_group) && $shocklogic_speakers_s
 										<div class="modal_dialog_content_body_left_image">
 											<img src="<?= $image_url ?>" alt="">
 										</div>
-										<strong><?= ($speaker_wordpress_group['name'] ?? '') . " " . ($speaker_wordpress_group['last_name'] ?? '') ?></strong>
+										<strong><?= $title ?></strong>
 										<div><?= ($speaker_wordpress_group['job_title'] ?? '') ?></div>
 										<div><?= ($speaker_wordpress_group['company_organizarion'] ?? '') ?></div>
 									</div>

@@ -5,6 +5,12 @@ const babel = require('gulp-babel');
 const cleanCSS = require('gulp-clean-css');
 var concat = require('gulp-concat');
 
+function compileImages(cb) {
+    cb();
+    return src('src/images/*')
+        .pipe(dest('assets/images/'));
+}
+
 function compileCss(cb) {
     cb();
     return src('src/scss/*.scss')
@@ -61,7 +67,7 @@ function compileSwiperCss(cb) {
 }
 
 //exports.build = build;
-exports.default = series(compileBootstrapCss, compileBootstrapJS, compileSwiperCss, compileSwipperJS, compileCss, compilePartsCss);
+exports.default = series(compileImages,compileBootstrapCss, compileBootstrapJS, compileSwiperCss, compileSwipperJS, compileCss, compilePartsCss);
 exports.watcher = function () {
     watch(['src/scss/*.scss', 'src/scss/**/*.scss', 'src/scss/template-parts/**/*.scss'], compileCss);
     watch(['src/scss/*.scss', 'src/scss/**/*.scss', 'src/scss/template-parts/**/*.scss'], compilePartsCss);
