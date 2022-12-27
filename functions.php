@@ -2,6 +2,19 @@
 include("includes/index.php");
 
 /*
+* Returning the default speakers avatar image file
+*/
+
+function default_speaker_avatar()
+{
+    if (isset(get_field('general_theme_settings_group', "option")['avatar_for_speakers']['url'])) {
+        return get_field('general_theme_settings_group', "option")['avatar_for_speakers']['url'];
+    } else {
+        return get_template_directory_uri() . "/assets/images/speaker_avatar.jpg";
+    }
+}
+
+/*
 * Changing the Login logo
 */
 function my_login_logo()

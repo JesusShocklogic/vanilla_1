@@ -4,10 +4,12 @@ const sass = require('gulp-sass')(require('sass'));
 const babel = require('gulp-babel');
 const cleanCSS = require('gulp-clean-css');
 var concat = require('gulp-concat');
+const imagemin = require('gulp-imagemin');
 
 function compileImages(cb) {
     cb();
     return src('src/images/*')
+        .pipe(imagemin())
         .pipe(dest('assets/images/'));
 }
 
@@ -32,7 +34,7 @@ function compilePartsCss(cb) {
 function compileBootstrapCss(cb) {
     //cb();
     return src('node_modules/bootstrap/scss/bootstrap.scss')
-    //return src('src/scss/bootstrap.scss')
+        //return src('src/scss/bootstrap.scss')
         .pipe(sass())
         .pipe(cleanCSS())
         .pipe(dest('assets/css/'));
@@ -67,7 +69,7 @@ function compileSwiperCss(cb) {
 }
 
 //exports.build = build;
-exports.default = series(compileImages,compileBootstrapCss, compileBootstrapJS, compileSwiperCss, compileSwipperJS, compileCss, compilePartsCss);
+exports.default = series(compileImages, compileBootstrapCss, compileBootstrapJS, compileSwiperCss, compileSwipperJS, compileCss, compilePartsCss);
 exports.watcher = function () {
     watch(['src/scss/*.scss', 'src/scss/**/*.scss', 'src/scss/template-parts/**/*.scss'], compileCss);
     watch(['src/scss/*.scss', 'src/scss/**/*.scss', 'src/scss/template-parts/**/*.scss'], compilePartsCss);
