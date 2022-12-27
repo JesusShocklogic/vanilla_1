@@ -5,6 +5,7 @@ $shocklogic_speakers_wordpress_group = get_field('shocklogic_speakers_wordpress_
 $wp_query = get_query($shocklogic_speakers_wordpress_group);
 $block_id = $block['id'];
 $background = $shocklogic_speakers_wordpress_group['background_colour'];
+$avatar = default_speaker_avatar();
 
 if (isset($shocklogic_speakers_wordpress_group) && $shocklogic_speakers_wordpress_group != null) { ?>
 	<div class="shocklogic_speakers_wordpress" id="<?= $block_id ?>">
@@ -18,7 +19,7 @@ if (isset($shocklogic_speakers_wordpress_group) && $shocklogic_speakers_wordpres
 					$content = "";
 					while ($wp_query->have_posts()) {
 						$wp_query->the_post();
-						$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : "";
+						$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : $avatar;
 
 						$speaker_wordpress_group = get_field('speaker_wordpress_group', get_the_ID());
 						if (((isset($speaker_wordpress_group['name']) && $speaker_wordpress_group['name'] != "") || (isset($speaker_wordpress_group['last_name']) && $speaker_wordpress_group['last_name'] != ""))) {
@@ -57,7 +58,7 @@ if (isset($shocklogic_speakers_wordpress_group) && $shocklogic_speakers_wordpres
 		if ($wp_query->have_posts()) {
 			while ($wp_query->have_posts()) {
 				$wp_query->the_post();
-				$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : "";
+				$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : $avatar;
 
 				$speaker_wordpress_group = get_field('speaker_wordpress_group', get_the_ID());
 				if (((isset($speaker_wordpress_group['name']) && $speaker_wordpress_group['name'] != "") || (isset($speaker_wordpress_group['last_name']) && $speaker_wordpress_group['last_name'] != ""))) {
