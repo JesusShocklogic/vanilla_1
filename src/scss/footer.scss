@@ -7,14 +7,16 @@
         text-decoration: none;
     }
     &_wrapper {
-        display: grid;
-        justify-content: center;
-        align-items: start;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         align-content: center;
-        grid-template-columns: 1fr;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
 
-        @media (min-width: breakpoints.$desktop_medium) {
-            grid-template-columns: repeat(3, 1fr);
+        &_column {
+            flex-basis: fit-content;
         }
     }
 }
