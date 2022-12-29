@@ -47,7 +47,6 @@
 		header .navbar {
 			background-color: <?= $general_menu_group['background_colour'] ?>;
 			box-shadow: 0px 5px 6px #00000029;
-			padding: 0;
 		}
 
 		header .navbar .menu-item .nav-link {
@@ -76,6 +75,10 @@
 
 		/* Desktop */
 		@media (min-width: 1200px) {
+			header .navbar {
+				padding: 0;
+			}
+
 			header a.navbar-brand img {
 				width: <?= $general_menu_group['logo_desktop_width'] . "%" ?? "100%"; ?>;
 			}
