@@ -3,9 +3,16 @@ wp_enqueue_style("footer");
 $footer = get_field('general_footer_options', 'option'); ?>
 <footer class="footer">
     <div class="footer_wrapper">
-        <div class="footer_wrapper_left"><?= $footer['left_column'] ?? '' ?></div>
-        <div class="footer_wrapper_center"><img src="<?= $footer['logo']['url'] ?? '' ?>" alt=""></div>
-        <div class="footer_wrapper_right"><?= $footer['right_column'] ?? '' ?></div>
+        <?php
+        if ($footer['columns']) {
+            foreach ($footer['columns'] as $key => $column) { ?>
+                <div class="footer_wrapper_column">
+                    <?= $column['column'] ?>
+                </div>
+        <?php
+            } //foreach
+        } //if
+        ?>
     </div>
 </footer>
 <style>
@@ -17,4 +24,5 @@ $footer = get_field('general_footer_options', 'option'); ?>
 wp_footer();
 ?>
 </body>
+
 </html>
