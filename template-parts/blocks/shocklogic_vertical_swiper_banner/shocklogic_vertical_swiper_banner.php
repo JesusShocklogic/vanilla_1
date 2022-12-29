@@ -46,7 +46,7 @@ if (isset($shocklogic_vertical_swiper_banner_group) && $shocklogic_vertical_swip
                                 <?php
                                 if ($option['background_select'] == "video") { ?>
                                     <div class="shocklogic_vertical_swiper_banner_wrapper_content_video">
-                                        <video src="<?= $option['video'] ?>" autoplay muted></video>
+                                        <video src="<?= $option['video'] ?>" autoplay muted loop></video>
                                     </div>
                                 <?php } ?>
                             </div>
