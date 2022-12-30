@@ -5,7 +5,7 @@
 
     @media (min-width: 1201px) {
         .fixed-menu-spacing {
-            margin-top: 90px;
+            margin-top: 80px;
         }
     }
 </style>
