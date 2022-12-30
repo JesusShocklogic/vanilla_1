@@ -75,10 +75,6 @@
 
 		/* Desktop */
 		@media (min-width: 1200px) {
-			header .navbar {
-				padding: 0;
-			}
-
 			header a.navbar-brand img {
 				width: <?= $general_menu_group['logo_desktop_width'] . "%" ?? "100%"; ?>;
 			}
