@@ -4,12 +4,12 @@ if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
 	'key' => 'group_63a375db05123',
-	'title' => 'Shocklogic vertical swiper banner',
+	'title' => 'Shocklogic vertical item list',
 	'fields' => array(
 		array(
 			'key' => 'field_63a375db1a7c2',
-			'label' => 'shocklogic vertical swiper banner group',
-			'name' => 'shocklogic_vertical_swiper_banner_group',
+			'label' => 'Shocklogic vertical item list group',
+			'name' => 'shocklogic_vertical_item_list_group',
 			'aria-label' => '',
 			'type' => 'group',
 			'instructions' => '',
@@ -235,7 +235,7 @@ acf_add_local_field_group(array(
 			array(
 				'param' => 'block',
 				'operator' => '==',
-				'value' => 'acf/shocklogic-vertical-swiper-banner',
+				'value' => 'acf/shocklogic-vertical-item-list',
 			),
 		),
 	),
@@ -259,7 +259,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'shocklogic' => 'Shocklogic',
 	),
-	'modified' => 1671900551,
+	'modified' => 1672408404,
 ));
 
 endif;
