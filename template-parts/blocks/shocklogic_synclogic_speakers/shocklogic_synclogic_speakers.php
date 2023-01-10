@@ -23,7 +23,7 @@ if (isset($shocklogic_synclogic_speakers_group) && $shocklogic_synclogic_speaker
 						$title = $speaker->speaker_name . " " . $speaker->speaker_family_name;
 				?>
 						<div class="shocklogic_synclogic_speakers_wrapper_speakers_speaker">
-							<a data-bs-toggle="modal" data-bs-target="#<?= $speaker->speaker_id ?>">
+							<a data-bs-toggle="modal" data-bs-target="#speaker-<?= $speaker->speaker_id ?>">
 								<img src="<?= $image_url ?>" alt="">
 							</a>
 							<div class="shocklogic_synclogic_speakers_wrapper_speakers_speaker_name"><?= $title ?></div>
@@ -58,7 +58,7 @@ if (isset($shocklogic_synclogic_speakers_group) && $shocklogic_synclogic_speaker
 		?>
 
 				<!-- Modal -->
-				<div class="modal fade" id="<?= $speaker->speaker_id ?>" tabindex="-1" aria-labelledby="<?= $speaker->speaker_id ?>Label" aria-hidden="true">
+				<div class="modal fade" id="speaker-<?= $speaker->speaker_id ?>" tabindex="-1" aria-labelledby="speaker-<?= $speaker->speaker_id ?>Label" aria-hidden="true">
 					<div class="modal-dialog modal-xl modal_dialog">
 						<div class="modal-content modal_dialog_content">
 							<div class="modal-header">
@@ -88,7 +88,6 @@ if (isset($shocklogic_synclogic_speakers_group) && $shocklogic_synclogic_speaker
 			}; //foreach
 		} //if
 		?>
-	</div>
 	</div>
 <?php
 }
