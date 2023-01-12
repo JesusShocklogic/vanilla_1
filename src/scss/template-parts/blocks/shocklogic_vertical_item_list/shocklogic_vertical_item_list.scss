@@ -6,6 +6,33 @@
         z-index: 0;
         height: 100dvh;
 
+        &_background {
+            position: absolute;
+            width: 100%;
+            height: 100dvh;
+
+            &_iframe {
+                width: 100%;
+                height: 100dvh;
+
+                & iframe {
+                    width: 100%;
+                    height: 100dvh;
+                }
+            }
+
+            &_image {
+                width: 100%;
+                height: 100dvh;
+
+                & img {
+                    width: 100%;
+                    height: 100dvh;
+                    object-fit: cover;
+                }
+            }
+        }
+
         &_options {
             position: absolute;
             z-index: 1;
