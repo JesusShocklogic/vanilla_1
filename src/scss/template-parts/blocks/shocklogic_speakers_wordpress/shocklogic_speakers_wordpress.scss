@@ -6,7 +6,9 @@
         display: none;
     }
     & .shocklogic_speakers_wordpress_wrapper_speakers {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        &_speaker {
+            width: 33.333%;
+        }
     }
 }
 .shocklogic_speakers_wordpress {

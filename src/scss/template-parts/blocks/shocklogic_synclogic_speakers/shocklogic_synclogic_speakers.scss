@@ -6,7 +6,13 @@
         display: none;
     }
     & .shocklogic_synclogic_speakers_wrapper_speakers {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        &_speaker {
+            width: 33.333%;
+
+            &:nth-child(n + 10) {
+                display: none;
+            }
+        }
     }
 }
 .shocklogic_synclogic_speakers {
