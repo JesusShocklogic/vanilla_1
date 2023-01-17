@@ -2,10 +2,23 @@
 wp_enqueue_style("modal-css");
 
 $shocklogic_synclogic_speakers_group = get_field('shocklogic_synclogic_speakers_group');
-$speakers = synclogic_get_all_speakers();
 $block_id = $block['id'];
 $background = $shocklogic_synclogic_speakers_group['background_colour'];
 $avatar = default_speaker_avatar();
+
+$speakers = null;
+if ($shocklogic_synclogic_speakers_group['content_select'] == "all") {
+	$speakers = synclogic_get_all_speakers();
+}
+if ($shocklogic_synclogic_speakers_group['content_select'] == "categories") {
+	$categories = "";
+	$categories = array_map(function ($category) {
+		return $category['category'];
+	}, $shocklogic_synclogic_speakers_group['categories']);
+
+	$categories = implode(",", $categories);
+	$speakers = synclogic_get_all_speakers_by_categories($categories);
+}
 
 if (isset($shocklogic_synclogic_speakers_group) && $shocklogic_synclogic_speakers_group != null) { ?>
 	<div class="shocklogic_synclogic_speakers" id="<?= $block_id ?>">
