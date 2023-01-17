@@ -39,11 +39,6 @@
 			color: <?= $general_theme_settings['general_links_colour_hover'] ?? "auto" ?>;
 		}
 
-		/* white-spcae property is used to make the text in the dropdown menu to wrap and not to cause a horizontal scroll */
-		header .navbar .dropdown-item {
-			white-space: normal;
-		}
-
 		header .navbar {
 			background-color: <?= $general_menu_group['background_colour'] ?>;
 			box-shadow: 0px 5px 6px #00000029;
