@@ -33,7 +33,7 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
     }
     $indent = str_repeat("\t", $depth);
     $submenu = ($depth > 0) ? ' sub-menu' : '';
-    $output .= "\n$indent<ul class=\"dropdown-menu$submenu " . esc_attr(implode(" ",$dropdown_menu_class)) . " depth_$depth\">\n";
+    $output .= "\n$indent<ul class=\"dropdown-menu dropdown-menu-end $submenu " . esc_attr(implode(" ",$dropdown_menu_class)) . " depth_$depth\">\n";
   }
 
   function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
