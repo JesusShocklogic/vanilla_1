@@ -1,6 +1,6 @@
 {
     "key": "group_63c96692d673d",
-    "title": "shocklogic partners",
+    "title": "Shocklogic partners",
     "fields": [
         {
             "key": "field_63c96692def57",
@@ -204,6 +204,35 @@
                     "return_format": "string"
                 },
                 {
+                    "key": "field_63c97f9ccc001",
+                    "label": "Click behaviour",
+                    "name": "click_behaviour",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "IMPORTANT: for the External URL option, be sure to add the external URL individually in the partners area.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "internal": "Send to internal page",
+                        "external": "Send to external page",
+                        "modal": "Show popup"
+                    },
+                    "default_value": "internal",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": ""
+                },
+                {
                     "key": "field_63c966930cad1",
                     "label": "Bottom tab",
                     "name": "",
@@ -274,7 +303,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1674144131,
+    "modified": 1674153430,
     "acfe_categories": {
         "shocklogic": "Shocklogic"
     }

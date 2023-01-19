@@ -23,7 +23,7 @@
                         margin: 0 auto;
                         margin-bottom: 1rem;
                         & img {
-                            object-fit: cover;
+                            object-fit: contain;
                             object-position: center center;
                             display: block;
                             margin: 0 auto;
