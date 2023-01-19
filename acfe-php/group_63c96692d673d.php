@@ -3,13 +3,13 @@
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
-	'key' => 'group_638e2c035e8c8',
-	'title' => 'Shocklogic speakers wordpress',
+	'key' => 'group_63c96692d673d',
+	'title' => 'Shocklogic partners',
 	'fields' => array(
 		array(
-			'key' => 'field_638e2c036e4b8',
-			'label' => 'Shocklogic speakers wordpress group',
-			'name' => 'shocklogic_speakers_wordpress_group',
+			'key' => 'field_63c96692def57',
+			'label' => 'shocklogic partners group',
+			'name' => 'shocklogic_partners_group',
 			'aria-label' => '',
 			'type' => 'group',
 			'instructions' => '',
@@ -24,7 +24,7 @@ acf_add_local_field_group(array(
 			'acfe_seamless_style' => 1,
 			'sub_fields' => array(
 				array(
-					'key' => 'field_638e2c0375dd5',
+					'key' => 'field_63c96692e2dba',
 					'label' => 'Title tab',
 					'name' => '',
 					'aria-label' => '',
@@ -42,7 +42,7 @@ acf_add_local_field_group(array(
 					'endpoint' => 0,
 				),
 				array(
-					'key' => 'field_638e2c0379894',
+					'key' => 'field_63c96692e69bc',
 					'label' => 'title',
 					'name' => 'title',
 					'aria-label' => '',
@@ -62,7 +62,7 @@ acf_add_local_field_group(array(
 					'delay' => 0,
 				),
 				array(
-					'key' => 'field_638e2c037d31f',
+					'key' => 'field_63c96692ea541',
 					'label' => 'Content tab',
 					'name' => '',
 					'aria-label' => '',
@@ -80,7 +80,7 @@ acf_add_local_field_group(array(
 					'endpoint' => 0,
 				),
 				array(
-					'key' => 'field_638e2c0380d7c',
+					'key' => 'field_63c96692edf44',
 					'label' => 'post types',
 					'name' => 'post_types',
 					'aria-label' => '',
@@ -94,11 +94,11 @@ acf_add_local_field_group(array(
 						'id' => '',
 					),
 					'post_type' => array(
-						0 => 'speakers',
+						0 => 'partner',
 					),
 					'field_type' => 'checkbox',
 					'default_value' => array(
-						0 => 'speakers',
+						0 => 'partner',
 					),
 					'return_format' => 'name',
 					'layout' => 'horizontal',
@@ -115,7 +115,7 @@ acf_add_local_field_group(array(
 					'other_choice' => 0,
 				),
 				array(
-					'key' => 'field_638e2c0384871',
+					'key' => 'field_63c96692f1ada',
 					'label' => 'post categories',
 					'name' => 'post_categories',
 					'aria-label' => '',
@@ -153,7 +153,7 @@ acf_add_local_field_group(array(
 					'other_choice' => 0,
 				),
 				array(
-					'key' => 'field_638e2c038837e',
+					'key' => 'field_63c96693012bb',
 					'label' => 'Posts per page',
 					'name' => 'posts_per_page',
 					'aria-label' => '',
@@ -175,7 +175,7 @@ acf_add_local_field_group(array(
 					'append' => '',
 				),
 				array(
-					'key' => 'field_638e2c038c014',
+					'key' => 'field_63c9669304d70',
 					'label' => 'Settings tab',
 					'name' => '',
 					'aria-label' => '',
@@ -193,7 +193,7 @@ acf_add_local_field_group(array(
 					'endpoint' => 0,
 				),
 				array(
-					'key' => 'field_638e2c038fa71',
+					'key' => 'field_63c9669308fbd',
 					'label' => 'Background colour',
 					'name' => 'background_colour',
 					'aria-label' => '',
@@ -211,7 +211,36 @@ acf_add_local_field_group(array(
 					'return_format' => 'string',
 				),
 				array(
-					'key' => 'field_638e2c03934f8',
+					'key' => 'field_63c97f9ccc001',
+					'label' => 'Click behaviour',
+					'name' => 'click_behaviour',
+					'aria-label' => '',
+					'type' => 'select',
+					'instructions' => 'IMPORTANT: for the External URL option, be sure to add the external URL individually in the partners area.',
+					'required' => 1,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array(
+						'internal' => 'Send to internal page',
+						'external' => 'Send to external page',
+						'modal' => 'Show popup',
+					),
+					'default_value' => 'internal',
+					'return_format' => 'value',
+					'multiple' => 0,
+					'allow_null' => 0,
+					'ui' => 0,
+					'ajax' => 0,
+					'placeholder' => '',
+					'allow_custom' => 0,
+					'search_placeholder' => '',
+				),
+				array(
+					'key' => 'field_63c966930cad1',
 					'label' => 'Bottom tab',
 					'name' => '',
 					'aria-label' => '',
@@ -229,7 +258,7 @@ acf_add_local_field_group(array(
 					'endpoint' => 0,
 				),
 				array(
-					'key' => 'field_638e2c0397842',
+					'key' => 'field_63c96693106cc',
 					'label' => 'Bottom text',
 					'name' => 'bottom_text',
 					'aria-label' => '',
@@ -260,7 +289,7 @@ acf_add_local_field_group(array(
 			array(
 				'param' => 'block',
 				'operator' => '==',
-				'value' => 'acf/shocklogic-speakers-wordpress',
+				'value' => 'acf/shocklogic-partners',
 			),
 		),
 	),
@@ -284,7 +313,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'shocklogic' => 'Shocklogic',
 	),
-	'modified' => 1674143742,
+	'modified' => 1674153430,
 ));
 
 endif;

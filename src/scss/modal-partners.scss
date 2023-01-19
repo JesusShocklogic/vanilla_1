@@ -1,0 +1,40 @@
+@use "util/variables";
+@use "util/breakpoints";
+.modal {
+    &_dialog {
+        &_content {
+            padding: 0rem 0.5rem;
+            &_body {
+                display: grid;
+                align-content: center;
+                justify-content: center;
+                align-items: start;
+                grid-gap: 20px;
+                grid-template-columns: 1fr;
+
+                @media (min-width: breakpoints.$desktop_medium) {
+                    grid-template-columns: 1fr 2fr;
+                }
+                &_left {
+                    text-align: center;
+                    &_image {
+                        @include variables.aspect-ratio(1, 1);
+                        width: 70%;
+                        margin: 0 auto;
+                        margin-bottom: 1rem;
+                        & img {
+                            object-fit: contain;
+                            object-position: center center;
+                            display: block;
+                            margin: 0 auto;
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                }
+                &_right {
+                }
+            }
+        }
+    }
+}

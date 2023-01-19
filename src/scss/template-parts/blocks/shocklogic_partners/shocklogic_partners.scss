@@ -2,22 +2,22 @@
 @use "../../../util/breakpoints";
 //This is just to hide the modals in the Dashboard editor. PENDING to make it better
 .acf-block-component {
-    & .shocklogic_speakers_wordpress_wrapper_modals {
+    & .shocklogic_partners_wrapper_modals {
         display: none;
     }
-    & .shocklogic_speakers_wordpress_wrapper_speakers {
-        &_speaker {
+    & .shocklogic_partners_wrapper_partners {
+        &_partner {
             width: 33.333%;
         }
     }
 }
-.shocklogic_speakers_wordpress {
+.shocklogic_partners {
     @include variables.spacing;
     &_wrapper {
         &_title {
             @include variables.title_spacing;
         }
-        &_speakers {
+        &_partners {
             display: flex;
             flex-wrap: wrap;
             flex-direction: row;
@@ -25,20 +25,19 @@
             justify-content: center;
             align-items: flex-start;
 
-            &_speaker {
+            &_partner {
                 padding: 30px 15px;
-                width: min(100%, 15rem);
+                width: min(100%, 18rem);
 
                 &_name {
                     text-align: center;
                     padding-top: 1rem;
                 }
                 & a {
-                    @include variables.aspect-ratio(1, 1);
+                    @include variables.aspect-ratio(4, 3);
                     display: block;
                     width: 100%;
                     & img {
-                        border-radius: 50%;
                         object-fit: cover;
                         object-position: center center;
                         display: block;
