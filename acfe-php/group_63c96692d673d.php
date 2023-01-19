@@ -4,7 +4,7 @@ if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
 	'key' => 'group_63c96692d673d',
-	'title' => 'shocklogic partners',
+	'title' => 'Shocklogic partners',
 	'fields' => array(
 		array(
 			'key' => 'field_63c96692def57',
@@ -211,6 +211,35 @@ acf_add_local_field_group(array(
 					'return_format' => 'string',
 				),
 				array(
+					'key' => 'field_63c97f9ccc001',
+					'label' => 'Click behaviour',
+					'name' => 'click_behaviour',
+					'aria-label' => '',
+					'type' => 'select',
+					'instructions' => 'IMPORTANT: for the External URL option, be sure to add the external URL individually in the partners area.',
+					'required' => 1,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array(
+						'internal' => 'Send to internal page',
+						'external' => 'Send to external page',
+						'modal' => 'Show popup',
+					),
+					'default_value' => 'internal',
+					'return_format' => 'value',
+					'multiple' => 0,
+					'allow_null' => 0,
+					'ui' => 0,
+					'ajax' => 0,
+					'placeholder' => '',
+					'allow_custom' => 0,
+					'search_placeholder' => '',
+				),
+				array(
 					'key' => 'field_63c966930cad1',
 					'label' => 'Bottom tab',
 					'name' => '',
@@ -284,7 +313,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'shocklogic' => 'Shocklogic',
 	),
-	'modified' => 1674144131,
+	'modified' => 1674153430,
 ));
 
 endif;
