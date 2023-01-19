@@ -126,6 +126,33 @@ acf_add_local_field_group(array(
 					'library' => 'all',
 				),
 				array(
+					'key' => 'field_63c97c2034e85',
+					'label' => 'Avatar for partners',
+					'name' => 'avatar_for_partners',
+					'aria-label' => '',
+					'type' => 'image',
+					'instructions' => 'If an speaker does not includes an image, this avatar will be used instead.',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'uploader' => '',
+					'acfe_thumbnail' => 0,
+					'return_format' => 'array',
+					'min_width' => '',
+					'min_height' => '',
+					'min_size' => '',
+					'max_width' => '',
+					'max_height' => '',
+					'max_size' => '',
+					'mime_types' => '',
+					'preview_size' => 'medium',
+					'library' => 'all',
+				),
+				array(
 					'key' => 'field_63a9f53b13e58',
 					'label' => 'Colours',
 					'name' => '',
@@ -207,7 +234,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1672084198,
+	'modified' => 1674148912,
 ));
 
 endif;

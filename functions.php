@@ -4,13 +4,24 @@ include("includes/index.php");
 /*
 * Returning the default speakers avatar image file
 */
-
 function default_speaker_avatar()
 {
     if (isset(get_field('general_theme_settings_group', "option")['avatar_for_speakers']['url'])) {
         return get_field('general_theme_settings_group', "option")['avatar_for_speakers']['url'];
     } else {
         return get_template_directory_uri() . "/assets/images/speaker_avatar.jpg";
+    }
+}
+
+/*
+* Returning the default partners avatar image file
+*/
+function default_partners_avatar()
+{
+    if (isset(get_field('general_theme_settings_group', "option")['avatar_for_partners']['url'])) {
+        return get_field('general_theme_settings_group', "option")['avatar_for_partners']['url'];
+    } else {
+        return get_template_directory_uri() . "/assets/images/partners_avatar.jpg";
     }
 }
 
@@ -117,6 +128,7 @@ add_action('init', function () {
     wp_register_style("swiper-css", get_template_directory_uri() . "/assets/css/swiper-bundle.min.css", array(), true);
     wp_register_script("swiper-js", get_template_directory_uri() . "/assets/js/swiper.js", array(), true);
     wp_register_style("modal-css", get_template_directory_uri() . "/assets/css/modal.css", array(), true);
+    wp_register_style("modal-partners", get_template_directory_uri() . "/assets/css/modal-partners.css", array(), true);
     wp_register_style("social-icon-widget", get_template_directory_uri() . "/template-parts/social-icons/social-icons-widget.css", array(), true);
 });
 
