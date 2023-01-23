@@ -12,7 +12,10 @@
     }
 }
 .shocklogic_partners {
-    @include variables.spacing;
+    &.contain {
+        @include variables.spacing;
+    }
+
     &_wrapper {
         &_title {
             @include variables.title_spacing;
