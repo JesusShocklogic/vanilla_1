@@ -240,6 +240,34 @@ acf_add_local_field_group(array(
 					'search_placeholder' => '',
 				),
 				array(
+					'key' => 'field_63ceebd7e5881',
+					'label' => 'Spacing',
+					'name' => 'spacing',
+					'aria-label' => '',
+					'type' => 'select',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array(
+						'contain' => 'Container',
+						'full_screen' => 'Full Screen',
+					),
+					'default_value' => 'contain',
+					'return_format' => 'value',
+					'multiple' => 0,
+					'allow_null' => 0,
+					'ui' => 0,
+					'ajax' => 0,
+					'placeholder' => '',
+					'allow_custom' => 0,
+					'search_placeholder' => '',
+				),
+				array(
 					'key' => 'field_63c966930cad1',
 					'label' => 'Bottom tab',
 					'name' => '',
@@ -313,7 +341,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'shocklogic' => 'Shocklogic',
 	),
-	'modified' => 1674153430,
+	'modified' => 1674505234,
 ));
 
 endif;

@@ -8,7 +8,7 @@ $background = $shocklogic_partners_group['background_colour'];
 $avatar = default_partners_avatar();
 
 if (isset($shocklogic_partners_group) && $shocklogic_partners_group != null) { ?>
-	<div class="shocklogic_partners" id="<?= $block_id ?>">
+	<div class="shocklogic_partners <?= $shocklogic_partners_group['spacing'] ?>" id="<?= $block_id ?>">
 		<div class="shocklogic_partners_wrapper">
 			<div class="shocklogic_partners_wrapper_title">
 				<?= $shocklogic_partners_group['title'] ?>
