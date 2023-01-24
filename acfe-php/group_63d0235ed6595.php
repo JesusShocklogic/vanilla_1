@@ -3,13 +3,13 @@
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
-	'key' => 'group_63c96692d673d',
-	'title' => 'Shocklogic partners',
+	'key' => 'group_63d0235ed6595',
+	'title' => 'Shocklogic slider partners',
 	'fields' => array(
 		array(
-			'key' => 'field_63c96692def57',
-			'label' => 'shocklogic partners group',
-			'name' => 'shocklogic_partners_group',
+			'key' => 'field_63d0235ee034f',
+			'label' => 'shocklogic partners slider group',
+			'name' => 'shocklogic_partners_slider_group',
 			'aria-label' => '',
 			'type' => 'group',
 			'instructions' => '',
@@ -24,7 +24,7 @@ acf_add_local_field_group(array(
 			'acfe_seamless_style' => 1,
 			'sub_fields' => array(
 				array(
-					'key' => 'field_63c96692e2dba',
+					'key' => 'field_63d0235ee4227',
 					'label' => 'Title tab',
 					'name' => '',
 					'aria-label' => '',
@@ -42,7 +42,7 @@ acf_add_local_field_group(array(
 					'endpoint' => 0,
 				),
 				array(
-					'key' => 'field_63c96692e69bc',
+					'key' => 'field_63d0235ee7cf0',
 					'label' => 'title',
 					'name' => 'title',
 					'aria-label' => '',
@@ -62,7 +62,7 @@ acf_add_local_field_group(array(
 					'delay' => 0,
 				),
 				array(
-					'key' => 'field_63c96692ea541',
+					'key' => 'field_63d0235eeba78',
 					'label' => 'Content tab',
 					'name' => '',
 					'aria-label' => '',
@@ -80,7 +80,7 @@ acf_add_local_field_group(array(
 					'endpoint' => 0,
 				),
 				array(
-					'key' => 'field_63c96692edf44',
+					'key' => 'field_63d0235eef4ee',
 					'label' => 'post types',
 					'name' => 'post_types',
 					'aria-label' => '',
@@ -115,7 +115,7 @@ acf_add_local_field_group(array(
 					'other_choice' => 0,
 				),
 				array(
-					'key' => 'field_63c96692f1ada',
+					'key' => 'field_63d0235ef3266',
 					'label' => 'post categories',
 					'name' => 'post_categories',
 					'aria-label' => '',
@@ -153,7 +153,7 @@ acf_add_local_field_group(array(
 					'other_choice' => 0,
 				),
 				array(
-					'key' => 'field_63c96693012bb',
+					'key' => 'field_63d0235f02a47',
 					'label' => 'Posts per page',
 					'name' => 'posts_per_page',
 					'aria-label' => '',
@@ -175,7 +175,7 @@ acf_add_local_field_group(array(
 					'append' => '',
 				),
 				array(
-					'key' => 'field_63c9669304d70',
+					'key' => 'field_63d0235f065b9',
 					'label' => 'Settings tab',
 					'name' => '',
 					'aria-label' => '',
@@ -193,7 +193,7 @@ acf_add_local_field_group(array(
 					'endpoint' => 0,
 				),
 				array(
-					'key' => 'field_63c9669308fbd',
+					'key' => 'field_63d0235f09f44',
 					'label' => 'Background colour',
 					'name' => 'background_colour',
 					'aria-label' => '',
@@ -211,7 +211,7 @@ acf_add_local_field_group(array(
 					'return_format' => 'string',
 				),
 				array(
-					'key' => 'field_63c97f9ccc001',
+					'key' => 'field_63d0235f0db38',
 					'label' => 'Click behaviour',
 					'name' => 'click_behaviour',
 					'aria-label' => '',
@@ -240,7 +240,7 @@ acf_add_local_field_group(array(
 					'search_placeholder' => '',
 				),
 				array(
-					'key' => 'field_63ceebd7e5881',
+					'key' => 'field_63d0235f11731',
 					'label' => 'Spacing',
 					'name' => 'spacing',
 					'aria-label' => '',
@@ -268,7 +268,7 @@ acf_add_local_field_group(array(
 					'search_placeholder' => '',
 				),
 				array(
-					'key' => 'field_63c966930cad1',
+					'key' => 'field_63d0235f15360',
 					'label' => 'Bottom tab',
 					'name' => '',
 					'aria-label' => '',
@@ -286,7 +286,7 @@ acf_add_local_field_group(array(
 					'endpoint' => 0,
 				),
 				array(
-					'key' => 'field_63c96693106cc',
+					'key' => 'field_63d0235f18df8',
 					'label' => 'Bottom text',
 					'name' => 'bottom_text',
 					'aria-label' => '',
@@ -317,7 +317,7 @@ acf_add_local_field_group(array(
 			array(
 				'param' => 'block',
 				'operator' => '==',
-				'value' => 'acf/shocklogic-partners',
+				'value' => 'acf/shocklogic-partners-slider',
 			),
 		),
 	),
@@ -341,7 +341,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'shocklogic' => 'Shocklogic',
 	),
-	'modified' => 1674585063,
+	'modified' => 1674585034,
 ));
 
 endif;
