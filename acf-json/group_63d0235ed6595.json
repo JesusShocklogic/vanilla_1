@@ -1,11 +1,11 @@
 {
-    "key": "group_63c96692d673d",
-    "title": "Shocklogic partners",
+    "key": "group_63d0235ed6595",
+    "title": "Shocklogic slider partners",
     "fields": [
         {
-            "key": "field_63c96692def57",
-            "label": "shocklogic partners group",
-            "name": "shocklogic_partners_group",
+            "key": "field_63d0235ee034f",
+            "label": "shocklogic partners slider group",
+            "name": "shocklogic_partners_slider_group",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -20,7 +20,7 @@
             "acfe_seamless_style": 1,
             "sub_fields": [
                 {
-                    "key": "field_63c96692e2dba",
+                    "key": "field_63d0235ee4227",
                     "label": "Title tab",
                     "name": "",
                     "aria-label": "",
@@ -38,7 +38,7 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_63c96692e69bc",
+                    "key": "field_63d0235ee7cf0",
                     "label": "title",
                     "name": "title",
                     "aria-label": "",
@@ -58,7 +58,7 @@
                     "delay": 0
                 },
                 {
-                    "key": "field_63c96692ea541",
+                    "key": "field_63d0235eeba78",
                     "label": "Content tab",
                     "name": "",
                     "aria-label": "",
@@ -76,7 +76,7 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_63c96692edf44",
+                    "key": "field_63d0235eef4ee",
                     "label": "post types",
                     "name": "post_types",
                     "aria-label": "",
@@ -110,7 +110,7 @@
                     "other_choice": 0
                 },
                 {
-                    "key": "field_63c96692f1ada",
+                    "key": "field_63d0235ef3266",
                     "label": "post categories",
                     "name": "post_categories",
                     "aria-label": "",
@@ -146,7 +146,7 @@
                     "other_choice": 0
                 },
                 {
-                    "key": "field_63c96693012bb",
+                    "key": "field_63d0235f02a47",
                     "label": "Posts per page",
                     "name": "posts_per_page",
                     "aria-label": "",
@@ -168,7 +168,7 @@
                     "append": ""
                 },
                 {
-                    "key": "field_63c9669304d70",
+                    "key": "field_63d0235f065b9",
                     "label": "Settings tab",
                     "name": "",
                     "aria-label": "",
@@ -186,7 +186,7 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_63c9669308fbd",
+                    "key": "field_63d0235f09f44",
                     "label": "Background colour",
                     "name": "background_colour",
                     "aria-label": "",
@@ -204,7 +204,7 @@
                     "return_format": "string"
                 },
                 {
-                    "key": "field_63c97f9ccc001",
+                    "key": "field_63d0235f0db38",
                     "label": "Click behaviour",
                     "name": "click_behaviour",
                     "aria-label": "",
@@ -233,7 +233,7 @@
                     "search_placeholder": ""
                 },
                 {
-                    "key": "field_63ceebd7e5881",
+                    "key": "field_63d0235f11731",
                     "label": "Spacing",
                     "name": "spacing",
                     "aria-label": "",
@@ -261,7 +261,7 @@
                     "search_placeholder": ""
                 },
                 {
-                    "key": "field_63c966930cad1",
+                    "key": "field_63d0235f15360",
                     "label": "Bottom tab",
                     "name": "",
                     "aria-label": "",
@@ -279,7 +279,7 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_63c96693106cc",
+                    "key": "field_63d0235f18df8",
                     "label": "Bottom text",
                     "name": "bottom_text",
                     "aria-label": "",
@@ -310,7 +310,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/shocklogic-partners"
+                "value": "acf\/shocklogic-partners-slider"
             }
         ]
     ],
@@ -331,7 +331,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1674585063,
+    "modified": 1674585034,
     "acfe_categories": {
         "shocklogic": "Shocklogic"
     }
