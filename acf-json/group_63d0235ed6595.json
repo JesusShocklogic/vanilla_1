@@ -168,8 +168,80 @@
                     "append": ""
                 },
                 {
+                    "key": "field_63d13a573f5f1",
+                    "label": "Click settings",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_63d0235f0db38",
+                    "label": "Click behaviour",
+                    "name": "click_behaviour",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "IMPORTANT: for the External URL option, be sure to add the external URL individually in the partners area.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "internal": "Send to internal page",
+                        "external": "Send to external page",
+                        "modal": "Show popup",
+                        "same": "Same link for all"
+                    },
+                    "default_value": "internal",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": ""
+                },
+                {
+                    "key": "field_63d13a083f5f0",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_63d0235f0db38",
+                                "operator": "==",
+                                "value": "same"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                },
+                {
                     "key": "field_63d0235f065b9",
-                    "label": "Settings tab",
+                    "label": "General Settings",
                     "name": "",
                     "aria-label": "",
                     "type": "accordion",
@@ -202,35 +274,6 @@
                     "default_value": "#fff",
                     "enable_opacity": 0,
                     "return_format": "string"
-                },
-                {
-                    "key": "field_63d0235f0db38",
-                    "label": "Click behaviour",
-                    "name": "click_behaviour",
-                    "aria-label": "",
-                    "type": "select",
-                    "instructions": "IMPORTANT: for the External URL option, be sure to add the external URL individually in the partners area.",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "internal": "Send to internal page",
-                        "external": "Send to external page",
-                        "modal": "Show popup"
-                    },
-                    "default_value": "internal",
-                    "return_format": "value",
-                    "multiple": 0,
-                    "allow_null": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "allow_custom": 0,
-                    "search_placeholder": ""
                 },
                 {
                     "key": "field_63d0235f11731",
@@ -331,7 +374,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1674585034,
+    "modified": 1674661519,
     "acfe_categories": {
         "shocklogic": "Shocklogic"
     }

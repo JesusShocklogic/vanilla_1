@@ -17,57 +17,123 @@ if (isset($shocklogic_partners_slider_group) && $shocklogic_partners_slider_grou
 				<?= $shocklogic_partners_slider_group['title'] ?>
 			</div>
 			<div class="shocklogic_partners_slider_wrapper_partners">
-				<div class="swiper mySwiper">
-					<div class="swiper-wrapper">
-						<?php
-						if ($wp_query->have_posts()) {
-							$content = "";
-							while ($wp_query->have_posts()) {
-								$wp_query->the_post();
-								$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : $avatar; ?>
-								<div class="swiper-slide">
-									<?php
-									//click behaviour
-									if ($shocklogic_partners_slider_group['click_behaviour'] == "internal") { ?>
-										<a href="<?= is_admin() ? "#" : the_permalink() ?>">
-											<img src="<?= $image_url ?>" alt="">
-										</a>
-									<?php
-									} elseif ($shocklogic_partners_slider_group['click_behaviour'] == "external") {
-										$data = get_field('data', get_the_ID()); ?>
-										<a href="<?= is_admin() ? "#" : $data['external_url'] ?>" target="_blank">
-											<img src="<?= $image_url ?>" alt="">
-										</a>
-									<?php
-									} elseif ($shocklogic_partners_slider_group['click_behaviour'] == "modal") { ?>
+				<?php
+				if ($wp_query->have_posts()) { ?>
+					<div class="swiper mySwiper">
+						<div class="swiper-wrapper">
+							<?php
+							//For internal links
+							if ($shocklogic_partners_slider_group['click_behaviour'] == "internal") {
+								while ($wp_query->have_posts()) {
+									$wp_query->the_post();
+									$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : $avatar; ?>
+									<div class="swiper-slide">
+										<?php
+										if (is_admin()) { ?>
+											<div>
+												<img src="<?= $image_url ?>" alt="">
+											</div>
+										<?php
+										} else { ?>
+											<a href="<?php the_permalink() ?>">
+												<img src="<?= $image_url ?>" alt="">
+											</a>
+										<?php
+
+										}
+										?>
+									</div>
+								<?php
+								}; //while
+								wp_reset_query();
+							}
+							//For external links
+							elseif ($shocklogic_partners_slider_group['click_behaviour'] == "external") {
+								while ($wp_query->have_posts()) {
+									$wp_query->the_post();
+									$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : $avatar;
+									$data = get_field('data', get_the_ID());
+									$link = $data['external_url'] ?? null; ?>
+									<div class="swiper-slide">
+										<?php
+										if (is_admin() || $link == null) { ?>
+											<div>
+												<img src="<?= $image_url ?>" alt="">
+											</div>
+										<?php
+
+										} else { ?>
+											<a href="<?= $link ?>" target="_blank">
+												<img src="<?= $image_url ?>" alt="">
+											</a>
+										<?php
+										}
+										?>
+									</div>
+								<?php
+								}; //while
+								wp_reset_query();
+							}
+							//For external links
+							elseif ($shocklogic_partners_slider_group['click_behaviour'] == "modal") {
+								while ($wp_query->have_posts()) {
+									$wp_query->the_post();
+									$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : $avatar; ?>
+									<div class="swiper-slide">
 										<a data-bs-toggle="modal" data-bs-target="#<?= "partner" . get_the_ID() ?>">
 											<img src="<?= $image_url ?>" alt="">
 										</a>
-									<?php
-									}
-									?>
-								</div>
+									</div>
+								<?php
+								}; //while
+								wp_reset_query();
+							}
+							//For same link on all links
+							elseif ($shocklogic_partners_slider_group['click_behaviour'] == "same") {
+								$link_array = $shocklogic_partners_slider_group['link'] ?? null;
+								$link_url = esc_url($link_array['url']);
+								//$link_title = esc_html($link_array['title']);
+								$link_target = $link_array['target'] ? $link_array['target'] : '_self';
+								$link_target = esc_attr($link_target);
 
+								while ($wp_query->have_posts()) {
+									$wp_query->the_post();
+									$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : $avatar; ?>
+									<div class="swiper-slide">
+										<?php
+										if (is_admin() || $link_array == null) { ?>
+											<div>
+												<img src="<?= $image_url ?>" alt="">
+											</div>
+										<?php
+										} else { ?>
+											<a href="<?= $link_url ?>" target="<?= $link_target ?>">
+												<img src="<?= $image_url ?>" alt="">
+											</a>
+										<?php
+										}
+										?>
+									</div>
 						<?php
-							}; //while
-							wp_reset_query();
-						} //if
-						else {
+								} //while
+								wp_reset_query();
+							}
+						} else {
 							echo "No posts were found";
 						}
 						?>
+						</div>
 					</div>
-				</div>
 			</div>
-			<?php
-			if ($shocklogic_partners_slider_group['bottom_text']) { ?>
-				<div class="shocklogic_partners_slider_wrapper_bottom_text">
-					<?= $shocklogic_partners_slider_group['bottom_text'] ?>
-				</div>
-			<?php
-			}
-			?>
 		</div>
+		<?php
+		if ($shocklogic_partners_slider_group['bottom_text']) { ?>
+			<div class="shocklogic_partners_slider_wrapper_bottom_text">
+				<?= $shocklogic_partners_slider_group['bottom_text'] ?>
+			</div>
+		<?php
+		}
+		?>
 	</div>
 
 	<?php
