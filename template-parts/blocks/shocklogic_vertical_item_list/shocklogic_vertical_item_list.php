@@ -32,16 +32,16 @@ if (isset($shocklogic_vertical_item_list_group) && $shocklogic_vertical_item_lis
 
                             if ($option['option_select'] == "link") {
                                 $link = $option['link']; ?>
-                                <a class="list-group-item list-group-item-action" href="<?= $option['link']['url'] ?>" target="<?= $option['link']['target'] ?>">
+                                <a class="list-group-item d-flex my-2 list-social-media list-group-item-action" href="<?= $option['link']['url'] ?>" target="<?= $option['link']['target'] ?>">
                                     <img src="<?= $option['icon']['url'] ?>" alt="">
-                                    <span><?= $option['title'] ?></span>
+                                    <span class="px-3 my-auto title-option-social-media"><b><?= $option['title'] ?></b></span>
                                 </a>
                             <?php
 
                             } else { ?>
-                                <a class="list-group-item list-group-item-action <?= $active ?>" id="list-<?= $key ?>-list" data-bs-toggle="list" href="#list-<?= $key ?>" role="tab" aria-controls="list-<?= $key ?>">
+                                <a class="list-group-item d-flex my-2 list-social-media list-group-item-action <?= $active ?>" id="list-<?= $key ?>-list" data-bs-toggle="list" href="#list-<?= $key ?>" role="tab" aria-controls="list-<?= $key ?>">
                                     <img src="<?= $option['icon']['url'] ?>" alt="">
-                                    <span><?= $option['title'] ?></span>
+                                    <span class="px-3 my-auto title-option-social-media"><b><?= $option['title'] ?></b></span>
                                 </a>
                             <?php
                             } ?>

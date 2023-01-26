@@ -38,7 +38,7 @@
             position: absolute;
             z-index: 2;
             top: 25vh;
-            left: 1vw;
+            left: 6vw;
 
             & img {
                 width: 50px;
@@ -77,3 +77,56 @@
         }
     } //wrapper
 } //shocklogic banner
+
+/*
+* Código de Elias (por arreglar)
+*/
+.list-social-media {
+    width: 70px;
+    height: 68px;
+    font-size: 0px;
+    color: transparent;
+    border-radius: 40px !important;
+    display: inline-block;
+    transition: width 0.5s, font-size 0.5s;
+}
+.list-social-media {
+    transition-timing-function: ease;
+}
+.list-social-media:hover {
+    width: auto;
+    font-size: var(--bs-body-font-size);
+    color: rgb(43, 43, 43);
+}
+
+@media (max-width: 1400px) {
+    .shocklogic_vertical_item_list_wrapper_options {
+        position: absolute;
+        z-index: 2;
+        top: 25vh;
+        left: 6vw;
+    }
+    .shocklogic_vertical_item_list_wrapper_options img {
+        width: 30px;
+        height: 45px;
+        -o-object-fit: contain;
+        object-fit: contain;
+    }
+    .list-social-media {
+        width: 65px;
+        height: 63px;
+        font-size: 0px;
+        color: transparent;
+        border-radius: 40px !important;
+        display: inline-block;
+        transition: width 0.5s, font-size 0.5s;
+    }
+    .list-social-media {
+        transition-timing-function: ease;
+    }
+    .list-social-media:hover {
+        width: auto;
+        font-size: var(--bs-body-font-size);
+        color: rgb(43, 43, 43);
+    }
+}
