@@ -13,9 +13,11 @@ $avatar = default_partners_avatar();
 if (isset($shocklogic_partners_slider_group) && $shocklogic_partners_slider_group != null) { ?>
 	<div class="shocklogic_partners_slider <?= $shocklogic_partners_slider_group['spacing'] ?>" id="<?= $block_id ?>">
 		<div class="shocklogic_partners_slider_wrapper">
-			<div class="shocklogic_partners_slider_wrapper_title">
-				<?= $shocklogic_partners_slider_group['title'] ?>
-			</div>
+			<?php if ($shocklogic_partners_slider_group['title']) : ?>
+				<div class="shocklogic_partners_slider_wrapper_title">
+					<?= $shocklogic_partners_slider_group['title'] ?>
+				</div>
+			<?php endif; ?>
 			<div class="shocklogic_partners_slider_wrapper_partners">
 				<?php
 				if ($wp_query->have_posts()) { ?>

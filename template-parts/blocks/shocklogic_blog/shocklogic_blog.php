@@ -7,9 +7,12 @@ $background = $shocklogic_blog_group['background_colour'];
 if (isset($shocklogic_blog_group) && $shocklogic_blog_group != null) { ?>
 	<div class="shocklogic_blog" id="<?= $block_id ?>">
 		<div class="shocklogic_blog_wrapper">
-			<div class="shocklogic_blog_wrapper_title">
-				<?= $shocklogic_blog_group['title'] ?>
-			</div>
+			<?php if ($shocklogic_blog_group['title']) : ?>
+				<div class="shocklogic_blog_wrapper_title">
+					<?= $shocklogic_blog_group['title'] ?>
+				</div>
+			<?php endif; ?>
+
 			<div class="shocklogic_blog_wrapper_blog">
 				<?php
 				if ($wp_query->have_posts()) {
@@ -39,9 +42,11 @@ if (isset($shocklogic_blog_group) && $shocklogic_blog_group != null) { ?>
 				?>
 			</div>
 
-			<div class="shocklogic_blog_wrapper_bottom_text">
-				<?= $shocklogic_blog_group['bottom_text'] ?>
-			</div>
+			<?php if ($shocklogic_blog_group['bottom_text']) : ?>
+				<div class="shocklogic_blog_wrapper_bottom_text">
+					<?= $shocklogic_blog_group['bottom_text'] ?>
+				</div>
+			<?php endif; ?>
 		</div>
 	</div>
 <?php
