@@ -268,6 +268,31 @@ acf_add_local_field_group(array(
 					'search_placeholder' => '',
 				),
 				array(
+					'key' => 'field_63d1dd9b7e805',
+					'label' => 'Minimal column size',
+					'name' => 'minimal_column_size',
+					'aria-label' => '',
+					'type' => 'text',
+					'instructions' => 'Add the minimal size all items will take on screen.
+You can place any available size.
+Eg.
+250px
+20rem
+20em',
+					'required' => 1,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '18rem',
+					'maxlength' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+				),
+				array(
 					'key' => 'field_63c966930cad1',
 					'label' => 'Bottom tab',
 					'name' => '',
@@ -341,7 +366,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'shocklogic' => 'Shocklogic',
 	),
-	'modified' => 1674585063,
+	'modified' => 1674698495,
 ));
 
 endif;
