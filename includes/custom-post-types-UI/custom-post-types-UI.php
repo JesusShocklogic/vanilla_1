@@ -9,7 +9,6 @@
 * PLEASE, update this document if you believe it is outdated with the current Cusotm Post Types managed by the plugin.
 * You can find this code in the Wordpress dashboard - CPT UI - tools - Get Code
 */
-
 function cptui_register_my_cpts()
 {
 
@@ -143,6 +142,7 @@ function cptui_register_my_cpts()
         "rewrite" => ["slug" => "partner", "with_front" => true],
         "query_var" => true,
         "supports" => ["title", "editor", "thumbnail"],
+        "taxonomies" => ["category"],
         "show_in_graphql" => false,
     ];
 
