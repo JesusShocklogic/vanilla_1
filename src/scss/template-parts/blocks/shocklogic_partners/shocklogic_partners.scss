@@ -35,7 +35,8 @@
                     text-align: center;
                     padding-top: 1rem;
                 }
-                & a {
+                & a,
+                & div {
                     @include variables.aspect-ratio(4, 3);
                     display: block;
                     width: 100%;

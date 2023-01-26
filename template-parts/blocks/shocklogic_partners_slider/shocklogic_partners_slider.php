@@ -86,40 +86,42 @@ if (isset($shocklogic_partners_slider_group) && $shocklogic_partners_slider_grou
 											<img src="<?= $image_url ?>" alt="">
 										</a>
 									</div>
-								<?php
+									<?php
 								}; //while
 								wp_reset_query();
 							}
 							//For same link on all links
 							elseif ($shocklogic_partners_slider_group['click_behaviour'] == "same") {
 								$link_array = $shocklogic_partners_slider_group['link'] ?? null;
-								$link_url = esc_url($link_array['url']);
-								//$link_title = esc_html($link_array['title']);
-								$link_target = $link_array['target'] ? $link_array['target'] : '_self';
-								$link_target = esc_attr($link_target);
+								if ($link_array) {
+									$link_url = esc_url($link_array['url']);
+									//$link_title = esc_html($link_array['title']);
+									$link_target = $link_array['target'] ? $link_array['target'] : '_self';
+									$link_target = esc_attr($link_target);
 
-								while ($wp_query->have_posts()) {
-									$wp_query->the_post();
-									$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : $avatar; ?>
-									<div class="swiper-slide">
-										<?php
-										if (is_admin() || $link_array == null) { ?>
-											<div>
-												<img src="<?= $image_url ?>" alt="">
-											</div>
-										<?php
-										} else { ?>
-											<a href="<?= $link_url ?>" target="<?= $link_target ?>">
-												<img src="<?= $image_url ?>" alt="">
-											</a>
-										<?php
-										}
-										?>
-									</div>
+									while ($wp_query->have_posts()) {
+										$wp_query->the_post();
+										$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : $avatar; ?>
+										<div class="swiper-slide">
+											<?php
+											if (is_admin() || $link_array == null) { ?>
+												<div>
+													<img src="<?= $image_url ?>" alt="">
+												</div>
+											<?php
+											} else { ?>
+												<a href="<?= $link_url ?>" target="<?= $link_target ?>">
+													<img src="<?= $image_url ?>" alt="">
+												</a>
+											<?php
+											}
+											?>
+										</div>
 						<?php
-								} //while
-								wp_reset_query();
-							}
+									} //while
+									wp_reset_query();
+								} //if there is a link
+							} //For same link on all links
 						} else {
 							echo "No posts were found";
 						}
