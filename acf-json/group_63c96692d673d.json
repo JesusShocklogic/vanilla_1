@@ -261,6 +261,26 @@
                     "search_placeholder": ""
                 },
                 {
+                    "key": "field_63d1dd9b7e805",
+                    "label": "Minimal column size",
+                    "name": "minimal_column_size",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Add the minimal size all items will take on screen.\r\nYou can place any available size.\r\nEg.\r\n250px\r\n20rem\r\n20em",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "18rem",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
                     "key": "field_63c966930cad1",
                     "label": "Bottom tab",
                     "name": "",
@@ -331,7 +351,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1674585063,
+    "modified": 1674698495,
     "acfe_categories": {
         "shocklogic": "Shocklogic"
     }

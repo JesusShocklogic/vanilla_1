@@ -149,7 +149,7 @@ CONTENT;
 					/*
                     * Chair Speakers Builder
                     */
-					/*if (!empty($speakers)) {
+					if (!empty($speakers)) {
                         $speakersContent = "<div><strong>Chair(s): </strong>";
                         foreach ($speakers as $key4 => $speaker) {
                             $id = $speaker->speaker_id;
@@ -158,13 +158,13 @@ CONTENT;
 
                             if ($key4 == 0) {
                                 $speakersContent .= <<<NAME
-                                    <a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-target="#speaker-$id">
+                                    <a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#speaker-$id">
                                         $name $lastName
                                     </a>
 NAME;
                             } else {
                                 $speakersContent .= <<<NAME
-                                    <a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-target="#speaker-$id">
+                                    <a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#speaker-$id">
                                         , $name $lastName
                                     </a>
 NAME;
@@ -172,7 +172,7 @@ NAME;
                         } //foreach Speakers
                         $speakersContent .= "</div>";
                     } // Speakers is not empty
-                    */
+                    
 					/*
                     * Presentations Builder
                     */
@@ -191,7 +191,7 @@ NAME;
 								$presentationId = $presentation->presentation_id;
 								//getting information for the authors
 								$authors = "";
-								/*if ($showPresentationsSpeakersModal == 1) {
+								if ($showPresentationsSpeakersModal == 1) {
                                     if (!empty($allSpeakersContent)) {
                                         $allSpeakersContent = json_decode($allSpeakersContent);
                                         $authors .= "<td>";
@@ -200,13 +200,13 @@ NAME;
                                             $fullName = $SpeakerContent->Full_Name;
                                             if ($key5 == 0) {
                                                 $authors .= <<<AUTHOR
-                                                    <a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-target="#speaker-$id">
+                                                    <a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#speaker-$id">
                                                         $fullName
                                                     </a>
 AUTHOR;
                                             } else {
                                                 $authors .= <<<AUTHOR
-                                                    <a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-target="#speaker-$id">
+                                                    <a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#speaker-$id">
                                                         , $fullName
                                                     </a>
 AUTHOR;
@@ -217,7 +217,7 @@ AUTHOR;
                                 } // IF presentations_speakers_modals is enabled in the Dashboard
                                 else {
                                     $authors = "<td>" . str_replace('"', '', $presentation->all_speakers_list) . "</td>";
-                                }*/
+                                }
 
 								$moreInfo = "";
 								/*
@@ -228,7 +228,7 @@ AUTHOR;
 
 								$presentationsContent .= <<<CONTENT
                                     <tr>
-                                        <th scope="row" class="d-none">$presentationTime</th>
+                                        <th scope="row">$presentationTime</th>
                                         <td>$presentationTitle $moreInfo</td>
                                         $authors
                                     </tr>
@@ -238,7 +238,7 @@ AUTHOR;
 							$tableContent .= <<<CONTENT
                                 <!-- Table content -->
                                 <table class="table">
-                                    <thead class="d-none">
+                                    <thead>
                                         <tr>
                                             <th class="text-nowrap" scope="col">Pres Time</th>
                                             <th scope="col">Presentation title</th>
@@ -297,7 +297,7 @@ IMG;
                                     $room
                                     $speakersContent
                                     $sessionType
-                                    <!-- div><strong>Session time: </strong>$sessionTime</div -->
+                                    <div><strong>Session time: </strong>$sessionTime</div>
                                 </div>
                                 <div>$tableContent</div>
                             </div>
@@ -600,11 +600,11 @@ foreach ($speakers as $speaker) {
 	}
 
 	$modals .= <<<MODALS
-            <div class="modal fade" id="speaker-$id" data-keyboard="false" tabindex="-1" aria-labelledby="speaker-$id-Label" aria-hidden="true">
+            <div class="modal fade" id="speaker-$id" data-bs-keyboard="false" tabindex="-1" aria-labelledby="speaker-$id-Label" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
                         <div class="modal-header justify-content-end">
-                            <button type="button" class="modal-header-close rounded-circle" data-dismiss="modal" aria-label="Close"><span>X</span></button>
+                            <button type="button" class="modal-header-close rounded-circle" data-bs-dismiss="modal" aria-label="Close"><span>X</span></button>
                         </div>
                         <div class="modal-body">
                             <div class="ratio ratio-1x1 mb-3">

@@ -7,12 +7,21 @@ $block_id = $block['id'];
 $background = $shocklogic_partners_group['background_colour'];
 $avatar = default_partners_avatar();
 
+$minimal_column_size = $shocklogic_partners_group['minimal_column_size'] ?? "18rem";
+
 if (isset($shocklogic_partners_group) && $shocklogic_partners_group != null) { ?>
+	<style>
+		.shocklogic_partners_wrapper_partners_partner {
+			width: min(100%, <?= $minimal_column_size ?>) !important;
+		}
+	</style>
 	<div class="shocklogic_partners <?= $shocklogic_partners_group['spacing'] ?>" id="<?= $block_id ?>">
 		<div class="shocklogic_partners_wrapper">
-			<div class="shocklogic_partners_wrapper_title">
-				<?= $shocklogic_partners_group['title'] ?>
-			</div>
+			<?php if ($shocklogic_partners_group['title']) : ?>
+				<div class="shocklogic_partners_wrapper_title">
+					<?= $shocklogic_partners_group['title'] ?>
+				</div>
+			<?php endif; ?>
 			<div class="shocklogic_partners_wrapper_partners">
 				<?php
 				if ($wp_query->have_posts()) {
