@@ -7,14 +7,27 @@ $block_id = $block['id'];
 $background = $shocklogic_partners_group['background_colour'];
 $avatar = default_partners_avatar();
 
-$minimal_column_size = $shocklogic_partners_group['minimal_column_size'] ?? "18rem";
+$minimal_column_size = $shocklogic_partners_group['minimal_column_size'] ?? "18rem"; ?>
+
+<style>
+	<?php
+	$classes = <<<ITEM
+	#$block_id{
+		background-color: $background;
+	}
+	#$block_id .shocklogic_partners_wrapper_partners_partner {
+		width: min(100%, $minimal_column_size) !important;
+	}
+	ITEM;
+
+	echo $classes;
+
+	?>
+</style>
+
+<?php
 
 if (isset($shocklogic_partners_group) && $shocklogic_partners_group != null) { ?>
-	<style>
-		.shocklogic_partners_wrapper_partners_partner {
-			width: min(100%, <?= $minimal_column_size ?>) !important;
-		}
-	</style>
 	<div class="shocklogic_partners <?= $shocklogic_partners_group['spacing'] ?>" id="<?= $block_id ?>">
 		<div class="shocklogic_partners_wrapper">
 			<?php if ($shocklogic_partners_group['title']) : ?>
@@ -90,7 +103,7 @@ if (isset($shocklogic_partners_group) && $shocklogic_partners_group != null) { ?
 									<img src="<?= $image_url ?>" alt="">
 								</a>
 							</div>
-						<?php
+							<?php
 						}; //while
 						wp_reset_query();
 					} // for modals / Popups
@@ -98,12 +111,12 @@ if (isset($shocklogic_partners_group) && $shocklogic_partners_group != null) { ?
 					//For same link on all links
 					elseif ($shocklogic_partners_group['click_behaviour'] == "same") {
 						$link_array = $shocklogic_partners_group['link'] ?? null;
-						if($link_array){
+						if ($link_array) {
 							$link_url = esc_url($link_array['url']);
 							//$link_title = esc_html($link_array['title']);
 							$link_target = $link_array['target'] ? $link_array['target'] : '_self';
 							$link_target = esc_attr($link_target);
-	
+
 							while ($wp_query->have_posts()) {
 								$wp_query->the_post();
 								$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : $avatar; ?>
@@ -122,11 +135,10 @@ if (isset($shocklogic_partners_group) && $shocklogic_partners_group != null) { ?
 									}
 									?>
 								</div>
-					<?php
+				<?php
 							} //while
 							wp_reset_query();
-
-						}// if there is a link
+						} // if there is a link
 					} // Same link for all logos
 				} //if there is posts
 				else {
@@ -195,17 +207,3 @@ if (isset($shocklogic_partners_group) && $shocklogic_partners_group != null) { ?
 	} //if click behaviour == modal
 
 }
-?>
-
-<style>
-	<?php
-	$classes = <<<ITEM
-	#$block_id{
-		background-color: $background;
-	}
-	ITEM;
-
-	echo $classes;
-
-	?>
-</style>
