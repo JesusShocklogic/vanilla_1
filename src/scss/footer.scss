@@ -1,7 +1,7 @@
 @use "util/variables";
 @use "util/breakpoints";
 .footer {
-    &.contain {
+    &.default {
         @include variables.spacing;
     }
 
@@ -13,8 +13,5 @@
         gap: 2rem;
         align-items: start;
         justify-items: center;
-
-        &_column {
-        }
     }
 }
