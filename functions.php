@@ -30,8 +30,8 @@ function default_partners_avatar()
 */
 function default_placeholder_image()
 {
-    if (isset(get_field('general_theme_settings_group', "option")['avatar_for_partners']['url'])) {
-        return get_field('general_theme_settings_group', "option")['avatar_for_partners']['url'];
+    if (isset(get_field('general_theme_settings_group', "option")['avatar_for_news']['url'])) {
+        return get_field('general_theme_settings_group', "option")['avatar_for_news']['url'];
     } else {
         return get_template_directory_uri() . "/assets/images/placeholder.jpg";
     }

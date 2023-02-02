@@ -108,7 +108,7 @@ acf_add_local_field_group(array(
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => '',
+						'width' => '50',
 						'class' => '',
 						'id' => '',
 					),
@@ -135,7 +135,34 @@ acf_add_local_field_group(array(
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => '',
+						'width' => '50',
+						'class' => '',
+						'id' => '',
+					),
+					'uploader' => '',
+					'acfe_thumbnail' => 0,
+					'return_format' => 'array',
+					'min_width' => '',
+					'min_height' => '',
+					'min_size' => '',
+					'max_width' => '',
+					'max_height' => '',
+					'max_size' => '',
+					'mime_types' => '',
+					'preview_size' => 'medium',
+					'library' => 'all',
+				),
+				array(
+					'key' => 'field_63dc1e5ae4e73',
+					'label' => 'Avatar for news',
+					'name' => 'avatar_for_news',
+					'aria-label' => '',
+					'type' => 'image',
+					'instructions' => 'If an speaker does not includes an image, this avatar will be used instead.',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '50',
 						'class' => '',
 						'id' => '',
 					),
@@ -237,7 +264,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'theme-settings' => 'Theme settings',
 	),
-	'modified' => 1675368289,
+	'modified' => 1675370089,
 ));
 
 endif;
