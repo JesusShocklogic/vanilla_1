@@ -2,7 +2,7 @@
 wp_enqueue_style("modal-partners");
 
 $shocklogic_partners_group = get_field('shocklogic_partners_group');
-$wp_query = get_query($shocklogic_partners_group);
+$wp_query = get_query(get_field('query_settings'));
 $block_id = $block['id'];
 $background = $shocklogic_partners_group['background_colour'];
 $avatar = default_partners_avatar();

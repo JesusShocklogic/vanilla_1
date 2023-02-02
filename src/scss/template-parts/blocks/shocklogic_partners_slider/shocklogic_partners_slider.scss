@@ -21,18 +21,18 @@
             @include variables.title_spacing;
         }
         &_partners {
-            & a,
-            & div {
-                @include variables.aspect-ratio(4, 3);
-                display: block;
-                width: 100%;
-                & img {
-                    object-fit: contain;
-                    object-position: center center;
-                    display: block;
-                    margin: 0 auto;
-                    width: 100%;
-                    height: 100%;
+            & .swiper_slide_partner {
+                & a,
+                & div {
+                    @include variables.aspect-ratio(4, 3);
+                    & img {
+                        object-fit: contain;
+                        object-position: center center;
+                        display: block;
+                        margin: 0 auto;
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
             }
         }
