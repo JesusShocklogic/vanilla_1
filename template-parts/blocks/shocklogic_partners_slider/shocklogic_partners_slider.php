@@ -5,7 +5,7 @@ wp_enqueue_script("swiper-js");
 wp_enqueue_style("modal-partners");
 
 $shocklogic_partners_slider_group = get_field('shocklogic_partners_slider_group');
-$wp_query = get_query($shocklogic_partners_slider_group);
+$wp_query = get_query(get_field('query_settings'));
 $block_id = $block['id'];
 $background = $shocklogic_partners_slider_group['background_colour'];
 $avatar = default_partners_avatar();
@@ -37,9 +37,11 @@ if (isset($shocklogic_partners_slider_group) && $shocklogic_partners_slider_grou
 											</div>
 										<?php
 										} else { ?>
-											<a href="<?php the_permalink() ?>">
-												<img src="<?= $image_url ?>" alt="">
-											</a>
+											<div class="swiper_slide_partner">
+												<a href="<?php the_permalink() ?>">
+													<img src="<?= $image_url ?>" alt="">
+												</a>
+											</div>
 										<?php
 
 										}

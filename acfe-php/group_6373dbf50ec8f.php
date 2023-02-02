@@ -217,7 +217,7 @@ acf_add_local_field_group(array(
 	'active' => true,
 	'description' => '',
 	'show_in_rest' => 0,
-	'acfe_display_title' => '',
+	'acfe_display_title' => 'Shocklogic banner',
 	'acfe_autosync' => array(
 		0 => 'php',
 		1 => 'json',
@@ -228,7 +228,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'shocklogic' => 'Shocklogic',
 	),
-	'modified' => 1671568130,
+	'modified' => 1675367574,
 ));
 
 endif;

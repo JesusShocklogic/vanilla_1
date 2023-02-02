@@ -1,11 +1,11 @@
 {
-    "key": "group_637664a095ed7",
-    "title": "Shocklogic speakers slider wordpress",
+    "key": "group_63dbb940e25d2",
+    "title": "Query settings",
     "fields": [
         {
-            "key": "field_637664a0a44bb",
-            "label": "Shocklogic speakers slider wordpress group",
-            "name": "shocklogic_speakers_slider_wordpress_group",
+            "key": "field_63dbb940ebbc4",
+            "label": "Query settings",
+            "name": "query_settings",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -20,8 +20,8 @@
             "acfe_seamless_style": 1,
             "sub_fields": [
                 {
-                    "key": "field_637664a0ac1c9",
-                    "label": "Title tab",
+                    "key": "field_63dbbd68384af",
+                    "label": "Query settings",
                     "name": "",
                     "aria-label": "",
                     "type": "accordion",
@@ -38,45 +38,7 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_637664a0afc2a",
-                    "label": "title",
-                    "name": "title",
-                    "aria-label": "",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0
-                },
-                {
-                    "key": "field_637664a0b36d5",
-                    "label": "Content tab",
-                    "name": "",
-                    "aria-label": "",
-                    "type": "accordion",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "open": 0,
-                    "multi_expand": 0,
-                    "endpoint": 0
-                },
-                {
-                    "key": "field_637664a0b715c",
+                    "key": "field_63dbb94106b5d",
                     "label": "post types",
                     "name": "post_types",
                     "aria-label": "",
@@ -106,7 +68,7 @@
                     "other_choice": 0
                 },
                 {
-                    "key": "field_637664a0bad1a",
+                    "key": "field_63dbb9410a519",
                     "label": "post categories",
                     "name": "post_categories",
                     "aria-label": "",
@@ -142,7 +104,7 @@
                     "other_choice": 0
                 },
                 {
-                    "key": "field_637664a0be68d",
+                    "key": "field_63dbb9410e10b",
                     "label": "Posts per page",
                     "name": "posts_per_page",
                     "aria-label": "",
@@ -164,11 +126,11 @@
                     "append": ""
                 },
                 {
-                    "key": "field_637664a0c212c",
-                    "label": "Settings tab",
-                    "name": "",
+                    "key": "field_63dbc1f314ace",
+                    "label": "Post order by",
+                    "name": "orderby",
                     "aria-label": "",
-                    "type": "accordion",
+                    "type": "select",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -177,16 +139,26 @@
                         "class": "",
                         "id": ""
                     },
-                    "open": 0,
-                    "multi_expand": 0,
-                    "endpoint": 0
+                    "choices": {
+                        "date": "Date",
+                        "name": "Name"
+                    },
+                    "default_value": "date",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": ""
                 },
                 {
-                    "key": "field_637664a0c5abf",
-                    "label": "Background colour",
-                    "name": "background_colour",
+                    "key": "field_63dbc22484123",
+                    "label": "Post order",
+                    "name": "order",
                     "aria-label": "",
-                    "type": "color_picker",
+                    "type": "select",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -195,47 +167,19 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "#fff",
-                    "enable_opacity": 0,
-                    "return_format": "string"
-                },
-                {
-                    "key": "field_637664a0c96a0",
-                    "label": "Bottom tab",
-                    "name": "",
-                    "aria-label": "",
-                    "type": "accordion",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
+                    "choices": {
+                        "DESC": "Descendant",
+                        "ASC": "Ascendant"
                     },
-                    "open": 0,
-                    "multi_expand": 0,
-                    "endpoint": 0
-                },
-                {
-                    "key": "field_637664a0cd13a",
-                    "label": "Bottom text",
-                    "name": "bottom_text",
-                    "aria-label": "",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0
+                    "default_value": "DESC",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": ""
                 }
             ],
             "acfe_group_modal": 0,
@@ -249,11 +193,46 @@
             {
                 "param": "block",
                 "operator": "==",
+                "value": "acf\/shocklogic-blog"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/shocklogic-partners-slider"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/shocklogic-testimonials"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/shocklogic-partners"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
                 "value": "acf\/shocklogic-speakers-slider-wordpress"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/shocklogic-speakers-wordpress"
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": -1,
     "position": "normal",
     "style": "default",
     "label_placement": "left",
@@ -262,7 +241,7 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "acfe_display_title": "Shocklogic speakers slider from wordpress",
+    "acfe_display_title": "Query settings",
     "acfe_autosync": [
         "php",
         "json"
@@ -270,8 +249,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1675367808,
-    "acfe_categories": {
-        "shocklogic": "Shocklogic"
-    }
+    "modified": 1675346653
 }

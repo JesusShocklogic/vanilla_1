@@ -65,7 +65,7 @@ acf_add_local_field_group(array(
 	'active' => true,
 	'description' => '',
 	'show_in_rest' => 0,
-	'acfe_display_title' => '',
+	'acfe_display_title' => 'Partners from Wordpress',
 	'acfe_autosync' => array(
 		0 => 'php',
 		1 => 'json',
@@ -73,7 +73,10 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1674153283,
+	'acfe_categories' => array(
+		'post-types' => 'Post types',
+	),
+	'modified' => 1675368109,
 ));
 
 endif;
