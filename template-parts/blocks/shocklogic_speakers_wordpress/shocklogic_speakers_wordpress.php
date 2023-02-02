@@ -2,7 +2,7 @@
 wp_enqueue_style("modal-css");
 
 $shocklogic_speakers_wordpress_group = get_field('shocklogic_speakers_wordpress_group');
-$wp_query = get_query($shocklogic_speakers_wordpress_group);
+$wp_query = get_query(get_field('query_settings'));
 $block_id = $block['id'];
 $background = $shocklogic_speakers_wordpress_group['background_colour'];
 $avatar = default_speaker_avatar();

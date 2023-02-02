@@ -127,7 +127,10 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1674752316,
+	'acfe_categories' => array(
+		'post-types' => 'Post types',
+	),
+	'modified' => 1675368220,
 ));
 
 endif;

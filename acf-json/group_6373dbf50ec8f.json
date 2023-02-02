@@ -213,7 +213,7 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "acfe_display_title": "",
+    "acfe_display_title": "Shocklogic banner",
     "acfe_autosync": [
         "php",
         "json"
@@ -221,7 +221,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1671568130,
+    "modified": 1675369713,
     "acfe_categories": {
         "shocklogic": "Shocklogic"
     }

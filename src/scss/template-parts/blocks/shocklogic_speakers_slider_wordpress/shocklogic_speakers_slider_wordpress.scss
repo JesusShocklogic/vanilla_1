@@ -19,9 +19,7 @@
         }
         &_speakers {
             & .swiper {
-                & .swiper-slide {
-                    padding: 2rem;
-                }
+                padding: 2rem 0;
                 & a {
                     @include variables.aspect-ratio(1, 1);
                     display: block;

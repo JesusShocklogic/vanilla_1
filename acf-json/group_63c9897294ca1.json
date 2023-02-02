@@ -61,7 +61,7 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "acfe_display_title": "",
+    "acfe_display_title": "Partners from Wordpress",
     "acfe_autosync": [
         "php",
         "json"
@@ -69,5 +69,8 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1674153283
+    "modified": 1675368109,
+    "acfe_categories": {
+        "post-types": "Post types"
+    }
 }

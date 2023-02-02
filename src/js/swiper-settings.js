@@ -1,11 +1,12 @@
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     spaceBetween: 15,
+    watchOverflow: true,
     autoplay: {
         delay: 2500,
         disableOnInteraction: false,
     },
-    breakpoints: {
+    breakpoints: { 
         481: {
             slidesPerView: 2,
         },
