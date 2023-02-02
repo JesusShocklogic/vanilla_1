@@ -228,7 +228,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'shocklogic' => 'Shocklogic',
 	),
-	'modified' => 1675367574,
+	'modified' => 1675369713,
 ));
 
 endif;
