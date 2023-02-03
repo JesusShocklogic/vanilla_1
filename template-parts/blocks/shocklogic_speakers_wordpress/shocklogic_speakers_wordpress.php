@@ -1,3 +1,4 @@
+<link rel="stylesheet" id="speakers-wordpress" href="<?= get_template_directory_uri() . "/template-parts/blocks/shocklogic_speakers_wordpress/shocklogic_speakers_wordpress.css" ?>" type="text/css" media="all">
 <?php
 wp_enqueue_style("modal-css");
 

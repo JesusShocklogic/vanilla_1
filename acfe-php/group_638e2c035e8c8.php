@@ -160,7 +160,7 @@ acf_add_local_field_group(array(
 	'active' => true,
 	'description' => '',
 	'show_in_rest' => 0,
-	'acfe_display_title' => 'Shocklogic speakers from Wordpress',
+	'acfe_display_title' => 'Speakers from Wordpress',
 	'acfe_autosync' => array(
 		0 => 'php',
 		1 => 'json',
@@ -171,7 +171,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'shocklogic' => 'Shocklogic',
 	),
-	'modified' => 1675367840,
+	'modified' => 1675455940,
 ));
 
 endif;
