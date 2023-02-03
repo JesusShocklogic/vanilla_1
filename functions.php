@@ -142,6 +142,7 @@ add_action('init', function () {
     wp_register_style("modal-css", get_template_directory_uri() . "/assets/css/modal.css", array(), true);
     wp_register_style("modal-partners", get_template_directory_uri() . "/assets/css/modal-partners.css", array(), true);
     wp_register_style("social-icon-widget", get_template_directory_uri() . "/template-parts/social-icons/social-icons-widget.css", array(), true);
+    //wp_register_style("speakers-wordpress", get_template_directory_uri() . "/template-parts/blocks/shocklogic_speakers_wordpress/shocklogic_speakers_wordpress.css", array(), true);
 });
 
 

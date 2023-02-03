@@ -156,7 +156,7 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "acfe_display_title": "Shocklogic speakers from Wordpress",
+    "acfe_display_title": "Speakers from Wordpress",
     "acfe_autosync": [
         "php",
         "json"
@@ -164,7 +164,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1675367840,
+    "modified": 1675455940,
     "acfe_categories": {
         "shocklogic": "Shocklogic"
     }
