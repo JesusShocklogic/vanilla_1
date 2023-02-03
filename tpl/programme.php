@@ -150,29 +150,29 @@ CONTENT;
                     * Chair Speakers Builder
                     */
 					if (!empty($speakers)) {
-                        $speakersContent = "<div><strong>Chair(s): </strong>";
-                        foreach ($speakers as $key4 => $speaker) {
-                            $id = $speaker->speaker_id;
-                            $name = $speaker->speaker_name;
-                            $lastName = $speaker->speaker_family_name;
+						$speakersContent = "<div><strong>Chair(s): </strong>";
+						foreach ($speakers as $key4 => $speaker) {
+							$id = $speaker->speaker_id;
+							$name = $speaker->speaker_name;
+							$lastName = $speaker->speaker_family_name;
 
-                            if ($key4 == 0) {
-                                $speakersContent .= <<<NAME
+							if ($key4 == 0) {
+								$speakersContent .= <<<NAME
                                     <a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#speaker-$id">
                                         $name $lastName
                                     </a>
 NAME;
-                            } else {
-                                $speakersContent .= <<<NAME
+							} else {
+								$speakersContent .= <<<NAME
                                     <a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#speaker-$id">
                                         , $name $lastName
                                     </a>
 NAME;
-                            }
-                        } //foreach Speakers
-                        $speakersContent .= "</div>";
-                    } // Speakers is not empty
-                    
+							}
+						} //foreach Speakers
+						$speakersContent .= "</div>";
+					} // Speakers is not empty
+
 					/*
                     * Presentations Builder
                     */
@@ -186,38 +186,38 @@ NAME;
 							foreach ($presentations as $key4 => $presentation) {
 								$presentationTime = substr($presentation->start_time, 0, -3);;
 								$presentationTitle = $presentation->presentation_title;
-								$presentationBody = $presentation->presentation_body;
+								$presentationBody = $presentation->presentation_body ?? "";
 								$allSpeakersContent = $presentation->all_speakers;
 								$presentationId = $presentation->presentation_id;
 								//getting information for the authors
 								$authors = "";
 								if ($showPresentationsSpeakersModal == 1) {
-                                    if (!empty($allSpeakersContent)) {
-                                        $allSpeakersContent = json_decode($allSpeakersContent);
-                                        $authors .= "<td>";
-                                        foreach ($allSpeakersContent as $key5 => $SpeakerContent) {
-                                            $id = $SpeakerContent->Faculty_Id;
-                                            $fullName = $SpeakerContent->Full_Name;
-                                            if ($key5 == 0) {
-                                                $authors .= <<<AUTHOR
+									if (!empty($allSpeakersContent)) {
+										$allSpeakersContent = json_decode($allSpeakersContent);
+										$authors .= "<td>";
+										foreach ($allSpeakersContent as $key5 => $SpeakerContent) {
+											$id = $SpeakerContent->Faculty_Id;
+											$fullName = $SpeakerContent->Full_Name;
+											if ($key5 == 0) {
+												$authors .= <<<AUTHOR
                                                     <a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#speaker-$id">
                                                         $fullName
                                                     </a>
 AUTHOR;
-                                            } else {
-                                                $authors .= <<<AUTHOR
+											} else {
+												$authors .= <<<AUTHOR
                                                     <a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#speaker-$id">
                                                         , $fullName
                                                     </a>
 AUTHOR;
-                                            }
-                                        } // Foreach authors in the presentations
-                                        $authors .= "</td>";
-                                    } // IF No speakers in the presentation
-                                } // IF presentations_speakers_modals is enabled in the Dashboard
-                                else {
-                                    $authors = "<td>" . str_replace('"', '', $presentation->all_speakers_list) . "</td>";
-                                }
+											}
+										} // Foreach authors in the presentations
+										$authors .= "</td>";
+									} // IF No speakers in the presentation
+								} // IF presentations_speakers_modals is enabled in the Dashboard
+								else {
+									$authors = "<td>" . str_replace('"', '', $presentation->all_speakers_list) . "</td>";
+								}
 
 								$moreInfo = "";
 								/*
@@ -227,12 +227,15 @@ AUTHOR;
                                 */
 
 								$presentationsContent .= <<<CONTENT
-                                    <tr>
-                                        <th scope="row">$presentationTime</th>
-                                        <td>$presentationTitle $moreInfo</td>
-                                        $authors
-                                    </tr>
-                                    CONTENT;
+									<tr>
+										<th scope="row" class="presentation_time">$presentationTime</th>
+										<td>
+											<div class="presentation_title">$presentationTitle $moreInfo</div>
+											<div class="presentation_body">$presentationBody</div>
+											<div class="presentation_authors">$authors</div>
+										</td>
+									</tr>
+									CONTENT;
 							}
 
 							$tableContent .= <<<CONTENT
