@@ -195,41 +195,6 @@
                 "operator": "==",
                 "value": "acf\/shocklogic-blog"
             }
-        ],
-        [
-            {
-                "param": "block",
-                "operator": "==",
-                "value": "acf\/shocklogic-partners-slider"
-            }
-        ],
-        [
-            {
-                "param": "block",
-                "operator": "==",
-                "value": "acf\/shocklogic-testimonials"
-            }
-        ],
-        [
-            {
-                "param": "block",
-                "operator": "==",
-                "value": "acf\/shocklogic-partners"
-            }
-        ],
-        [
-            {
-                "param": "block",
-                "operator": "==",
-                "value": "acf\/shocklogic-speakers-slider-wordpress"
-            }
-        ],
-        [
-            {
-                "param": "block",
-                "operator": "==",
-                "value": "acf\/shocklogic-speakers-wordpress"
-            }
         ]
     ],
     "menu_order": -1,
@@ -249,5 +214,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1675346653
+    "modified": 1675807183
 }

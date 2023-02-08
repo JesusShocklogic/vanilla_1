@@ -1,9 +1,25 @@
+<link rel="stylesheet" id="shocklogic_banner" href="<?= get_template_directory_uri() . "/template-parts/blocks/shocklogic_banner/shocklogic_banner.css" ?>" type="text/css" media="all">
 <?php
-
 $shocklogic_banner_group = get_field('shocklogic_banner_group');
-$spacing = $shocklogic_banner_group['banner_spacing'];
+$general_settings = get_field('general_settings');
+$block_id = $block['id'];
+$spacing = $general_settings['spacing'];
+$background_colour = $general_settings['background_colour']; ?>
+
+<style>
+    <?php
+    $classes = <<<ITEM
+	#$block_id{
+		background-color: $background_colour;
+	}
+	ITEM;
+    echo $classes;
+    ?>
+</style>
+
+<?php
 if (isset($shocklogic_banner_group) && $shocklogic_banner_group != null) { ?>
-    <div class="shocklogic_banner <?= $spacing ?>">
+    <div class="shocklogic_banner <?= $spacing ?>" id="<?= $block_id ?>">
         <div class="shocklogic_banner_wrapper">
             <?php
             //Content above banner
@@ -13,7 +29,7 @@ if (isset($shocklogic_banner_group) && $shocklogic_banner_group != null) { ?>
                 </div>
             <?php
             } ?>
-            
+
             <?php
             //Content over banner
             if ($shocklogic_banner_group['content_over_banner']) { ?>
