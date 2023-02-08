@@ -1,3 +1,4 @@
+<link rel="stylesheet" id="shocklogic_blog" href="<?= get_template_directory_uri() ?>/template-parts/blocks/shocklogic_blog/shocklogic_blog.css" type="text/css" media="all">
 <?php
 $shocklogic_blog_group = get_field('shocklogic_blog_group');
 $wp_query = get_query(get_field('query_settings'));
@@ -8,8 +9,7 @@ $spacing = $general_settings['spacing'];
 $block_id = $block['id'];
 
 $background_colour = $general_settings['background_colour'];
-$placeholder = default_placeholder_image();
-?>
+$placeholder = default_placeholder_image(); ?>
 
 <style>
 	<?php

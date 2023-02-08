@@ -57,7 +57,7 @@
                     "min": 0,
                     "max": 0,
                     "collapsed": "",
-                    "button_label": "Add Row",
+                    "button_label": "Add option",
                     "rows_per_page": 20,
                     "sub_fields": [
                         {
@@ -406,7 +406,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1673549276,
+    "modified": 1675881354,
     "acfe_categories": {
         "shocklogic": "Shocklogic"
     }

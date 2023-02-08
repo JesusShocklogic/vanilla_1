@@ -1,7 +1,26 @@
 <?php
 $shocklogic_vertical_item_list_group = get_field('shocklogic_vertical_item_list_group');
+
+$general_settings = get_field('general_settings');
+$spacing = $general_settings['spacing'];
+$background_colour = $general_settings['background_colour'];
+
+$block_id = $block['id']; ?>
+
+<style>
+    <?php
+    $classes = <<<ITEM
+	#$block_id{
+		background-color: $background_colour;
+	}
+	ITEM;
+    echo $classes;
+    ?>
+</style>
+<?php
+
 if (isset($shocklogic_vertical_item_list_group) && $shocklogic_vertical_item_list_group != null) { ?>
-    <div class="shocklogic_vertical_item_list">
+    <div class="shocklogic_vertical_item_list <?= $spacing ?>" id="<?= $block_id ?>">
         <div class="shocklogic_vertical_item_list_wrapper">
             <!-- Background -->
             <div class="shocklogic_vertical_item_list_wrapper_background">
