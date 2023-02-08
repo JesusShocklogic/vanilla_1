@@ -3,17 +3,37 @@
 wp_enqueue_style("modal-css");
 
 $shocklogic_speakers_wordpress_group = get_field('shocklogic_speakers_wordpress_group');
-$wp_query = get_query(get_field('query_settings'));
-$block_id = $block['id'];
-$background = $shocklogic_speakers_wordpress_group['background_colour'];
-$avatar = default_speaker_avatar();
+$wp_query = get_query(get_field('query_settings')['query_settings']);
 
+$general_settings = get_field('general_settings');
+$spacing = $general_settings['spacing'];
+$background_colour = $general_settings['background_colour'];
+
+$block_id = $block['id'];
+$avatar = default_speaker_avatar(); ?>
+
+<style>
+	<?php
+	$classes = <<<ITEM
+	#$block_id{
+		background-color: $background_colour;
+	}
+	ITEM;
+	echo $classes;
+
+	?>
+</style>
+<?php
 if (isset($shocklogic_speakers_wordpress_group) && $shocklogic_speakers_wordpress_group != null) { ?>
-	<div class="shocklogic_speakers_wordpress" id="<?= $block_id ?>">
+	<div class="shocklogic_speakers_wordpress <?= $spacing ?>" id="<?= $block_id ?>">
 		<div class="shocklogic_speakers_wordpress_wrapper">
-			<div class="shocklogic_speakers_wordpress_wrapper_title">
-				<?= $shocklogic_speakers_wordpress_group['title'] ?>
-			</div>
+
+			<?php if ($shocklogic_speakers_wordpress_group['title']) : ?>
+				<div class="shocklogic_speakers_wordpress_wrapper_title">
+					<?= $shocklogic_speakers_wordpress_group['title'] ?>
+				</div>
+			<?php endif; ?>
+
 			<div class="shocklogic_speakers_wordpress_wrapper_speakers">
 				<?php
 				if ($wp_query->have_posts()) {
@@ -101,20 +121,5 @@ if (isset($shocklogic_speakers_wordpress_group) && $shocklogic_speakers_wordpres
 		} //if
 		?>
 	</div>
-	</div>
 <?php
 }
-?>
-
-<style>
-	<?php
-	$classes = <<<ITEM
-	#$block_id{
-		background-color: $background;
-	}
-	ITEM;
-
-	echo $classes;
-
-	?>
-</style>
