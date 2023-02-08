@@ -4,6 +4,10 @@ $shocklogic_buttons_group = get_field('shocklogic_buttons_group');
 $block_id = $block['id'];
 
 $width = $shocklogic_buttons_group['button_width'] ?? "auto";
+if($shocklogic_buttons_group['button_width'] != "auto"){
+	$width = "min(100%, $width)";
+}
+
 $button_style = $shocklogic_buttons_group['button_style'];
 if ($shocklogic_buttons_group['button_style'] == "solid") :
 	$background_color = $shocklogic_buttons_group['main_colour'];
@@ -30,7 +34,7 @@ endif;
 		background-color: $background;
 	}
 	#$block_id .shocklogic_buttons_wrapper_buttons_button{
-		width: min(100%, $width);
+		width: $width;
 	}
 	#$block_id .shocklogic_buttons_wrapper_buttons_button a {
 		background-color: $background_color;
@@ -63,12 +67,16 @@ if ($shocklogic_buttons_group) : ?>
 					foreach ($buttons as $key => $button) {
 						$link = $button['link'];
 						if ($link) :
+							$image_url = $button['image']['url'] ?? null;
 							$link_url = esc_url($link['url']);
 							$link_title = esc_html($link['title']);
 							$link_target = $link['target'] ? $link['target'] : '_self';
 							$link_target = esc_attr($link_target); ?>
 							<div class="shocklogic_buttons_wrapper_buttons_button">
 								<a href="<?= $link_url ?>" target="<?= $link_target ?>" class="btn">
+									<?php if ($image_url) : ?>
+										<img src="<?= $image_url ?>" alt="" srcset="">
+									<?php endif; ?>
 									<?= $link_title ?>
 								</a>
 							</div>

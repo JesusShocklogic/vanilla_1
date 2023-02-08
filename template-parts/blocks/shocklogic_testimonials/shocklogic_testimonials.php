@@ -1,4 +1,4 @@
-<link rel="stylesheet" id="shocklogic_testimonials" href="http://localhost/vanila_1/wp-content/themes/vanilla_1/template-parts/blocks/shocklogic_testimonials/shocklogic_testimonials.css" type="text/css" media="all">
+<link rel="stylesheet" id="shocklogic_testimonials" href="<?= get_template_directory_uri() ?>/template-parts/blocks/shocklogic_testimonials/shocklogic_testimonials.css" type="text/css" media="all">
 <?php
 $shocklogic_testimonials_group = get_field('shocklogic_testimonials_group');
 
