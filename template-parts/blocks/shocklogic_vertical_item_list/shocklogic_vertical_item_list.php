@@ -1,3 +1,4 @@
+<link rel="stylesheet" id="shocklogic_vertical_item_list" href="<?= get_template_directory_uri() ?>/template-parts/blocks/shocklogic_vertical_item_list/shocklogic_vertical_item_list.css" type="text/css" media="all">
 <?php
 $shocklogic_vertical_item_list_group = get_field('shocklogic_vertical_item_list_group');
 
