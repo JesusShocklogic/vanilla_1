@@ -1,11 +1,29 @@
+<link rel="stylesheet" id="shocklogic_single_iframe" href="<?= get_template_directory_uri() . "/template-parts/blocks/shocklogic_single_iframe/shocklogic_single_iframe.css" ?>" type="text/css" media="all">
 <?php
 $shocklogic_single_iframe_group = get_field('shocklogic_single_iframe_group');
 
-if (isset($shocklogic_single_iframe_group) && $shocklogic_single_iframe_group != null) {
-    $width = $shocklogic_single_iframe_group['width'];
-    $block_width = $shocklogic_single_iframe_group['block_width']; ?>
+$general_settings = get_field('general_settings');
+$spacing = $general_settings['spacing'];
 
-    <div class="shocklogic_single_iframe <?= $block_width ?>">
+$block_id = $block['id'];
+$background_colour = $general_settings['background_colour']; ?>
+
+<style>
+    <?php
+    $classes = <<<ITEM
+	#$block_id{
+		background-color: $background_colour;
+	}
+	ITEM;
+    echo $classes;
+    ?>
+</style>
+
+<?php
+
+if (isset($shocklogic_single_iframe_group) && $shocklogic_single_iframe_group != null) { ?>
+
+    <div class="shocklogic_single_iframe <?= $spacing ?>" id="<?= $block_id ?>">
         <div class="shocklogic_single_iframe_wrapper">
             <?php
             // Text above the iframe
@@ -17,22 +35,11 @@ if (isset($shocklogic_single_iframe_group) && $shocklogic_single_iframe_group !=
             }
             ?>
 
-            <?php
-            // Iframe
-            ?>
-            <div class="shocklogic_single_iframe_wrapper_iframe <?= $width ?>">
-                <?= $shocklogic_single_iframe_group['iframe'] ?>
-
-                <?php
-                //Text over the iframe
-                if ($shocklogic_single_iframe_group['text_over_iframe']) { ?>
-                    <div class="shocklogic_single_iframe_wrapper_iframe_text">
-                        <?= $shocklogic_single_iframe_group['text_over_iframe']; ?>
-                    </div>
-                <?php
-                }
-                ?>
-            </div>
+            <?php if ($shocklogic_single_iframe_group['iframe']) : ?>
+                <div class="shocklogic_single_iframe_wrapper_iframe <?= $shocklogic_single_iframe_group['iframe_width'] ?>">
+                    <?= $shocklogic_single_iframe_group['iframe'] ?>
+                </div>
+            <?php endif; ?>
 
             <?php
             //Text below the iframe

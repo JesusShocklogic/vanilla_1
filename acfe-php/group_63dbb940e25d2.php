@@ -204,41 +204,6 @@ acf_add_local_field_group(array(
 				'value' => 'acf/shocklogic-blog',
 			),
 		),
-		array(
-			array(
-				'param' => 'block',
-				'operator' => '==',
-				'value' => 'acf/shocklogic-partners-slider',
-			),
-		),
-		array(
-			array(
-				'param' => 'block',
-				'operator' => '==',
-				'value' => 'acf/shocklogic-testimonials',
-			),
-		),
-		array(
-			array(
-				'param' => 'block',
-				'operator' => '==',
-				'value' => 'acf/shocklogic-partners',
-			),
-		),
-		array(
-			array(
-				'param' => 'block',
-				'operator' => '==',
-				'value' => 'acf/shocklogic-speakers-slider-wordpress',
-			),
-		),
-		array(
-			array(
-				'param' => 'block',
-				'operator' => '==',
-				'value' => 'acf/shocklogic-speakers-wordpress',
-			),
-		),
 	),
 	'menu_order' => -1,
 	'position' => 'normal',
@@ -257,7 +222,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1675346653,
+	'modified' => 1675807183,
 ));
 
 endif;

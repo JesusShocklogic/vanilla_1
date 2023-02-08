@@ -1,0 +1,23 @@
+@use "../../../util/variables";
+@use "../../../util/breakpoints";
+
+.shocklogic_buttons {
+    @include variables.spacing;
+
+    &_wrapper {
+        &_buttons {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            flex-direction: row;
+            &_button {
+                & a {
+                    display: block;
+                }
+            }
+        }
+    }
+}

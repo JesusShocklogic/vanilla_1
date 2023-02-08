@@ -1,10 +1,15 @@
+<link rel="stylesheet" id="shocklogic_partners" href="<?= get_template_directory_uri() . "/template-parts/blocks/shocklogic_partners/shocklogic_partners.css" ?>" type="text/css" media="all">
 <?php
 wp_enqueue_style("modal-partners");
 
 $shocklogic_partners_group = get_field('shocklogic_partners_group');
-$wp_query = get_query(get_field('query_settings'));
+$wp_query = get_query(get_field('query_settings')['query_settings']);
+
+$general_settings = get_field('general_settings');
+$spacing = $general_settings['spacing'];
+
 $block_id = $block['id'];
-$background = $shocklogic_partners_group['background_colour'];
+$background_colour = $general_settings['background_colour'];
 $avatar = default_partners_avatar();
 
 $minimal_column_size = $shocklogic_partners_group['minimal_column_size'] ?? "18rem"; ?>
@@ -13,22 +18,20 @@ $minimal_column_size = $shocklogic_partners_group['minimal_column_size'] ?? "18r
 	<?php
 	$classes = <<<ITEM
 	#$block_id{
-		background-color: $background;
+		background-color: $background_colour;
 	}
 	#$block_id .shocklogic_partners_wrapper_partners_partner {
 		width: min(100%, $minimal_column_size) !important;
 	}
 	ITEM;
-
 	echo $classes;
-
 	?>
 </style>
 
 <?php
 
 if (isset($shocklogic_partners_group) && $shocklogic_partners_group != null) { ?>
-	<div class="shocklogic_partners <?= $shocklogic_partners_group['spacing'] ?>" id="<?= $block_id ?>">
+	<div class="shocklogic_partners <?= $spacing ?>" id="<?= $block_id ?>">
 		<div class="shocklogic_partners_wrapper">
 			<?php if ($shocklogic_partners_group['title']) : ?>
 				<div class="shocklogic_partners_wrapper_title">

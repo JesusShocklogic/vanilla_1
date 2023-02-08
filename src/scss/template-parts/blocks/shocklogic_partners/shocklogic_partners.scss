@@ -53,6 +53,7 @@
         }
         &_bottom_text {
             @include variables.section_top_spacing;
+            @include variables.title_spacing;
         }
     }
 }

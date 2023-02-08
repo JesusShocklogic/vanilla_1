@@ -1,7 +1,9 @@
 @use "../../../util/variables";
 @use "../../../util/breakpoints";
 .shocklogic_blog {
-    @include variables.spacing;
+    &.contain {
+        @include variables.spacing;
+    }
     &_wrapper {
         &_title {
             @include variables.title_spacing;
@@ -57,6 +59,7 @@
         }
         &_bottom_text {
             @include variables.section_top_spacing;
+            @include variables.title_spacing;
         }
     }
 }
