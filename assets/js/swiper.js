@@ -4765,7 +4765,7 @@ var swiper = new Swiper(".mySwiper", {
   spaceBetween: 15,
   watchOverflow: true,
   autoplay: {
-    delay: 2500,
+    delay: 2000,
     disableOnInteraction: false
   },
   breakpoints: {

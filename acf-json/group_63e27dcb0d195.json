@@ -1,11 +1,11 @@
 {
-    "key": "group_6373e386ee512",
-    "title": "Shocklogic single iframe",
+    "key": "group_63e27dcb0d195",
+    "title": "Shocklogic buttons",
     "fields": [
         {
-            "key": "field_6373e3882442b",
-            "label": "Shocklogic single iframe group",
-            "name": "shocklogic_single_iframe_group",
+            "key": "field_63e27dcbed46d",
+            "label": "Shocklogic buttons group",
+            "name": "shocklogic_buttons_group",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -20,8 +20,8 @@
             "acfe_seamless_style": 1,
             "sub_fields": [
                 {
-                    "key": "field_6373f1deba774",
-                    "label": "Content tab",
+                    "key": "field_63e27deded46e",
+                    "label": "Buttons",
                     "name": "",
                     "aria-label": "",
                     "type": "accordion",
@@ -38,11 +38,11 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_6373e3fc2442e",
-                    "label": "iframe",
-                    "name": "iframe",
+                    "key": "field_63e27e0ded470",
+                    "label": "Buttons",
+                    "name": "buttons",
                     "aria-label": "",
-                    "type": "textarea",
+                    "type": "repeater",
                     "instructions": "",
                     "required": 1,
                     "conditional_logic": 0,
@@ -51,16 +51,37 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "acfe_textarea_code": 1,
-                    "maxlength": "",
-                    "rows": "",
-                    "placeholder": "",
-                    "new_lines": ""
+                    "acfe_repeater_stylised_button": 1,
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add button",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_63e27e50ed471",
+                            "label": "Link",
+                            "name": "link",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "parent_repeater": "field_63e27e0ded470"
+                        }
+                    ]
                 },
                 {
-                    "key": "field_639c64f70b2d1",
-                    "label": "Texts",
+                    "key": "field_63e27e00ed46f",
+                    "label": "Buttons settings",
                     "name": "",
                     "aria-label": "",
                     "type": "accordion",
@@ -77,71 +98,13 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_639c65050b2d2",
-                    "label": "Text above iframe",
-                    "name": "text_above_iframe",
-                    "aria-label": "",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0
-                },
-                {
-                    "key": "field_639c66b0d8a15",
-                    "label": "Text below iframe",
-                    "name": "text_below_iframe",
-                    "aria-label": "",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0
-                },
-                {
-                    "key": "field_6373f45cba775",
-                    "label": "Settings tab",
-                    "name": "",
-                    "aria-label": "",
-                    "type": "accordion",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "open": 0,
-                    "multi_expand": 0,
-                    "endpoint": 0
-                },
-                {
-                    "key": "field_63e307d3b185b",
-                    "label": "Iframe width",
-                    "name": "iframe_width",
+                    "key": "field_63e28441d379d",
+                    "label": "button style",
+                    "name": "button_style",
                     "aria-label": "",
                     "type": "select",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -149,10 +112,10 @@
                         "id": ""
                     },
                     "choices": {
-                        "full": "Occupied the full block",
-                        "dynamic": "Smaller and responsive behavior"
+                        "solid": "Solid",
+                        "bordered": "Bordered"
                     },
-                    "default_value": "full",
+                    "default_value": "solid",
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
@@ -161,6 +124,62 @@
                     "placeholder": "",
                     "allow_custom": 0,
                     "search_placeholder": ""
+                },
+                {
+                    "key": "field_63e284c2d379e",
+                    "label": "Main colour",
+                    "name": "main_colour",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#0d6efd",
+                    "enable_opacity": 0,
+                    "return_format": "string"
+                },
+                {
+                    "key": "field_63e284d5d379f",
+                    "label": "Secondary colour",
+                    "name": "secondary_colour",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#FFFFFF",
+                    "enable_opacity": 0,
+                    "return_format": "string"
+                },
+                {
+                    "key": "field_63e298104460a",
+                    "label": "Button width",
+                    "name": "button_width",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Add the minimal size all items will take on screen.\r\nYou can place any available size.\r\nEg.\r\n250px\r\n20rem\r\n20em",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "auto",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
                 }
             ],
             "acfe_group_modal": 0,
@@ -174,7 +193,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/shocklogic-single-iframe"
+                "value": "acf\/shocklogic-buttons"
             }
         ]
     ],
@@ -187,7 +206,7 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "acfe_display_title": "Shocklogic single iframe",
+    "acfe_display_title": "Shocklogic buttons",
     "acfe_autosync": [
         "php",
         "json"
@@ -195,7 +214,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1675823285,
+    "modified": 1675798302,
     "acfe_categories": {
         "shocklogic": "Shocklogic"
     }

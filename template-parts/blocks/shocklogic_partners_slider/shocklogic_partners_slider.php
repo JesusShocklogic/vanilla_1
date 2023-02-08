@@ -1,3 +1,4 @@
+<link rel="stylesheet" id="shocklogic_partners_slider" href="<?= get_template_directory_uri() . "/template-parts/blocks/shocklogic_partners_slider/shocklogic_partners_slider.css" ?>" type="text/css" media="all">
 <?php
 //Initialize Swiper
 wp_enqueue_style("swiper-css");
@@ -5,13 +6,28 @@ wp_enqueue_script("swiper-js");
 wp_enqueue_style("modal-partners");
 
 $shocklogic_partners_slider_group = get_field('shocklogic_partners_slider_group');
-$wp_query = get_query(get_field('query_settings'));
-$block_id = $block['id'];
-$background = $shocklogic_partners_slider_group['background_colour'];
-$avatar = default_partners_avatar();
+$wp_query = get_query(get_field('query_settings')['query_settings']);
 
+$general_settings = get_field('general_settings');
+$spacing = $general_settings['spacing'];
+
+$block_id = $block['id'];
+$background_colour = $general_settings['background_colour'];
+$avatar = default_partners_avatar(); ?>
+
+<style>
+	<?php
+	$classes = <<<ITEM
+	#$block_id{
+		background-color: $background_colour;
+	}
+	ITEM;
+	echo $classes;
+	?>
+</style>
+<?php
 if (isset($shocklogic_partners_slider_group) && $shocklogic_partners_slider_group != null) { ?>
-	<div class="shocklogic_partners_slider <?= $shocklogic_partners_slider_group['spacing'] ?>" id="<?= $block_id ?>">
+	<div class="shocklogic_partners_slider <?= $spacing ?>" id="<?= $block_id ?>">
 		<div class="shocklogic_partners_slider_wrapper">
 			<?php if ($shocklogic_partners_slider_group['title']) : ?>
 				<div class="shocklogic_partners_slider_wrapper_title">
@@ -191,17 +207,3 @@ if (isset($shocklogic_partners_slider_group) && $shocklogic_partners_slider_grou
 	} //if click behaviour == modal
 
 }
-?>
-
-<style>
-	<?php
-	$classes = <<<ITEM
-	#$block_id{
-		background-color: $background;
-	}
-	ITEM;
-
-	echo $classes;
-
-	?>
-</style>

@@ -1,6 +1,9 @@
 @use "../../../util/variables";
 @use "../../../util/breakpoints";
 .shocklogic_vertical_item_list {
+    &.contain {
+        @include variables.spacing;
+    }
     &_wrapper {
         position: relative;
         z-index: 0;

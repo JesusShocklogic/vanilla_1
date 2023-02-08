@@ -1,11 +1,11 @@
 {
-    "key": "group_6374ed0948fec",
-    "title": "Shocklogic blog",
+    "key": "group_63e2ab0200b2b",
+    "title": "General block settings",
     "fields": [
         {
-            "key": "field_6374ed0a26882",
-            "label": "Shocklogic blog group",
-            "name": "shocklogic_blog_group",
+            "key": "field_63e2ab0209969",
+            "label": "General settings",
+            "name": "general_settings",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -20,8 +20,8 @@
             "acfe_seamless_style": 1,
             "sub_fields": [
                 {
-                    "key": "field_63758d1cc0b90",
-                    "label": "Title tab",
+                    "key": "field_63e2ad0873fd8",
+                    "label": "General settings",
                     "name": "",
                     "aria-label": "",
                     "type": "accordion",
@@ -38,11 +38,11 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_6374f15426884",
-                    "label": "title",
-                    "name": "title",
+                    "key": "field_63e2ab2b32f3c",
+                    "label": "Background colour",
+                    "name": "background_colour",
                     "aria-label": "",
-                    "type": "wysiwyg",
+                    "type": "color_picker",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -52,17 +52,15 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0
+                    "enable_opacity": 0,
+                    "return_format": "string"
                 },
                 {
-                    "key": "field_6375a838c513b",
-                    "label": "Bottom tab",
-                    "name": "",
+                    "key": "field_63e2ac0e32f3d",
+                    "label": "Spacing",
+                    "name": "spacing",
                     "aria-label": "",
-                    "type": "accordion",
+                    "type": "select",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -71,29 +69,19 @@
                         "class": "",
                         "id": ""
                     },
-                    "open": 0,
-                    "multi_expand": 0,
-                    "endpoint": 0
-                },
-                {
-                    "key": "field_6375a84ac513c",
-                    "label": "Bottom text",
-                    "name": "bottom_text",
-                    "aria-label": "",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
+                    "choices": {
+                        "contain": "Contain",
+                        "fullscreen": "Full Screen"
                     },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0
+                    "default_value": "contain",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": ""
                 }
             ],
             "acfe_group_modal": 0,
@@ -107,11 +95,11 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/shocklogic-blog"
+                "value": "all"
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": -1,
     "position": "normal",
     "style": "default",
     "label_placement": "left",
@@ -120,7 +108,7 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "acfe_display_title": "Shocklogic blog",
+    "acfe_display_title": "General block settings",
     "acfe_autosync": [
         "php",
         "json"
@@ -128,8 +116,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1675806996,
-    "acfe_categories": {
-        "shocklogic": "Shocklogic"
-    }
+    "modified": 1675864141
 }

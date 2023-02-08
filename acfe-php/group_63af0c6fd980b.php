@@ -63,7 +63,7 @@ acf_add_local_field_group(array(
 				),
 				array(
 					'key' => 'field_63af0c700bacb',
-					'label' => 'Settings tab',
+					'label' => 'Settings',
 					'name' => '',
 					'aria-label' => '',
 					'type' => 'accordion',
@@ -78,24 +78,6 @@ acf_add_local_field_group(array(
 					'open' => 0,
 					'multi_expand' => 0,
 					'endpoint' => 0,
-				),
-				array(
-					'key' => 'field_63af0c700f4b6',
-					'label' => 'Background colour',
-					'name' => 'background_colour',
-					'aria-label' => '',
-					'type' => 'color_picker',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'wrapper' => array(
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'default_value' => '#fff',
-					'enable_opacity' => 0,
-					'return_format' => 'string',
 				),
 				array(
 					'key' => 'field_63c6ad1f8ca88',
@@ -253,7 +235,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'shocklogic' => 'Shocklogic',
 	),
-	'modified' => 1675455907,
+	'modified' => 1675862745,
 ));
 
 endif;

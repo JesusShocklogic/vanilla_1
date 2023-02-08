@@ -1,12 +1,30 @@
+<link rel="stylesheet" id="shocklogic_blog" href="<?= get_template_directory_uri() ?>/template-parts/blocks/shocklogic_blog/shocklogic_blog.css" type="text/css" media="all">
 <?php
 $shocklogic_blog_group = get_field('shocklogic_blog_group');
 $wp_query = get_query(get_field('query_settings'));
+
+$general_settings = get_field('general_settings');
+$spacing = $general_settings['spacing'];
+
 $block_id = $block['id'];
-$background = $shocklogic_blog_group['background_colour'];
-$placeholder = default_placeholder_image();
+
+$background_colour = $general_settings['background_colour'];
+$placeholder = default_placeholder_image(); ?>
+
+<style>
+	<?php
+	$classes = <<<ITEM
+	#$block_id{
+		background-color: $background_colour;
+	}
+	ITEM;
+	echo $classes;
+	?>
+</style>
+<?php
 
 if (isset($shocklogic_blog_group) && $shocklogic_blog_group != null) { ?>
-	<div class="shocklogic_blog" id="<?= $block_id ?>">
+	<div class="shocklogic_blog <?= $spacing ?>" id="<?= $block_id ?>">
 		<div class="shocklogic_blog_wrapper">
 			<?php if ($shocklogic_blog_group['title']) : ?>
 				<div class="shocklogic_blog_wrapper_title">
@@ -62,17 +80,3 @@ if (isset($shocklogic_blog_group) && $shocklogic_blog_group != null) { ?>
 	</div>
 <?php
 }
-?>
-
-<style>
-	<?php
-	$classes = <<<ITEM
-	#$block_id{
-		background-color: $background;
-	}
-	ITEM;
-
-	echo $classes;
-
-	?>
-</style>

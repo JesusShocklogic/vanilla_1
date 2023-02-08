@@ -61,7 +61,7 @@ acf_add_local_field_group(array(
 					'min' => 0,
 					'max' => 0,
 					'collapsed' => '',
-					'button_label' => 'Add Row',
+					'button_label' => 'Add option',
 					'rows_per_page' => 20,
 					'sub_fields' => array(
 						array(
@@ -413,7 +413,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'shocklogic' => 'Shocklogic',
 	),
-	'modified' => 1673549276,
+	'modified' => 1675881354,
 ));
 
 endif;

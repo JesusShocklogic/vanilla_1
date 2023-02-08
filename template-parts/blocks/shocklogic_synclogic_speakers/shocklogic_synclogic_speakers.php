@@ -1,9 +1,14 @@
+<link rel="stylesheet" id="shocklogic_synclogic_speakers" href="<?= get_template_directory_uri() ?>/template-parts/blocks/shocklogic_synclogic_speakers/shocklogic_synclogic_speakers.css" type="text/css" media="all">
 <?php
 wp_enqueue_style("modal-css");
 
 $shocklogic_synclogic_speakers_group = get_field('shocklogic_synclogic_speakers_group');
+
+$general_settings = get_field('general_settings');
+$spacing = $general_settings['spacing'];
+$background_colour = $general_settings['background_colour'];
+
 $block_id = $block['id'];
-$background = $shocklogic_synclogic_speakers_group['background_colour'];
 $avatar = default_speaker_avatar();
 
 $speakers = null;
@@ -20,12 +25,30 @@ if ($shocklogic_synclogic_speakers_group['content_select'] == "categories") {
 	$speakers = synclogic_get_all_speakers_by_categories($categories);
 }
 
+?>
+
+<style>
+	<?php
+	$classes = <<<ITEM
+	#$block_id{
+		background-color: $background_colour;
+	}
+	ITEM;
+
+	echo $classes;
+
+	?>
+</style>
+<?php
 if (isset($shocklogic_synclogic_speakers_group) && $shocklogic_synclogic_speakers_group != null) { ?>
-	<div class="shocklogic_synclogic_speakers" id="<?= $block_id ?>">
+	<div class="shocklogic_synclogic_speakers <?= $spacing ?>" id="<?= $block_id ?>">
 		<div class="shocklogic_synclogic_speakers_wrapper">
-			<div class="shocklogic_synclogic_speakers_wrapper_title">
-				<?= $shocklogic_synclogic_speakers_group['title'] ?>
-			</div>
+			<?php if ($shocklogic_synclogic_speakers_group['title']) : ?>
+				<div class="shocklogic_synclogic_speakers_wrapper_title">
+					<?= $shocklogic_synclogic_speakers_group['title'] ?>
+				</div>
+			<?php endif; ?>
+
 			<div class="shocklogic_synclogic_speakers_wrapper_speakers">
 				<?php
 				if ($speakers) {
@@ -49,14 +72,11 @@ if (isset($shocklogic_synclogic_speakers_group) && $shocklogic_synclogic_speaker
 				}
 				?>
 			</div>
-			<?php
-			if ($shocklogic_synclogic_speakers_group['bottom_text']) { ?>
+			<?php if ($shocklogic_synclogic_speakers_group['bottom_text']) : ?>
 				<div class="shocklogic_synclogic_speakers_wrapper_bottom_text">
 					<?= $shocklogic_synclogic_speakers_group['bottom_text'] ?>
 				</div>
-			<?php
-			}
-			?>
+			<?php endif; ?>
 		</div>
 	</div>
 
@@ -104,17 +124,3 @@ if (isset($shocklogic_synclogic_speakers_group) && $shocklogic_synclogic_speaker
 	</div>
 <?php
 }
-?>
-
-<style>
-	<?php
-	$classes = <<<ITEM
-	#$block_id{
-		background-color: $background;
-	}
-	ITEM;
-
-	echo $classes;
-
-	?>
-</style>

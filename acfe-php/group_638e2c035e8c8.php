@@ -7,6 +7,33 @@ acf_add_local_field_group(array(
 	'title' => 'Shocklogic speakers wordpress',
 	'fields' => array(
 		array(
+			'key' => 'field_63e39a5ab5682',
+			'label' => 'Query settings',
+			'name' => 'query_settings',
+			'aria-label' => '',
+			'type' => 'clone',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'clone' => array(
+				0 => 'group_63dbb940e25d2',
+			),
+			'display' => 'seamless',
+			'layout' => 'block',
+			'prefix_label' => 0,
+			'prefix_name' => 0,
+			'acfe_seamless_style' => 0,
+			'acfe_clone_modal' => 0,
+			'acfe_clone_modal_close' => 0,
+			'acfe_clone_modal_button' => '',
+			'acfe_clone_modal_size' => 'large',
+		),
+		array(
 			'key' => 'field_638e2c036e4b8',
 			'label' => 'Shocklogic speakers wordpress group',
 			'name' => 'shocklogic_speakers_wordpress_group',
@@ -60,42 +87,6 @@ acf_add_local_field_group(array(
 					'toolbar' => 'full',
 					'media_upload' => 1,
 					'delay' => 0,
-				),
-				array(
-					'key' => 'field_638e2c038c014',
-					'label' => 'Settings tab',
-					'name' => '',
-					'aria-label' => '',
-					'type' => 'accordion',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'wrapper' => array(
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'open' => 0,
-					'multi_expand' => 0,
-					'endpoint' => 0,
-				),
-				array(
-					'key' => 'field_638e2c038fa71',
-					'label' => 'Background colour',
-					'name' => 'background_colour',
-					'aria-label' => '',
-					'type' => 'color_picker',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'wrapper' => array(
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'default_value' => '#fff',
-					'enable_opacity' => 0,
-					'return_format' => 'string',
 				),
 				array(
 					'key' => 'field_638e2c03934f8',
@@ -171,7 +162,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'shocklogic' => 'Shocklogic',
 	),
-	'modified' => 1675455940,
+	'modified' => 1675860605,
 ));
 
 endif;

@@ -18,11 +18,7 @@
             position: relative;
             @include variables.aspect-ratio(16, 9);
 
-            &_text {
-                @include variables.banner_text_spacing;
-            }
-
-            &.contain {
+            &.dynamic {
                 width: 90%;
                 margin: 0 auto;
                 @media (min-width: breakpoints.$tablet) {
@@ -31,9 +27,6 @@
                 @media (min-width: breakpoints.$desktop_small) {
                     width: 75%;
                 }
-            }
-            &.fullwidth {
-                width: 100%;
             }
         }
     }
