@@ -36,6 +36,13 @@
                 &_right {
                 }
             }
+
+            &_footer{
+                display: block;
+                &_session{
+                    padding-bottom: 1rem;
+                }
+            }
         }
     }
 }

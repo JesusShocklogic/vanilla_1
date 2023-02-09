@@ -51,13 +51,11 @@ if (isset($shocklogic_synclogic_speakers_group) && $shocklogic_synclogic_speaker
 
 			<div class="shocklogic_synclogic_speakers_wrapper_speakers">
 				<?php
-				if ($speakers) {
+				if ($speakers) :
 					$content = "";
 					foreach ($speakers as $key => $speaker) {
 						$image_url = $speaker->image_profile ? $speaker->image_profile : $avatar;
-
-						$title = $speaker->speaker_name . " " . $speaker->speaker_family_name;
-				?>
+						$title = $speaker->speaker_name . " " . $speaker->speaker_family_name; ?>
 						<div class="shocklogic_synclogic_speakers_wrapper_speakers_speaker">
 							<a data-bs-toggle="modal" data-bs-target="#speaker-<?= $speaker->speaker_id ?>">
 								<img src="<?= $image_url ?>" alt="">
@@ -66,10 +64,9 @@ if (isset($shocklogic_synclogic_speakers_group) && $shocklogic_synclogic_speaker
 						</div>
 				<?php
 					} //foreach
-				} //if
-				else {
+				else :
 					echo "No posts were found";
-				}
+				endif;
 				?>
 			</div>
 			<?php if ($shocklogic_synclogic_speakers_group['bottom_text']) : ?>
@@ -112,7 +109,39 @@ if (isset($shocklogic_synclogic_speakers_group) && $shocklogic_synclogic_speaker
 									</div>
 								</div>
 							</div>
-							<div class="modal-footer d-none"></div>
+
+							<?php
+							$sessions = get_sessions_by_speaker_id($speaker->speaker_id);
+							if ($sessions) : ?>
+								<div class="modal-footer modal_dialog_content_footer">
+									<?php
+									foreach ($sessions as $key => $session) {
+										$session_title = $session->session_title ?? null;
+										$session_day_name = $session->session_day_name ?? null;
+										$start_time = $session->start_time ?? null;
+										$end_time = $sessions->end_time ?? null;
+
+									?>
+										<div class="modal_dialog_content_footer_session">
+											<?php if ($session_title) : ?>
+												<div class="modal_dialog_content_footer_session_title"><?= $session->session_title; ?></div>
+											<?php endif; ?>
+											<?php if ($session_day_name) : ?>
+												<div class="modal_dialog_content_footer_session_day_name"><?= $session->session_day_name; ?></div>
+											<?php endif; ?>
+											<?php if ($start_time) : ?>
+												<div class="modal_dialog_content_footer_time">
+													<?php if ($session->start_time) : echo $session->start_time;
+														if ($end_time) : echo " - " . $end_time;
+														endif;
+													endif; ?> <?= $session->start_time ?>
+												</div>
+											<?php endif; ?>
+										</div>
+									<?php } ?>
+								</div>
+							<?php
+							endif; ?>
 						</div>
 					</div>
 				</div>
