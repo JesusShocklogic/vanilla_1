@@ -405,18 +405,17 @@ CONTENT;
 
 		<div class="programme standard_padding">
 			<div class="container-fluid">
-				<div class="row justify-content-center">
-					<div class="col-12 pb-4">
-						<?php the_content(); ?>
-					</div>
-				</div>
-
 				<div class="row">
 					<div class="col-12">
 						<?= $programmeTabs; ?>
 					</div>
 					<div class="col-12">
 						<?= $fullProgramme; ?>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-12 pb-4">
+						<?php the_content(); ?>
 					</div>
 				</div>
 			</div>
