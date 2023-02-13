@@ -134,14 +134,13 @@ if (isset($shocklogic_synclogic_speakers_group) && $shocklogic_synclogic_speaker
 													<?php if ($session->start_time) : echo $session->start_time;
 														if ($end_time) : echo " - " . $end_time;
 														endif;
-													endif; ?> <?= $session->start_time ?>
+													endif; ?>
 												</div>
 											<?php endif; ?>
 										</div>
 									<?php } ?>
 								</div>
-							<?php
-							endif; ?>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>
