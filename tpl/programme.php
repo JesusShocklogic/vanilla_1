@@ -421,7 +421,6 @@ CONTENT;
 			</div>
 		</div>
 
-		<div><?= get_template_part('tpl/loop', 'speakers_modal', ["#f7931d", "#001763", "http://localhost/makeuk/wp-content/uploads/2022/09/user.jpg"]); ?></div>
 <?php
 	}
 	wp_reset_postdata();
