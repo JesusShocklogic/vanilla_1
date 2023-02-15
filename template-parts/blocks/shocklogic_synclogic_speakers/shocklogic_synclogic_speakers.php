@@ -11,6 +11,8 @@ $background_colour = $general_settings['background_colour'];
 $block_id = $block['id'];
 $avatar = default_speaker_avatar();
 
+$captions = $shocklogic_synclogic_speakers_group['captions_group'];
+
 $speakers = null;
 if ($shocklogic_synclogic_speakers_group['content_select'] == "all") {
 	$speakers = synclogic_get_all_speakers();
@@ -121,20 +123,51 @@ if (isset($shocklogic_synclogic_speakers_group) && $shocklogic_synclogic_speaker
 										$start_time = $session->start_time ?? null;
 										$end_time = $sessions->end_time ?? null;
 
+										$rol = "| ";
+										if ($session->IsSpeaker) :
+											$rol .= $captions['speaker'];
+										elseif ($session->IsChair) :
+											$rol .= $captions['chair'];
+										elseif ($session->IsCoChair) :
+											$rol .= $captions['co_chair'];
+										endif;
+
+										$presentations = get_presentations_by_speaker_and_author($speaker->speaker_id, $speaker->speaker_email, $session->session_id);
 									?>
 										<div class="modal_dialog_content_footer_session">
 											<?php if ($session_title) : ?>
-												<div class="modal_dialog_content_footer_session_title"><?= $session->session_title; ?></div>
+												<div>
+													<div class="modal_dialog_content_footer_session_title"><?= $session->session_title; ?></div>
+													<div class="modal_dialog_content_footer_session_rol"><?= $rol; ?></div>
+												</div>
 											<?php endif; ?>
-											<?php if ($session_day_name) : ?>
-												<div class="modal_dialog_content_footer_session_day_name"><?= $session->session_day_name; ?></div>
-											<?php endif; ?>
-											<?php if ($start_time) : ?>
-												<div class="modal_dialog_content_footer_time">
-													<?php if ($session->start_time) : echo $session->start_time;
-														if ($end_time) : echo " - " . $end_time;
-														endif;
-													endif; ?>
+
+											<div>
+												<?php if ($session_day_name) : ?>
+													<div class="modal_dialog_content_footer_session_day_name"><?= $session->session_day_name; ?></div>
+												<?php endif; ?>
+												<?php if ($start_time) : ?>
+													<div class="modal_dialog_content_footer_session_time">
+														<?php if ($session->start_time) : echo " | " . $session->start_time;
+															if ($end_time) : echo " - " . $end_time;
+															endif;
+														endif; ?>
+													</div>
+												<?php endif; ?>
+											</div>
+
+											<?php if ($presentations) : ?>
+												<div class="modal_dialog_content_footer_session_presentations">
+													<?php
+													if ($captions['presentations_title']) : ?>
+														<div class="modal_dialog_content_footer_session_presentations_title"><?= $captions['presentations_title'] ?></div>
+													<?php endif; ?>
+													<ul class="modal_dialog_content_footer_session_presentations_presentation">
+														<?php foreach ($presentations as $key => $presentation) { ?>
+															<li class="modal_dialog_content_footer_session_presentations_presentation_title"><?= $presentation->presentation_title ?></li>
+														<?php } //foreach 
+														?>
+													</ul>
 												</div>
 											<?php endif; ?>
 										</div>
