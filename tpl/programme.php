@@ -4,6 +4,13 @@
 * Description: Programme sort by start time. Sessions have the same start time and the same end time.
 */
 get_header();
+$programme_group = get_field('programme_group');
+
+$chairs = $programme_group['chairs'];
+$session_time = $programme_group['session_time'];
+$presentation_time = $programme_group['presentation_time'];
+$presentation_title = $programme_group['presentation_title'];
+$speakerauthors = $programme_group['speakerauthors'];
 
 function getCurrentDate($timezone, $format, $additionalMinutes = 0)
 {
@@ -40,12 +47,30 @@ if (have_posts()) {
 		$DayTab = isset($_GET['DayTab']) ? $_GET['DayTab'] : null;
 ?>
 		<style>
-			.grey-background:nth-child(even) {
-				background: lightgray;
-			}
-
 			.programme {
 				padding-bottom: 2rem;
+			}
+
+			.session-title {
+				font-weight: bold;
+				color: <?= $programme_group['title_colour'] ?? "black"; ?>;
+				text-align: <?= $programme_group['title_alignment'] ?? "left"; ?>;
+			}
+
+			.presentations {
+				display: <?php if ($programme_group['showhide_presentation_table'] == "show") echo "block";
+							else echo "none"; ?>;
+			}
+
+			.presentations thead {
+				display: <?php if ($programme_group['presentation_group']['presentations_table_header'] == "show") echo "table-header-group";
+							else echo "none"; ?>;
+			}
+
+			.presentations .presentation_time,
+			.presentations .thead_presentation_time {
+				display: <?php if ($programme_group['presentation_group']['presentation_time_column'] == "show") echo "block";
+							else echo "none"; ?>;
 			}
 		</style>
 		<?php
@@ -161,7 +186,7 @@ CONTENT;
                     * Chair Speakers Builder
                     */
 					if (!empty($speakers)) {
-						$speakersContent = "<div><strong>Chair(s): </strong>";
+						$speakersContent = "<div><strong>$chairs: </strong>";
 						foreach ($speakers as $key4 => $speaker) {
 							$id = $speaker->speaker_id;
 							$name = $speaker->speaker_name;
@@ -254,9 +279,9 @@ AUTHOR;
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th class="text-nowrap" scope="col">Pres Time</th>
-                                            <th scope="col">Presentation title</th>
-                                            <th scope="col">Speaker/Authors</th>
+                                            <th class="text-nowrap thead_presentation_time" scope="col">$presentation_time</th>
+                                            <th scope="col">$presentation_title</th>
+                                            <th scope="col">$speakerauthors</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -315,16 +340,16 @@ IMG;
                             <!-- Sessions Info -->
                             <div class="col-12 col-lg px-5 px-lg-2 session $speakerIsConnect">
                                 <div>
-                                    <h4 class="session-title">$title </h4>
+                                    <h5 class="session-title">$title </h5>
                                     $titleImg
 									$sessionHTML
                                     
                                     $room
                                     $speakersContent
                                     $sessionType
-                                    <div><strong>Session time: </strong>$sessionTime</div>
+                                    <div><strong>$session_time: </strong>$sessionTime</div>
                                 </div>
-                                <div>$tableContent</div>
+                                <div class="presentations">$tableContent</div>
                             </div>
 CONTENT;
 
@@ -339,7 +364,7 @@ CONTENT;
 
 				$timeContent .= <<<CONTENT
                     <!-- Sessions Times -->
-                    <div class="container-fluid row grey-background">
+                    <div class="container-fluid row">
                         <div class="col-12 col-lg px-5 d-flex justify-content-center align-items-center" style="border-right: 2px solid #ededed;border-bottom: 2px solid #ededed;">
                             <strong>
                                 <h5>$time - $lastSessionEndTime</h5>
@@ -417,11 +442,6 @@ CONTENT;
 			table tbody tr:first-child {
 				background-color: unset !important;
 				color: #000000;
-			}
-
-			h4.session-title {
-				text-align: center;
-				color: black;
 			}
 		</style>
 
