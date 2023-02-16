@@ -156,6 +156,18 @@ if (isset($shocklogic_synclogic_speakers_group) && $shocklogic_synclogic_speaker
 												<?php endif; ?>
 											</div>
 
+											<?php if ($shocklogic_synclogic_speakers_group['link_to_programme'] == "link_to_programme") :
+												$programme_page_link = isset($shocklogic_synclogic_speakers_group['programme_page_link']) ? $shocklogic_synclogic_speakers_group['programme_page_link'] : null;
+												if ($programme_page_link) :
+													$getTab = getDayProgrammeTab($session->session_day); ?>
+													<div>
+														<a href="<?= $programme_page_link . "?DayTab=" . $getTab . "&SessionId=" . $session->session_id ?>">
+															<?= $shocklogic_synclogic_speakers_group['programme_link_caption'] ?>
+														</a>
+													</div>
+											<?php endif;
+											endif; ?>
+
 											<?php if ($presentations) : ?>
 												<div class="modal_dialog_content_footer_session_presentations">
 													<?php
