@@ -206,6 +206,34 @@ acf_add_local_field_group(array(
 					'search_placeholder' => '',
 				),
 				array(
+					'key' => 'field_63ee8ca8d252a',
+					'label' => 'Show/hide session time',
+					'name' => 'showhide_session_time',
+					'aria-label' => '',
+					'type' => 'select',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array(
+						'show' => 'Show',
+						'hide' => 'Hide',
+					),
+					'default_value' => 'show',
+					'return_format' => 'value',
+					'multiple' => 0,
+					'allow_null' => 0,
+					'ui' => 0,
+					'ajax' => 0,
+					'placeholder' => '',
+					'allow_custom' => 0,
+					'search_placeholder' => '',
+				),
+				array(
 					'key' => 'field_63ee596f6ab08',
 					'label' => 'Presentations',
 					'name' => '',
@@ -374,7 +402,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'template' => 'Template',
 	),
-	'modified' => 1676571705,
+	'modified' => 1676577993,
 ));
 
 endif;

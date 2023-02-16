@@ -72,6 +72,11 @@ if (have_posts()) {
 				display: <?php if ($programme_group['presentation_group']['presentation_time_column'] == "show") echo "block";
 							else echo "none"; ?>;
 			}
+
+			.session_time {
+				display: <?php if ($programme_group['showhide_session_time'] == "show") echo "block";
+							else echo "none"; ?>
+			}
 		</style>
 		<?php
 
@@ -347,7 +352,7 @@ IMG;
                                     $room
                                     $speakersContent
                                     $sessionType
-                                    <div><strong>$session_time: </strong>$sessionTime</div>
+                                    <div class="session_time"><strong>$session_time: </strong>$sessionTime</div>
                                 </div>
                                 <div class="presentations">$tableContent</div>
                             </div>

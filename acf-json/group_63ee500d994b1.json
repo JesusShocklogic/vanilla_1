@@ -202,6 +202,34 @@
                     "search_placeholder": ""
                 },
                 {
+                    "key": "field_63ee8ca8d252a",
+                    "label": "Show\/hide session time",
+                    "name": "showhide_session_time",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "show": "Show",
+                        "hide": "Hide"
+                    },
+                    "default_value": "show",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": ""
+                },
+                {
                     "key": "field_63ee596f6ab08",
                     "label": "Presentations",
                     "name": "",
@@ -367,7 +395,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1676571705,
+    "modified": 1676577993,
     "acfe_categories": {
         "template": "Template"
     }
