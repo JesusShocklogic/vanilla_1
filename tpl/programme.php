@@ -105,8 +105,19 @@ TABS;
 		// GETTING THE DAYS
 		foreach ($days as $key => $day) {
 			$dayContent = "";
+			if (isset($DayTab) && $DayTab == $key) {
+				$dayContent .= <<<CONTENT
+                    <div class="tab-pane fade show active" id="list-$key" role="tabpanel" aria-labelledby="list-$key-list">
+                        <div class="row">
+CONTENT;
+			} elseif (isset($DayTab) && $DayTab != $key) {
+				$dayContent .= <<<CONTENT
+                    <div class="tab-pane fade" id="list-$key" role="tabpanel" aria-labelledby="list-$key-list">
+                        <div class="row">
+CONTENT;
+			}
 			//if this is the first interaction and (our current day is before the start of the event or our current day is after the days of the event)
-			if ($key == 0 && (getCurrentDate($timezone, 'Y-m-d') < $days[$firstDay]->session_day || getCurrentDate($timezone, 'Y-m-d') > $days[$lastDay]->session_day)) {
+			elseif ($key == 0 && (getCurrentDate($timezone, 'Y-m-d') < $days[$firstDay]->session_day || getCurrentDate($timezone, 'Y-m-d') > $days[$lastDay]->session_day)) {
 				$dayContent .= <<<CONTENT
                     <div class="tab-pane fade show active" id="list-$key" role="tabpanel" aria-labelledby="list-$key-list">
                         <div class="row">
@@ -120,7 +131,7 @@ CONTENT;
 				$dayContent .= <<<CONTENT
                     <div class="tab-pane fade" id="list-$key" role="tabpanel" aria-labelledby="list-$key-list">
                         <div class="row">
-                    CONTENT;
+CONTENT;
 			}
 
 			//GETTING THE START TIMES
@@ -289,9 +300,20 @@ IMG;
 
 					$sessionHTML = $session->session_html;
 					$sessionTime = $session->start_time . " - " . $session->end_time;
+					$speakerIsConnect = "";
+
+					//get Session Id of the speaker
+					if ($_GET) {
+						if (!empty($_GET['SessionId'])) {
+							if ($session->session_id == $_GET['SessionId']) {
+								$speakerIsConnect = "scroll-to-speaker";
+							}
+						}
+					}
+
 					$sessionsContent .= <<<CONTENT
                             <!-- Sessions Info -->
-                            <div class="col-12 col-lg px-5 px-lg-2 session">
+                            <div class="col-12 col-lg px-5 px-lg-2 session $speakerIsConnect">
                                 <div>
                                     <h4 class="session-title">$title </h4>
                                     $titleImg
@@ -428,6 +450,14 @@ CONTENT;
 	echo "No content was found";
 }
 get_footer(); ?>
+
+<script>
+	var speakerScroll = $(".scroll-to-speaker").offset();
+
+	if (speakerScroll !== undefined) {
+		scroll(0, speakerScroll.top);
+	}
+</script>
 
 <script>
 	var elements = document.getElementsByClassName("btn-favorites");
