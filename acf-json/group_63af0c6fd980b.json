@@ -162,6 +162,90 @@
                     ]
                 },
                 {
+                    "key": "field_63ee3cf654b34",
+                    "label": "Link to programme",
+                    "name": "link_to_programme",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Enable a link in the Speaker modal to link the session to the respective information in the programme page.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "no_link": "No link",
+                        "link_to_programme": "Add a link in sessions"
+                    },
+                    "default_value": "no_link",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": ""
+                },
+                {
+                    "key": "field_63ee3d5c54b35",
+                    "label": "Programme page link",
+                    "name": "programme_page_link",
+                    "aria-label": "",
+                    "type": "page_link",
+                    "instructions": "The programme page MUST be using the programme page template",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_63ee3cf654b34",
+                                "operator": "==",
+                                "value": "link_to_programme"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "taxonomy": "",
+                    "allow_archives": 1,
+                    "multiple": 0,
+                    "allow_null": 0
+                },
+                {
+                    "key": "field_63ee4631e9b49",
+                    "label": "Programme link caption",
+                    "name": "programme_link_caption",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Text to be use as the link.",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_63ee3cf654b34",
+                                "operator": "==",
+                                "value": "link_to_programme"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Check it in programme",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
                     "key": "field_63af0c7012f81",
                     "label": "Bottom tab",
                     "name": "",
@@ -349,7 +433,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1676475372,
+    "modified": 1676560050,
     "acfe_categories": {
         "shocklogic": "Shocklogic"
     }
