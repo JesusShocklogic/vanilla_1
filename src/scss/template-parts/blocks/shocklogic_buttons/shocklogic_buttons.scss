@@ -2,7 +2,9 @@
 @use "../../../util/breakpoints";
 
 .shocklogic_buttons {
-    @include variables.spacing;
+    &_contain {
+        @include variables.spacing;
+    }
 
     &_wrapper {
         &_buttons {

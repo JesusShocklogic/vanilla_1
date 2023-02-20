@@ -18,6 +18,10 @@
             },
             "layout": "block",
             "acfe_seamless_style": 1,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large",
             "sub_fields": [
                 {
                     "key": "field_63d2d257bc9d9",
@@ -51,12 +55,12 @@
                         "id": ""
                     },
                     "acfe_repeater_stylised_button": 1,
-                    "layout": "",
+                    "layout": "table",
                     "pagination": 0,
                     "min": 0,
                     "max": 0,
                     "collapsed": "",
-                    "button_label": "Add Row",
+                    "button_label": "Add Column",
                     "rows_per_page": 20,
                     "sub_fields": [
                         {
@@ -151,6 +155,10 @@
                     },
                     "layout": "block",
                     "acfe_seamless_style": 1,
+                    "acfe_group_modal": 0,
+                    "acfe_group_modal_close": 0,
+                    "acfe_group_modal_button": "",
+                    "acfe_group_modal_size": "large",
                     "sub_fields": [
                         {
                             "key": "field_63d4394f3cee2",
@@ -269,11 +277,7 @@
                             "ajax": 0,
                             "placeholder": ""
                         }
-                    ],
-                    "acfe_group_modal": 0,
-                    "acfe_group_modal_close": 0,
-                    "acfe_group_modal_button": "",
-                    "acfe_group_modal_size": "large"
+                    ]
                 },
                 {
                     "key": "field_63d4438d9e8ba",
@@ -299,6 +303,10 @@
                     },
                     "layout": "block",
                     "acfe_seamless_style": 1,
+                    "acfe_group_modal": 0,
+                    "acfe_group_modal_close": 0,
+                    "acfe_group_modal_button": "",
+                    "acfe_group_modal_size": "large",
                     "sub_fields": [
                         {
                             "key": "field_63d4438d9e8bb",
@@ -417,11 +425,7 @@
                             "ajax": 0,
                             "placeholder": ""
                         }
-                    ],
-                    "acfe_group_modal": 0,
-                    "acfe_group_modal_close": 0,
-                    "acfe_group_modal_button": "",
-                    "acfe_group_modal_size": "large"
+                    ]
                 },
                 {
                     "key": "field_63d444dd0dd41",
@@ -447,6 +451,10 @@
                     },
                     "layout": "block",
                     "acfe_seamless_style": 1,
+                    "acfe_group_modal": 0,
+                    "acfe_group_modal_close": 0,
+                    "acfe_group_modal_button": "",
+                    "acfe_group_modal_size": "large",
                     "sub_fields": [
                         {
                             "key": "field_63d444dd0dd42",
@@ -565,11 +573,7 @@
                             "ajax": 0,
                             "placeholder": ""
                         }
-                    ],
-                    "acfe_group_modal": 0,
-                    "acfe_group_modal_close": 0,
-                    "acfe_group_modal_button": "",
-                    "acfe_group_modal_size": "large"
+                    ]
                 },
                 {
                     "key": "field_63adf30c7dd7d",
@@ -606,11 +610,7 @@
                     "enable_opacity": 0,
                     "return_format": ""
                 }
-            ],
-            "acfe_group_modal": 0,
-            "acfe_group_modal_close": 0,
-            "acfe_group_modal_button": "",
-            "acfe_group_modal_size": "large"
+            ]
         }
     ],
     "location": [
@@ -639,7 +639,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1675368302,
+    "modified": 1676858368,
     "acfe_categories": {
         "theme-settings": "Theme settings"
     }
