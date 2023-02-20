@@ -1,10 +1,15 @@
 <link rel="stylesheet" id="shocklogic_buttons" href="<?= get_template_directory_uri() . "/template-parts/blocks/shocklogic_buttons/shocklogic_buttons.css" ?>" type="text/css" media="all">
 <?php
 $shocklogic_buttons_group = get_field('shocklogic_buttons_group');
+
+$general_settings = get_field('general_settings');
+$spacing = $general_settings['spacing'];
+
 $block_id = $block['id'];
+$background_colour = $general_settings['background_colour'];
 
 $width = $shocklogic_buttons_group['button_width'] ?? "auto";
-if($shocklogic_buttons_group['button_width'] != "auto"){
+if ($shocklogic_buttons_group['button_width'] != "auto") {
 	$width = "min(100%, $width)";
 }
 
@@ -31,7 +36,7 @@ endif;
 	<?php
 	$classes = <<<ITEM
 	#$block_id{
-		background-color: $background;
+		background-color: $background_colour;
 	}
 	#$block_id .shocklogic_buttons_wrapper_buttons_button{
 		width: $width;
@@ -57,7 +62,7 @@ endif;
 
 if ($shocklogic_buttons_group) : ?>
 
-	<div class="shocklogic_buttons" id="<?= $block_id ?>">
+	<div class="shocklogic_buttons <?= $spacing ?>" id="<?= $block_id ?>">
 		<div class="shocklogic_buttons_wrapper">
 			<?php
 			$buttons = $shocklogic_buttons_group['buttons'];
