@@ -6,11 +6,11 @@
 get_header();
 $programme_group = get_field('programme_group');
 
-$chairs = $programme_group['chairs'];
-$session_time = $programme_group['session_time'];
-$presentation_time = $programme_group['presentation_time'];
-$presentation_title = $programme_group['presentation_title'];
-$speakerauthors = $programme_group['speakerauthors'];
+$chairs = $programme_group['chairs'] ?? "Chair(s)";
+$session_time = $programme_group['session_time'] ?? "Session time";
+$presentation_time = $programme_group['presentation_time'] ?? "Pres Time";
+$presentation_title = $programme_group['presentation_title'] ?? "Presentation title";
+$speakerauthors = $programme_group['speakerauthors'] ?? "Speaker/Authors";
 
 function getCurrentDate($timezone, $format, $additionalMinutes = 0)
 {
@@ -60,6 +60,10 @@ if (have_posts()) {
 			.presentations {
 				display: <?php if ($programme_group['showhide_presentation_table'] == "show") echo "block";
 							else echo "none"; ?>;
+			}
+
+			.presentations table {
+				margin-top: 5px;
 			}
 
 			.presentations thead {
@@ -431,8 +435,8 @@ CONTENT;
 
 			.session {
 				border-bottom: 2px solid #ededed;
-				padding-top: 1rem;
-				padding-bottom: 2rem;
+				padding-top: 1.5rem;
+				padding-bottom: 1.5rem;
 			}
 
 			table thead tr {
