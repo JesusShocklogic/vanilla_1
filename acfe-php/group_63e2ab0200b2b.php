@@ -8,7 +8,7 @@ acf_add_local_field_group(array(
 	'fields' => array(
 		array(
 			'key' => 'field_63e2ab0209969',
-			'label' => 'General settings',
+			'label' => '',
 			'name' => 'general_settings',
 			'aria-label' => '',
 			'type' => 'group',
@@ -22,10 +22,6 @@ acf_add_local_field_group(array(
 			),
 			'layout' => 'block',
 			'acfe_seamless_style' => 1,
-			'acfe_group_modal' => 0,
-			'acfe_group_modal_close' => 0,
-			'acfe_group_modal_button' => '',
-			'acfe_group_modal_size' => 'large',
 			'sub_fields' => array(
 				array(
 					'key' => 'field_63e2ad0873fd8',
@@ -92,6 +88,10 @@ acf_add_local_field_group(array(
 					'search_placeholder' => '',
 				),
 			),
+			'acfe_group_modal' => 0,
+			'acfe_group_modal_close' => 0,
+			'acfe_group_modal_button' => '',
+			'acfe_group_modal_size' => 'large',
 		),
 	),
 	'location' => array(
@@ -120,7 +120,10 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1675959914,
+	'acfe_categories' => array(
+		'block-general' => 'Block - General',
+	),
+	'modified' => 1677278623,
 ));
 
 endif;

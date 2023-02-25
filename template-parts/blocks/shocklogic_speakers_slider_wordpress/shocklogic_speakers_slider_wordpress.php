@@ -13,7 +13,17 @@ $spacing = $general_settings['spacing'];
 
 $block_id = $block['id'];
 $background = $general_settings['background_colour'];
-$avatar = default_speaker_avatar(); ?>
+$avatar = default_speaker_avatar();
+
+//Speaker's modal
+$speakers_modal = get_field('speakers_modal');
+
+$show_job_title = $speakers_modal['show_job_title'] ? "block" : "none";
+$show_company_name = $speakers_modal['show_company_name'] ? "block" : "none";
+
+$speaker_name_colour = $speakers_modal['speaker_name_colour'] ?? "#000";
+$job_title_colour = $speakers_modal['job_title_colour'] ?? "#000";
+$company_name_colour = $speakers_modal['company_name_colour'] ?? "#000"; ?>
 
 <style>
 	<?php
@@ -21,6 +31,11 @@ $avatar = default_speaker_avatar(); ?>
 	#$block_id{
 		background-color: $background;
 	}
+
+	#$block_id .modal_dialog_content_body_left_name{color: $speaker_name_colour;}
+	#$block_id .modal_dialog_content_body_left_jobtitle{display: $show_job_title; color: $job_title_colour;}
+	#$block_id .modal_dialog_content_body_left_companyname{display: $show_job_title; color: $company_name_colour;}
+	
 	ITEM;
 
 	echo $classes;
@@ -82,7 +97,7 @@ if (isset($shocklogic_speakers_slider_wordpress_group) && $shocklogic_speakers_s
 		</div>
 	</div>
 
-	<div class="shocklogic_speakers_slider_wordpress_wrapper_modals">
+	<div class="shocklogic_speakers_slider_wordpress_wrapper_modals" id="<?= $block_id ?>">
 		<?php
 		if ($wp_query->have_posts()) {
 			while ($wp_query->have_posts()) {
@@ -107,9 +122,9 @@ if (isset($shocklogic_speakers_slider_wordpress_group) && $shocklogic_speakers_s
 									<div class="modal_dialog_content_body_left_image">
 										<img src="<?= $image_url ?>" alt="">
 									</div>
-									<strong><?= $title ?></strong>
-									<div><?= ($speaker_wordpress_group['job_title'] ?? '') ?></div>
-									<div><?= ($speaker_wordpress_group['company_organizarion'] ?? '') ?></div>
+									<strong class="modal_dialog_content_body_left_name"><?= $title ?></strong>
+									<div class="modal_dialog_content_body_left_jobtitle"><?= ($speaker_wordpress_group['job_title'] ?? '') ?></div>
+									<div class="modal_dialog_content_body_left_companyname"><?= ($speaker_wordpress_group['company_organizarion'] ?? '') ?></div>
 								</div>
 								<div class="modal_dialog_content_body_right">
 									<div class="modal_dialog_content_body_right_content">
