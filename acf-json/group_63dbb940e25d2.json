@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_63dbb940ebbc4",
-            "label": "Query settings",
+            "label": "",
             "name": "query_settings",
             "aria-label": "",
             "type": "group",
@@ -18,10 +18,6 @@
             },
             "layout": "block",
             "acfe_seamless_style": 1,
-            "acfe_group_modal": 0,
-            "acfe_group_modal_close": 0,
-            "acfe_group_modal_button": "",
-            "acfe_group_modal_size": "large",
             "sub_fields": [
                 {
                     "key": "field_63dbbd68384af",
@@ -185,7 +181,11 @@
                     "allow_custom": 0,
                     "search_placeholder": ""
                 }
-            ]
+            ],
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
         }
     ],
     "location": [
@@ -214,5 +214,8 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1676856809
+    "modified": 1677278659,
+    "acfe_categories": {
+        "block-queries": "Block - queries"
+    }
 }

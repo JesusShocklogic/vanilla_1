@@ -27,7 +27,15 @@ if ($shocklogic_synclogic_speakers_group['content_select'] == "categories") {
 	$speakers = synclogic_get_all_speakers_by_categories($categories);
 }
 
-?>
+//Speaker's modal
+$speakers_modal = get_field('speakers_modal');
+
+$show_job_title = $speakers_modal['show_job_title'] ? "block" : "none";
+$show_company_name = $speakers_modal['show_company_name'] ? "block" : "none";
+
+$speaker_name_colour = $speakers_modal['speaker_name_colour'] ?? "#000";
+$job_title_colour = $speakers_modal['job_title_colour'] ?? "#000";
+$company_name_colour = $speakers_modal['company_name_colour'] ?? "#000"; ?>
 
 <style>
 	<?php
@@ -35,6 +43,11 @@ if ($shocklogic_synclogic_speakers_group['content_select'] == "categories") {
 	#$block_id{
 		background-color: $background_colour;
 	}
+
+	#$block_id .modal_dialog_content_body_left_name{color: $speaker_name_colour;}
+	#$block_id .modal_dialog_content_body_left_jobtitle{display: $show_job_title; color: $job_title_colour;}
+	#$block_id .modal_dialog_content_body_left_companyname{display: $show_job_title; color: $company_name_colour;}
+	
 	ITEM;
 
 	echo $classes;
@@ -79,7 +92,7 @@ if (isset($shocklogic_synclogic_speakers_group) && $shocklogic_synclogic_speaker
 		</div>
 	</div>
 
-	<div class="shocklogic_synclogic_speakers_wrapper_modals">
+	<div class="shocklogic_synclogic_speakers_wrapper_modals" id="<?= $block_id ?>">
 		<?php
 		if ($speakers) {
 			$content = "";
@@ -101,9 +114,9 @@ if (isset($shocklogic_synclogic_speakers_group) && $shocklogic_synclogic_speaker
 									<div class="modal_dialog_content_body_left_image">
 										<img src="<?= $image_url ?>" alt="">
 									</div>
-									<strong><?= $title ?></strong>
-									<div><?= ($speaker->job_title ?? '') ?></div>
-									<div><?= ($speaker->company ?? '') ?></div>
+									<strong class="modal_dialog_content_body_left_name"><?= $title ?></strong>
+									<div class="modal_dialog_content_body_left_jobtitle"><?= ($speaker->job_title ?? '') ?></div>
+									<div class="modal_dialog_content_body_left_companyname"><?= ($speaker->company ?? '') ?></div>
 								</div>
 								<div class="modal_dialog_content_body_right">
 									<div class="modal_dialog_content_body_right_content">
