@@ -180,16 +180,17 @@ if (isset($shocklogic_synclogic_speakers_group) && $shocklogic_synclogic_speaker
 													</div>
 											<?php endif;
 											endif; ?>
-
-											<?php if ($presentations) : ?>
+											<?php if (count($presentations) > 0) : ?>
 												<div class="modal_dialog_content_footer_session_presentations">
 													<?php
 													if ($captions['presentations_title']) : ?>
 														<div class="modal_dialog_content_footer_session_presentations_title"><?= $captions['presentations_title'] ?></div>
 													<?php endif; ?>
 													<ul class="modal_dialog_content_footer_session_presentations_presentation">
-														<?php foreach ($presentations as $key => $presentation) { ?>
-															<li class="modal_dialog_content_footer_session_presentations_presentation_title"><?= $presentation->presentation_title ?></li>
+														<?php foreach ($presentations as $key => $presentation) {
+															if ($presentation->presentation_title != "") : ?>
+																<li class="modal_dialog_content_footer_session_presentations_presentation_title"><?= $presentation->presentation_title ?></li>
+															<?php endif; ?>
 														<?php } //foreach 
 														?>
 													</ul>

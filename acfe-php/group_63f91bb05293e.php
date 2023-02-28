@@ -185,7 +185,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'speakers' => 'Speakers',
 	),
-	'modified' => 1677281733,
+	'modified' => 1677535817,
 ));
 
 endif;

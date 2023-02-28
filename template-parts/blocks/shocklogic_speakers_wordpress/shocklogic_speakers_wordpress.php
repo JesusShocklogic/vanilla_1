@@ -15,8 +15,8 @@ $avatar = default_speaker_avatar();
 //Speaker's modal
 $speakers_modal = get_field('speakers_modal');
 
-$show_job_title = $speakers_modal['show_job_title'] ? "block" : "none";
-$show_company_name = $speakers_modal['show_company_name'] ? "block" : "none";
+$show_job_title = (isset($speakers_modal['show_job_title']) && $speakers_modal['show_job_title']) ? "block" : "none";
+$show_company_name = (isset($speakers_modal['show_company_name']) && $speakers_modal['show_company_name']) ? "block" : "none";
 
 $speaker_name_colour = $speakers_modal['speaker_name_colour'] ?? "#000";
 $job_title_colour = $speakers_modal['job_title_colour'] ?? "#000";
@@ -31,7 +31,7 @@ $company_name_colour = $speakers_modal['company_name_colour'] ?? "#000"; ?>
 
 	#$block_id .modal_dialog_content_body_left_name{color: $speaker_name_colour;}
 	#$block_id .modal_dialog_content_body_left_jobtitle{display: $show_job_title; color: $job_title_colour;}
-	#$block_id .modal_dialog_content_body_left_companyname{display: $show_job_title; color: $company_name_colour;}
+	#$block_id .modal_dialog_content_body_left_companyname{display: $show_company_name; color: $company_name_colour;}
 	ITEM;
 	echo $classes;
 	?>
