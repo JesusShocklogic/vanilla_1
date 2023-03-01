@@ -8,7 +8,7 @@
             "name": "general_social_icons",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "",
+            "instructions": "Please keep in mind that the social icon bar will disappear for smaller resolutions",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -46,7 +46,77 @@
             },
             "layout": "block",
             "acfe_seamless_style": 1,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large",
             "sub_fields": [
+                {
+                    "key": "field_63ff8e23db7f6",
+                    "label": "Background colour",
+                    "name": "background_colour",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "rgba(32,32,32,0.5)",
+                    "enable_opacity": 1,
+                    "return_format": "string"
+                },
+                {
+                    "key": "field_63ff90a9d8837",
+                    "label": "Bar position",
+                    "name": "bar_position",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "right": "Right",
+                        "left": "Left"
+                    },
+                    "default_value": "right",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": ""
+                },
+                {
+                    "key": "field_63ff90c9d8838",
+                    "label": "Distance from the screen edge",
+                    "name": "distance_from_the_screen_edge",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Space between the bar and the edge of the screen.\r\nMUST add the space unit after the number with no spaces in between.\r\nExample: 5px , 2rem , 10%",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "0px",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
                 {
                     "key": "field_6399341738167",
                     "label": "Icons",
@@ -118,11 +188,7 @@
                         }
                     ]
                 }
-            ],
-            "acfe_group_modal": 0,
-            "acfe_group_modal_close": 0,
-            "acfe_group_modal_button": "",
-            "acfe_group_modal_size": "large"
+            ]
         }
     ],
     "location": [
@@ -151,8 +217,8 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1675368278,
+    "modified": 1677694110,
     "acfe_categories": {
-        "theme-settings": "Theme settings"
+        "theme": "Theme"
     }
 }
