@@ -6,11 +6,15 @@ include("includes/index.php");
 */
 function default_speaker_avatar()
 {
-    if (isset(get_field('general_theme_settings_group', "option")['avatar_for_speakers']['url'])) {
-        return get_field('general_theme_settings_group', "option")['avatar_for_speakers']['url'];
-    } else {
+    if (class_exists('ACF')) :
+        if (isset(get_field('general_theme_settings_group', "option")['avatar_for_speakers']['url'])) {
+            return get_field('general_theme_settings_group', "option")['avatar_for_speakers']['url'];
+        } else {
+            return get_template_directory_uri() . "/assets/images/speaker_avatar.jpg";
+        }
+    else :
         return get_template_directory_uri() . "/assets/images/speaker_avatar.jpg";
-    }
+    endif;
 }
 
 /*
@@ -18,11 +22,15 @@ function default_speaker_avatar()
 */
 function default_partners_avatar()
 {
-    if (isset(get_field('general_theme_settings_group', "option")['avatar_for_partners']['url'])) {
-        return get_field('general_theme_settings_group', "option")['avatar_for_partners']['url'];
-    } else {
+    if (class_exists('ACF')) :
+        if (isset(get_field('general_theme_settings_group', "option")['avatar_for_partners']['url'])) {
+            return get_field('general_theme_settings_group', "option")['avatar_for_partners']['url'];
+        } else {
+            return get_template_directory_uri() . "/assets/images/partners_avatar.jpg";
+        }
+    else :
         return get_template_directory_uri() . "/assets/images/partners_avatar.jpg";
-    }
+    endif;
 }
 
 /*
@@ -30,11 +38,15 @@ function default_partners_avatar()
 */
 function default_placeholder_image()
 {
-    if (isset(get_field('general_theme_settings_group', "option")['avatar_for_news']['url'])) {
-        return get_field('general_theme_settings_group', "option")['avatar_for_news']['url'];
-    } else {
+    if (class_exists('ACF')) :
+        if (isset(get_field('general_theme_settings_group', "option")['avatar_for_news']['url'])) {
+            return get_field('general_theme_settings_group', "option")['avatar_for_news']['url'];
+        } else {
+            return get_template_directory_uri() . "/assets/images/placeholder.jpg";
+        }
+    else :
         return get_template_directory_uri() . "/assets/images/placeholder.jpg";
-    }
+    endif;
 }
 
 /*
@@ -42,21 +54,24 @@ function default_placeholder_image()
 */
 function my_login_logo()
 {
-    if (get_field('general_theme_settings_group', "option")['login_image']) : ?>
-        <style type="text/css">
-            #login h1 a,
-            .login h1 a {
-                background-image: url("<?= get_field('general_theme_settings_group', "option")['login_image']['url'] ?>");
-                background-size: contain;
-                background-position: center center;
-                background-repeat: no-repeat;
-                padding-bottom: 30px;
-                width: 100%;
-                height: 70px;
-                margin: 0 auto;
-            }
-        </style>
-<?php endif;
+    if (class_exists('ACF')) :
+        if (get_field('general_theme_settings_group', "option")['login_image']) : ?>
+            <style type="text/css">
+                #login h1 a,
+                .login h1 a {
+                    background-image: url("<?= get_field('general_theme_settings_group', "option")['login_image']['url'] ?>");
+                    background-size: contain;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    padding-bottom: 30px;
+                    width: 100%;
+                    height: 70px;
+                    margin: 0 auto;
+                }
+            </style>
+<?php
+        endif;
+    endif;
 }
 add_action('login_enqueue_scripts', 'my_login_logo');
 
