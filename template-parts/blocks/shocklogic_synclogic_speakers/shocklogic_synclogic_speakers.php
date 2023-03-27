@@ -137,12 +137,12 @@ if (isset($shocklogic_synclogic_speakers_group) && $shocklogic_synclogic_speaker
 										$end_time = $sessions->end_time ?? null;
 
 										$rol = "| ";
-										if ($session->IsSpeaker) :
-											$rol .= $captions['speaker'];
-										elseif ($session->IsChair) :
+										if ($session->IsChair) :
 											$rol .= $captions['chair'];
 										elseif ($session->IsCoChair) :
 											$rol .= $captions['co_chair'];
+										elseif ($session->IsSpeaker) :
+											$rol .= $captions['speaker'];
 										endif;
 
 										$presentations = get_presentations_by_speaker_and_author($speaker->speaker_id, $speaker->speaker_email, $session->session_id);
