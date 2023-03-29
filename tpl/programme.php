@@ -3,7 +3,36 @@
 * Template name: Programme (DEPRECATED)
 * Description: Programme sort by start time. Sessions have the same start time and the same end time.
 */
-get_header();
+get_header(); ?>
+<style>
+	.modal_body_left {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	@media (min-width: 1200px) {
+		.modal-body {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			align-content: center;
+			justify-content: center;
+			align-items: start;
+			grid-gap: 20px;
+		}
+
+		.modal_body_left {
+			text-align: center;
+		}
+
+		.modal_body_left_img {
+			width: 70% !important;
+			margin: 0 auto !important;
+			margin-bottom: 1rem !important;
+		}
+	}
+</style>
+<?php
 $programme_group = get_field('programme_group');
 
 $chairs = $programme_group['chairs'] ?? "Chair(s)";
@@ -593,7 +622,7 @@ $avatar = default_speaker_avatar();
 	}
 
 	.speaker-modal-information {
-		border-left: solid 4px <?= $args[0] ?>;
+		border-left: solid 4px <?= $args[0] ?? "" ?>;
 		padding-left: 15px;
 	}
 
@@ -661,30 +690,34 @@ foreach ($speakers as $speaker) {
 
 	$modals .= <<<MODALS
             <div class="modal fade" id="speaker-$id" data-bs-keyboard="false" tabindex="-1" aria-labelledby="speaker-$id-Label" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-dialog modal-xl modal_dialog">
                     <div class="modal-content">
                         <div class="modal-header justify-content-end">
                             <button type="button" class="modal-header-close rounded-circle" data-bs-dismiss="modal" aria-label="Close"><span>X</span></button>
                         </div>
                         <div class="modal-body">
-                            <div class="ratio ratio-1x1 mb-3">
-                                <img loading="lazy" class="img-fluid d-block mx-auto rounded-circle" src="$image">
-                            </div>
-                            <div class="text-start row justify-content-center">
-                                <div class="col-6 col-md-5 speaker-modal-information">
-                                    <div class="speaker-name">$name $last_name</div>
-                                    <div class="speaker-information">
-                                        <div>$company</div>
-                                        <div>$job_title</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pt-4 text-start speaker-information">$biography</div>
+							<div class="modal_body_left">
+								<div class="ratio ratio-1x1 modal_body_left_img">
+									<img loading="lazy" class="img-fluid d-block mx-auto rounded-circle" src="$image">
+								</div>
+								<div class="modal_body_left">
+									<div class="speaker-modal-information">
+										<div class="speaker-name">$name $last_name</div>
+										<div class="speaker-information">
+											<div>$company</div>
+											<div>$job_title</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="modal_body_right">
+								<div class="pt-4 text-start speaker-information">$biography</div>
+							</div>
                         </div>
                     </div>
                 </div>
             </div>
-    MODALS;
+MODALS;
 }
 
 echo $modals;
