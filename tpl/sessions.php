@@ -17,7 +17,7 @@ if (have_posts()) {
         function getSessionsByDay($days)
         {
             $args = array(
-                'post_type' => 'sessions',
+                'post_type' => 'session',
                 //'orderby' => 'title',
                 'order' => 'ASC',
                 'post_status'      => 'publish',
@@ -65,7 +65,7 @@ if (have_posts()) {
         {
 
             $args = array(
-                'post_type' => 'sessions',
+                'post_type' => 'session',
                 //'orderby' => 'title',
                 'order' => 'ASC',
                 'post_status'      => 'publish',
@@ -234,22 +234,13 @@ if (have_posts()) {
             @media (min-width: 1400px) {}
         </style>
 
-        <!-- <div class="text-center my-4">
-            <span class="p-3 the-title">
-                <b><i class="fa fa-calendar fa-1x mx-2"></i> <?php the_title(); ?></b>
-            </span>
-        </div> -->
+        <div class="text-center my-4">
+            <h1 class="has-text-align-left has-text-color wp-block-heading ms-5" style="color:#005281;font-style:normal;font-weight:700"><?php the_title(); ?></h1>
+        </div>
 
         <div class="py-2">
             <div class="container-fluid">
 
-                <?php if (!empty(get_the_content())) { ?>
-                    <div class="row justify-content-center">
-                        <div class="col-12">
-                            <?php the_content(); ?>
-                        </div>
-                    </div>
-                <?php } ?>
                 <div class="row p-3 mb-3 mx-3 background-programme">
                     <?php
                     $days = getAllDaysForSession();
@@ -288,7 +279,7 @@ if (have_posts()) {
 
                                             <div class="modal-body">
                                                 <div class="p-3">
-                                                    <p><?= $dateString ?></p>
+                                                    <!-- <p><?= $dateString ?></p> -->
                                                     <h5 style="color: #53BCC1"><?= $session->post_title ?> - <?= $session->session_title ?></h5>
                                                 </div>
                                                 <div id="modal-description-session" class="p-3">
@@ -304,6 +295,14 @@ if (have_posts()) {
                         </div>
                     <?php } ?>
                 </div>
+
+                <?php if (!empty(get_the_content())) { ?>
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <?php the_content(); ?>
+                        </div>
+                    </div>
+                <?php } ?>
             </div>
         </div>
 <?php
