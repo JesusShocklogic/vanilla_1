@@ -597,13 +597,6 @@ $avatar = default_speaker_avatar();
 		border-radius: 10px;
 	}
 
-	.modal-header {
-		padding: 0;
-		padding-right: 20px;
-		padding-top: 15px;
-		border: none;
-	}
-
 	.ratio-1x1 img,
 	.ratio-1x1 svg {
 		object-fit: cover;
@@ -632,23 +625,9 @@ $avatar = default_speaker_avatar();
 		height: 100%;
 	}
 
-	.speaker .speaker-name,
-	.speaker-name {
-		font-size: 22px;
-	}
-
 	.speaker .speaker-information,
 	.modal-body .speaker-information {
 		font-size: 14px;
-	}
-
-	.modal-header .modal-header-close {
-		background-color: <?= $args[0] ?>;
-		color: <?= $args[1] ?>;
-		border: transparent;
-		height: 2rem;
-		width: 2rem;
-		text-align: center;
 	}
 
 	/*
@@ -709,7 +688,7 @@ foreach ($speakers as $speaker) {
 		<div class="modal-dialog modal-xl modal_dialog">
 			<div class="modal-content">
 				<div class="modal-header justify-content-end">
-					<button type="button" class="modal-header-close rounded-circle" data-bs-dismiss="modal" aria-label="Close"><span>X</span></button>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
 					<div class="modal_body_left">
@@ -718,7 +697,7 @@ foreach ($speakers as $speaker) {
 						</div>
 						<div class="modal_body_left">
 							<div class="speaker-modal-information">
-								<div class="speaker-name"><?php echo $name . " " . $last_name ?></div>
+								<div><strong><?php echo $name . " " . $last_name ?></strong></div>
 								<div class="speaker-information">
 									<div><?= $company ?></div>
 									<div><?= $job_title ?></div>
