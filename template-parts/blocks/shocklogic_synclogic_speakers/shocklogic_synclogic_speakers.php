@@ -11,7 +11,8 @@ $background_colour = $general_settings['background_colour'];
 $block_id = $block['id'];
 $avatar = default_speaker_avatar();
 
-$captions = $shocklogic_synclogic_speakers_group['captions_group'];
+$speakers_modal = get_field('speakers_modal');
+$captions = $speakers_modal['captions_group'];
 
 $speakers = null;
 if ($shocklogic_synclogic_speakers_group['content_select'] == "all") {
@@ -169,13 +170,13 @@ if (isset($shocklogic_synclogic_speakers_group) && $shocklogic_synclogic_speaker
 												<?php endif; ?>
 											</div>
 
-											<?php if ($shocklogic_synclogic_speakers_group['link_to_programme'] == "link_to_programme") :
-												$programme_page_link = isset($shocklogic_synclogic_speakers_group['programme_page_link']) ? $shocklogic_synclogic_speakers_group['programme_page_link'] : null;
+											<?php if ($speakers_modal['link_to_programme'] == "link_to_programme") :
+												$programme_page_link = isset($speakers_modal['programme_page_link']) ? $speakers_modal['programme_page_link'] : null;
 												if ($programme_page_link) :
 													$getTab = getDayProgrammeTab($session->session_day); ?>
 													<div>
 														<a href="<?= $programme_page_link . "?DayTab=" . $getTab . "&SessionId=" . $session->session_id ?>">
-															<?= $shocklogic_synclogic_speakers_group['programme_link_caption'] ?>
+															<?= $speakers_modal['programme_link_caption'] ?>
 														</a>
 													</div>
 											<?php endif;
