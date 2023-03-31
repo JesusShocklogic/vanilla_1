@@ -24,6 +24,10 @@ $captions = $speakers_modal['captions_group']; ?>
 		padding-bottom: 1rem;
 	}
 
+	.width-speakers {
+		width: 30%;
+	}
+
 	@media (min-width: 1200px) {
 		.modal-body {
 			display: grid;
@@ -281,7 +285,7 @@ NAME;
 								if ($showPresentationsSpeakersModal == 1) {
 									if (!empty($allSpeakersContent)) {
 										$allSpeakersContent = json_decode($allSpeakersContent);
-										$authors .= "<td>";
+										$authors .= "<td class='width-speakers'>";
 										foreach ($allSpeakersContent as $key5 => $SpeakerContent) {
 											$id = $SpeakerContent->Faculty_Id;
 											$fullName = $SpeakerContent->Full_Name;
