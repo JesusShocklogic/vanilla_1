@@ -33,8 +33,7 @@ $company_name_colour = $speakers_modal['company_name_colour'] ?? "#000"; ?>
 	#$block_id .modal_dialog_content_body_left_jobtitle{display: $show_job_title; color: $job_title_colour;}
 	#$block_id .modal_dialog_content_body_left_companyname{display: $show_company_name; color: $company_name_colour;}
 	ITEM;
-	echo $classes;
-	?>
+	echo $classes; ?>
 </style>
 
 <?php

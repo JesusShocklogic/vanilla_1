@@ -21,7 +21,7 @@
             "sub_fields": [
                 {
                     "key": "field_63f91cbc15670",
-                    "label": "Speaker's modal",
+                    "label": "Modal's Settings",
                     "name": "",
                     "aria-label": "",
                     "type": "accordion",
@@ -130,6 +130,214 @@
                     "default_value": "#000",
                     "enable_opacity": 0,
                     "return_format": "string"
+                },
+                {
+                    "key": "field_63ee3cf654b34",
+                    "label": "Link to programme",
+                    "name": "link_to_programme",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Enable a link in the Speaker modal to link the session to the respective information in the programme page.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "no_link": "No link",
+                        "link_to_programme": "Add a link in sessions"
+                    },
+                    "default_value": "no_link",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": ""
+                },
+                {
+                    "key": "field_63ee3d5c54b35",
+                    "label": "Programme page link",
+                    "name": "programme_page_link",
+                    "aria-label": "",
+                    "type": "page_link",
+                    "instructions": "The programme page MUST be using the programme page template",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_63ee3cf654b34",
+                                "operator": "==",
+                                "value": "link_to_programme"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "acfe_save_meta": 0,
+                    "post_type": "",
+                    "taxonomy": "",
+                    "allow_archives": 1,
+                    "multiple": 0,
+                    "allow_null": 0
+                },
+                {
+                    "key": "field_63ee4631e9b49",
+                    "label": "Programme link caption",
+                    "name": "programme_link_caption",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Text to be use as the link.",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_63ee3cf654b34",
+                                "operator": "==",
+                                "value": "link_to_programme"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "acfe_save_meta": 0,
+                    "default_value": "Check it in programme",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_63ecfa47d503a",
+                    "label": "Modal's Captions",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_63ecfae7d503d",
+                    "label": "Captions group",
+                    "name": "captions_group",
+                    "aria-label": "",
+                    "type": "group",
+                    "instructions": "This captions only affect the modals with information coming from Synclogic",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "acfe_save_meta": 0,
+                    "layout": "block",
+                    "acfe_seamless_style": 0,
+                    "acfe_group_modal": 0,
+                    "sub_fields": [
+                        {
+                            "key": "field_63ecfaf1d503e",
+                            "label": "Presentations title",
+                            "name": "presentations_title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Presentation\/s",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_63ecfb05d503f",
+                            "label": "Chair",
+                            "name": "chair",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Chair",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_63ecfb0dd5040",
+                            "label": "Co-chair",
+                            "name": "co_chair",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Co-chair",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_63ecfb3bd5041",
+                            "label": "Speaker",
+                            "name": "speaker",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Speaker",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ],
+                    "acfe_group_modal_close": 0,
+                    "acfe_group_modal_button": "",
+                    "acfe_group_modal_size": "large"
                 }
             ],
             "acfe_group_modal": 0,
@@ -159,6 +367,13 @@
                 "operator": "==",
                 "value": "acf\/shocklogic-speakers-wordpress"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "tpl\/programme.php"
+            }
         ]
     ],
     "menu_order": -1,
@@ -178,7 +393,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1677535817,
+    "modified": 1680211976,
     "acfe_categories": {
         "speakers": "Speakers"
     }

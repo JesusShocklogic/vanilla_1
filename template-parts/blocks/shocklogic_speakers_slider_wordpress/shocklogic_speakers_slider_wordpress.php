@@ -38,9 +38,7 @@ $company_name_colour = $speakers_modal['company_name_colour'] ?? "#000"; ?>
 	
 	ITEM;
 
-	echo $classes;
-
-	?>
+	echo $classes; ?>
 </style>
 <?php
 if (isset($shocklogic_speakers_slider_wordpress_group) && $shocklogic_speakers_slider_wordpress_group != null) { ?>
