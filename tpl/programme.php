@@ -3,12 +3,29 @@
 * Template name: Programme (DEPRECATED)
 * Description: Programme sort by start time. Sessions have the same start time and the same end time.
 */
-get_header(); ?>
+get_header();
+$speakers_modal = get_field('speakers_modal');
+$captions = $speakers_modal['captions_group']; ?>
 <style>
 	.modal_body_left {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+
+	.modal_dialog_content_footer_session_day_name,
+	.modal_dialog_content_footer_session_rol,
+	.modal_dialog_content_footer_session_time,
+	.modal_dialog_content_footer_session_title {
+		display: inline-block;
+	}
+
+	.modal_dialog_content_footer_session {
+		padding-bottom: 1rem;
+	}
+
+	.width-speakers {
+		width: 30%;
 	}
 
 	@media (min-width: 1200px) {
@@ -268,7 +285,7 @@ NAME;
 								if ($showPresentationsSpeakersModal == 1) {
 									if (!empty($allSpeakersContent)) {
 										$allSpeakersContent = json_decode($allSpeakersContent);
-										$authors .= "<td>";
+										$authors .= "<td class='width-speakers'>";
 										foreach ($allSpeakersContent as $key5 => $SpeakerContent) {
 											$id = $SpeakerContent->Faculty_Id;
 											$fullName = $SpeakerContent->Full_Name;
@@ -612,18 +629,13 @@ $avatar = default_speaker_avatar();
 	}
 
 	.speaker .speaker-name,
-	.speaker-modal-information .speaker-name {
+	.speaker-name {
 		font-size: 22px;
 	}
 
 	.speaker .speaker-information,
 	.modal-body .speaker-information {
 		font-size: 14px;
-	}
-
-	.speaker-modal-information {
-		border-left: solid 4px <?= $args[0] ?? "" ?>;
-		padding-left: 15px;
 	}
 
 	.modal-header .modal-header-close {
@@ -688,36 +700,110 @@ foreach ($speakers as $speaker) {
 		$image = $avatar;
 	}
 
-	$modals .= <<<MODALS
-            <div class="modal fade" id="speaker-$id" data-bs-keyboard="false" tabindex="-1" aria-labelledby="speaker-$id-Label" aria-hidden="true">
-                <div class="modal-dialog modal-xl modal_dialog">
-                    <div class="modal-content">
-                        <div class="modal-header justify-content-end">
-                            <button type="button" class="modal-header-close rounded-circle" data-bs-dismiss="modal" aria-label="Close"><span>X</span></button>
-                        </div>
-                        <div class="modal-body">
-							<div class="modal_body_left">
-								<div class="ratio ratio-1x1 modal_body_left_img">
-									<img loading="lazy" class="img-fluid d-block mx-auto rounded-circle" src="$image">
-								</div>
-								<div class="modal_body_left">
-									<div class="speaker-modal-information">
-										<div class="speaker-name">$name $last_name</div>
-										<div class="speaker-information">
-											<div>$company</div>
-											<div>$job_title</div>
-										</div>
-									</div>
+?>
+	<div class="modal fade" id="speaker-<?= $id ?>" data-bs-keyboard="false" tabindex="-1" aria-labelledby="speaker-<?= $id ?>-Label" aria-hidden="true">
+		<div class="modal-dialog modal-xl modal_dialog">
+			<div class="modal-content">
+				<div class="modal-header justify-content-end">
+					<button type="button" class="modal-header-close rounded-circle" data-bs-dismiss="modal" aria-label="Close"><span>X</span></button>
+				</div>
+				<div class="modal-body">
+					<div class="modal_body_left">
+						<div class="ratio ratio-1x1 modal_body_left_img">
+							<img loading="lazy" class="img-fluid d-block mx-auto rounded-circle" src="<?= $image ?>">
+						</div>
+						<div class="modal_body_left">
+							<div class="speaker-modal-information">
+								<div class="speaker-name"><?php echo $name . " " . $last_name ?></div>
+								<div class="speaker-information">
+									<div><?= $company ?></div>
+									<div><?= $job_title ?></div>
 								</div>
 							</div>
-							<div class="modal_body_right">
-								<div class="pt-4 text-start speaker-information">$biography</div>
-							</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-MODALS;
-}
+						</div>
+					</div>
+					<div class="modal_body_right">
+						<div class="pt-4 text-start speaker-information"><?= $biography ?></div>
+					</div>
+				</div>
+				<?php
+				$sessions = get_sessions_by_speaker_id($speaker->speaker_id);
+				if ($sessions) : ?>
+					<div class="modal-footer modal_dialog_content_footer d-block">
+						<?php
+						foreach ($sessions as $key => $session) {
+							$session_title = $session->session_title ?? null;
+							$session_day_name = $session->session_day_name ?? null;
+							$start_time = $session->start_time ?? null;
+							$end_time = $sessions->end_time ?? null;
 
-echo $modals;
+							$rol = "| ";
+							if ($session->IsChair) :
+								$rol .= $captions['chair'];
+							elseif ($session->IsCoChair) :
+								$rol .= $captions['co_chair'];
+							elseif ($session->IsSpeaker) :
+								$rol .= $captions['speaker'];
+							endif;
+
+							$presentations = get_presentations_by_speaker_and_author($speaker->speaker_id, $speaker->speaker_email, $session->session_id);
+						?>
+							<div class="modal_dialog_content_footer_session">
+								<?php if ($session_title) : ?>
+									<div>
+										<div class="modal_dialog_content_footer_session_title"><?= $session->session_title; ?></div>
+										<div class="modal_dialog_content_footer_session_rol"><?= $rol; ?></div>
+									</div>
+								<?php endif; ?>
+
+								<div>
+									<?php if ($session_day_name) : ?>
+										<div class="modal_dialog_content_footer_session_day_name"><?= $session->session_day_name; ?></div>
+									<?php endif; ?>
+									<?php if ($start_time) : ?>
+										<div class="modal_dialog_content_footer_session_time">
+											<?php if ($session->start_time) : echo " | " . $session->start_time;
+												if ($end_time) : echo " - " . $end_time;
+												endif;
+											endif; ?>
+										</div>
+									<?php endif; ?>
+								</div>
+
+								<?php if ($speakers_modal['link_to_programme'] == "link_to_programme") :
+									$programme_page_link = isset($speakers_modal['programme_page_link']) ? $speakers_modal['programme_page_link'] : null;
+									if ($programme_page_link) :
+										$getTab = getDayProgrammeTab($session->session_day); ?>
+										<div>
+											<a href="<?= $programme_page_link . "?DayTab=" . $getTab . "&SessionId=" . $session->session_id ?>">
+												<?= $speakers_modal['programme_link_caption'] ?>
+											</a>
+										</div>
+								<?php endif;
+								endif; ?>
+								<?php if (count($presentations) > 0) : ?>
+									<div class="modal_dialog_content_footer_session_presentations">
+										<?php
+										if ($captions['presentations_title']) : ?>
+											<div class="modal_dialog_content_footer_session_presentations_title"><?= $captions['presentations_title'] ?></div>
+										<?php endif; ?>
+										<ul class="modal_dialog_content_footer_session_presentations_presentation">
+											<?php foreach ($presentations as $key => $presentation) {
+												if ($presentation->presentation_title != "") : ?>
+													<li class="modal_dialog_content_footer_session_presentations_presentation_title"><?= $presentation->presentation_title ?></li>
+												<?php endif; ?>
+											<?php } //foreach 
+											?>
+										</ul>
+									</div>
+								<?php endif; ?>
+							</div>
+						<?php } ?>
+					</div>
+				<?php endif; ?>
+			</div>
+		</div>
+	</div>
+<?php
+
+}
