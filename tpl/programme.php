@@ -20,6 +20,10 @@ $captions = $speakers_modal['captions_group']; ?>
 		display: inline-block;
 	}
 
+	.modal_dialog_content_footer_session_title {
+		font-weight: 700;
+	}
+
 	.modal_dialog_content_footer_session {
 		padding-bottom: 1rem;
 	}

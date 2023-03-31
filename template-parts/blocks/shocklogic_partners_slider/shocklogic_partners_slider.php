@@ -174,20 +174,20 @@ if (isset($shocklogic_partners_slider_group) && $shocklogic_partners_slider_grou
 
 					<!-- Modal -->
 					<div class="modal fade" id="<?= "partner" . get_the_ID() ?>" tabindex="-1" aria-labelledby="<?= "partner" . get_the_ID() ?>Label" aria-hidden="true">
-						<div class="modal-dialog modal-xl modal_dialog">
-							<div class="modal-content modal_dialog_content">
+						<div class="modal-dialog modal-xl modal_partner_dialog">
+							<div class="modal-content modal_partner_dialog_content">
 								<div class="modal-header">
 									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 								</div>
-								<div class="modal-body modal_dialog_content_body">
-									<div class="modal_dialog_content_body_left">
-										<div class="modal_dialog_content_body_left_image">
+								<div class="modal-body modal_partner_dialog_content_body">
+									<div class="modal_partner_dialog_content_body_left">
+										<div class="modal_partner_dialog_content_body_left_image">
 											<img src="<?= $image_url ?>" alt="">
 										</div>
 										<strong><?= $title ?></strong>
 									</div>
-									<div class="modal_dialog_content_body_right">
-										<div class="modal_dialog_content_body_right_content">
+									<div class="modal_partner_dialog_content_body_right">
+										<div class="modal_partner_dialog_content_body_right_content">
 											<?php the_content() ?>
 										</div>
 									</div>
