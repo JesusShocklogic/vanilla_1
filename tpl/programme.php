@@ -5,6 +5,13 @@
 */
 get_header();
 $speakers_modal = get_field('speakers_modal');
+$show_job_title = $speakers_modal['show_job_title'] ? "block" : "none";
+$show_company_name = $speakers_modal['show_company_name'] ? "block" : "none";
+
+$speaker_name_colour = $speakers_modal['speaker_name_colour'] ?? "#000";
+$job_title_colour = $speakers_modal['job_title_colour'] ?? "#000";
+$company_name_colour = $speakers_modal['company_name_colour'] ?? "#000";
+
 $captions = $speakers_modal['captions_group']; ?>
 <style>
 	.modal_body_left {
@@ -24,6 +31,10 @@ $captions = $speakers_modal['captions_group']; ?>
 		font-weight: 700;
 	}
 
+	.modal_dialog_content_footer_session_presentations_title {
+		font-weight: 700;
+	}
+
 	.modal_dialog_content_footer_session {
 		padding-bottom: 1rem;
 	}
@@ -31,6 +42,21 @@ $captions = $speakers_modal['captions_group']; ?>
 	.width-speakers {
 		width: 30%;
 	}
+
+	.modal_dialog_content_body_left_name {
+		color: <?= $speaker_name_colour ?>;
+	}
+
+	.modal_dialog_content_body_left_jobtitle {
+		display: <?= $show_job_title ?>;
+		color: <?= $job_title_colour ?>;
+	}
+
+	.modal_dialog_content_body_left_companyname {
+		display: <?= $show_company_name ?>;
+		color: <?= $company_name_colour ?>;
+	}
+
 
 	@media (min-width: 1200px) {
 		.modal-body {
@@ -625,11 +651,6 @@ $avatar = default_speaker_avatar();
 		height: 100%;
 	}
 
-	.speaker .speaker-information,
-	.modal-body .speaker-information {
-		font-size: 14px;
-	}
-
 	/*
 	/* Bootstrap Media Query
 	*/
@@ -697,16 +718,16 @@ foreach ($speakers as $speaker) {
 						</div>
 						<div class="modal_body_left">
 							<div class="speaker-modal-information">
-								<div><strong><?php echo $name . " " . $last_name ?></strong></div>
+								<div class="modal_dialog_content_body_left_name"><strong><?php echo $name . " " . $last_name ?></strong></div>
 								<div class="speaker-information">
-									<div><?= $company ?></div>
-									<div><?= $job_title ?></div>
+									<div class="modal_dialog_content_body_left_companyname"><?= $company ?></div>
+									<div class="modal_dialog_content_body_left_jobtitle"><?= $job_title ?></div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="modal_body_right">
-						<div class="pt-4 text-start speaker-information"><?= $biography ?></div>
+						<div class="text-start speaker-information"><?= $biography ?></div>
 					</div>
 				</div>
 				<?php
