@@ -36,7 +36,7 @@ $table = $six_column_table_group['table'];
 			<table class="table table-striped table-hover">
 				<thead>
 					<tr>
-						<th scope="col"><?= $table[0]['col_1'] ?></th>
+						<th scope="col" style="min-width: 50px;"> <?= $table[0]['col_1'] ?></th>
 						<th scope="col" style="min-width: 100px;"><?= $table[0]['col_2'] ?></th>
 						<th scope="col" style="min-width: 100px;"><?= $table[0]['col_3'] ?></th>
 						<th scope="col" style="min-width: 300px;"><?= $table[0]['col_4'] ?></th>
