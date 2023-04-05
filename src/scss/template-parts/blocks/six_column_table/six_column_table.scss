@@ -1,0 +1,11 @@
+@use "../../../util/variables";
+@use "../../../util/breakpoints";
+
+.six_column_table {
+    &.contain {
+        @include variables.spacing;
+    }
+    &.fullscreen {
+        padding: 0;
+    }
+}
