@@ -2,7 +2,7 @@
 @use "util/breakpoints";
 html,
 body {
-    word-break: break-word;
+    word-wrap: break-word;
 }
 img {
     max-width: 100%;
