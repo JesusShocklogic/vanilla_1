@@ -21,6 +21,75 @@
             "acfe_seamless_style": 1,
             "sub_fields": [
                 {
+                    "key": "field_642dedca11528",
+                    "label": "Stripe rows",
+                    "name": "stripe_rows",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "acfe_save_meta": 0,
+                    "message": "",
+                    "default_value": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "ui": 1
+                },
+                {
+                    "key": "field_642df02d98a39",
+                    "label": "Stripe rows backgrounds",
+                    "name": "stripe_rows_backgrounds",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_642dedca11528",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "acfe_save_meta": 0,
+                    "default_value": "",
+                    "enable_opacity": 1,
+                    "return_format": "string"
+                },
+                {
+                    "key": "field_642de9e5c65b3",
+                    "label": "Text midle alignment",
+                    "name": "text_midle_alignment",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "Center vertical alignment text",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "acfe_save_meta": 0,
+                    "message": "",
+                    "default_value": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "ui": 1
+                },
+                {
                     "key": "field_642d6bf5892ef",
                     "label": "Table",
                     "name": "table",
@@ -211,5 +280,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1680698425
+    "modified": 1680732334
 }
