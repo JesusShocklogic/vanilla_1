@@ -45,7 +45,7 @@ $stripe_rows_backgrounds = (isset($six_column_table_group['stripe_rows_backgroun
 			<table class="table table-hover <?= $text_midle_alignment . " " . $stripe_rows ?>">
 				<thead>
 					<tr>
-						<th scope="col" style:"min-width: 25px;"> <?= $table[0]['col_1'] ?></th>
+						<th scope="col" style="min-width: 25px;"> <?= $table[0]['col_1'] ?></th>
 						<th scope="col"><?= $table[0]['col_2'] ?></th>
 						<th scope="col" style="min-width: 100px;"><?= $table[0]['col_3'] ?></th>
 						<th scope="col" style="min-width: 300px;"><?= $table[0]['col_4'] ?></th>
