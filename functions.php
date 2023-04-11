@@ -2,60 +2,60 @@
 include("includes/index.php");
 
 /*
-* Returning the default speakers avatar image file
-*/
+ * Returning the default speakers avatar image file
+ */
 function default_speaker_avatar()
 {
-    if (class_exists('ACF')) :
+    if (class_exists('ACF')):
         if (isset(get_field('general_theme_settings_group', "option")['avatar_for_speakers']['url'])) {
             return get_field('general_theme_settings_group', "option")['avatar_for_speakers']['url'];
         } else {
             return get_template_directory_uri() . "/assets/images/speaker_avatar.jpg";
         }
-    else :
+    else:
         return get_template_directory_uri() . "/assets/images/speaker_avatar.jpg";
     endif;
 }
 
 /*
-* Returning the default partners avatar image file
-*/
+ * Returning the default partners avatar image file
+ */
 function default_partners_avatar()
 {
-    if (class_exists('ACF')) :
+    if (class_exists('ACF')):
         if (isset(get_field('general_theme_settings_group', "option")['avatar_for_partners']['url'])) {
             return get_field('general_theme_settings_group', "option")['avatar_for_partners']['url'];
         } else {
             return get_template_directory_uri() . "/assets/images/partners_avatar.jpg";
         }
-    else :
+    else:
         return get_template_directory_uri() . "/assets/images/partners_avatar.jpg";
     endif;
 }
 
 /*
-* Returning the default placeholder image file
-*/
+ * Returning the default placeholder image file
+ */
 function default_placeholder_image()
 {
-    if (class_exists('ACF')) :
+    if (class_exists('ACF')):
         if (isset(get_field('general_theme_settings_group', "option")['avatar_for_news']['url'])) {
             return get_field('general_theme_settings_group', "option")['avatar_for_news']['url'];
         } else {
             return get_template_directory_uri() . "/assets/images/placeholder.jpg";
         }
-    else :
+    else:
         return get_template_directory_uri() . "/assets/images/placeholder.jpg";
     endif;
 }
 
 /*
-* Changing the Login logo
-*/
+ * Changing the Login logo
+ */
 function my_login_logo()
 {
-    if (class_exists('ACF')) :
-        if (get_field('general_theme_settings_group', "option")['login_image']) : ?>
+    if (class_exists('ACF')):
+        if (get_field('general_theme_settings_group', "option")['login_image']): ?>
             <style type="text/css">
                 #login h1 a,
                 .login h1 a {
@@ -69,15 +69,15 @@ function my_login_logo()
                     margin: 0 auto;
                 }
             </style>
-<?php
+            <?php
         endif;
     endif;
 }
 add_action('login_enqueue_scripts', 'my_login_logo');
 
 /*
-* Remove the Wordpress Version Generator meta tag
-*/
+ * Remove the Wordpress Version Generator meta tag
+ */
 //Remove the wordpress version generator
 remove_action('wp_head', 'wp_generator');
 
@@ -144,26 +144,26 @@ add_post_type_support('page', 'excerpt');
 add_post_type_support('post', 'excerpt');
 
 /*
-* Registering Style sheets
-*/
+ * Registering Style sheets
+ */
 add_action('init', function () {
     wp_register_style("style", get_template_directory_uri() . "/style.css", array(), true);
     wp_register_style("style-sass", get_template_directory_uri() . "/assets/css/style.css", array(), true);
     wp_register_style("footer", get_template_directory_uri() . "/assets/css/footer.css", array(), true);
     wp_register_style("bootstrap", get_template_directory_uri() . "/assets/css/bootstrap.css", array(), true);
-    wp_register_script("base", get_template_directory_uri() . "/assets/js/base.js", array(), true);
     wp_register_style("swiper-css", get_template_directory_uri() . "/assets/css/swiper-bundle.min.css", array(), true);
-    wp_register_script("swiper-js", get_template_directory_uri() . "/assets/js/swiper.js", array(), true);
     wp_register_style("modal-css", get_template_directory_uri() . "/assets/css/modal.css", array(), true);
     wp_register_style("modal-partners", get_template_directory_uri() . "/assets/css/modal-partners.css", array(), true);
     wp_register_style("social-icon-widget", get_template_directory_uri() . "/template-parts/social-icons/social-icons-widget.css", array(), true);
-    //wp_register_style("speakers-wordpress", get_template_directory_uri() . "/template-parts/blocks/shocklogic_speakers_wordpress/shocklogic_speakers_wordpress.css", array(), true);
+    
+    wp_register_script("swiper-js", get_template_directory_uri() . "/assets/js/swiper.js", array(), true);
+    wp_register_script("base", get_template_directory_uri() . "/assets/js/base.js", array(), true);
 });
 
 
 /*
-* wp_head actions
-*/
+ * wp_head actions
+ */
 add_action("get_header", function () {
     wp_enqueue_style('style');
     wp_enqueue_style('style-sass');
@@ -171,8 +171,8 @@ add_action("get_header", function () {
 });
 
 /*
-* wp_footer actions
-*/
+ * wp_footer actions
+ */
 add_action("wp_footer", function () {
     //wp_enqueue_script('jquery');
     wp_enqueue_script('base');
@@ -192,49 +192,57 @@ function register_my_menus()
 add_action('init', 'register_my_menus');
 
 /*
-* ACF option menu in WP Dashboard
-*/
+ * ACF option menu in WP Dashboard
+ */
 if (function_exists('acf_add_options_page')) {
 
-    acf_add_options_page(array(
-        'page_title'     => 'Theme General Settings',
-        'menu_title'    => 'Theme Settings',
-        'menu_slug'     => 'theme-general-settings',
-        'capability'    => 'edit_posts',
-        'redirect'        => false
-    ));
+    acf_add_options_page(
+        array(
+            'page_title' => 'Theme General Settings',
+            'menu_title' => 'Theme Settings',
+            'menu_slug' => 'theme-general-settings',
+            'capability' => 'edit_posts',
+            'redirect' => false
+        )
+    );
 
-    acf_add_options_sub_page(array(
-        'page_title'     => 'Theme Menu Settings',
-        'menu_title'    => 'Menu',
-        'parent_slug'    => 'theme-general-settings',
-    ));
+    acf_add_options_sub_page(
+        array(
+            'page_title' => 'Theme Menu Settings',
+            'menu_title' => 'Menu',
+            'parent_slug' => 'theme-general-settings',
+        )
+    );
 
-    acf_add_options_sub_page(array(
-        'page_title'     => 'Theme Footer Settings',
-        'menu_title'    => 'Footer',
-        'parent_slug'    => 'theme-general-settings',
-    ));
+    acf_add_options_sub_page(
+        array(
+            'page_title' => 'Theme Footer Settings',
+            'menu_title' => 'Footer',
+            'parent_slug' => 'theme-general-settings',
+        )
+    );
 
-    acf_add_options_sub_page(array(
-        'page_title'     => 'Theme Social Icons Settings',
-        'menu_title'    => 'Social Icons',
-        'parent_slug'    => 'theme-general-settings',
-    ));
+    acf_add_options_sub_page(
+        array(
+            'page_title' => 'Theme Social Icons Settings',
+            'menu_title' => 'Social Icons',
+            'parent_slug' => 'theme-general-settings',
+        )
+    );
 } //ACF option menu in WP Dashboard
 
 /*
-* Adding a block category
-*/
+ * Adding a block category
+ */
 function filter_block_categories_when_post_provided($block_categories, $editor_context)
 {
     if (!empty($editor_context->post)) {
         array_push(
             $block_categories,
             array(
-                'slug'  => 'shocklogic-category',
+                'slug' => 'shocklogic-category',
                 'title' => __('Shocklogic'),
-                'icon'  => null,
+                'icon' => null,
             )
         );
     }
