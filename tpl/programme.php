@@ -501,10 +501,6 @@ CONTENT;
 				border-color: #186C9D;
 			}
 
-			#speaker {
-				color: #f7931d;
-			}
-
 			.list-group {
 				font-weight: bold;
 			}
