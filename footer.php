@@ -57,7 +57,7 @@ $padding_desktop = $footer['padding_desktop']; ?>
 </style>
 
 <?php
-if ($number_of_columns > 1): ?>
+if ($number_of_columns > 0): ?>
     <footer class="footer <?= $container ?>">
         <div class="footer_wrapper">
             <?php
