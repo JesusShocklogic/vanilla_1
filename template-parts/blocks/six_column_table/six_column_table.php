@@ -58,7 +58,7 @@ $stripe_rows_backgrounds = (isset($six_column_table_group['stripe_rows_backgroun
 					foreach ($table as $key => $column) {
 						if ($key == 0) continue; ?>
 						<tr>
-							<th scope="row"><?= $column['col_1'] ?><?= $key ?></th>
+							<th scope="row"><?= $column['col_1'] ? $column['col_1']." ".$key : ""; ?></th>
 							<td><?= $column['col_2'] ?></td>
 							<td><?= $column['col_3'] ?></td>
 							<td><?= $column['col_4'] ?></td>
