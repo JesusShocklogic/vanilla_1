@@ -104,7 +104,7 @@ if (isset($shocklogic_synclogic_speakers_group) && $shocklogic_synclogic_speaker
 		?>
 
 				<!-- Modal -->
-				<div class="modal fade" id="speaker-<?= $speaker->speaker_id ?>" tabindex="-1" aria-labelledby="speaker-<?= $speaker->speaker_id ?>Label" aria-hidden="true">
+				<div class="modal fade" id="speaker-<?= $speaker->speaker_id ?>" tabindex="-1" aria-labelledby="speaker-<?= $speaker->speaker_id ?>-Label" aria-hidden="true">
 					<div class="modal-dialog modal-xl modal_dialog">
 						<div class="modal-content modal_dialog_content">
 							<div class="modal-header">
