@@ -20,6 +20,7 @@ $block_id = $block['id'];
 $six_column_table_group = get_field('six_column_table_group');
 $table = $six_column_table_group['table'];
 $text_midle_alignment = (isset($six_column_table_group['text_midle_alignment']) && $six_column_table_group['text_midle_alignment'] == true) ? "align-middle" : "";
+$text_font_size = (isset($six_column_table_group['text_font_size']) && $six_column_table_group['text_font_size']) ? $six_column_table_group['text_font_size'] : "inherit";
 
 $stripe_rows = (isset($six_column_table_group['stripe_rows']) && $six_column_table_group['stripe_rows'] == true) ? "table-striped" : "";
 $stripe_rows_backgrounds = (isset($six_column_table_group['stripe_rows_backgrounds'])) ? $six_column_table_group['stripe_rows_backgrounds'] : null;
@@ -30,6 +31,7 @@ $stripe_rows_backgrounds = (isset($six_column_table_group['stripe_rows_backgroun
 	$classes = <<<ITEM
 	#$block_id{
 		background-color: $background_colour;
+		font-size: $text_font_size;
 	}
 
 	#$block_id .table-striped>tbody>tr:nth-of-type(odd)>*{
