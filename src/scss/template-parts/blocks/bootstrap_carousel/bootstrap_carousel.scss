@@ -1,0 +1,21 @@
+@use "../../../util/variables";
+@use "../../../util/breakpoints";
+.bootstrap_carousel {
+    &.contain {
+        @include variables.spacing;
+    }
+    &.fullscreen {
+        padding: 0;
+    }
+
+    &_group_carousel{
+        &_inner{
+            &_item{
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
