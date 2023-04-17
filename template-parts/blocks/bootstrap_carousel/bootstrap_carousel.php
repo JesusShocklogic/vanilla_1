@@ -23,6 +23,11 @@ else:
 endif;
 
 $object_fit = (isset($bootstrap_carousel_group['object_fit']) && $bootstrap_carousel_group['object_fit']) ? $bootstrap_carousel_group['object_fit'] : "contain";
+if (isset($bootstrap_carousel_group['fade_effect'])):
+	$fade_effect = ($bootstrap_carousel_group['fade_effect'] == false) ? "" : "carousel-fade";
+endif;
+
+$slides_time_interval = (isset($bootstrap_carousel_group['slides_time_interval'])) ? $bootstrap_carousel_group['slides_time_interval'] : 3000;
 ?>
 <style>
 	<?php
@@ -46,22 +51,25 @@ ITEM;
 if (isset($bootstrap_carousel_group) && $bootstrap_carousel_group != null) {
 	if ($slides): ?>
 		<div class="bootstrap_carousel <?= $spacing ?>" id="<?= $block_id ?>" data-bs-ride="carousel">
-			<div id="carousel_<?= $block_id ?>" class="carousel slide bootstrap_carousel_group_carousel">
+			<div id="carousel_<?= $block_id ?>" class="carousel slide <?= $fade_effect ?> bootstrap_carousel_group_carousel">
 				<div class="carousel-inner bootstrap_carousel_group_carousel_inner">
 					<?php
 					foreach ($slides as $key => $slide): ?>
-						<div class="carousel-item bootstrap_carousel_group_carousel_inner_item <?= ($key == 0) ? "active" : ""; ?>">
+						<div data-bs-interval="<?= $slides_time_interval ?>"
+							class="carousel-item bootstrap_carousel_group_carousel_inner_item <?= ($key == 0) ? "active" : ""; ?>">
 							<img src="<?= $slide['slide']['url'] ?>" class="d-block" alt="<?= $slide['slide']['alt'] ?>">
 						</div>
 						<?php
 					endforeach;
 					?>
 				</div>
-				<button class="carousel-control-prev" type="button" data-bs-target="#carousel_<?= $block_id ?>" data-bs-slide="prev">
+				<button class="carousel-control-prev" type="button" data-bs-target="#carousel_<?= $block_id ?>"
+					data-bs-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span class="visually-hidden">Previous</span>
 				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#carousel_<?= $block_id ?>" data-bs-slide="next">
+				<button class="carousel-control-next" type="button" data-bs-target="#carousel_<?= $block_id ?>"
+					data-bs-slide="next">
 					<span class="carousel-control-next-icon" aria-hidden="true"></span>
 					<span class="visually-hidden">Next</span>
 				</button>
