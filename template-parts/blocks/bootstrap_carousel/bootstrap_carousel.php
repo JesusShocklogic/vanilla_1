@@ -11,6 +11,7 @@ $spacing = $general_settings['spacing'];
 $background_colour = $general_settings['background_colour'];
 
 $showhide_arrows = (isset($bootstrap_carousel_group['showhide_arrows'])) ? (($bootstrap_carousel_group['showhide_arrows'] == "show") ? true : false) : true;
+$showhide_bullet_dots = (isset($bootstrap_carousel_group['showhide_bullet_dots'])) ? (($bootstrap_carousel_group['showhide_bullet_dots'] == "show") ? true : false) : true;
 
 if (isset($bootstrap_carousel_group['aspect_ratio'])):
 	if ($bootstrap_carousel_group['aspect_ratio'] == "full_screen"):
@@ -57,6 +58,17 @@ if (isset($bootstrap_carousel_group) && $bootstrap_carousel_group != null) {
 	if ($slides): ?>
 		<div class="bootstrap_carousel <?= $spacing ?>" id="<?= $block_id ?>" data-bs-ride="carousel">
 			<div id="carousel_<?= $block_id ?>" class="carousel slide <?= $fade_effect ?> bootstrap_carousel_group_carousel">
+
+				<?php if ($showhide_bullet_dots): ?>
+					<div class="carousel-indicators">
+						<button type="button" data-bs-target="#carousel_<?= $block_id ?>" data-bs-slide-to="0" class="active"
+							aria-current="true" aria-label="Slide 1"></button>
+						<button type="button" data-bs-target="#carousel_<?= $block_id ?>" data-bs-slide-to="1"
+							aria-label="Slide 2"></button>
+						<button type="button" data-bs-target="#carousel_<?= $block_id ?>" data-bs-slide-to="2"
+							aria-label="Slide 3"></button>
+					</div>
+				<?php endif; ?>
 				<div class="carousel-inner bootstrap_carousel_group_carousel_inner">
 					<?php
 					foreach ($slides as $key => $slide): ?>

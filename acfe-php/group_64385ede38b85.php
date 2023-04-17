@@ -168,6 +168,35 @@ acf_add_local_field_group(array(
 					'search_placeholder' => '',
 				),
 				array(
+					'key' => 'field_643d77989a66a',
+					'label' => 'Show/hide bullet dots',
+					'name' => 'showhide_bullet_dots',
+					'aria-label' => '',
+					'type' => 'select',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'acfe_save_meta' => 0,
+					'choices' => array(
+						'show' => 'Show bullet dots',
+						'hide' => 'Hide bullet dots',
+					),
+					'default_value' => 'show',
+					'return_format' => 'value',
+					'multiple' => 0,
+					'allow_null' => 0,
+					'ui' => 0,
+					'ajax' => 0,
+					'placeholder' => '',
+					'allow_custom' => 0,
+					'search_placeholder' => '',
+				),
+				array(
 					'key' => 'field_6439fd023d1b1',
 					'label' => 'Object fit',
 					'name' => 'object_fit',
@@ -313,7 +342,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1681748889,
+	'modified' => 1681749946,
 ));
 
 endif;
