@@ -114,9 +114,30 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_6439f8d05e7b1",
-                    "label": "Aspect ratio",
-                    "name": "aspect_ratio",
+                    "key": "field_643d45d2b8543",
+                    "label": "Fade effect",
+                    "name": "fade_effect",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "acfe_save_meta": 0,
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_643d6a0ea718e",
+                    "label": "Show\/hide arrows",
+                    "name": "showhide_arrows",
                     "aria-label": "",
                     "type": "select",
                     "instructions": "",
@@ -129,11 +150,10 @@
                     },
                     "acfe_save_meta": 0,
                     "choices": {
-                        "auto": "Adjust to slide's size",
-                        "full_screen": "Full screen",
-                        "16x9": "16 x 9"
+                        "show": "Show arrows",
+                        "hide": "Hide arrows"
                     },
-                    "default_value": "auto",
+                    "default_value": "show",
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
@@ -173,27 +193,6 @@
                     "search_placeholder": ""
                 },
                 {
-                    "key": "field_643d45d2b8543",
-                    "label": "Fade effect",
-                    "name": "fade_effect",
-                    "aria-label": "",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "acfe_save_meta": 0,
-                    "message": "",
-                    "default_value": 0,
-                    "ui": 0,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
-                },
-                {
                     "key": "field_643d476a50a93",
                     "label": "Slide's time interval",
                     "name": "slides_time_interval",
@@ -213,6 +212,66 @@
                     "max": "",
                     "placeholder": "",
                     "step": 500,
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_6439f8d05e7b1",
+                    "label": "Aspect ratio",
+                    "name": "aspect_ratio",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "acfe_save_meta": 0,
+                    "choices": {
+                        "auto": "Adjust to slide's size",
+                        "full_screen": "Full screen",
+                        "16x9": "16 x 9",
+                        "custom": "Custom height"
+                    },
+                    "default_value": "auto",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": ""
+                },
+                {
+                    "key": "field_643d6f547c2d0",
+                    "label": "Custom height",
+                    "name": "custom_height",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Please add the custom height value that the carousel and its elements will have.",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6439f8d05e7b1",
+                                "operator": "==",
+                                "value": "custom"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "acfe_save_meta": 0,
+                    "default_value": "300px",
+                    "maxlength": "",
+                    "placeholder": "300px",
                     "prepend": "",
                     "append": ""
                 }
@@ -249,5 +308,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1681737694
+    "modified": 1681748889
 }
