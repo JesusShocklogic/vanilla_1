@@ -10,6 +10,8 @@ $block_id = $block['id'];
 $spacing = $general_settings['spacing'];
 $background_colour = $general_settings['background_colour'];
 
+$showhide_arrows = (isset($bootstrap_carousel_group['showhide_arrows'])) ? (($bootstrap_carousel_group['showhide_arrows'] == "show") ? true : false) : true;
+
 if (isset($bootstrap_carousel_group['aspect_ratio'])):
 	if ($bootstrap_carousel_group['aspect_ratio'] == "full_screen"):
 		$aspect_ratio = "height: 100dvh";
@@ -17,6 +19,9 @@ if (isset($bootstrap_carousel_group['aspect_ratio'])):
 		$aspect_ratio = "aspect-ratio: 16 / 9";
 	elseif ($bootstrap_carousel_group['aspect_ratio'] == "auto"):
 		$aspect_ratio = "aspect-ratio: auto";
+	elseif ($bootstrap_carousel_group['aspect_ratio'] == "custom"):
+		$custom_height = $bootstrap_carousel_group['custom_height'] ?? "300px";
+		$aspect_ratio = "height:" . $custom_height;
 	endif;
 else:
 	$aspect_ratio = "aspect-ratio: auto";
@@ -63,16 +68,18 @@ if (isset($bootstrap_carousel_group) && $bootstrap_carousel_group != null) {
 					endforeach;
 					?>
 				</div>
-				<button class="carousel-control-prev" type="button" data-bs-target="#carousel_<?= $block_id ?>"
-					data-bs-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#carousel_<?= $block_id ?>"
-					data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Next</span>
-				</button>
+				<?php if ($showhide_arrows): ?>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carousel_<?= $block_id ?>"
+						data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carousel_<?= $block_id ?>"
+						data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				<?php endif; ?>
 			</div>
 		</div>
 		<?php
