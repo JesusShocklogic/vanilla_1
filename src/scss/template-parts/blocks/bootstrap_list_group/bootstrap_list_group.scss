@@ -1,0 +1,10 @@
+@use "../../../util/variables";
+@use "../../../util/breakpoints";
+.bootstrap_list_group {
+    &.contain {
+        @include variables.spacing;
+    }
+    &.fullscreen {
+        padding: 0; 
+    }
+}
