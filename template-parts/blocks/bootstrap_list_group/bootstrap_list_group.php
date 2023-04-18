@@ -30,6 +30,7 @@ $background_colour = $general_settings['background_colour']; ?>
 		#$block_id .bootstrap_list_group_wrapper_list_group_item.active{
 			background-color: $titless_background_colour_active;
 			color: $titless_font_colour_active;
+			border-color: transparent;
 		}
 ITEM;
 	echo $classes;
