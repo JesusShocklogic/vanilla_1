@@ -1,4 +1,6 @@
-<link rel="stylesheet" id="shocklogic_partners_slider" href="<?= get_template_directory_uri() . "/template-parts/blocks/shocklogic_partners_slider/shocklogic_partners_slider.css" ?>" type="text/css" media="all">
+<link rel="stylesheet" id="shocklogic_partners_slider"
+	href="<?= get_template_directory_uri() . "/template-parts/blocks/shocklogic_partners_slider/shocklogic_partners_slider.css" ?>"
+	type="text/css" media="all">
 <?php
 //Initialize Swiper
 wp_enqueue_style("swiper-css");
@@ -29,7 +31,7 @@ $avatar = default_partners_avatar(); ?>
 if (isset($shocklogic_partners_slider_group) && $shocklogic_partners_slider_group != null) { ?>
 	<div class="shocklogic_partners_slider <?= $spacing ?>" id="<?= $block_id ?>">
 		<div class="shocklogic_partners_slider_wrapper">
-			<?php if ($shocklogic_partners_slider_group['title']) : ?>
+			<?php if ($shocklogic_partners_slider_group['title']): ?>
 				<div class="shocklogic_partners_slider_wrapper_title">
 					<?= $shocklogic_partners_slider_group['title'] ?>
 				</div>
@@ -51,20 +53,21 @@ if (isset($shocklogic_partners_slider_group) && $shocklogic_partners_slider_grou
 											<div>
 												<img src="<?= $image_url ?>" alt="">
 											</div>
-										<?php
+											<?php
 										} else { ?>
 											<div class="swiper_slide_partner">
 												<a href="<?php the_permalink() ?>">
 													<img src="<?= $image_url ?>" alt="">
 												</a>
 											</div>
-										<?php
+											<?php
 
 										}
 										?>
 									</div>
-								<?php
-								}; //while
+									<?php
+								}
+								; //while
 								wp_reset_query();
 							}
 							//For external links
@@ -80,18 +83,19 @@ if (isset($shocklogic_partners_slider_group) && $shocklogic_partners_slider_grou
 											<div>
 												<img src="<?= $image_url ?>" alt="">
 											</div>
-										<?php
+											<?php
 
 										} else { ?>
 											<a href="<?= $link ?>" target="_blank">
 												<img src="<?= $image_url ?>" alt="">
 											</a>
-										<?php
+											<?php
 										}
 										?>
 									</div>
-								<?php
-								}; //while
+									<?php
+								}
+								; //while
 								wp_reset_query();
 							}
 							//For external links
@@ -105,7 +109,8 @@ if (isset($shocklogic_partners_slider_group) && $shocklogic_partners_slider_grou
 										</a>
 									</div>
 									<?php
-								}; //while
+								}
+								; //while
 								wp_reset_query();
 							}
 							//For same link on all links
@@ -126,26 +131,26 @@ if (isset($shocklogic_partners_slider_group) && $shocklogic_partners_slider_grou
 												<div>
 													<img src="<?= $image_url ?>" alt="">
 												</div>
-											<?php
+												<?php
 											} else { ?>
 												<a href="<?= $link_url ?>" target="<?= $link_target ?>">
 													<img src="<?= $image_url ?>" alt="">
 												</a>
-											<?php
+												<?php
 											}
 											?>
 										</div>
-						<?php
+										<?php
 									} //while
 									wp_reset_query();
 								} //if there is a link
 							} //For same link on all links
-						} else {
-							echo "No posts were found";
-						}
-						?>
-						</div>
+				} else {
+					echo "No posts were found";
+				}
+				?>
 					</div>
+				</div>
 			</div>
 		</div>
 		<?php
@@ -153,16 +158,18 @@ if (isset($shocklogic_partners_slider_group) && $shocklogic_partners_slider_grou
 			<div class="shocklogic_partners_slider_wrapper_bottom_text">
 				<?= $shocklogic_partners_slider_group['bottom_text'] ?>
 			</div>
-		<?php
+			<?php
 		}
 		?>
 	</div>
 
 	<?php
 	/*
-	* Printing modals
-	*/
-	if ($shocklogic_partners_slider_group['click_behaviour'] == "modal") { ?>
+	 * Printing modals
+	 */
+	if ($shocklogic_partners_slider_group['click_behaviour'] == "modal") {
+		$partners_modal = get_field('partners_modal');
+		$style_of_modal = $partners_modal['style_of_modal'] ?? "horizontal"; ?>
 		<div class="shocklogic_partners_slider_wrapper_modals">
 			<?php
 			if ($wp_query->have_posts()) {
@@ -173,18 +180,21 @@ if (isset($shocklogic_partners_slider_group) && $shocklogic_partners_slider_grou
 					$title = get_the_title(); ?>
 
 					<!-- Modal -->
-					<div class="modal fade" id="<?= "partner" . get_the_ID() ?>" tabindex="-1" aria-labelledby="<?= "partner" . get_the_ID() ?>Label" aria-hidden="true">
+					<div class="modal fade" id="<?= "partner" . get_the_ID() ?>" tabindex="-1"
+						aria-labelledby="<?= "partner" . get_the_ID() ?>Label" aria-hidden="true">
 						<div class="modal-dialog modal-xl modal_partner_dialog">
 							<div class="modal-content modal_partner_dialog_content">
 								<div class="modal-header">
 									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 								</div>
-								<div class="modal-body modal_partner_dialog_content_body">
+								<div class="modal-body modal_partner_dialog_content_body <?= $style_of_modal ?>">
 									<div class="modal_partner_dialog_content_body_left">
-										<div class="modal_partner_dialog_content_body_left_image">
+										<div class="modal_partner_dialog_content_body_left_image <?= $style_of_modal ?>">
 											<img src="<?= $image_url ?>" alt="">
 										</div>
-										<strong><?= $title ?></strong>
+										<strong>
+											<?= $title ?>
+										</strong>
 									</div>
 									<div class="modal_partner_dialog_content_body_right">
 										<div class="modal_partner_dialog_content_body_right_content">
@@ -197,13 +207,14 @@ if (isset($shocklogic_partners_slider_group) && $shocklogic_partners_slider_grou
 						</div>
 					</div>
 
-			<?php
-				}; //while
+					<?php
+				}
+				; //while
 				wp_reset_query();
 			} //if
 			?>
 		</div>
-<?php
+		<?php
 	} //if click behaviour == modal
 
 }
