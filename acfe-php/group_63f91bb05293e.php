@@ -42,6 +42,34 @@ acf_add_local_field_group(array(
 					'endpoint' => 0,
 				),
 				array(
+					'key' => 'field_64513887d8d82',
+					'label' => 'Style of modal',
+					'name' => 'style_of_modal',
+					'aria-label' => '',
+					'type' => 'select',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array(
+						'horizontal' => 'Horizontal',
+						'vertical' => 'Vertical',
+					),
+					'default_value' => 'horizontal',
+					'return_format' => 'value',
+					'multiple' => 0,
+					'allow_null' => 0,
+					'ui' => 0,
+					'ajax' => 0,
+					'placeholder' => '',
+					'allow_custom' => 0,
+					'search_placeholder' => '',
+				),
+				array(
 					'key' => 'field_63f91ca81566f',
 					'label' => 'Speaker name colour',
 					'name' => 'speaker_name_colour',
@@ -400,7 +428,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'speakers' => 'Speakers',
 	),
-	'modified' => 1680211976,
+	'modified' => 1683044529,
 ));
 
 endif;

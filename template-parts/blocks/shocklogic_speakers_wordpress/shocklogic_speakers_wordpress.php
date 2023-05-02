@@ -1,4 +1,6 @@
-<link rel="stylesheet" id="speakers-wordpress" href="<?= get_template_directory_uri() . "/template-parts/blocks/shocklogic_speakers_wordpress/shocklogic_speakers_wordpress.css" ?>" type="text/css" media="all">
+<link rel="stylesheet" id="speakers-wordpress"
+	href="<?= get_template_directory_uri() . "/template-parts/blocks/shocklogic_speakers_wordpress/shocklogic_speakers_wordpress.css" ?>"
+	type="text/css" media="all">
 <?php
 wp_enqueue_style("modal-css");
 
@@ -14,6 +16,7 @@ $avatar = default_speaker_avatar();
 
 //Speaker's modal
 $speakers_modal = get_field('speakers_modal');
+$style_of_modal = $speakers_modal['style_of_modal'] ?? "horizontal";
 
 $show_job_title = (isset($speakers_modal['show_job_title']) && $speakers_modal['show_job_title']) ? "block" : "none";
 $show_company_name = (isset($speakers_modal['show_company_name']) && $speakers_modal['show_company_name']) ? "block" : "none";
@@ -41,7 +44,7 @@ if (isset($shocklogic_speakers_wordpress_group) && $shocklogic_speakers_wordpres
 	<div class="shocklogic_speakers_wordpress <?= $spacing ?>" id="<?= $block_id ?>">
 		<div class="shocklogic_speakers_wordpress_wrapper">
 
-			<?php if ($shocklogic_speakers_wordpress_group['title']) : ?>
+			<?php if ($shocklogic_speakers_wordpress_group['title']): ?>
 				<div class="shocklogic_speakers_wordpress_wrapper_title">
 					<?= $shocklogic_speakers_wordpress_group['title'] ?>
 				</div>
@@ -65,10 +68,13 @@ if (isset($shocklogic_speakers_wordpress_group) && $shocklogic_speakers_wordpres
 							<a data-bs-toggle="modal" data-bs-target="#<?= "speaker" . get_the_ID() ?>">
 								<img src="<?= $image_url ?>" alt="">
 							</a>
-							<div class="shocklogic_speakers_wordpress_wrapper_speakers_speaker_name"><?= $title ?></div>
+							<div class="shocklogic_speakers_wordpress_wrapper_speakers_speaker_name">
+								<?= $title ?>
+							</div>
 						</div>
-				<?php
-					}; //while
+						<?php
+					}
+					; //while
 					wp_reset_query();
 				} //if
 				else {
@@ -81,7 +87,7 @@ if (isset($shocklogic_speakers_wordpress_group) && $shocklogic_speakers_wordpres
 				<div class="shocklogic_speakers_wordpress_wrapper_bottom_text">
 					<?= $shocklogic_speakers_wordpress_group['bottom_text'] ?>
 				</div>
-			<?php
+				<?php
 			}
 			?>
 		</div>
@@ -102,20 +108,27 @@ if (isset($shocklogic_speakers_wordpress_group) && $shocklogic_speakers_wordpres
 				} ?>
 
 				<!-- Modal -->
-				<div class="modal fade" id="<?= "speaker" . get_the_ID() ?>" tabindex="-1" aria-labelledby="<?= "speaker" . get_the_ID() ?>Label" aria-hidden="true">
+				<div class="modal fade" id="<?= "speaker" . get_the_ID() ?>" tabindex="-1"
+					aria-labelledby="<?= "speaker" . get_the_ID() ?>Label" aria-hidden="true">
 					<div class="modal-dialog modal-xl modal_dialog">
 						<div class="modal-content modal_dialog_content">
 							<div class="modal-header">
 								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							</div>
-							<div class="modal-body modal_dialog_content_body">
+							<div class="modal-body modal_dialog_content_body <?= $style_of_modal ?>">
 								<div class="modal_dialog_content_body_left">
-									<div class="modal_dialog_content_body_left_image">
+									<div class="modal_dialog_content_body_left_image <?= $style_of_modal ?>">
 										<img src="<?= $image_url ?>" alt="">
 									</div>
-									<strong class="modal_dialog_content_body_left_name"><?= $title ?></strong>
-									<div class="modal_dialog_content_body_left_jobtitle"><?= ($speaker_wordpress_group['job_title'] ?? '') ?></div>
-									<div class="modal_dialog_content_body_left_companyname"><?= ($speaker_wordpress_group['company_organizarion'] ?? '') ?></div>
+									<strong class="modal_dialog_content_body_left_name">
+										<?= $title ?>
+									</strong>
+									<div class="modal_dialog_content_body_left_jobtitle">
+										<?= ($speaker_wordpress_group['job_title'] ?? '') ?>
+									</div>
+									<div class="modal_dialog_content_body_left_companyname">
+										<?= ($speaker_wordpress_group['company_organizarion'] ?? '') ?>
+									</div>
 								</div>
 								<div class="modal_dialog_content_body_right">
 									<div class="modal_dialog_content_body_right_content">
@@ -128,11 +141,12 @@ if (isset($shocklogic_speakers_wordpress_group) && $shocklogic_speakers_wordpres
 					</div>
 				</div>
 
-		<?php
-			}; //while
+				<?php
+			}
+			; //while
 			wp_reset_query();
 		} //if
 		?>
 	</div>
-<?php
+	<?php
 }

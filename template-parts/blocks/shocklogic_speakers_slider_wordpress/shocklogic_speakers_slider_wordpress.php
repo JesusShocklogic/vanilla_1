@@ -17,6 +17,7 @@ $avatar = default_speaker_avatar();
 
 //Speaker's modal
 $speakers_modal = get_field('speakers_modal');
+$style_of_modal = $speakers_modal['style_of_modal'] ?? "horizontal";
 
 $show_job_title = (isset($speakers_modal['show_job_title']) && $speakers_modal['show_job_title']) ? "block" : "none";
 $show_company_name = (isset($speakers_modal['show_company_name']) && $speakers_modal['show_company_name']) ? "block" : "none";
@@ -117,9 +118,9 @@ if (isset($shocklogic_speakers_slider_wordpress_group) && $shocklogic_speakers_s
 							<div class="modal-header">
 								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							</div>
-							<div class="modal-body modal_dialog_content_body">
+							<div class="modal-body modal_dialog_content_body <?= $style_of_modal ?>">
 								<div class="modal_dialog_content_body_left">
-									<div class="modal_dialog_content_body_left_image">
+									<div class="modal_dialog_content_body_left_image <?= $style_of_modal ?>">
 										<img src="<?= $image_url ?>" alt="">
 									</div>
 									<strong class="modal_dialog_content_body_left_name"><?= $title ?></strong>
