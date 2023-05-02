@@ -18,6 +18,7 @@ if (defined('Synclogic')) {
 	$avatar = default_speaker_avatar();
 
 	$speakers_modal = get_field('speakers_modal');
+	$style_of_modal = $speakers_modal['style_of_modal'] ?? "horizontal";
 	$captions = $speakers_modal['captions_group'];
 
 	$speakers = null;
@@ -119,9 +120,9 @@ if (defined('Synclogic')) {
 								<div class="modal-header">
 									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 								</div>
-								<div class="modal-body modal_dialog_content_body">
+								<div class="modal-body modal_dialog_content_body <?= $style_of_modal ?>">
 									<div class="modal_dialog_content_body_left">
-										<div class="modal_dialog_content_body_left_image">
+										<div class="modal_dialog_content_body_left_image <?= $style_of_modal ?>">
 											<img src="<?= $image_url ?>" alt="">
 										</div>
 										<strong class="modal_dialog_content_body_left_name">
@@ -242,6 +243,6 @@ if (defined('Synclogic')) {
 		<?php
 	} // if shocklogic_synclogic_speakers_group is set
 } else {
-	echo "this block requires Shocklogic Synclogic plugin to be installed. Contact shocklogic.com for more information";
+	echo "This block requires Shocklogic Synclogic plugin to be installed. Contact shocklogic.com for more information";
 }
 ; //if class Synclogic exist
