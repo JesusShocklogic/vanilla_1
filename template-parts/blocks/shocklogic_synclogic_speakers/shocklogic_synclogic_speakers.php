@@ -6,7 +6,7 @@ if (defined('Synclogic')) {
 		href="<?= get_template_directory_uri() ?>/template-parts/blocks/shocklogic_synclogic_speakers/shocklogic_synclogic_speakers.css"
 		type="text/css" media="all">
 	<?php
-	wp_enqueue_style("modal-css");
+	wp_enqueue_style("modal-speakers");
 
 	$shocklogic_synclogic_speakers_group = get_field('shocklogic_synclogic_speakers_group');
 

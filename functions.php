@@ -154,6 +154,7 @@ add_action('init', function () {
     wp_register_style("swiper-css", get_template_directory_uri() . "/assets/css/swiper-bundle.min.css", array(), true);
     wp_register_style("modal-css", get_template_directory_uri() . "/assets/css/modal.css", array(), true);
     wp_register_style("modal-partners", get_template_directory_uri() . "/assets/css/modal-partners.css", array(), true);
+    wp_register_style("modal-speakers", get_template_directory_uri() . "/assets/css/modal-speakers.css", array(), true);
     wp_register_style("social-icon-widget", get_template_directory_uri() . "/template-parts/social-icons/social-icons-widget.css", array(), true);
     
     wp_register_script("swiper-js", get_template_directory_uri() . "/assets/js/swiper.js", array(), true);
