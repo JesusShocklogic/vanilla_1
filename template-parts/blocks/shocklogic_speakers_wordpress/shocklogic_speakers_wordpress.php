@@ -2,7 +2,7 @@
 	href="<?= get_template_directory_uri() . "/template-parts/blocks/shocklogic_speakers_wordpress/shocklogic_speakers_wordpress.css" ?>"
 	type="text/css" media="all">
 <?php
-wp_enqueue_style("modal-css");
+wp_enqueue_style("modal-speakers");
 
 $shocklogic_speakers_wordpress_group = get_field('shocklogic_speakers_wordpress_group');
 $wp_query = get_query(get_field('query_settings')['query_settings']);
