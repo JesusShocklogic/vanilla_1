@@ -55,6 +55,7 @@ acf_add_local_field_group(array(
 						'class' => '',
 						'id' => '',
 					),
+					'acfe_save_meta' => 0,
 					'choices' => array(
 						'horizontal' => 'Horizontal',
 						'vertical' => 'Vertical',
@@ -428,7 +429,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'speakers' => 'Speakers',
 	),
-	'modified' => 1683044529,
+	'modified' => 1683214373,
 ));
 
 endif;

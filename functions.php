@@ -175,7 +175,7 @@ add_action("get_header", function () {
  * wp_footer actions
  */
 add_action("wp_footer", function () {
-    //wp_enqueue_script('jquery');
+    wp_enqueue_script('jquery');
     wp_enqueue_script('base');
 });
 
