@@ -7,6 +7,7 @@ function get_query($args)
     $post_type = (isset($args['post_types']) && $args['post_types'] != "") ? $args['post_types'] : "post";
     $cat = (isset($args['post_categories'])) ? $args['post_categories'] : null;
     $posts_per_page = isset($args['posts_per_page']) ? $args['posts_per_page'] : 3;
+    if($posts_per_page === 0 || $posts_per_page === "") $posts_per_page = -1;
     $orderby = isset($args['orderby']) ? $args['orderby'] : "date";
     $order = isset($args['order']) ? $args['order'] : "DESC";
 

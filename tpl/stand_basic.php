@@ -159,8 +159,6 @@ get_header(); ?>
                     href="#list-downloads" role="tab" aria-controls="list-downloads">Downloads</a>
                 <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list"
                     href="#list-profile" role="tab" aria-controls="list-profile">Contact info</a>
-                <a class="list-group-item list-group-item-action" id="list-chat-list" data-bs-toggle="list"
-                    href="#list-chat" role="tab" aria-controls="list-chat">Settings</a>
             </div>
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="list-gallery" role="tabpanel"
@@ -244,16 +242,6 @@ get_header(); ?>
                                 eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
                                 <hr>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="list-chat" role="tabpanel" aria-labelledby="list-chat-list">
-                    <div class="stand_basic_chat">
-                        <div class="stand_basic_chat_wrapper">
-                            <iframe src="https://www.youtube.com/embed/s6H7BHNIyxM" title="YouTube video player"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>

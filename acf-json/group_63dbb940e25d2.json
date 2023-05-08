@@ -109,7 +109,7 @@
                     "name": "posts_per_page",
                     "aria-label": "",
                     "type": "number",
-                    "instructions": "",
+                    "instructions": "Empty or zero means ALL",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -117,11 +117,12 @@
                         "class": "",
                         "id": ""
                     },
+                    "acfe_save_meta": 0,
                     "default_value": 3,
                     "min": "",
                     "max": "",
                     "placeholder": "",
-                    "step": "",
+                    "step": 1,
                     "prepend": "",
                     "append": ""
                 },
@@ -214,7 +215,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1677278659,
+    "modified": 1683554471,
     "acfe_categories": {
         "block-queries": "Block - queries"
     }
