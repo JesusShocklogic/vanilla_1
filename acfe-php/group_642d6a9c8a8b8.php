@@ -23,6 +23,10 @@ acf_add_local_field_group(array(
 			'acfe_save_meta' => 0,
 			'layout' => 'block',
 			'acfe_seamless_style' => 1,
+			'acfe_group_modal' => 0,
+			'acfe_group_modal_close' => 0,
+			'acfe_group_modal_button' => '',
+			'acfe_group_modal_size' => 'large',
 			'sub_fields' => array(
 				array(
 					'key' => 'field_642dedca11528',
@@ -82,7 +86,7 @@ acf_add_local_field_group(array(
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => '',
+						'width' => '50',
 						'class' => '',
 						'id' => '',
 					),
@@ -92,6 +96,27 @@ acf_add_local_field_group(array(
 					'ui_on_text' => '',
 					'ui_off_text' => '',
 					'ui' => 1,
+				),
+				array(
+					'key' => 'field_6436d43abb525',
+					'label' => 'Text font size',
+					'name' => 'text_font_size',
+					'aria-label' => '',
+					'type' => 'text',
+					'instructions' => 'If empty, the table will use the default sizes',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '50',
+						'class' => '',
+						'id' => '',
+					),
+					'acfe_save_meta' => 0,
+					'default_value' => '',
+					'maxlength' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
 				),
 				array(
 					'key' => 'field_642d6bf5892ef',
@@ -252,10 +277,6 @@ acf_add_local_field_group(array(
 					),
 				),
 			),
-			'acfe_group_modal' => 0,
-			'acfe_group_modal_close' => 0,
-			'acfe_group_modal_button' => '',
-			'acfe_group_modal_size' => 'large',
 		),
 	),
 	'location' => array(
@@ -284,7 +305,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1680732334,
+	'modified' => 1681317090,
 ));
 
 endif;

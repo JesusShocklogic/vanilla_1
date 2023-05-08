@@ -20,6 +20,8 @@ $block_id = $block['id'];
 $six_column_table_group = get_field('six_column_table_group');
 $table = $six_column_table_group['table'];
 $text_midle_alignment = (isset($six_column_table_group['text_midle_alignment']) && $six_column_table_group['text_midle_alignment'] == true) ? "align-middle" : "";
+$text_font_size = (isset($six_column_table_group['text_font_size']) && $six_column_table_group['text_font_size']) ? $six_column_table_group['text_font_size'] : "inherit";
+
 
 $stripe_rows = (isset($six_column_table_group['stripe_rows']) && $six_column_table_group['stripe_rows'] == true) ? "table-striped" : "";
 $stripe_rows_backgrounds = (isset($six_column_table_group['stripe_rows_backgrounds'])) ? $six_column_table_group['stripe_rows_backgrounds'] : null;
@@ -30,6 +32,7 @@ $stripe_rows_backgrounds = (isset($six_column_table_group['stripe_rows_backgroun
 	$classes = <<<ITEM
 	#$block_id{
 		background-color: $background_colour;
+		font-size: $text_font_size;
 	}
 
 	#$block_id .table-striped>tbody>tr:nth-of-type(odd)>*{
@@ -45,12 +48,12 @@ $stripe_rows_backgrounds = (isset($six_column_table_group['stripe_rows_backgroun
 			<table class="table table-hover <?= $text_midle_alignment . " " . $stripe_rows ?>">
 				<thead>
 					<tr>
-						<th scope="col" style="min-width: 50px;"> <?= $table[0]['col_1'] ?></th>
+						<th scope="col" style="min-width: 25px;"> <?= $table[0]['col_1'] ?></th>
 						<th scope="col"><?= $table[0]['col_2'] ?></th>
-						<th scope="col" style="min-width: 100px;"><?= $table[0]['col_3'] ?></th>
+						<th scope="col"><?= $table[0]['col_3'] ?></th>
 						<th scope="col" style="min-width: 300px;"><?= $table[0]['col_4'] ?></th>
-						<th scope="col" style="min-width: 200px;"><?= $table[0]['col_5'] ?></th>
-						<th scope="col" style="min-width: 200px;"><?= $table[0]['col_6'] ?></th>
+						<th scope="col" style="min-width: 240px;"><?= $table[0]['col_5'] ?></th>
+						<th scope="col" style="min-width: 260px;"><?= $table[0]['col_6'] ?></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -58,7 +61,7 @@ $stripe_rows_backgrounds = (isset($six_column_table_group['stripe_rows_backgroun
 					foreach ($table as $key => $column) {
 						if ($key == 0) continue; ?>
 						<tr>
-							<th scope="row"><?= $column['col_1'] ?><?= $key ?></th>
+							<th scope="row"><?= $table[0]['col_1'] ? $column['col_1']." ".$key : ""; ?></th>
 							<td><?= $column['col_2'] ?></td>
 							<td><?= $column['col_3'] ?></td>
 							<td><?= $column['col_4'] ?></td>
