@@ -9,7 +9,7 @@ function get_query($args)
 
     if (isset($args['posts_per_page'])) {
         if ($args['posts_per_page'] <= 0) {
-            $posts_per_page = "-1";
+            $posts_per_page = "-1"; 
         } else {
             $posts_per_page = $args['posts_per_page'];
         }
