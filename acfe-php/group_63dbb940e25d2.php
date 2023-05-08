@@ -117,7 +117,7 @@ acf_add_local_field_group(array(
 					'name' => 'posts_per_page',
 					'aria-label' => '',
 					'type' => 'number',
-					'instructions' => '',
+					'instructions' => 'Empty or zero means ALL',
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
@@ -125,11 +125,12 @@ acf_add_local_field_group(array(
 						'class' => '',
 						'id' => '',
 					),
+					'acfe_save_meta' => 0,
 					'default_value' => 3,
 					'min' => '',
 					'max' => '',
 					'placeholder' => '',
-					'step' => '',
+					'step' => 1,
 					'prepend' => '',
 					'append' => '',
 				),
@@ -225,7 +226,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'block-queries' => 'Block - queries',
 	),
-	'modified' => 1677278659,
+	'modified' => 1683554471,
 ));
 
 endif;
