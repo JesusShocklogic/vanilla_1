@@ -13,14 +13,24 @@
                     grid-gap: 20px;
                     grid-template-columns: 1fr;
 
-                    @media (min-width: breakpoints.$desktop_medium) {
-                        grid-template-columns: 1fr 2fr;
+                    &.horizontal {
+                        @media (min-width: breakpoints.$desktop_medium) {
+                            grid-template-columns: 1fr 2fr;
+                        }
                     }
                     &_left {
                         text-align: center;
                         &_image {
-                            @include variables.aspect-ratio(1, 1);
-                            width: 70%;
+                            aspect-ratio: 1 / 1;
+                            width: 80%;
+                            @media (min-width: breakpoints.$tablet) {
+                                width: 70%;
+                            }
+                            max-width: 350px;
+                            min-width: 250px;
+                            &.horizontal {
+                                width: 70%;
+                            }
                             margin: 0 auto;
                             margin-bottom: 1rem;
                             & img {

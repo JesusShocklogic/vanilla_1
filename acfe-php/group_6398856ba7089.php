@@ -213,8 +213,9 @@ acf_add_local_field_group(array(
 						'class' => '',
 						'id' => '',
 					),
+					'acfe_save_meta' => 0,
 					'default_value' => '#FFF',
-					'enable_opacity' => 0,
+					'enable_opacity' => 1,
 					'return_format' => 'string',
 				),
 				array(
@@ -479,9 +480,9 @@ acf_add_local_field_group(array(
 	'acfe_meta' => '',
 	'acfe_note' => '',
 	'acfe_categories' => array(
-		'theme-settings' => 'Theme settings',
+		'theme' => 'Theme',
 	),
-	'modified' => 1676854332,
+	'modified' => 1681240368,
 ));
 
 endif;
