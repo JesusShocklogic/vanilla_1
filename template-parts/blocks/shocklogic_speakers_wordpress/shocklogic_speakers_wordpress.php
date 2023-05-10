@@ -2,10 +2,10 @@
 	href="<?= get_template_directory_uri() . "/template-parts/blocks/shocklogic_speakers_wordpress/shocklogic_speakers_wordpress.css" ?>"
 	type="text/css" media="all">
 <?php
-wp_enqueue_style("modal-speakers");
 
 $shocklogic_speakers_wordpress_group = get_field('shocklogic_speakers_wordpress_group');
-$wp_query = get_query(get_field('query_settings')['query_settings']);
+$query_settings = get_field('query_settings')['query_settings'];
+$wp_speakers_query = get_query($query_settings);
 
 $general_settings = get_field('general_settings');
 $spacing = $general_settings['spacing'];
@@ -52,10 +52,10 @@ if (isset($shocklogic_speakers_wordpress_group) && $shocklogic_speakers_wordpres
 
 			<div class="shocklogic_speakers_wordpress_wrapper_speakers">
 				<?php
-				if ($wp_query->have_posts()) {
+				if ($wp_speakers_query->have_posts()) {
 					$content = "";
-					while ($wp_query->have_posts()) {
-						$wp_query->the_post();
+					while ($wp_speakers_query->have_posts()) {
+						$wp_speakers_query->the_post();
 						$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : $avatar;
 
 						$speaker_wordpress_group = get_field('speaker_wordpress_group', get_the_ID());
@@ -95,57 +95,12 @@ if (isset($shocklogic_speakers_wordpress_group) && $shocklogic_speakers_wordpres
 
 	<div class="shocklogic_speakers_wordpress_wrapper_modals" id="<?= $block_id ?>">
 		<?php
-		if ($wp_query->have_posts()) {
-			while ($wp_query->have_posts()) {
-				$wp_query->the_post();
-				$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : $avatar;
-
-				$speaker_wordpress_group = get_field('speaker_wordpress_group', get_the_ID());
-				if (((isset($speaker_wordpress_group['name']) && $speaker_wordpress_group['name'] != "") || (isset($speaker_wordpress_group['last_name']) && $speaker_wordpress_group['last_name'] != ""))) {
-					$title = ($speaker_wordpress_group['name'] ?? '') . " " . ($speaker_wordpress_group['last_name'] ?? '');
-				} else {
-					$title = get_the_title();
-				} ?>
-
-				<!-- Modal -->
-				<div class="modal fade" id="<?= "speaker" . get_the_ID() ?>" tabindex="-1"
-					aria-labelledby="<?= "speaker" . get_the_ID() ?>Label" aria-hidden="true">
-					<div class="modal-dialog modal-xl modal_dialog">
-						<div class="modal-content modal_dialog_content">
-							<div class="modal-header">
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-							</div>
-							<div class="modal-body modal_dialog_content_body <?= $style_of_modal ?>">
-								<div class="modal_dialog_content_body_left">
-									<div class="modal_dialog_content_body_left_image <?= $style_of_modal ?>">
-										<img src="<?= $image_url ?>" alt="">
-									</div>
-									<strong class="modal_dialog_content_body_left_name">
-										<?= $title ?>
-									</strong>
-									<div class="modal_dialog_content_body_left_jobtitle">
-										<?= ($speaker_wordpress_group['job_title'] ?? '') ?>
-									</div>
-									<div class="modal_dialog_content_body_left_companyname">
-										<?= ($speaker_wordpress_group['company_organizarion'] ?? '') ?>
-									</div>
-								</div>
-								<div class="modal_dialog_content_body_right">
-									<div class="modal_dialog_content_body_right_content">
-										<?php the_content() ?>
-									</div>
-								</div>
-							</div>
-							<div class="modal-footer d-none"></div>
-						</div>
-					</div>
-				</div>
-
-				<?php
-			}
-			; //while
-			wp_reset_query();
-		} //if
+		$params = ["query" => $wp_speakers_query, "avatar" => $avatar];
+		if ($style_of_modal == "vertical"):
+			echo get_template_part("template-parts/modals/speakers/modals_speakers", "vertical", $params);
+		elseif ($style_of_modal == "horizontal"):
+			echo get_template_part("template-parts/modals/speakers/modals_speakers", "horizontal", $params);
+		endif;
 		?>
 	</div>
 	<?php

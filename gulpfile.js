@@ -31,6 +31,15 @@ function compilePartsCss(cb) {
         .pipe(dest('template-parts/'));
 }
 
+function compileModalsCss(cb) {
+    cb();
+    return src('src/scss/modals/**/*.scss')
+        .pipe(sass())
+        .pipe(autoprefixer())
+        .pipe(cleanCSS())
+        .pipe(dest('assets/css/modals/'));
+}
+
 function compileBootstrapCss(cb) {
     //cb();
     return src('node_modules/bootstrap/scss/bootstrap.scss')
@@ -69,9 +78,10 @@ function compileSwiperCss(cb) {
 }
 
 //exports.build = build;
-exports.default = series(compileImages, compileBootstrapCss, compileBootstrapJS, compileSwiperCss, compileSwipperJS, compileCss, compilePartsCss);
+exports.default = series(compileImages, compileBootstrapCss, compileBootstrapJS, compileSwiperCss, compileSwipperJS, compileCss, compilePartsCss, compileModalsCss);
 exports.watcher = function () {
     watch(['src/scss/*.scss', 'src/scss/**/*.scss', 'src/scss/template-parts/**/*.scss'], compileCss);
     watch(['src/scss/*.scss', 'src/scss/**/*.scss', 'src/scss/template-parts/**/*.scss'], compilePartsCss);
     watch('src/js/swiper-settings.js', compileSwipperJS);
+    watch('src/scss/modals/**/*.scss', compileModalsCss);
 };
