@@ -41,6 +41,27 @@
             }
 
             &_footer {
+                display: block;
+                &_session {
+                    padding-bottom: 1rem;
+
+                    &_title {
+                        font-weight: bold;
+                    }
+
+                    &_title,
+                    &_rol,
+                    &_day_name,
+                    &_time {
+                        display: inline-block;
+                    }
+
+                    &_presentations {
+                        &_title {
+                            font-weight: bold;
+                        }
+                    }
+                }
             }
         }
     }
