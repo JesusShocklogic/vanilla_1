@@ -109,7 +109,7 @@ function disable_emojis_tinymce($plugins)
     if (is_array($plugins)) {
         return array_diff($plugins, array('wpemoji'));
     } else {
-        return array();
+        return [];
     }
 }
 
@@ -148,27 +148,29 @@ add_post_type_support('post', 'excerpt');
  */
 add_action('init', function () {
     //Bases
-    wp_register_style("style", get_template_directory_uri() . "/style.css", array(), true);
-    wp_register_style("style-sass", get_template_directory_uri() . "/assets/css/style.css", array(), true);
-    wp_register_style("footer", get_template_directory_uri() . "/assets/css/footer.css", array(), true);
-    wp_register_style("bootstrap", get_template_directory_uri() . "/assets/css/bootstrap.css", array(), true);
+    wp_register_style("style", get_template_directory_uri() . "/style.css", [], true);
+    wp_register_style("style-sass", get_template_directory_uri() . "/assets/css/style.css", [], true);
+    wp_register_style("footer", get_template_directory_uri() . "/assets/css/footer.css", [], true);
+    wp_register_style("bootstrap", get_template_directory_uri() . "/assets/css/bootstrap.css", [], true);
     
     //Modals
-    wp_register_style("modal-speakers-vertical", get_template_directory_uri() . "/assets/css/modals/speakers/vertical.css", array(), true);
-    wp_register_style("modal-speakers-horizontal", get_template_directory_uri() . "/assets/css/modals/speakers/horizontal.css", array(), true);
-    wp_register_style("modal-css", get_template_directory_uri() . "/assets/css/modal.css", array(), true);
-    wp_register_style("modal-partners", get_template_directory_uri() . "/assets/css/modal-partners.css", array(), true);
-    wp_register_style("modal-speakers", get_template_directory_uri() . "/assets/css/modal-speakers.css", array(), true);
+    wp_register_style("modal-speakers-vertical", get_template_directory_uri() . "/assets/css/modals/speakers/vertical.css", [], true);
+    wp_register_style("modal-speakers-horizontal", get_template_directory_uri() . "/assets/css/modals/speakers/horizontal.css", [], true);
+    wp_register_style("modal-speakers-synclogic-vertical", get_template_directory_uri() . "/assets/css/modals/speakers/synclogic-vertical.css", [], true);
+    wp_register_style("modal-speakers-synclogic-horizontal", get_template_directory_uri() . "/assets/css/modals/speakers/synclogic-horizontal.css", [], true);
+    wp_register_style("modal-css", get_template_directory_uri() . "/assets/css/modal.css", [], true);
+    wp_register_style("modal-partners", get_template_directory_uri() . "/assets/css/modal-partners.css", [], true);
+    wp_register_style("modal-speakers", get_template_directory_uri() . "/assets/css/modal-speakers.css", [], true);
     
     //Social icon widget
-    wp_register_style("social-icon-widget", get_template_directory_uri() . "/template-parts/social-icons/social-icons-widget.css", array(), true);
+    wp_register_style("social-icon-widget", get_template_directory_uri() . "/template-parts/social-icons/social-icons-widget.css", [], true);
     
     //Swipper
-    wp_register_style("swiper-css", get_template_directory_uri() . "/assets/css/swiper-bundle.min.css", array(), true);
-    wp_register_script("swiper-js", get_template_directory_uri() . "/assets/js/swiper.js", array(), true);
+    wp_register_style("swiper-css", get_template_directory_uri() . "/assets/css/swiper-bundle.min.css", [], true);
+    wp_register_script("swiper-js", get_template_directory_uri() . "/assets/js/swiper.js", [], true);
     
     //Bases
-    wp_register_script("base", get_template_directory_uri() . "/assets/js/base.js", array(), true);
+    wp_register_script("base", get_template_directory_uri() . "/assets/js/base.js", [], true);
 });
 
 
