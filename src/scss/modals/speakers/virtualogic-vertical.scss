@@ -1,0 +1,83 @@
+@use "../../util/breakpoints";
+@use "../../util/variables";
+.modal {
+    &_dialog {
+        text-align: center;
+        &_content {
+            padding: 0rem 0.5rem;
+            & .modal-header {
+                border-bottom: none;
+            }
+
+            &_header {
+                & .btn-close {
+                    opacity: 1;
+                    border-radius: 50%;
+                    border: none;
+                    box-shadow: none;
+                    background: none;
+                }
+            }
+            &_body {
+                display: grid;
+                align-content: center;
+                justify-content: center;
+                align-items: start;
+                grid-gap: 20px;
+                grid-template-columns: 1fr;
+                &_left {
+                    text-align: center;
+
+                    &_name {
+                        padding-left: 15px;
+                        margin-left: -15px;
+                        font-size: 22px;
+                    }
+                    &_image {
+                        aspect-ratio: 1 / 1;
+                        width: 80%;
+                        @media (min-width: breakpoints.$tablet) {
+                            width: 70%;
+                        }
+                        max-width: 300px;
+                        min-width: 250px;
+                        margin: 0 auto;
+                        margin-bottom: 1rem;
+                        & img {
+                            border-radius: 50%;
+                            object-fit: cover;
+                            object-position: center center;
+                            display: block;
+                            margin: 0 auto;
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                }
+                &_right {
+                }
+            }
+
+            &_footer {
+                display: block;
+                &_session {
+                    padding-bottom: 1rem;
+
+                    &_title {
+                        font-weight: bold;
+                    }
+
+                    &_title,
+                    &_rol,
+                    &_day_name,
+                    &_time {
+                        display: inline-block;
+                    }
+
+                    &_presentations {
+                    }
+                }
+            }
+        }
+    }
+}

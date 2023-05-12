@@ -6,8 +6,6 @@ if (defined('Synclogic')) {
 		href="<?= get_template_directory_uri() ?>/template-parts/blocks/shocklogic_synclogic_speakers/shocklogic_synclogic_speakers.css"
 		type="text/css" media="all">
 	<?php
-	wp_enqueue_style("modal-speakers");
-
 	$shocklogic_synclogic_speakers_group = get_field('shocklogic_synclogic_speakers_group');
 
 	$general_settings = get_field('general_settings');
@@ -33,8 +31,8 @@ if (defined('Synclogic')) {
 	}
 
 	//Speaker's modal
-	$speakers_modal = get_field('speakers_modal');
-	$style_of_modal = $speakers_modal['style_of_modal'] ?? "horizontal";
+	$synclogic_speakers_modal = get_field('synclogic_speakers_modal');
+	$style_of_modal = $synclogic_speakers_modal['style_of_modal'] ?? "horizontal";
 	?>
 
 	<style>
@@ -91,11 +89,13 @@ if (defined('Synclogic')) {
 
 		<div class="shocklogic_synclogic_speakers_wrapper_modals" id="<?= $block_id ?>">
 			<?php
-			$params = ["speakers" => $speakers, "avatar" => $avatar, "speakers_modal" => $speakers_modal, "block_id" => $block_id];
+			$params = ["speakers" => $speakers, "avatar" => $avatar, "synclogic_speakers_modal" => $synclogic_speakers_modal, "block_id" => $block_id];
 			if ($style_of_modal == "vertical"):
 				echo get_template_part("template-parts/modals/speakers/modals_speakers", "synclogic-vertical", $params);
 			elseif ($style_of_modal == "horizontal"):
 				echo get_template_part("template-parts/modals/speakers/modals_speakers", "synclogic-horizontal", $params);
+			elseif ($style_of_modal == "virtualogic"):
+				echo get_template_part("template-parts/modals/speakers/modals_speakers", "virtualogic-vertical", $params);
 			endif;
 			?>
 		</div>
