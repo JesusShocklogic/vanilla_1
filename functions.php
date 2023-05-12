@@ -152,12 +152,13 @@ add_action('init', function () {
     wp_register_style("style-sass", get_template_directory_uri() . "/assets/css/style.css", [], true);
     wp_register_style("footer", get_template_directory_uri() . "/assets/css/footer.css", [], true);
     wp_register_style("bootstrap", get_template_directory_uri() . "/assets/css/bootstrap.css", [], true);
-    
+  
     //Modals
     wp_register_style("modal-speakers-vertical", get_template_directory_uri() . "/assets/css/modals/speakers/vertical.css", [], true);
     wp_register_style("modal-speakers-horizontal", get_template_directory_uri() . "/assets/css/modals/speakers/horizontal.css", [], true);
     wp_register_style("modal-speakers-synclogic-vertical", get_template_directory_uri() . "/assets/css/modals/speakers/synclogic-vertical.css", [], true);
     wp_register_style("modal-speakers-synclogic-horizontal", get_template_directory_uri() . "/assets/css/modals/speakers/synclogic-horizontal.css", [], true);
+    wp_register_style("modal-speakers-virtualogic-vertical", get_template_directory_uri() . "/assets/css/modals/speakers/virtualogic-vertical.css", [], true);
     wp_register_style("modal-css", get_template_directory_uri() . "/assets/css/modal.css", [], true);
     wp_register_style("modal-partners", get_template_directory_uri() . "/assets/css/modal-partners.css", [], true);
     wp_register_style("modal-speakers", get_template_directory_uri() . "/assets/css/modal-speakers.css", [], true);

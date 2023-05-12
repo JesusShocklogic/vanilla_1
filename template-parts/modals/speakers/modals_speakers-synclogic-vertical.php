@@ -3,15 +3,15 @@ wp_enqueue_style("modal-speakers-synclogic-vertical");
 $block_id = $args['block_id'];
 $speakers = $args['speakers'];
 $avatar = $args["avatar"];
-$speakers_modal = $args['speakers_modal'];
-$captions = $speakers_modal['captions_group'];
+$synclogic_speakers_modal = $args['synclogic_speakers_modal'];
+$captions = $synclogic_speakers_modal['captions_group'];
 
-$show_job_title = $speakers_modal['show_job_title'] ? "block" : "none";
-$show_company_name = $speakers_modal['show_company_name'] ? "block" : "none";
+$show_job_title = $synclogic_speakers_modal['show_job_title'] ? "block" : "none";
+$show_company_name = $synclogic_speakers_modal['show_company_name'] ? "block" : "none";
 
-$speaker_name_colour = $speakers_modal['speaker_name_colour'] ?? "#000";
-$job_title_colour = $speakers_modal['job_title_colour'] ?? "#000";
-$company_name_colour = $speakers_modal['company_name_colour'] ?? "#000"; ?>
+$speaker_name_colour = $synclogic_speakers_modal['speaker_name_colour'] ?? "#000";
+$job_title_colour = $synclogic_speakers_modal['job_title_colour'] ?? "#000";
+$company_name_colour = $synclogic_speakers_modal['company_name_colour'] ?? "#000"; ?>
 <style>
     <?php
     $classes = <<<ITEM
@@ -113,14 +113,14 @@ if ($speakers) {
                                         <?php endif; ?>
                                     </div>
 
-                                    <?php if ($speakers_modal['link_to_programme'] == "link_to_programme"):
-                                        $programme_page_link = isset($speakers_modal['programme_page_link']) ? $speakers_modal['programme_page_link'] : null;
+                                    <?php if ($synclogic_speakers_modal['link_to_programme'] == "link_to_programme"):
+                                        $programme_page_link = isset($synclogic_speakers_modal['programme_page_link']) ? $synclogic_speakers_modal['programme_page_link'] : null;
                                         if ($programme_page_link):
                                             $getTab = getDayProgrammeTab($session->session_day); ?>
                                             <div>
                                                 <a
                                                     href="<?= $programme_page_link . "?DayTab=" . $getTab . "&SessionId=" . $session->session_id ?>">
-                                                    <?= $speakers_modal['programme_link_caption'] ?>
+                                                    <?= $synclogic_speakers_modal['programme_link_caption'] ?>
                                                 </a>
                                             </div>
                                         <?php endif;
