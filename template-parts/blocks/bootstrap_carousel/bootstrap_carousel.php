@@ -58,15 +58,13 @@ if (isset($bootstrap_carousel_group) && $bootstrap_carousel_group != null) {
 	if ($slides): ?>
 		<div class="bootstrap_carousel <?= $spacing ?>" id="<?= $block_id ?>" data-bs-ride="carousel">
 			<div id="carousel_<?= $block_id ?>" class="carousel slide <?= $fade_effect ?> bootstrap_carousel_group_carousel">
-
 				<?php if ($showhide_bullet_dots): ?>
 					<div class="carousel-indicators">
-						<button type="button" data-bs-target="#carousel_<?= $block_id ?>" data-bs-slide-to="0" class="active"
-							aria-current="true" aria-label="Slide 1"></button>
-						<button type="button" data-bs-target="#carousel_<?= $block_id ?>" data-bs-slide-to="1"
-							aria-label="Slide 2"></button>
-						<button type="button" data-bs-target="#carousel_<?= $block_id ?>" data-bs-slide-to="2"
-							aria-label="Slide 3"></button>
+						<?php foreach ($slides as $key => $slide): ?>
+							<button type="button" data-bs-target="#carousel_<?= $block_id ?>" data-bs-slide-to="<?= $key ?>"
+								class="<?= ($key == 0) ? "active" : ""; ?>" aria-current="true" aria-label="Slide <?= $key ?>"></button>
+							<?php
+						endforeach; ?>
 					</div>
 				<?php endif; ?>
 				<div class="carousel-inner bootstrap_carousel_group_carousel_inner">

@@ -3,13 +3,13 @@
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
-	'key' => 'group_63f91bb05293e',
-	'title' => 'Speaker\'s modal',
+	'key' => 'group_645bb7c0aa0d2',
+	'title' => 'Synclogic Speaker\'s modal',
 	'fields' => array(
 		array(
-			'key' => 'field_63f91bb01566a',
+			'key' => 'field_645bb7c0c09da',
 			'label' => '',
-			'name' => 'speakers_modal',
+			'name' => 'synclogic_speakers_modal',
 			'aria-label' => '',
 			'type' => 'group',
 			'instructions' => '',
@@ -20,11 +20,12 @@ acf_add_local_field_group(array(
 				'class' => '',
 				'id' => '',
 			),
+			'acfe_save_meta' => 0,
 			'layout' => 'block',
 			'acfe_seamless_style' => 1,
 			'sub_fields' => array(
 				array(
-					'key' => 'field_63f91cbc15670',
+					'key' => 'field_645bb7c0d3585',
 					'label' => 'Modal\'s Settings',
 					'name' => '',
 					'aria-label' => '',
@@ -42,7 +43,7 @@ acf_add_local_field_group(array(
 					'endpoint' => 0,
 				),
 				array(
-					'key' => 'field_64513887d8d82',
+					'key' => 'field_645bb7c0d7052',
 					'label' => 'Style of modal',
 					'name' => 'style_of_modal',
 					'aria-label' => '',
@@ -59,6 +60,7 @@ acf_add_local_field_group(array(
 					'choices' => array(
 						'horizontal' => 'Horizontal',
 						'vertical' => 'Vertical',
+						'virtualogic' => 'Virtualogic (vertical)',
 					),
 					'default_value' => 'horizontal',
 					'return_format' => 'value',
@@ -71,7 +73,7 @@ acf_add_local_field_group(array(
 					'search_placeholder' => '',
 				),
 				array(
-					'key' => 'field_63f91ca81566f',
+					'key' => 'field_645bb7c0da982',
 					'label' => 'Speaker name colour',
 					'name' => 'speaker_name_colour',
 					'aria-label' => '',
@@ -89,7 +91,7 @@ acf_add_local_field_group(array(
 					'return_format' => 'string',
 				),
 				array(
-					'key' => 'field_63f91c001566b',
+					'key' => 'field_645bb7c0de2c1',
 					'label' => 'Show Job title',
 					'name' => 'show_job_title',
 					'aria-label' => '',
@@ -109,7 +111,7 @@ acf_add_local_field_group(array(
 					'ui_off_text' => '',
 				),
 				array(
-					'key' => 'field_63f91c401566c',
+					'key' => 'field_645bb7c0e1dc2',
 					'label' => 'Job title colour',
 					'name' => 'job_title_colour',
 					'aria-label' => '',
@@ -127,7 +129,7 @@ acf_add_local_field_group(array(
 					'return_format' => 'string',
 				),
 				array(
-					'key' => 'field_63f91c8b1566d',
+					'key' => 'field_645bb7c0e5802',
 					'label' => 'Show Company name',
 					'name' => 'show_company_name',
 					'aria-label' => '',
@@ -147,7 +149,7 @@ acf_add_local_field_group(array(
 					'ui_off_text' => '',
 				),
 				array(
-					'key' => 'field_63f91c991566e',
+					'key' => 'field_645bb7c0e9300',
 					'label' => 'Company name colour',
 					'name' => 'company_name_colour',
 					'aria-label' => '',
@@ -165,7 +167,7 @@ acf_add_local_field_group(array(
 					'return_format' => 'string',
 				),
 				array(
-					'key' => 'field_63ee3cf654b34',
+					'key' => 'field_645bb7c0ece28',
 					'label' => 'Link to programme',
 					'name' => 'link_to_programme',
 					'aria-label' => '',
@@ -193,7 +195,7 @@ acf_add_local_field_group(array(
 					'search_placeholder' => '',
 				),
 				array(
-					'key' => 'field_63ee3d5c54b35',
+					'key' => 'field_645bb7c0f0912',
 					'label' => 'Programme page link',
 					'name' => 'programme_page_link',
 					'aria-label' => '',
@@ -203,7 +205,7 @@ acf_add_local_field_group(array(
 					'conditional_logic' => array(
 						array(
 							array(
-								'field' => 'field_63ee3cf654b34',
+								'field' => 'field_645bb7c0ece28',
 								'operator' => '==',
 								'value' => 'link_to_programme',
 							),
@@ -222,7 +224,7 @@ acf_add_local_field_group(array(
 					'allow_null' => 0,
 				),
 				array(
-					'key' => 'field_63ee4631e9b49',
+					'key' => 'field_645bb7c100178',
 					'label' => 'Programme link caption',
 					'name' => 'programme_link_caption',
 					'aria-label' => '',
@@ -232,7 +234,7 @@ acf_add_local_field_group(array(
 					'conditional_logic' => array(
 						array(
 							array(
-								'field' => 'field_63ee3cf654b34',
+								'field' => 'field_645bb7c0ece28',
 								'operator' => '==',
 								'value' => 'link_to_programme',
 							),
@@ -251,7 +253,7 @@ acf_add_local_field_group(array(
 					'append' => '',
 				),
 				array(
-					'key' => 'field_63ecfa47d503a',
+					'key' => 'field_645bb7c103c9b',
 					'label' => 'Modal\'s Captions',
 					'name' => '',
 					'aria-label' => '',
@@ -269,7 +271,7 @@ acf_add_local_field_group(array(
 					'endpoint' => 0,
 				),
 				array(
-					'key' => 'field_63ecfae7d503d',
+					'key' => 'field_645bb7c1078e4',
 					'label' => 'Captions group',
 					'name' => 'captions_group',
 					'aria-label' => '',
@@ -286,9 +288,12 @@ acf_add_local_field_group(array(
 					'layout' => 'block',
 					'acfe_seamless_style' => 0,
 					'acfe_group_modal' => 0,
+					'acfe_group_modal_close' => 0,
+					'acfe_group_modal_button' => '',
+					'acfe_group_modal_size' => 'large',
 					'sub_fields' => array(
 						array(
-							'key' => 'field_63ecfaf1d503e',
+							'key' => 'field_645bb7c1e48d9',
 							'label' => 'Presentations title',
 							'name' => 'presentations_title',
 							'aria-label' => '',
@@ -308,7 +313,7 @@ acf_add_local_field_group(array(
 							'append' => '',
 						),
 						array(
-							'key' => 'field_63ecfb05d503f',
+							'key' => 'field_645bb7c1e859b',
 							'label' => 'Chair',
 							'name' => 'chair',
 							'aria-label' => '',
@@ -328,7 +333,7 @@ acf_add_local_field_group(array(
 							'append' => '',
 						),
 						array(
-							'key' => 'field_63ecfb0dd5040',
+							'key' => 'field_645bb7c1ec0dd',
 							'label' => 'Co-chair',
 							'name' => 'co_chair',
 							'aria-label' => '',
@@ -348,7 +353,7 @@ acf_add_local_field_group(array(
 							'append' => '',
 						),
 						array(
-							'key' => 'field_63ecfb3bd5041',
+							'key' => 'field_645bb7c1efb3a',
 							'label' => 'Speaker',
 							'name' => 'speaker',
 							'aria-label' => '',
@@ -368,9 +373,6 @@ acf_add_local_field_group(array(
 							'append' => '',
 						),
 					),
-					'acfe_group_modal_close' => 0,
-					'acfe_group_modal_button' => '',
-					'acfe_group_modal_size' => 'large',
 				),
 			),
 			'acfe_group_modal' => 0,
@@ -384,21 +386,7 @@ acf_add_local_field_group(array(
 			array(
 				'param' => 'block',
 				'operator' => '==',
-				'value' => 'acf/shocklogic-speakers-slider-wordpress',
-			),
-		),
-		array(
-			array(
-				'param' => 'block',
-				'operator' => '==',
-				'value' => 'acf/shocklogic-speakers-wordpress',
-			),
-		),
-		array(
-			array(
-				'param' => 'page_template',
-				'operator' => '==',
-				'value' => 'tpl/programme.php',
+				'value' => 'acf/shocklogic-synclogic-speakers',
 			),
 		),
 	),
@@ -411,7 +399,7 @@ acf_add_local_field_group(array(
 	'active' => true,
 	'description' => '',
 	'show_in_rest' => 0,
-	'acfe_display_title' => 'Speaker\'s modal',
+	'acfe_display_title' => 'Synclogic Speaker\'s modal',
 	'acfe_autosync' => array(
 		0 => 'php',
 		1 => 'json',
@@ -419,10 +407,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'acfe_categories' => array(
-		'speakers' => 'Speakers',
-	),
-	'modified' => 1683733251,
+	'modified' => 1683733720,
 ));
 
 endif;
