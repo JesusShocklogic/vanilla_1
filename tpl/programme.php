@@ -1,8 +1,8 @@
 <?php
 /*
-* Template name: Programme (DEPRECATED)
-* Description: Programme sort by start time. Sessions have the same start time and the same end time.
-*/
+ * Template name: Programme (DEPRECATED)
+ * Description: Programme sort by start time. Sessions have the same start time and the same end time.
+ */
 get_header();
 $speakers_modal = get_field('speakers_modal');
 $show_job_title = $speakers_modal['show_job_title'] ? "block" : "none";
@@ -44,17 +44,27 @@ $captions = $speakers_modal['captions_group']; ?>
 	}
 
 	.modal_dialog_content_body_left_name {
-		color: <?= $speaker_name_colour ?>;
+		color:
+			<?= $speaker_name_colour ?>
+		;
 	}
 
 	.modal_dialog_content_body_left_jobtitle {
-		display: <?= $show_job_title ?>;
-		color: <?= $job_title_colour ?>;
+		display:
+			<?= $show_job_title ?>
+		;
+		color:
+			<?= $job_title_colour ?>
+		;
 	}
 
 	.modal_dialog_content_body_left_companyname {
-		display: <?= $show_company_name ?>;
-		color: <?= $company_name_colour ?>;
+		display:
+			<?= $show_company_name ?>
+		;
+		color:
+			<?= $company_name_colour ?>
+		;
 	}
 
 
@@ -121,7 +131,7 @@ if (have_posts()) {
 		$showPresentationsSpeakersModal = 1;
 		$filter_by_session_type_select = 0;
 		$DayTab = isset($_GET['DayTab']) ? $_GET['DayTab'] : null;
-?>
+		?>
 		<style>
 			.programme {
 				padding-bottom: 2rem;
@@ -129,44 +139,59 @@ if (have_posts()) {
 
 			.session-title {
 				font-weight: bold;
-				color: <?= $programme_group['title_colour'] ?? "black"; ?>;
-				text-align: <?= $programme_group['title_alignment'] ?? "left"; ?>;
+				color:
+					<?= $programme_group['title_colour'] ?? "black"; ?>
+				;
+				text-align:
+					<?= $programme_group['title_alignment'] ?? "left"; ?>
+				;
 			}
 
 			.presentations {
-				display: <?php if ($programme_group['showhide_presentation_table'] == "show") echo "block";
-							else echo "none"; ?>;
-			}
-
-			.presentations table {
-				margin-top: 5px;
+				display:
+					<?php if ($programme_group['showhide_presentation_table'] == "show")
+						echo "block";
+					else
+						echo "none"; ?>
+				;
 			}
 
 			.presentations thead {
-				display: <?php if ($programme_group['presentation_group']['presentations_table_header'] == "show") echo "table-header-group";
-							else echo "none"; ?>;
+				display:
+					<?php if ($programme_group['presentation_group']['presentations_table_header'] == "show")
+						echo "table-header-group";
+					else
+						echo "none"; ?>
+				;
 			}
 
 			.presentations .presentation_time,
 			.presentations .thead_presentation_time {
-				display: <?php if ($programme_group['presentation_group']['presentation_time_column'] == "show") echo "block";
-							else echo "none"; ?>;
+				display:
+					<?php if ($programme_group['presentation_group']['presentation_time_column'] == "show")
+						echo "table-cell";
+					else
+						echo "none"; ?>
+				;
 			}
 
 			.session_time {
-				display: <?php if ($programme_group['showhide_session_time'] == "show") echo "block";
-							else echo "none"; ?>
+				display:
+					<?php if ($programme_group['showhide_session_time'] == "show")
+						echo "block";
+					else
+						echo "none"; ?>
 			}
 		</style>
 		<?php
 
 		/*
-        * Functions
-        */
+		 * Functions
+		 */
 
 		/*
-        * Programme Builder
-        */
+		 * Programme Builder
+		 */
 		// Day tabs
 		// filter_by_session_type_select = 0 No filter
 		// filter_by_session_type_select = 1 Filter by one session type
@@ -268,8 +293,8 @@ CONTENT;
 					$speakersContent = "";
 
 					/*
-                    * Chair Speakers Builder
-                    */
+					 * Chair Speakers Builder
+					 */
 					if (!empty($speakers)) {
 						$speakersContent = "<div><strong>$chairs: </strong>";
 						foreach ($speakers as $key4 => $speaker) {
@@ -295,8 +320,8 @@ NAME;
 					} // Speakers is not empty
 
 					/*
-                    * Presentations Builder
-                    */
+					 * Presentations Builder
+					 */
 					$tableContent = "";
 					// If presentations table is enable in the Dashboard.
 					if ($showPresentationsTables == 1) {
@@ -305,7 +330,8 @@ NAME;
 
 						if (!empty($presentations)) {
 							foreach ($presentations as $key4 => $presentation) {
-								$presentationTime = substr($presentation->start_time, 0, -3);;
+								$presentationTime = substr($presentation->start_time, 0, -3);
+								;
 								$presentationTitle = $presentation->presentation_title;
 								$presentationBody = $presentation->presentation_body ?? "";
 								$allSpeakersContent = $presentation->all_speakers;
@@ -341,11 +367,6 @@ AUTHOR;
 								}
 
 								$moreInfo = "";
-								/*
-								if (!empty(json_decode($allSpeakersContent)) || !empty(trim($presentationBody))) {
-									$moreInfo = "(<a href='/COMUNICACIONYSALUD/presentation-info/?presentation_id=$presentationId&DayTab=$key'><i>Más información</i></a>)";
-								}
-                                */
 
 								$presentationsContent .= <<<CONTENT
 									<tr>
@@ -364,7 +385,7 @@ AUTHOR;
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th class="text-nowrap thead_presentation_time" scope="col">$presentation_time</th>
+                                            <th class="thead_presentation_time" scope="col">$presentation_time</th>
                                             <th scope="col">$presentation_title</th>
                                             <th scope="col">$speakerauthors</th>
                                         </tr>
@@ -380,8 +401,8 @@ CONTENT;
 					/*** End of presentations builder */
 
 					/*
-                    * Session builder
-                    */
+					 * Session builder
+					 */
 
 					$title = strip_tags($session->session_title, '<br>');
 					$titleImg = "";
@@ -477,10 +498,6 @@ CONTENT;
 		$fullProgramme .= '</div>';
 		?>
 		<style>
-			/*.row {
-                width: 100%;
-            }*/
-
 			.programme {
 				font-size: 16px;
 			}
@@ -514,16 +531,6 @@ CONTENT;
 			table thead tr {
 				height: 32px;
 			}
-
-			.table th,
-			.table td {
-				padding: 0.5rem;
-			}
-
-			table tbody tr:first-child {
-				background-color: unset !important;
-				color: #000000;
-			}
 		</style>
 
 		<div class="programme standard_padding">
@@ -544,13 +551,37 @@ CONTENT;
 			</div>
 		</div>
 
-<?php
+		<?php
 	}
 	wp_reset_postdata();
 } else {
 	echo "No content was found";
 }
-get_footer(); ?>
+
+/*
+ * Speakers modal area
+ */
+$block_id = "auxiliar";
+$synclogic_speakers_modal = get_field('synclogic_speakers_modal');
+$style_of_modal = $synclogic_speakers_modal['style_of_modal'] ?? "horizontal";
+$avatar = default_speaker_avatar();
+$speakers = synclogic_get_all_speakers();
+?>
+
+<div class="shocklogic_synclogic_programme_wrapper_modals" id="<?= $block_id ?>">
+	<?php
+	$params = ["speakers" => $speakers, "avatar" => $avatar, "synclogic_speakers_modal" => $synclogic_speakers_modal, "block_id" => $block_id];
+	if ($style_of_modal == "vertical"):
+		echo get_template_part("template-parts/modals/speakers/modals_speakers", "synclogic-vertical", $params);
+	elseif ($style_of_modal == "horizontal"):
+		echo get_template_part("template-parts/modals/speakers/modals_speakers", "synclogic-horizontal", $params);
+	elseif ($style_of_modal == "virtualogic"):
+		echo get_template_part("template-parts/modals/speakers/modals_speakers", "virtualogic-vertical", $params);
+	endif;
+	?>
+</div>
+
+<?php get_footer(); ?>
 
 <script>
 	var speakerScroll = $(".scroll-to-speaker").offset();
@@ -564,18 +595,18 @@ get_footer(); ?>
 	var elements = document.getElementsByClassName("btn-favorites");
 	var urlHome = '<?php echo get_home_url() ?>';
 	var idPerson = '001 <?php //echo $_SESSION['personId'] 
-						?>';
+	?>';
 	var session;
 
-	Date.prototype.addMins = function(m) {
+	Date.prototype.addMins = function (m) {
 		this.setTime(this.getTime() + (m * 60 * 1000)); // minutos * seg * milisegundos
 		return this;
 	}
 
 	var currentDatePrevious = "<?php date_default_timezone_set($timezone);
-								echo str_replace(" ", "T", date('Y-m-d H:i', (time() + 60 * 2))); ?>";
+	echo str_replace(" ", "T", date('Y-m-d H:i', (time() + 60 * 2))); ?>";
 	var currentDateNext = "<?php date_default_timezone_set($timezone);
-							echo str_replace(" ", "T", date('Y-m-d H:i', (time() + 60 * 0))); ?>";
+	echo str_replace(" ", "T", date('Y-m-d H:i', (time() + 60 * 0))); ?>";
 
 	function updateInformation() {
 
@@ -588,7 +619,7 @@ get_footer(); ?>
 		currentDateNext.addMins(minutoSumar);
 
 		var Person_Id = '001 <?php //$_SESSION['personId'] 
-								?>';
+		?>';
 		var homeUrl = '<?php echo get_home_url() ?>';
 
 		for (var i = 0; i < session.length; i++) {
@@ -601,209 +632,3 @@ get_footer(); ?>
 		}
 	} //updateInformation
 </script>
-
-<?php
-/*
-* Speakers modal area
-*/
-$avatar = default_speaker_avatar();
-?>
-<style>
-	.modal-body .ratio-1x1 {
-		width: 50%;
-		margin: 0 auto;
-	}
-
-	.modal-content {
-		box-shadow: 0px 4px 8px #00000029;
-		border-radius: 10px;
-	}
-
-	.ratio-1x1 img,
-	.ratio-1x1 svg {
-		object-fit: cover;
-	}
-
-	.ratio-1x1 {
-		--bs-aspect-ratio: 100%;
-	}
-
-	.ratio {
-		position: relative;
-		width: 100%;
-	}
-
-	.ratio::before {
-		display: block;
-		padding-top: var(--bs-aspect-ratio);
-		content: "";
-	}
-
-	.ratio>* {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
-
-	/*
-	/* Bootstrap Media Query
-	*/
-
-	/* X-Small devices (portrait phones, less than 576px)
-			No media query for `xs` since this is the default in Bootstrap */
-
-	/* Small devices (landscape phones, 576px and up) */
-	@media (min-width: 576px) {}
-
-	/* Medium devices (tablets, 768px and up) */
-	@media (min-width: 768px) {}
-
-	/* Large devices (desktops, 992px and up) */
-	@media (min-width: 992px) {
-		.modal-body .ratio-1x1 {
-			width: 40%;
-		}
-	}
-
-	/* X-Large devices (large desktops, 1200px and up) */
-	@media (min-width: 1200px) {
-		.modal-body {
-			padding-left: 3rem;
-			padding-right: 3rem;
-			padding-bottom: 1.5rem;
-		}
-	}
-
-	/* XX-Large devices (larger desktops, 1400px and up) */
-	@media (min-width: 1400px) {}
-</style>
-<?php
-
-//creating the modals
-$speakers = synclogic_get_all_speakers();
-$modals = "";
-foreach ($speakers as $speaker) {
-	$id = $speaker->speaker_id;
-	$image = $speaker->image_profile;
-	$name = $speaker->speaker_name;
-	$last_name = $speaker->speaker_family_name;
-	$company = $speaker->company;
-	$job_title = $speaker->job_title;
-	$biography =  $speaker->biography;
-	if ($biography == "<p>0</p>" || empty($biography)) {
-		$biography = "";
-	}
-
-	if (empty($image) || (substr($image, -2) == "/0")) {
-		$image = $avatar;
-	}
-
-?>
-	<div class="modal fade" id="speaker-<?= $id ?>" data-bs-keyboard="false" tabindex="-1" aria-labelledby="speaker-<?= $id ?>-Label" aria-hidden="true">
-		<div class="modal-dialog modal-xl modal_dialog">
-			<div class="modal-content">
-				<div class="modal-header justify-content-end">
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<div class="modal_body_left">
-						<div class="ratio ratio-1x1 modal_body_left_img">
-							<img loading="lazy" class="img-fluid d-block mx-auto rounded-circle" src="<?= $image ?>">
-						</div>
-						<div class="modal_body_left">
-							<div class="speaker-modal-information">
-								<div class="modal_dialog_content_body_left_name"><strong><?php echo $name . " " . $last_name ?></strong></div>
-								<div class="speaker-information">
-									<div class="modal_dialog_content_body_left_companyname"><?= $company ?></div>
-									<div class="modal_dialog_content_body_left_jobtitle"><?= $job_title ?></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="modal_body_right">
-						<div class="text-start speaker-information"><?= $biography ?></div>
-					</div>
-				</div>
-				<?php
-				$sessions = get_sessions_by_speaker_id($speaker->speaker_id);
-				if ($sessions) : ?>
-					<div class="modal-footer modal_dialog_content_footer d-block">
-						<?php
-						foreach ($sessions as $key => $session) {
-							$session_title = $session->session_title ?? null;
-							$session_day_name = $session->session_day_name ?? null;
-							$start_time = $session->start_time ?? null;
-							$end_time = $sessions->end_time ?? null;
-
-							$rol = "| ";
-							if ($session->IsChair) :
-								$rol .= $captions['chair'];
-							elseif ($session->IsCoChair) :
-								$rol .= $captions['co_chair'];
-							elseif ($session->IsSpeaker) :
-								$rol .= $captions['speaker'];
-							endif;
-
-							$presentations = get_presentations_by_speaker_and_author($speaker->speaker_id, $speaker->speaker_email, $session->session_id);
-						?>
-							<div class="modal_dialog_content_footer_session">
-								<?php if ($session_title) : ?>
-									<div>
-										<div class="modal_dialog_content_footer_session_title"><?= $session->session_title; ?></div>
-										<div class="modal_dialog_content_footer_session_rol"><?= $rol; ?></div>
-									</div>
-								<?php endif; ?>
-
-								<div>
-									<?php if ($session_day_name) : ?>
-										<div class="modal_dialog_content_footer_session_day_name"><?= $session->session_day_name; ?></div>
-									<?php endif; ?>
-									<?php if ($start_time) : ?>
-										<div class="modal_dialog_content_footer_session_time">
-											<?php if ($session->start_time) : echo " | " . $session->start_time;
-												if ($end_time) : echo " - " . $end_time;
-												endif;
-											endif; ?>
-										</div>
-									<?php endif; ?>
-								</div>
-
-								<?php if ($speakers_modal['link_to_programme'] == "link_to_programme") :
-									$programme_page_link = isset($speakers_modal['programme_page_link']) ? $speakers_modal['programme_page_link'] : null;
-									if ($programme_page_link) :
-										$getTab = getDayProgrammeTab($session->session_day); ?>
-										<div>
-											<a href="<?= $programme_page_link . "?DayTab=" . $getTab . "&SessionId=" . $session->session_id ?>">
-												<?= $speakers_modal['programme_link_caption'] ?>
-											</a>
-										</div>
-								<?php endif;
-								endif; ?>
-								<?php if (count($presentations) > 0) : ?>
-									<div class="modal_dialog_content_footer_session_presentations">
-										<?php
-										if ($captions['presentations_title']) : ?>
-											<div class="modal_dialog_content_footer_session_presentations_title"><?= $captions['presentations_title'] ?></div>
-										<?php endif; ?>
-										<ul class="modal_dialog_content_footer_session_presentations_presentation">
-											<?php foreach ($presentations as $key => $presentation) {
-												if ($presentation->presentation_title != "") : ?>
-													<li class="modal_dialog_content_footer_session_presentations_presentation_title"><?= $presentation->presentation_title ?></li>
-												<?php endif; ?>
-											<?php } //foreach 
-											?>
-										</ul>
-									</div>
-								<?php endif; ?>
-							</div>
-						<?php } ?>
-					</div>
-				<?php endif; ?>
-			</div>
-		</div>
-	</div>
-<?php
-
-}

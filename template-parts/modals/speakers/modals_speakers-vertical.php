@@ -26,7 +26,7 @@ if ($wp_modals_query->have_posts()) {
                     <div class="modal-body modal_dialog_content_body ">
                         <div class="modal_dialog_content_body_left">
                             <div class="modal_dialog_content_body_left_image ">
-                                <img src="<?= $image_url ?>" alt="">
+                                <img src="<?= $image_url ?>" alt="" loading="lazy">
                             </div>
                             <strong class="modal_dialog_content_body_left_name">
                                 <?= $title ?>
