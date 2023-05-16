@@ -389,6 +389,13 @@ acf_add_local_field_group(array(
 				'value' => 'acf/shocklogic-synclogic-speakers',
 			),
 		),
+		array(
+			array(
+				'param' => 'page_template',
+				'operator' => '==',
+				'value' => 'tpl/programme.php',
+			),
+		),
 	),
 	'menu_order' => -1,
 	'position' => 'normal',
@@ -407,7 +414,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1683733720,
+	'modified' => 1684180252,
 ));
 
 endif;

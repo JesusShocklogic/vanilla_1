@@ -394,13 +394,6 @@ acf_add_local_field_group(array(
 				'value' => 'acf/shocklogic-speakers-wordpress',
 			),
 		),
-		array(
-			array(
-				'param' => 'page_template',
-				'operator' => '==',
-				'value' => 'tpl/programme.php',
-			),
-		),
 	),
 	'menu_order' => -1,
 	'position' => 'normal',
@@ -422,7 +415,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'speakers' => 'Speakers',
 	),
-	'modified' => 1683733251,
+	'modified' => 1684165198,
 ));
 
 endif;

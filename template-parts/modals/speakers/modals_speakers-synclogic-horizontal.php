@@ -1,7 +1,7 @@
 <?php
 wp_enqueue_style("modal-speakers-synclogic-horizontal");
 $block_id = $args['block_id'];
-$speakers = $args['speakers'];
+$speakers = $args['speakers']; 
 $avatar = $args["avatar"];
 $synclogic_speakers_modal = $args['synclogic_speakers_modal'];
 $captions = $synclogic_speakers_modal['captions_group'];
@@ -42,7 +42,7 @@ if ($speakers) {
                     <div class="modal-body modal_dialog_content_body">
                         <div class="modal_dialog_content_body_left">
                             <div class="modal_dialog_content_body_left_image">
-                                <img src="<?= $image_url ?>" alt="">
+                                <img src="<?= $image_url ?>" alt="" loading="lazy">
                             </div>
                             <strong class="modal_dialog_content_body_left_name">
                                 <?= $title ?>
