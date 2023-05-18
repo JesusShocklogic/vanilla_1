@@ -79,13 +79,13 @@ if ($speakers) {
                                 $start_time = $session->start_time ?? null;
                                 $end_time = $sessions->end_time ?? null;
 
-                                $rol = "";
+                                $rol = "| ";
                                 if ($session->IsChair):
-                                    $rol .= $captions['chair'];
+                                    $rol .= $captions['chair'] ?? "Chair";
                                 elseif ($session->IsCoChair):
-                                    $rol .= $captions['co_chair'];
+                                    $rol .= $captions['co_chair'] ?? "Co chair";
                                 elseif ($session->IsSpeaker):
-                                    $rol .= $captions['speaker'];
+                                    $rol .= $captions['speaker'] ?? "Speaker";
                                 endif;
 
                                 $presentations = get_presentations_by_speaker_and_author($speaker->speaker_id, $speaker->speaker_email, $session->session_id);
@@ -142,51 +142,40 @@ if ($speakers) {
                                             <table class="table">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">
+                                                        <th class="modal_presentations_head_title" scope="col">
                                                             <?= $captions['presentations_title'] ?>
                                                         </th>
-                                                        <th scope="col">Start Time</th>
-                                                        <th scope="col">Role</th>
+                                                        <th class="modal_presentations_head_time" scope="col">Start Time</th>
+                                                        <th class="modal_presentations_head_role" scope="col">Role</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <?php foreach ($presentations as $key => $presentation) {
-                                                        //var_dump($presentations->all_speakers);
+
                                                         $rolFacultyPresentation = "";
                                                         $id = $speaker->speaker_id;
                                                         $email = $speaker->speaker_email;
                                                         if (
                                                             (!empty($presentation->all_speakers) && $presentation->all_speakers !== "[]")
-                                                            && (!empty($presentation->all_authors) && $presentation->all_authors !== "[]")
+                                                            || (!empty($presentation->all_authors) && $presentation->all_authors !== "[]")
                                                         ) {
-                                                            if (strpos($presentation->all_speakers, "$id") !== false) {
+                                                            if (str_contains($presentation->all_speakers, "$id")):
                                                                 $rolFacultyPresentation = "Speaker";
-                                                            } elseif (strpos($presentation->all_authors, "$email") !== false) {
+                                                            elseif (strpos($presentation->all_authors, "$email") === false):
                                                                 $rolFacultyPresentation = "Author";
-                                                            }
-                                                        } else if (
-                                                            (!empty($presentation->all_speakers) && $presentation->all_speakers !== "[]")
-                                                            && (!empty($presentation->all_authors) && $presentation->all_authors == "[]")
-                                                        ) {
-                                                            if (strpos($presentation->all_speakers, "$id") !== false) {
-                                                                $rolFacultyPresentation = "Speaker";
-                                                            }
-                                                        } else if (
-                                                            (!empty($presentation->all_speakers) && $presentation->all_speakers !== "[]")
-                                                            && (!empty($presentation->all_authors) && $presentation->all_authors == "[]")
-                                                        ) {
-                                                            if (strpos($presentations->all_authors, "$email") !== false) {
-                                                                $rolFacultyPresentation = "Author";
-                                                            }
+                                                            endif;
+
+                                                        } else {
+                                                            $rolFacultyPresentation = "No role found";
                                                         } ?>
                                                         <tr>
-                                                            <th scope="row">
+                                                            <th class="modal_presentations_body_title" scope="row">
                                                                 <?= $presentation->presentation_title ?>
                                                             </th>
-                                                            <td>
+                                                            <td class="modal_presentations_body_time">
                                                                 <?= $presentation->start_time ?>
                                                             </td>
-                                                            <td>
+                                                            <td class="modal_presentations_body_title">
                                                                 <?= $rolFacultyPresentation ?>
                                                             </td>
                                                         </tr>
