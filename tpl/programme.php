@@ -565,7 +565,7 @@ $block_id = "auxiliar";
 $synclogic_speakers_modal = get_field('synclogic_speakers_modal');
 $style_of_modal = $synclogic_speakers_modal['style_of_modal'] ?? "horizontal";
 $avatar = default_speaker_avatar();
-$speakers = synclogic_get_all_speakers();
+$speakers = synclogic_get_all_speakers_authors();
 ?>
 
 <div class="shocklogic_synclogic_programme_wrapper_modals" id="<?= $block_id ?>">

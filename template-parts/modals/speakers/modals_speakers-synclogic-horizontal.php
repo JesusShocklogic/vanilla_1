@@ -74,11 +74,11 @@ if ($speakers) {
 
                                 $rol = "| ";
                                 if ($session->IsChair):
-                                    $rol .= $captions['chair'];
+                                    $rol .= $captions['chair'] ?? "Chair";
                                 elseif ($session->IsCoChair):
-                                    $rol .= $captions['co_chair'];
+                                    $rol .= $captions['co_chair'] ?? "Co chair";
                                 elseif ($session->IsSpeaker):
-                                    $rol .= $captions['speaker'];
+                                    $rol .= $captions['speaker'] ?? "Speaker";
                                 endif;
 
                                 $presentations = get_presentations_by_speaker_and_author($speaker->speaker_id, $speaker->speaker_email, $session->session_id);
