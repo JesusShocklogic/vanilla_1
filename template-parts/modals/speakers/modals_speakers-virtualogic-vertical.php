@@ -79,7 +79,7 @@ if ($speakers) {
                                 $start_time = $session->start_time ?? null;
                                 $end_time = $sessions->end_time ?? null;
 
-                                $rol = "| ";
+                                $rol = "";
                                 if ($session->IsChair):
                                     $rol .= $captions['chair'] ?? "Chair";
                                 elseif ($session->IsCoChair):
