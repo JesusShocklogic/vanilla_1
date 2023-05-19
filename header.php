@@ -43,7 +43,10 @@
 			background-color: <?= $general_menu_group['background_colour'] ?>;
 			box-shadow: 0px 5px 6px #00000029;
 		}
-
+ 
+		header .navbar .menu-item {
+			width: max-content;
+		}
 		header .navbar .menu-item .nav-link {
 			color: <?= $general_menu_group['menu_items_text_colour'] ?>;
 		}
