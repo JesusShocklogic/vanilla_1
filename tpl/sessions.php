@@ -249,7 +249,7 @@ if (have_posts()) {
                         $dateString = date_ES_es($days[$i]);
 
                     ?>
-                        <div class="col p-3">
+                        <div class="col-12 col-md-6 col-xl p-3">
                             <h5 class="text-center"><b><?= $dateString ?></b></h5>
 
                             <?php
