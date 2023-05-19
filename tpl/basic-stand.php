@@ -2,6 +2,32 @@
 /*
  * Template name: Stand basic
  */
+//$temp_person_id = $_GET['person_id'];
+$temp_person_id = 5301197;
+$exhibitor = get_exhibitors_by_person_id_sl($temp_person_id)[0];
+$contact_info = [
+    "Person_Id" => $exhibitor->Person_Id,
+    "First_Name" => $exhibitor->First_Name,
+    "Family_Name" => $exhibitor->Family_Name,
+    "Image01" => $exhibitor->Image01,
+    "Mobile" => $exhibitor->Mobile,
+    "Email" => $exhibitor->Email,
+    "Biography" => $exhibitor->Biography,
+];
+
+$company_info = [
+    "companyLogo" => get_freefield_by_type_and_personId("Company_Logo", $contact_info["Person_Id"])[0]->Value,
+    "website" => "https://" . get_freefield_by_fieldName_and_personId("Website", $contact_info["Person_Id"])[0]->Value,
+    "companyVideo" => wp_http_validate_url(
+        sanitize_url(get_freefield_by_fieldName_and_personId("Video A", $contact_info["Person_Id"])[0]->Value)
+    ),
+    "companyBio" => get_freefield_by_fieldName_and_personId("Company Information", $contact_info["Person_Id"])[0]->Value ?? null,
+];
+
+$company_gallery_array = get_freefields_images_by_person_id($contact_info["Person_Id"]);
+$company_documents = get_freefields_documents_by_personId($contact_info["Person_Id"]);
+
+$avatar = default_speaker_avatar();
 get_header(); ?>
 <style>
     .standard_padding {
@@ -21,7 +47,8 @@ get_header(); ?>
     }
 
     .stand_basic_wrapper_left {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         gap: 25px;
     }
 
@@ -61,6 +88,7 @@ get_header(); ?>
         align-items: center;
         flex-wrap: nowrap;
 
+        gap: 1rem;
         padding-bottom: 10px;
     }
 
@@ -108,6 +136,7 @@ get_header(); ?>
         background-color: #FF6E0B;
         color: white;
         border-radius: 16px;
+        word-break: keep-all;
     }
 
     .stand_basic_wrapper_downloads_wrapper_download_text {
@@ -181,22 +210,22 @@ get_header(); ?>
     <div class="stand_basic_wrapper">
         <div class="stand_basic_wrapper_left">
             <div class="stand_basic_wrapper_left_image">
-                <img src="http://localhost/vanila_1/wp-content/uploads/2023/04/SVO22-Logo-Color@2x.png" alt="">
+                <img src="<?= $company_info["companyLogo"] ?>" alt="">
             </div>
             <div class="stand_basic_wrapper_left_link">
-                <a href="https://svo.org.ve/coming-soon/">https://svo.org.ve</a>
+                <a target="_blank" href="<?= $company_info["website"] ?>"><?= $company_info["website"] ?></a>
             </div>
-            <div class="stand_basic_wrapper_left_video">
-                <iframe style="border: none; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/s6H7BHNIyxM"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
+            <?php if ($company_info['companyVideo']): ?>
+                <div class="stand_basic_wrapper_left_video">
+                    <iframe style="border: none; aspect-ratio: 16 / 9;" src="<?= $company_info['companyVideo'] ?>"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            <?php endif; ?>
+            <div class="stand_basic_wrapper_left_biography">
+                <?= $company_info['companyBio'] ?>
             </div>
-            <div class="stand_basic_wrapper_left_biography"><img
-                    src="http://localhost/vanila_1/wp-content/uploads/2023/05/document.png" alt=""> Lorem ipsum dolor
-                sit amet, consectetur adipisicing elit.
-                Hic ducimus optio voluptatum repellendus dolorem sed? Aperiam libero exercitationem facere distinctio ab
-                magni vero ut! Pariatur labore quia officiis harum voluptas!</div>
         </div>
         <div class="stand_basic_wrapper_right">
             <div class="list-group list-group-horizontal list-group-flush" id="list-tab" role="tablist">
@@ -220,116 +249,85 @@ get_header(); ?>
                 <div class="tab-pane fade show active" id="list-gallery" role="tabpanel"
                     aria-labelledby="list-gallery-list">
                     <div class="stand_basic_wrapper_gallery">
-                        <div class="stand_basic_wrapper_gallery_image">
-                            <img src="http://localhost/vanila_1/wp-content/uploads/2023/04/banner_facebook-2017.jpg"
-                                alt="">
-                        </div>
-                        <div class="stand_basic_wrapper_gallery_image">
-                            <img src="http://localhost/vanila_1/wp-content/uploads/2023/04/banner_facebook-2017.jpg"
-                                alt="">
-                        </div>
-                        <div class="stand_basic_wrapper_gallery_image">
-                            <img src="http://localhost/vanila_1/wp-content/uploads/2023/04/banner_facebook-2017.jpg"
-                                alt="">
-                        </div>
-                        <div class="stand_basic_wrapper_gallery_image">
-                            <img src="http://localhost/vanila_1/wp-content/uploads/2023/04/banner_facebook-2017.jpg"
-                                alt="">
-                        </div>
-                        <div class="stand_basic_wrapper_gallery_image">
-                            <img src="http://localhost/vanila_1/wp-content/uploads/2023/04/banner_facebook-2017.jpg"
-                                alt="">
-                        </div>
-                        <div class="stand_basic_wrapper_gallery_image">
-                            <img src="http://localhost/vanila_1/wp-content/uploads/2023/04/banner_facebook-2017.jpg"
-                                alt="">
-                        </div>
-
+                        <?php
+                        foreach ($company_gallery_array as $key => $item): ?>
+                            <div class="stand_basic_wrapper_gallery_image">
+                                <img src="<?= $item->Value ?>" alt="">
+                            </div>
+                            <?php
+                        endforeach;
+                        ?>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="list-downloads" role="tabpanel" aria-labelledby="list-downloads-list">
                     <div class="stand_basic_wrapper_downloads">
                         <div class="stand_basic_wrapper_downloads_wrapper">
-                            <div class="stand_basic_wrapper_downloads_wrapper_download">
-                                <div class="stand_basic_wrapper_downloads_wrapper_download_text">
-                                    <img class="stand_basic_wrapper_downloads_wrapper_download_text_icon"
-                                        src="http://localhost/vanila_1/wp-content/uploads/2023/05/document.png" alt="">
-                                    Lorem ipsum dolor sit
+
+                            <?php
+                            foreach ($company_documents as $key => $document): ?>
+                                <div class="stand_basic_wrapper_downloads_wrapper_download">
+                                    <div class="stand_basic_wrapper_downloads_wrapper_download_text">
+                                        <img class="stand_basic_wrapper_downloads_wrapper_download_text_icon"
+                                            src="http://localhost/vanila_1/wp-content/uploads/2023/05/document.png" alt="">
+                                        <?= $document->Caption ?>
+                                    </div>
+                                    <div class="stand_basic_wrapper_downloads_wrapper_download_button">
+                                        <a href="<?= $document->Value ?>" download target="_blank"
+                                            class="button btn ">Download</a>
+                                    </div>
                                 </div>
-                                <div class="stand_basic_wrapper_downloads_wrapper_download_button">
-                                    <a href="#" class="button btn ">Download</a>
-                                </div>
-                            </div>
-                            <div class="stand_basic_wrapper_downloads_wrapper_download">
-                                <div class="stand_basic_wrapper_downloads_wrapper_download_text">
-                                    <img class="stand_basic_wrapper_downloads_wrapper_download_text_icon"
-                                        src="http://localhost/vanila_1/wp-content/uploads/2023/05/document.png" alt="">
-                                    Lorem ipsum dolor sit
-                                </div>
-                                <div class="stand_basic_wrapper_downloads_wrapper_download_button">
-                                    <a href="#" class="button btn ">Download</a>
-                                </div>
-                            </div>
-                            <div class="stand_basic_wrapper_downloads_wrapper_download">
-                                <div class="stand_basic_wrapper_downloads_wrapper_download_text">
-                                    <img class="stand_basic_wrapper_downloads_wrapper_download_text_icon"
-                                        src="http://localhost/vanila_1/wp-content/uploads/2023/05/document.png" alt="">
-                                    Lorem ipsum dolor sit
-                                </div>
-                                <div class="stand_basic_wrapper_downloads_wrapper_download_button">
-                                    <a href="#" class="button btn ">Download</a>
-                                </div>
-                            </div>
-                            <div class="stand_basic_wrapper_downloads_wrapper_download">
-                                <div class="stand_basic_wrapper_downloads_wrapper_download_text">
-                                    <img class="stand_basic_wrapper_downloads_wrapper_download_text_icon"
-                                        src="http://localhost/vanila_1/wp-content/uploads/2023/05/document.png" alt="">
-                                    Lorem ipsum dolor sit
-                                </div>
-                                <div class="stand_basic_wrapper_downloads_wrapper_download_button">
-                                    <a href="#" class="button btn ">Download</a>
-                                </div>
-                            </div>
+                                <?php
+                            endforeach;
+                            ?>
                         </div>
                     </div>
                 </div>
+
                 <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
                     <div class="stand_basic_profile">
                         <div class="stand_basic_profile_wrapper">
                             <div class="stand_basic_profile_wrapper_image">
-                                <img src="http://localhost/vanila_1/wp-content/uploads/2023/05/person-default.jpg"
+                                <img src="<?= ($contact_info['Image01'] !== "") ? $contact_info['Image01'] : $avatar ?>"
                                     alt="" srcset="">
                             </div>
-                            <div class="stand_basic_profile_wrapper_section">
-                                <img class="stand_basic_profile_wrapper_section_icon"
-                                    src="http://localhost/vanila_1/wp-content/uploads/2023/05/user.png" alt=""
-                                    srcset="">
-                                Jonathan Smith
-                                <hr>
-                            </div>
-                            <div class="stand_basic_profile_wrapper_section">
-                                <img class="stand_basic_profile_wrapper_section_icon"
-                                    src="http://localhost/vanila_1/wp-content/uploads/2023/05/user.png" alt=""
-                                    srcset="">
-                                1800-898-2234
-                                <hr>
-                            </div>
-                            <div class="stand_basic_profile_wrapper_section">
-                                <img class="stand_basic_profile_wrapper_section_icon"
-                                    src="http://localhost/vanila_1/wp-content/uploads/2023/05/user.png" alt=""
-                                    srcset="">
-                                jonathansmith@gmail.com
-                                <hr>
-                            </div>
-                            <div class="stand_basic_profile_wrapper_section">
-                                <img class="stand_basic_profile_wrapper_section_icon"
-                                    src="http://localhost/vanila_1/wp-content/uploads/2023/05/user.png" alt=""
-                                    srcset="">
-                                Neque porro quisquam est, qui
-                                dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-                                eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-                                <hr>
-                            </div>
+                            <?php
+                            if ($contact_info['First_Name']):
+                                ?>
+                                <div class="stand_basic_profile_wrapper_section">
+                                    <img class="stand_basic_profile_wrapper_section_icon"
+                                        src="http://localhost/vanila_1/wp-content/uploads/2023/05/user.png" alt=""
+                                        srcset="">
+                                    <?= $contact_info['First_Name'] . " " . $contact_info['Family_Name'] ?>
+                                    <hr>
+                                </div>
+                            <?php endif; ?>
+                            <?php if ($contact_info['Mobile']): ?>
+                                <div class="stand_basic_profile_wrapper_section">
+                                    <img class="stand_basic_profile_wrapper_section_icon"
+                                        src="http://localhost/vanila_1/wp-content/uploads/2023/05/user.png" alt=""
+                                        srcset="">
+                                    <?= $contact_info['Mobile'] ?>
+                                    <hr>
+                                </div>
+                            <?php endif; ?>
+                            <?php if ($contact_info['Email']): ?>
+                                <div class="stand_basic_profile_wrapper_section">
+                                    <img class="stand_basic_profile_wrapper_section_icon"
+                                        src="http://localhost/vanila_1/wp-content/uploads/2023/05/user.png" alt=""
+                                        srcset="">
+                                    <?= $contact_info['Email'] ?>
+                                    <hr>
+                                </div>
+                            <?php endif; ?>
+                            <?php if ($contact_info['Biography']): ?>
+                                <div class="stand_basic_profile_wrapper_section">
+                                    <img class="stand_basic_profile_wrapper_section_icon"
+                                        src="http://localhost/vanila_1/wp-content/uploads/2023/05/user.png" alt=""
+                                        srcset="">
+                                    <?= $contact_info['Biography'] ?>
+                                    <hr>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
