@@ -20,6 +20,9 @@
 		// Fav icons
 		echo get_template_part("template-parts/head/fav", "icon", $general_theme_settings['fav_icon']);
 	} // Fav icons
+	
+	$header_position = $general_menu_group['headers_position'] ?? "normal";
+	$menu_alignment = $general_menu_group['menu_alignment'] ?? "ms-auto";
 	?>
 </head>
 
@@ -113,7 +116,7 @@
 	</style>
 
 	<header>
-		<nav class="navbar navbar-expand-xl <?= $general_menu_group['menus_position'] ?>">
+		<nav class="navbar navbar-expand-xl <?= $header_position ?>">
 			<div class="container-fluid">
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 					data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
@@ -128,16 +131,16 @@
 					<?php
 					//Printing the menu
 					wp_nav_menu(
-						array(
+						[
 							'theme_location' => 'main-menu',
 							'menu_id' => 'main-menu',
 							'container' => false,
-							'menu_class' => 'navbar-nav ms-auto mb-2 mb-md-0',
+							'menu_class' => "navbar-nav $menu_alignment mb-2 mb-md-0",
 							'fallback_cb' => '__return_false',
 							'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 							'depth' => 2,
 							'walker' => new bootstrap_5_wp_nav_menu_walker()
-						)
+						]
 					);
 					?>
 					<?php
@@ -152,7 +155,7 @@
 	</header>
 
 	<?php
-	if ($general_menu_group['menus_position'] == "fixed-top") {
+	if ($header_position == "fixed-top") {
 		echo get_template_part("template-parts/menu/fixed-menu", "spacing");
 	}
 	?>
