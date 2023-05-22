@@ -52,6 +52,10 @@
 			box-shadow: 0px 5px 6px #00000029;
 		}
 
+		header .navbar .container-fluid {
+			gap: 10px;
+		}
+
 		header .navbar .menu-item {
 			width: max-content;
 		}
@@ -75,26 +79,34 @@
 		}
 
 		/* Sizes for the menu logo */
-		header a.navbar-brand img {
+		header .navbar-collapse {
+			max-width: 100%;
+		}
+
+		header a.navbar-brand {
+			display: block;
+		}
+
+		header a.navbar-brand {
 			width:
-				<?= $general_menu_group['logo_mobile_width'] . "%" ?? "100%"; ?>
+				<?= $general_menu_group['logo_mobile_width'] ?? "200px"; ?>
 			;
 		}
 
 		/* tablet */
 		@media (min-width: 769px) {
-			header a.navbar-brand img {
+			header a.navbar-brand {
 				width:
-					<?= $general_menu_group['logo_tablet_width'] . "%" ?? "100%"; ?>
+					<?= $general_menu_group['logo_tablet_width'] ?? "200px"; ?>
 				;
 			}
 		}
 
 		/* Desktop */
 		@media (min-width: 1200px) {
-			header a.navbar-brand img {
+			header a.navbar-brand {
 				width:
-					<?= $general_menu_group['logo_desktop_width'] . "%" ?? "100%"; ?>
+					<?= $general_menu_group['logo_desktop_width'] ?? "180px"; ?>
 				;
 			}
 		}
@@ -109,11 +121,10 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-					<div>
-						<a class="navbar-brand" href="<?= get_home_url() ?>">
-							<img src="<?= $general_menu_group['logo']['url'] ?>" alt="">
-						</a>
-					</div>
+
+					<a class="navbar-brand" href="<?= get_home_url() ?>">
+						<img src="<?= $general_menu_group['logo']['url'] ?>" alt="">
+					</a>
 					<?php
 					//Printing the menu
 					wp_nav_menu(
