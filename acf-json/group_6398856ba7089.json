@@ -117,7 +117,7 @@
                     "label": "Logo mobile width",
                     "name": "logo_mobile_width",
                     "aria-label": "",
-                    "type": "number",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -126,20 +126,19 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": 100,
-                    "min": 0,
-                    "max": 100,
+                    "acfe_save_meta": 0,
+                    "default_value": "",
+                    "maxlength": "",
                     "placeholder": "",
-                    "step": 1,
                     "prepend": "",
-                    "append": "%"
+                    "append": ""
                 },
                 {
                     "key": "field_63a73e8419401",
                     "label": "Logo tablet width",
                     "name": "logo_tablet_width",
                     "aria-label": "",
-                    "type": "number",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -148,20 +147,19 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": 100,
-                    "min": 0,
-                    "max": 100,
+                    "acfe_save_meta": 0,
+                    "default_value": "",
+                    "maxlength": "",
                     "placeholder": "",
-                    "step": 1,
                     "prepend": "",
-                    "append": "%"
+                    "append": ""
                 },
                 {
                     "key": "field_63a73e9319402",
                     "label": "Logo desktop width",
                     "name": "logo_desktop_width",
                     "aria-label": "",
-                    "type": "number",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -170,13 +168,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": 100,
-                    "min": 0,
-                    "max": 100,
+                    "acfe_save_meta": 0,
+                    "default_value": "",
+                    "maxlength": "",
                     "placeholder": "",
-                    "step": 1,
                     "prepend": "",
-                    "append": "%"
+                    "append": ""
                 },
                 {
                     "key": "field_63a73ab0f1ec6",
@@ -475,7 +472,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1681240368,
+    "modified": 1684777376,
     "acfe_categories": {
         "theme": "Theme"
     }
