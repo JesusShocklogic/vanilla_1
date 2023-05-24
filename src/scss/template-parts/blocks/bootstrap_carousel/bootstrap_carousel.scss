@@ -13,6 +13,7 @@
         }
     }
 }
+
 .bootstrap_carousel {
     &.contain {
         @include variables.spacing;
@@ -22,6 +23,17 @@
     }
 
     &_group_carousel {
+        &_indicators {
+            &_item {
+                &.stripes {
+                }
+                &.circle {
+                    height: 15px;
+                    width: 15px;
+                    border-radius: 50%;
+                }
+            }
+        }
         &_inner {
             &_item {
                 img {

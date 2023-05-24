@@ -179,10 +179,47 @@
                     },
                     "acfe_save_meta": 0,
                     "choices": {
-                        "show": "Show bullet dots",
-                        "hide": "Hide bullet dots"
+                        "show": "Show bullet points",
+                        "hide": "Hide bullet points"
                     },
                     "default_value": "show",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": ""
+                },
+                {
+                    "key": "field_646e3d54b9908",
+                    "label": "Shape of the bullet point",
+                    "name": "shape_of_the_bullet_point",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_643d77989a66a",
+                                "operator": "==",
+                                "value": "show"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "acfe_save_meta": 0,
+                    "choices": {
+                        "stripes": "Stripes",
+                        "circle": "Circle"
+                    },
+                    "default_value": "stripes",
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
@@ -337,5 +374,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1681749946
+    "modified": 1684949940
 }
