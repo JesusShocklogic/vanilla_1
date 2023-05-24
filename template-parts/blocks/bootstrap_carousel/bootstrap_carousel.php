@@ -13,6 +13,9 @@ $background_colour = $general_settings['background_colour'];
 $showhide_arrows = (isset($bootstrap_carousel_group['showhide_arrows'])) ? (($bootstrap_carousel_group['showhide_arrows'] == "show") ? true : false) : true;
 $showhide_bullet_dots = (isset($bootstrap_carousel_group['showhide_bullet_dots'])) ? (($bootstrap_carousel_group['showhide_bullet_dots'] == "show") ? true : false) : true;
 
+if ($showhide_bullet_dots)
+	$shape_of_the_bullet_point = isset($bootstrap_carousel_group['shape_of_the_bullet_point']) ? $bootstrap_carousel_group['shape_of_the_bullet_point'] : "stripes";
+
 if (isset($bootstrap_carousel_group['aspect_ratio'])):
 	if ($bootstrap_carousel_group['aspect_ratio'] == "full_screen"):
 		$aspect_ratio = "height: 100dvh";
@@ -59,19 +62,21 @@ if (isset($bootstrap_carousel_group) && $bootstrap_carousel_group != null) {
 		<div class="bootstrap_carousel <?= $spacing ?>" id="<?= $block_id ?>" data-bs-ride="carousel">
 			<div id="carousel_<?= $block_id ?>" class="carousel slide <?= $fade_effect ?> bootstrap_carousel_group_carousel">
 				<?php if ($showhide_bullet_dots): ?>
-					<div class="carousel-indicators">
+					<div class="carousel-indicators bootstrap_carousel_group_carousel_indicators">
 						<?php foreach ($slides as $key => $slide): ?>
-							<button type="button" data-bs-target="#carousel_<?= $block_id ?>" data-bs-slide-to="<?= $key ?>"
-								class="<?= ($key == 0) ? "active" : ""; ?>" aria-current="true" aria-label="Slide <?= $key ?>"></button>
+							<button type="button" data-bs-target="#carousel_<?= $block_id ?>" data-bs-slide-to="<?= $key ?>" class="bootstrap_carousel_group_carousel_indicators_item 
+							<?= $shape_of_the_bullet_point; ?> <?= ($key == 0) ? "active" : ""; ?>" aria-current="true"
+								aria-label="Slide <?= $key ?>"></button>
 							<?php
 						endforeach; ?>
 					</div>
 				<?php endif; ?>
 				<div class="carousel-inner bootstrap_carousel_group_carousel_inner">
+
 					<?php
 					foreach ($slides as $key => $slide): ?>
-						<div data-bs-interval="<?= $slides_time_interval ?>"
-							class="carousel-item bootstrap_carousel_group_carousel_inner_item <?= ($key == 0) ? "active" : ""; ?>">
+						<div data-bs-interval="<?= $slides_time_interval ?>" class="carousel-item bootstrap_carousel_group_carousel_inner_item
+							<?= ($key == 0) ? "active" : ""; ?>">
 							<img src="<?= $slide['slide']['url'] ?>" class="d-block" alt="<?= $slide['slide']['alt'] ?>">
 						</div>
 						<?php
