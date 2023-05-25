@@ -339,9 +339,44 @@ NAME;
 								//getting information for the authors
 								$authors = "";
 								if ($showPresentationsSpeakersModal == 1) {
+									$logicSpeaker = 0;
+									if ($presentation->all_authors !== "[]") {
+										$contAuthors = 0;
+										foreach ($allAuthors as $key5 => $author) {
+											if ($author->presenting_author == 1) {
+												$select_author = true;
+											} else {
+												$select_author = false;
+											}
+
+											if ($presentation->person_id == $author->person_id && $select_author) {
+												$id = $author->id;
+												$email = $author->author_email;
+												$fullName = "";
+												$fullName = $author->prefix_Title . " " . $author->author_name . " " . $author->author_last_name;
+												if (!empty($id)) {
+													$authors .= <<<AUTHOR
+                                                            <a id="speaker"
+                                                                class="text-decoration-underline" 
+                                                                style="cursor: pointer;"
+                                                                data-bs-toggle="modal" 
+                                                                data-bs-target="#speaker-$id">
+                                                                $fullName,
+                                                            </a>
+AUTHOR;
+												} else {
+													$authors .= <<<AUTHOR
+                                                            <a id="speaker" class="text-decoration-none">
+                                                                $fullName,
+                                                            </a>
+AUTHOR;
+												}
+												$contAuthors = $contAuthors + 1;
+											}
+										}
+									}
 									if (!empty($allSpeakersContent)) {
 										$allSpeakersContent = json_decode($allSpeakersContent);
-										$authors .= "<td class='width-speakers'>";
 										foreach ($allSpeakersContent as $key5 => $SpeakerContent) {
 											$id = $SpeakerContent->Faculty_Id;
 											$fullName = $SpeakerContent->Full_Name;
@@ -359,12 +394,14 @@ AUTHOR;
 AUTHOR;
 											}
 										} // Foreach authors in the presentations
-										$authors .= "</td>";
 									} // IF No speakers in the presentation
+
+									$authors .= "<td class='width-speakers'>" . $authors . "</td>";
 								} // IF presentations_speakers_modals is enabled in the Dashboard
 								else {
 									$authors = "<td>" . str_replace('"', '', $presentation->all_speakers_list) . "</td>";
-								}
+								} // IF presentations_speakers_modals is enabled in the Dashboard
+
 
 								$moreInfo = "";
 
