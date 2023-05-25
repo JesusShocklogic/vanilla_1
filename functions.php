@@ -169,6 +169,10 @@ add_action('init', function () {
     //Swipper
     wp_register_style("swiper-css", get_template_directory_uri() . "/assets/css/swiper-bundle.min.css", [], true);
     wp_register_script("swiper-js", get_template_directory_uri() . "/assets/js/swiper.js", [], true);
+
+    //simplelightbox
+    wp_register_style("simplelightbox-css", get_template_directory_uri() . "/assets/css/simple-lightbox.css", [], true);
+    wp_register_script("simplelightbox-js", get_template_directory_uri() . "/assets/js/simplelightbox.js", [], true);
     
     //Bases
     wp_register_script("base", get_template_directory_uri() . "/assets/js/base.js", [], true);

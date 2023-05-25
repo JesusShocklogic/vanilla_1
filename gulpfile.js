@@ -77,8 +77,29 @@ function compileSwiperCss(cb) {
         .pipe(dest('assets/css/'));
 }
 
+/*
+* SimpleLightbox information found in https://simplelightbox.com/
+*/
+function compileSimpleLightboxCss(cb) {
+    //cb();
+    return src('node_modules/simplelightbox/dist/simple-lightbox.css')
+        .pipe(sass())
+        .pipe(dest('assets/css/'));
+}
+
+function compileSimpleLightboxJs(cb) {
+    //cb();
+    return src('node_modules/simplelightbox/dist/simple-lightbox.js')
+        .pipe(babel())
+        .pipe(concat('simplelightbox.js'))
+        .pipe(dest('assets/js/'));
+}
+
 //exports.build = build;
-exports.default = series(compileImages, compileBootstrapCss, compileBootstrapJS, compileSwiperCss, compileSwipperJS, compileCss, compilePartsCss, compileModalsCss);
+exports.default = series(compileImages, compileBootstrapCss, compileBootstrapJS,
+    compileSwiperCss, compileSwipperJS,
+    compileCss, compilePartsCss, compileModalsCss,
+    compileSimpleLightboxCss, compileSimpleLightboxJs);
 exports.watcher = function () {
     watch(['src/scss/*.scss', 'src/scss/**/*.scss', 'src/scss/template-parts/**/*.scss'], compileCss);
     watch(['src/scss/*.scss', 'src/scss/**/*.scss', 'src/scss/template-parts/**/*.scss'], compilePartsCss);
