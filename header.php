@@ -88,6 +88,7 @@
 
 		header a.navbar-brand {
 			display: block;
+			max-width: 100%;
 		}
 
 		header a.navbar-brand {
