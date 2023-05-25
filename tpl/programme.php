@@ -11,7 +11,7 @@ $show_company_name = $speakers_modal['show_company_name'] ? "block" : "none";
 $speaker_name_colour = $speakers_modal['speaker_name_colour'] ?? "#000";
 $job_title_colour = $speakers_modal['job_title_colour'] ?? "#000";
 $company_name_colour = $speakers_modal['company_name_colour'] ?? "#000";
-
+$allAuthors = synclogic_get_all_authors();
 $captions = $speakers_modal['captions_group']; ?>
 <style>
 	.modal_body_left {
@@ -380,6 +380,7 @@ AUTHOR;
 										foreach ($allSpeakersContent as $key5 => $SpeakerContent) {
 											$id = $SpeakerContent->Faculty_Id;
 											$fullName = $SpeakerContent->Full_Name;
+											
 											if ($key5 == 0) {
 												$authors .= <<<AUTHOR
                                                     <a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#speaker-$id">
@@ -396,7 +397,7 @@ AUTHOR;
 										} // Foreach authors in the presentations
 									} // IF No speakers in the presentation
 
-									$authors .= "<td class='width-speakers'>" . $authors . "</td>";
+									$authors = "<td class='width-speakers'>" . $authors . "</td>";
 								} // IF presentations_speakers_modals is enabled in the Dashboard
 								else {
 									$authors = "<td>" . str_replace('"', '', $presentation->all_speakers_list) . "</td>";
