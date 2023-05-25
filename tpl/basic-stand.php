@@ -3,10 +3,14 @@
  * Template name: Stand basic
  */
 //$temp_person_id = $_GET['person_id'];
-$temp_person_id = 5301197;
+$temp_person_id = 5301189;
 $exhibitor = get_exhibitors_by_person_id_sl($temp_person_id)[0] ?? null;
 
 if ($exhibitor):
+
+    wp_enqueue_style("simplelightbox-css");
+    wp_enqueue_script("simplelightbox-js");
+
     $contact_info = [
         "Person_Id" => $exhibitor->Person_Id,
         "First_Name" => $exhibitor->First_Name,
@@ -267,7 +271,9 @@ get_header(); ?>
                             <?php
                             foreach ($company_gallery_array as $key => $item): ?>
                                 <div class="stand_basic_wrapper_gallery_image">
-                                    <img src="<?= $item->Value ?>" alt="">
+                                    <a href="<?= $item->Value ?>">
+                                        <img src="<?= $item->Value ?>" alt="">
+                                    </a>
                                 </div>
                                 <?php
                             endforeach;
@@ -356,4 +362,8 @@ get_header(); ?>
     echo "No data was found for the exhibitor";
 endif; ?>
 <?php
-get_footer();
+get_footer(); ?>
+
+<script>
+    var lightbox = new SimpleLightbox('.stand_basic_wrapper_gallery .stand_basic_wrapper_gallery_image a', { /* options */ });
+</script>
