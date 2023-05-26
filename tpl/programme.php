@@ -198,8 +198,8 @@ if (have_posts()) {
 		$days = get_programme_days();
 
 		$programmeTabs = <<<TABS
-            <div class="list-group list-group-horizontal text-center" id="list-tab" role="tablist">
-TABS;
+			<div class="list-group list-group-horizontal text-center" id="list-tab" role="tablist">
+		TABS;
 
 		$firstDay = array_key_first($days);
 		$lastDay = array_key_last($days);
@@ -209,31 +209,31 @@ TABS;
 
 			if (isset($DayTab) && $DayTab == $key) {
 				$programmeTabs .= <<<TABS
-                <a class="list-group-item list-group-item-action active" id="list-$key-list" data-bs-toggle="list" href="#list-$key" role="tab" aria-controls="$key">$title</a>
-TABS;
+					<a class="list-group-item list-group-item-action active" id="list-$key-list" data-bs-toggle="list" href="#list-$key" role="tab" aria-controls="$key">$title</a>
+				TABS;
 			} elseif (isset($DayTab) && $DayTab != $key) {
 				$programmeTabs .= <<<TABS
-                <a class="list-group-item list-group-item-action" id="list-$key-list" data-bs-toggle="list" href="#list-$key" role="tab" aria-controls="$key">$title</a>
-TABS;
+					<a class="list-group-item list-group-item-action" id="list-$key-list" data-bs-toggle="list" href="#list-$key" role="tab" aria-controls="$key">$title</a>
+				TABS;
 			}
 			//if this is the first interaction and (our current day is before the start of the event or our current day is after the days of the event)
 			elseif ($key == 0 && (getCurrentDate($timezone, 'Y-m-d') < $days[$firstDay]->session_day || getCurrentDate($timezone, 'Y-m-d') > $days[$lastDay]->session_day)) {
 				$programmeTabs .= <<<TABS
-                <a class="list-group-item list-group-item-action active" id="list-$key-list" data-bs-toggle="list" href="#list-$key" role="tab" aria-controls="$key">$title</a>
-TABS;
+					<a class="list-group-item list-group-item-action active" id="list-$key-list" data-bs-toggle="list" href="#list-$key" role="tab" aria-controls="$key">$title</a>
+				TABS;
 			} elseif (getCurrentDate($timezone, 'Y-m-d') == $day->session_day) {
 				$programmeTabs .= <<<TABS
-                    <a class="list-group-item list-group-item-action active" id="list-$key-list" data-bs-toggle="list" href="#list-$key" role="tab" aria-controls="$key">$title</a>
-TABS;
+					<a class="list-group-item list-group-item-action active" id="list-$key-list" data-bs-toggle="list" href="#list-$key" role="tab" aria-controls="$key">$title</a>
+				TABS;
 			} else {
 				$programmeTabs .= <<<TABS
-                    <a class="list-group-item list-group-item-action" id="list-$key-list" data-bs-toggle="list" href="#list-$key" role="tab" aria-controls="$key">$title</a>
-TABS;
+					<a class="list-group-item list-group-item-action" id="list-$key-list" data-bs-toggle="list" href="#list-$key" role="tab" aria-controls="$key">$title</a>
+				TABS;
 			}
 		} //foreach
 		$programmeTabs .= <<<TABS
-            </div>
-TABS;
+			</div>
+		TABS;
 
 		// Programme Content
 		$fullProgramme = '<div class="tab-content pt-4 bg-white" id="nav-tabContent">';
@@ -242,31 +242,31 @@ TABS;
 			$dayContent = "";
 			if (isset($DayTab) && $DayTab == $key) {
 				$dayContent .= <<<CONTENT
-                    <div class="tab-pane fade show active" id="list-$key" role="tabpanel" aria-labelledby="list-$key-list">
-                        <div class="row">
-CONTENT;
+					<div class="tab-pane fade show active" id="list-$key" role="tabpanel" aria-labelledby="list-$key-list">
+					<div class="row">
+				CONTENT;
 			} elseif (isset($DayTab) && $DayTab != $key) {
 				$dayContent .= <<<CONTENT
-                    <div class="tab-pane fade" id="list-$key" role="tabpanel" aria-labelledby="list-$key-list">
-                        <div class="row">
-CONTENT;
+					<div class="tab-pane fade" id="list-$key" role="tabpanel" aria-labelledby="list-$key-list">
+					<div class="row">
+				CONTENT;
 			}
 			//if this is the first interaction and (our current day is before the start of the event or our current day is after the days of the event)
 			elseif ($key == 0 && (getCurrentDate($timezone, 'Y-m-d') < $days[$firstDay]->session_day || getCurrentDate($timezone, 'Y-m-d') > $days[$lastDay]->session_day)) {
 				$dayContent .= <<<CONTENT
-                    <div class="tab-pane fade show active" id="list-$key" role="tabpanel" aria-labelledby="list-$key-list">
-                        <div class="row">
-CONTENT;
+					<div class="tab-pane fade show active" id="list-$key" role="tabpanel" aria-labelledby="list-$key-list">
+					<div class="row">
+				CONTENT;
 			} elseif (getCurrentDate($timezone, 'Y-m-d') == $day->session_day) {
 				$dayContent .= <<<CONTENT
-                    <div class="tab-pane fade show active" id="list-$key" role="tabpanel" aria-labelledby="list-$key-list">
-                        <div class="row">
-CONTENT;
+					<div class="tab-pane fade show active" id="list-$key" role="tabpanel" aria-labelledby="list-$key-list">
+					<div class="row">
+				CONTENT;
 			} else {
 				$dayContent .= <<<CONTENT
-                    <div class="tab-pane fade" id="list-$key" role="tabpanel" aria-labelledby="list-$key-list">
-                        <div class="row">
-CONTENT;
+					<div class="tab-pane fade" id="list-$key" role="tabpanel" aria-labelledby="list-$key-list">
+					<div class="row">
+				CONTENT;
 			}
 
 			//GETTING THE START TIMES
@@ -304,16 +304,16 @@ CONTENT;
 
 							if ($key4 == 0) {
 								$speakersContent .= <<<NAME
-                                    <a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#speaker-$id">
-                                        $name $lastName
-                                    </a>
-NAME;
+									<a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#speaker-$id">
+										$name $lastName
+									</a>
+								NAME;
 							} else {
 								$speakersContent .= <<<NAME
-                                    <a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#speaker-$id">
-                                        , $name $lastName
-                                    </a>
-NAME;
+									<a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#speaker-$id">
+									, $name $lastName
+									</a>
+								NAME;
 							}
 						} //foreach Speakers
 						$speakersContent .= "</div>";
@@ -356,20 +356,16 @@ NAME;
 												$fullName = $author->prefix_Title . " " . $author->author_name . " " . $author->author_last_name;
 												if (!empty($id)) {
 													$authors .= <<<AUTHOR
-                                                            <a id="speaker"
-                                                                class="text-decoration-underline" 
-                                                                style="cursor: pointer;"
-                                                                data-bs-toggle="modal" 
-                                                                data-bs-target="#speaker-$id">
-                                                                $fullName,
-                                                            </a>
-AUTHOR;
+														<div id="author">
+														$fullName 
+														</div>
+													AUTHOR;
 												} else {
 													$authors .= <<<AUTHOR
-                                                            <a id="speaker" class="text-decoration-none">
-                                                                $fullName,
-                                                            </a>
-AUTHOR;
+														<div id="author">
+															$fullName 
+														</div>
+													AUTHOR;
 												}
 												$contAuthors = $contAuthors + 1;
 											}
@@ -380,19 +376,19 @@ AUTHOR;
 										foreach ($allSpeakersContent as $key5 => $SpeakerContent) {
 											$id = $SpeakerContent->Faculty_Id;
 											$fullName = $SpeakerContent->Full_Name;
-											
+
 											if ($key5 == 0) {
 												$authors .= <<<AUTHOR
-                                                    <a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#speaker-$id">
-                                                        $fullName
-                                                    </a>
-AUTHOR;
+													<a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#speaker-$id">
+														$fullName
+													</a>
+												AUTHOR;
 											} else {
 												$authors .= <<<AUTHOR
-                                                    <a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#speaker-$id">
-                                                        , $fullName
-                                                    </a>
-AUTHOR;
+													<a id="speaker" class="text-decoration-underline" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#speaker-$id">
+													, $fullName
+													</a>
+												AUTHOR;
 											}
 										} // Foreach authors in the presentations
 									} // IF No speakers in the presentation
@@ -419,20 +415,20 @@ AUTHOR;
 							}
 
 							$tableContent .= <<<CONTENT
-                                <!-- Table content -->
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th class="thead_presentation_time" scope="col">$presentation_time</th>
-                                            <th scope="col">$presentation_title</th>
-                                            <th scope="col">$speakerauthors</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        $presentationsContent
-                                    </tbody>
-                                </table>
-CONTENT;
+								<!-- Table content -->
+								<table class="table">
+									<thead>
+										<tr>
+											<th class="thead_presentation_time" scope="col">$presentation_time</th>
+											<th scope="col">$presentation_title</th>
+											<th scope="col">$speakerauthors</th>
+										</tr>
+									</thead>
+									<tbody>
+										$presentationsContent
+									</tbody>
+								</table>
+								CONTENT;
 						} // if presentations is not empty
 					} // If Presentation table is enable in the Dashboard
 
@@ -449,8 +445,8 @@ CONTENT;
 						//$titleImg = <<<IMG <div><img src="$titleImgSrc"></div> IMG;
 						$titleImgSrc = $titleImgSrcArray[0];
 						$titleImg = <<<IMG
-                            <div class="mw-50">$titleImgSrc</div>
-IMG;
+							<div class="mw-50">$titleImgSrc</div>
+						IMG;
 					}
 
 					// IF the session has a Room
@@ -481,55 +477,55 @@ IMG;
 					}
 
 					$sessionsContent .= <<<CONTENT
-                            <!-- Sessions Info -->
-                            <div class="col-12 col-lg px-5 px-lg-2 session $speakerIsConnect">
-                                <div>
-                                    <h5 class="session-title">$title </h5>
-                                    $titleImg
-									$sessionHTML
-                                    
-                                    $room
-                                    $speakersContent
-                                    $sessionType
-                                    <div class="session_time"><strong>$session_time: </strong>$sessionTime</div>
-                                </div>
-                                <div class="presentations">$tableContent</div>
-                            </div>
-CONTENT;
+						<!-- Sessions Info -->
+						<div class="col-12 col-lg px-5 px-lg-2 session $speakerIsConnect">
+							<div>
+							<h5 class="session-title">$title </h5>
+							$titleImg
+							$sessionHTML
+
+							$room
+							$speakersContent
+							$sessionType
+							<div class="session_time"><strong>$session_time: </strong>$sessionTime</div>
+						</div>
+						<div class="presentations">$tableContent</div>
+						</div>
+					CONTENT;
 
 					if (($key3 + 1) % 3 == 0) {
 						$sessionsContent .= <<<CONTENT
-                            <div class="w-100"></div>
-CONTENT;
+							<div class="w-100"></div>
+						CONTENT;
 					}
 
 					$lastSessionEndTime = $session->end_time;
 				} //foreach sessions
 
 				$timeContent .= <<<CONTENT
-                    <!-- Sessions Times -->
-                    <div class="container-fluid row">
-                        <div class="col-12 col-lg px-5 d-flex justify-content-center align-items-center" style="border-right: 2px solid #ededed;border-bottom: 2px solid #ededed;">
-                            <strong>
-                                <h5>$time - $lastSessionEndTime</h5>
-                            </strong>
-                        </div>
-                        <!-- Session Content -->
-                        <div class="col-12 col-lg-10">
-                            <div class="row">
-                                $sessionsContent
-                            </div>
-                        </div>
-                    </div>
-CONTENT;
+					<!-- Sessions Times -->
+					<div class="container-fluid row">
+						<div class="col-12 col-lg px-5 d-flex justify-content-center align-items-center" style="border-right: 2px solid #ededed;border-bottom: 2px solid #ededed;">
+							<strong>
+								<h5>$time - $lastSessionEndTime</h5>
+							</strong>
+						</div>
+						<!-- Session Content -->
+						<div class="col-12 col-lg-10">
+							<div class="row">
+								$sessionsContent
+							</div>
+						</div>
+					</div>
+				CONTENT;
 			} //foreach start time
 
 
 			$dayContent .= <<<CONTENT
-                            $timeContent
-                        </div>
-                    </div>
-CONTENT;
+						$timeContent
+					</div>
+				</div>
+			CONTENT;
 
 			$fullProgramme .= $dayContent;
 		} //foreach days
