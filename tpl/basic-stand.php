@@ -3,7 +3,7 @@
  * Template name: Stand basic
  */
 //$temp_person_id = $_GET['person_id'];
-$temp_person_id = 5301189;
+$temp_person_id = 5301190;
 $exhibitor = get_exhibitors_by_person_id_sl($temp_person_id)[0] ?? null;
 
 if ($exhibitor):
@@ -294,7 +294,7 @@ get_header(); ?>
                                         </div>
                                         <div class="stand_basic_wrapper_downloads_wrapper_download_button">
                                             <a href="<?= $document->Value ?>" download target="_blank"
-                                                class="button btn ">Download</a>
+                                                class="button btn ">View</a>
                                         </div>
                                     </div>
                                     <hr>
@@ -337,7 +337,7 @@ get_header(); ?>
                                         <img class="stand_basic_profile_wrapper_section_icon"
                                             src="http://localhost/vanila_1/wp-content/uploads/2023/05/user.png" alt=""
                                             srcset="">
-                                        <?= $contact_info['Email'] ?>
+                                        <a href="mailto:<?= $contact_info['Email'] ?>"><?= $contact_info['Email'] ?></a>
                                         <hr>
                                     </div>
                                 <?php endif; ?>
