@@ -1,6 +1,10 @@
-<link rel="stylesheet" id="shocklogic_blog" href="<?= get_template_directory_uri() ?>/template-parts/blocks/shocklogic_blog/shocklogic_blog.css" type="text/css" media="all">
+<link rel="stylesheet" id="shocklogic_blog"
+	href="<?= get_template_directory_uri() ?>/template-parts/blocks/shocklogic_blog/shocklogic_blog.css" type="text/css"
+	media="all">
 <?php
 $shocklogic_blog_group = get_field('shocklogic_blog_group');
+$title_style = isset($shocklogic_blog_group['title_style']) ? $shocklogic_blog_group['title_style'] : "h3";
+$title_font_weight = isset($shocklogic_blog_group['title_font_weight']) ? $shocklogic_blog_group['title_font_weight'] : "font-bold";
 $wp_query = get_query(get_field('query_settings'));
 
 $general_settings = get_field('general_settings');
@@ -26,7 +30,7 @@ $placeholder = default_placeholder_image(); ?>
 if (isset($shocklogic_blog_group) && $shocklogic_blog_group != null) { ?>
 	<div class="shocklogic_blog <?= $spacing ?>" id="<?= $block_id ?>">
 		<div class="shocklogic_blog_wrapper">
-			<?php if ($shocklogic_blog_group['title']) : ?>
+			<?php if ($shocklogic_blog_group['title']): ?>
 				<div class="shocklogic_blog_wrapper_title">
 					<?= $shocklogic_blog_group['title'] ?>
 				</div>
@@ -43,26 +47,31 @@ if (isset($shocklogic_blog_group) && $shocklogic_blog_group != null) { ?>
 						$image_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : $placeholder; ?>
 						<div class="shocklogic_blog_wrapper_blog_single">
 							<?php
-							if (!is_admin()) : ?>
+							if (!is_admin()): ?>
 								<a href="<?= $permalink ?>">
 									<div class="shocklogic_blog_wrapper_blog_single_image">
 										<img src="<?= $image_url ?>" alt="">
 									</div>
 									<div class="shocklogic_blog_wrapper_blog_single_title title">
-										<h3><?php the_title() ?></h3>
+										<div class="<?= $title_style . " " . $title_font_weight ?>">
+											<?php the_title() ?>
+										</div>
 									</div>
 								</a>
-							<?php else : ?>
+							<?php else: ?>
 								<div class="shocklogic_blog_wrapper_blog_single_image">
 									<img src="<?= $image_url ?>" alt="">
 								</div>
 								<div class="shocklogic_blog_wrapper_blog_single_title title">
-									<h3><?php the_title() ?></h3>
+									<h3>
+										<?php the_title() ?>
+									</h3>
 								</div>
 							<?php endif; ?>
 						</div>
-				<?php
-					}; //while
+						<?php
+					}
+					; //while
 					wp_reset_query();
 				} //if
 				else {
@@ -71,12 +80,12 @@ if (isset($shocklogic_blog_group) && $shocklogic_blog_group != null) { ?>
 				?>
 			</div>
 
-			<?php if ($shocklogic_blog_group['bottom_text']) : ?>
+			<?php if ($shocklogic_blog_group['bottom_text']): ?>
 				<div class="shocklogic_blog_wrapper_bottom_text">
 					<?= $shocklogic_blog_group['bottom_text'] ?>
 				</div>
 			<?php endif; ?>
 		</div>
 	</div>
-<?php
+	<?php
 }
