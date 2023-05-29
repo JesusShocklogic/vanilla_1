@@ -59,9 +59,9 @@
 			gap: 10px;
 		}
 
-		header .navbar .menu-item {
+		/* header .navbar .menu-item {
 			width: max-content;
-		}
+		} */
 
 		header .navbar .menu-item .nav-link {
 			color:
