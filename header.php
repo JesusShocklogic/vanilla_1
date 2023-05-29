@@ -21,6 +21,7 @@
 		echo get_template_part("template-parts/head/fav", "icon", $general_theme_settings['fav_icon']);
 	} // Fav icons
 	
+	$menu_underline_on_hover = $general_menu_group['menu_underline_on_hover'] ?? "hide";
 	$header_position = $general_menu_group['headers_position'] ?? "normal";
 	$menu_alignment = $general_menu_group['menu_alignment'] ?? "ms-auto";
 	?>
@@ -74,6 +75,14 @@
 				<?= $general_menu_group['menu_items_text_colour_hover'] ?>
 			;
 		}
+
+		<?php if ($menu_underline_on_hover): ?>
+			header .navbar .menu-item .nav-link:hover {
+				border-bottom: 1px solid
+					<?= $general_menu_group['menu_items_text_colour_hover'] ?>
+				;
+			}
+		<?php endif; ?>
 
 		header .navbar .menu-item .nav-link.active {
 			color:
