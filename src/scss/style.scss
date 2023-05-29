@@ -19,6 +19,10 @@ iframe {
     font-weight: bold !important;
 }
 
+.border-radius-15px{
+    border-radius: 15px;
+}
+
 .standard_padding {
     @include variables.spacing("!important");
 }
@@ -29,6 +33,6 @@ iframe {
     }
 
     .show-on-desktop {
-        display: block;
+        display: block
     }
 }
