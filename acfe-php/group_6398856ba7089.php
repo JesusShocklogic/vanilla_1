@@ -256,10 +256,11 @@ acf_add_local_field_group(array(
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => '',
+						'width' => '50',
 						'class' => '',
 						'id' => '',
 					),
+					'acfe_save_meta' => 0,
 					'default_value' => 'rgba(0,0,0,0.55)',
 					'enable_opacity' => 1,
 					'return_format' => 'string',
@@ -274,13 +275,43 @@ acf_add_local_field_group(array(
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
+						'width' => '50',
+						'class' => '',
+						'id' => '',
+					),
+					'acfe_save_meta' => 0,
+					'default_value' => 'rgba(0,0,0,0.7)',
+					'enable_opacity' => 1,
+					'return_format' => 'string',
+				),
+				array(
+					'key' => 'field_6474efd94d146',
+					'label' => 'Menu underline on hover',
+					'name' => 'menu_underline_on_hover',
+					'aria-label' => '',
+					'type' => 'select',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
-					'default_value' => 'rgba(0,0,0,0.7)',
-					'enable_opacity' => 1,
-					'return_format' => 'string',
+					'acfe_save_meta' => 0,
+					'choices' => array(
+						'show' => 'Show',
+						'hide' => 'Hide',
+					),
+					'default_value' => 'hide',
+					'return_format' => 'value',
+					'multiple' => 0,
+					'allow_null' => 0,
+					'ui' => 0,
+					'ajax' => 0,
+					'placeholder' => '',
+					'allow_custom' => 0,
+					'search_placeholder' => '',
 				),
 				array(
 					'key' => 'field_63989252e5d3e',
@@ -510,7 +541,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'theme' => 'Theme',
 	),
-	'modified' => 1684780325,
+	'modified' => 1685385461,
 ));
 
 endif;
