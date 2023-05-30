@@ -82,11 +82,35 @@
 					<?= $general_menu_group['menu_items_text_colour_hover'] ?>
 				;
 			}
+
 		<?php endif; ?>
 
 		header .navbar .menu-item .nav-link.active {
 			color:
 				<?= $general_menu_group['active_menu_item'] ?>
+			;
+		}
+
+		header .navbar-nav .dropdown-menu {
+			background-color:
+				<?= $general_menu_group['sub_menu_items_background_colour'] ?? "#e9ecef"; ?>
+			;
+		}
+
+		header .dropdown-item {
+			color:
+				<?= $general_menu_group['sub_menu_items_text_colour'] ?? "#212529"; ?>
+			;
+
+		}
+
+		header .dropdown-item:focus,
+		header .dropdown-item:hover {
+			color:
+				<?= $general_menu_group['sub_menu_items_text_colour_hover'] ?? "#1e2125"; ?>
+			;
+			background-color:
+				<?= $general_menu_group['sub_menu_items_background_colour_hover'] ?? "#e9ecef"; ?>
 			;
 		}
 
