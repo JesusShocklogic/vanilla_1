@@ -77,6 +77,11 @@
 		}
 
 		<?php if ($menu_underline_on_hover): ?>
+			header .navbar .menu-item .nav-link {
+				border-bottom: 1px solid transparent;
+				;
+			}
+
 			header .navbar .menu-item .nav-link:hover {
 				border-bottom: 1px solid
 					<?= $general_menu_group['menu_items_text_colour_hover'] ?>
