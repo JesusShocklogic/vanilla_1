@@ -1,38 +1,11 @@
 {
-    "key": "group_63c96692d673d",
-    "title": "Shocklogic partners",
+    "key": "group_6479eaa74d3b8",
+    "title": "Shocklogic Synclogic Exhibitors",
     "fields": [
         {
-            "key": "field_63e2cd77db026",
-            "label": "Query settings",
-            "name": "query_settings",
-            "aria-label": "",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_63dbb940e25d2"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0,
-            "acfe_seamless_style": 0,
-            "acfe_clone_modal": 0,
-            "acfe_clone_modal_close": 0,
-            "acfe_clone_modal_button": "",
-            "acfe_clone_modal_size": "large"
-        },
-        {
-            "key": "field_63c96692def57",
-            "label": "shocklogic partners group",
-            "name": "shocklogic_partners_group",
+            "key": "field_6479eaa7601ec",
+            "label": "Shocklogic Synclogic Exhibitors Group",
+            "name": "shocklogic_synclogic_exhibitors_group",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -43,15 +16,12 @@
                 "class": "",
                 "id": ""
             },
+            "acfe_save_meta": 0,
             "layout": "block",
             "acfe_seamless_style": 1,
-            "acfe_group_modal": 0,
-            "acfe_group_modal_close": 0,
-            "acfe_group_modal_button": "",
-            "acfe_group_modal_size": "large",
             "sub_fields": [
                 {
-                    "key": "field_63c96692e2dba",
+                    "key": "field_6479eaa77323a",
                     "label": "Title tab",
                     "name": "",
                     "aria-label": "",
@@ -69,7 +39,7 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_63c96692e69bc",
+                    "key": "field_6479eaa776da8",
                     "label": "title",
                     "name": "title",
                     "aria-label": "",
@@ -89,8 +59,8 @@
                     "delay": 0
                 },
                 {
-                    "key": "field_63d29b9c1df9c",
-                    "label": "Partner's Settings",
+                    "key": "field_6479eaa77a732",
+                    "label": "Settings",
                     "name": "",
                     "aria-label": "",
                     "type": "accordion",
@@ -107,33 +77,13 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_63d1dd9b7e805",
-                    "label": "Minimal column size",
-                    "name": "minimal_column_size",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "Add the minimal size all items will take on screen.\r\nYou can place any available size.\r\nEg.\r\n250px\r\n20rem\r\n20em",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "18rem",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_63c97f9ccc001",
-                    "label": "Click behaviour",
-                    "name": "click_behaviour",
+                    "key": "field_6479eaa77e2f8",
+                    "label": "Content select",
+                    "name": "content_select",
                     "aria-label": "",
                     "type": "select",
-                    "instructions": "IMPORTANT: for the External URL option, be sure to add the external URL individually in the partners area.",
-                    "required": 1,
+                    "instructions": "",
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -141,13 +91,11 @@
                         "id": ""
                     },
                     "choices": {
-                        "internal": "Send to internal page",
-                        "external": "Send to external page",
-                        "modal": "Show popup",
-                        "same": "Same link for all"
+                        "all": "All speakers",
+                        "categories": "Categories of speakers"
                     },
-                    "default_value": "internal",
-                    "return_format": "value",
+                    "default_value": "all",
+                    "return_format": "",
                     "multiple": 0,
                     "allow_null": 0,
                     "ui": 0,
@@ -157,19 +105,19 @@
                     "search_placeholder": ""
                 },
                 {
-                    "key": "field_63d292e636272",
-                    "label": "Link",
-                    "name": "link",
+                    "key": "field_6479eaa781ede",
+                    "label": "Categories",
+                    "name": "categories",
                     "aria-label": "",
-                    "type": "link",
+                    "type": "repeater",
                     "instructions": "",
                     "required": 1,
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_63c97f9ccc001",
+                                "field": "field_6479eaa77e2f8",
                                 "operator": "==",
-                                "value": "same"
+                                "value": "categories"
                             }
                         ]
                     ],
@@ -178,10 +126,40 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array"
+                    "acfe_repeater_stylised_button": 1,
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 1,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add Category",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_6479eaa7e8a93",
+                            "label": "Category",
+                            "name": "category",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_6479eaa781ede"
+                        }
+                    ]
                 },
                 {
-                    "key": "field_63c966930cad1",
+                    "key": "field_6479eaa785ca0",
                     "label": "Bottom tab",
                     "name": "",
                     "aria-label": "",
@@ -199,7 +177,7 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_63c96693106cc",
+                    "key": "field_6479eaa7898dc",
                     "label": "Bottom text",
                     "name": "bottom_text",
                     "aria-label": "",
@@ -218,7 +196,11 @@
                     "media_upload": 1,
                     "delay": 0
                 }
-            ]
+            ],
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
         }
     ],
     "location": [
@@ -226,7 +208,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/shocklogic-partners"
+                "value": "acf\/shocklogic-synclogic-exhibitors"
             }
         ]
     ],
@@ -239,7 +221,7 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "acfe_display_title": "Shocklogic partners",
+    "acfe_display_title": "Shocklogic Synclogic Exhibitors",
     "acfe_autosync": [
         "php",
         "json"
@@ -247,8 +229,8 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1685709777,
+    "modified": 1685715983,
     "acfe_categories": {
-        "shocklogic": "Shocklogic"
+        "synclogic": "Synclogic"
     }
 }

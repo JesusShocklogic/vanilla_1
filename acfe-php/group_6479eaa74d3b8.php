@@ -3,13 +3,13 @@
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
-	'key' => 'group_63af0c6fd980b',
-	'title' => 'Shocklogic synclogic speakers',
+	'key' => 'group_6479eaa74d3b8',
+	'title' => 'Shocklogic Synclogic Exhibitors',
 	'fields' => array(
 		array(
-			'key' => 'field_63af0c6fe5aa1',
-			'label' => 'Shocklogic synclogic speakers group',
-			'name' => 'shocklogic_synclogic_speakers_group',
+			'key' => 'field_6479eaa7601ec',
+			'label' => 'Shocklogic Synclogic Exhibitors Group',
+			'name' => 'shocklogic_synclogic_exhibitors_group',
 			'aria-label' => '',
 			'type' => 'group',
 			'instructions' => '',
@@ -20,15 +20,12 @@ acf_add_local_field_group(array(
 				'class' => '',
 				'id' => '',
 			),
+			'acfe_save_meta' => 0,
 			'layout' => 'block',
 			'acfe_seamless_style' => 1,
-			'acfe_group_modal' => 0,
-			'acfe_group_modal_close' => 0,
-			'acfe_group_modal_button' => '',
-			'acfe_group_modal_size' => 'large',
 			'sub_fields' => array(
 				array(
-					'key' => 'field_63af0c6fe995b',
+					'key' => 'field_6479eaa77323a',
 					'label' => 'Title tab',
 					'name' => '',
 					'aria-label' => '',
@@ -46,7 +43,7 @@ acf_add_local_field_group(array(
 					'endpoint' => 0,
 				),
 				array(
-					'key' => 'field_63af0c6fed44a',
+					'key' => 'field_6479eaa776da8',
 					'label' => 'title',
 					'name' => 'title',
 					'aria-label' => '',
@@ -66,7 +63,7 @@ acf_add_local_field_group(array(
 					'delay' => 0,
 				),
 				array(
-					'key' => 'field_63af0c700bacb',
+					'key' => 'field_6479eaa77a732',
 					'label' => 'Settings',
 					'name' => '',
 					'aria-label' => '',
@@ -84,7 +81,7 @@ acf_add_local_field_group(array(
 					'endpoint' => 0,
 				),
 				array(
-					'key' => 'field_63c6ad1f8ca88',
+					'key' => 'field_6479eaa77e2f8',
 					'label' => 'Content select',
 					'name' => 'content_select',
 					'aria-label' => '',
@@ -112,7 +109,7 @@ acf_add_local_field_group(array(
 					'search_placeholder' => '',
 				),
 				array(
-					'key' => 'field_63c6ad688ca89',
+					'key' => 'field_6479eaa781ede',
 					'label' => 'Categories',
 					'name' => 'categories',
 					'aria-label' => '',
@@ -122,7 +119,7 @@ acf_add_local_field_group(array(
 					'conditional_logic' => array(
 						array(
 							array(
-								'field' => 'field_63c6ad1f8ca88',
+								'field' => 'field_6479eaa77e2f8',
 								'operator' => '==',
 								'value' => 'categories',
 							),
@@ -143,7 +140,7 @@ acf_add_local_field_group(array(
 					'rows_per_page' => 20,
 					'sub_fields' => array(
 						array(
-							'key' => 'field_63c6b4aac2e16',
+							'key' => 'field_6479eaa7e8a93',
 							'label' => 'Category',
 							'name' => 'category',
 							'aria-label' => '',
@@ -161,12 +158,12 @@ acf_add_local_field_group(array(
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
-							'parent_repeater' => 'field_63c6ad688ca89',
+							'parent_repeater' => 'field_6479eaa781ede',
 						),
 					),
 				),
 				array(
-					'key' => 'field_63af0c7012f81',
+					'key' => 'field_6479eaa785ca0',
 					'label' => 'Bottom tab',
 					'name' => '',
 					'aria-label' => '',
@@ -184,7 +181,7 @@ acf_add_local_field_group(array(
 					'endpoint' => 0,
 				),
 				array(
-					'key' => 'field_63af0c70169d8',
+					'key' => 'field_6479eaa7898dc',
 					'label' => 'Bottom text',
 					'name' => 'bottom_text',
 					'aria-label' => '',
@@ -204,6 +201,10 @@ acf_add_local_field_group(array(
 					'delay' => 0,
 				),
 			),
+			'acfe_group_modal' => 0,
+			'acfe_group_modal_close' => 0,
+			'acfe_group_modal_button' => '',
+			'acfe_group_modal_size' => 'large',
 		),
 	),
 	'location' => array(
@@ -211,7 +212,7 @@ acf_add_local_field_group(array(
 			array(
 				'param' => 'block',
 				'operator' => '==',
-				'value' => 'acf/shocklogic-synclogic-speakers',
+				'value' => 'acf/shocklogic-synclogic-exhibitors',
 			),
 		),
 	),
@@ -224,7 +225,7 @@ acf_add_local_field_group(array(
 	'active' => true,
 	'description' => '',
 	'show_in_rest' => 0,
-	'acfe_display_title' => 'Synclogic speakers',
+	'acfe_display_title' => 'Shocklogic Synclogic Exhibitors',
 	'acfe_autosync' => array(
 		0 => 'php',
 		1 => 'json',
@@ -235,7 +236,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'synclogic' => 'Synclogic',
 	),
-	'modified' => 1685711649,
+	'modified' => 1685715983,
 ));
 
 endif;
