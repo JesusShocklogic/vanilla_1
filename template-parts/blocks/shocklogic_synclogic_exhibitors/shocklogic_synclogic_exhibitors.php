@@ -10,17 +10,11 @@ $spacing = $general_settings['spacing'];
 $background_colour = $general_settings['background_colour'];
 
 $block_id = $block['id'];
-$avatar = default_speaker_avatar();
+$avatar = default_partners_avatar();
 
 
-$speakers = null;
-$speakers = get_exhibitors_sl();
-var_dump($speakers);
-
-
-//Speaker's modal
-$synclogic_speakers_modal = get_field('synclogic_speakers_modal');
-$style_of_modal = $synclogic_speakers_modal['style_of_modal'] ?? "horizontal";
+//$exhibitors_array = null;
+$exhibitors_array = get_exhibitors_sl();
 ?>
 
 <style>
@@ -44,33 +38,28 @@ if (isset($shocklogic_synclogic_exhibitors_group) && $shocklogic_synclogic_exhib
 				</div>
 			<?php endif; ?>
 
-			<div class="shocklogic_synclogic_exhibitors_wrapper_speakers">
+			<div class="shocklogic_synclogic_exhibitors_wrapper_exhibitorss">
 				<?php
-				if ($speakers):
-					$content = "";
-					foreach ($speakers as $key => $speaker) {
-						$image_url = $speaker->image_profile ? $speaker->image_profile : $avatar;
-						$title = $speaker->speaker_name . " " . $speaker->speaker_family_name; ?>
-						<div class="shocklogic_synclogic_exhibitors_wrapper_speakers_speaker">
-							<a data-bs-toggle="modal" data-bs-target="#speaker-<?= $speaker->speaker_id ?>">
-								<img src="<?= $image_url ?>" alt="">
-							</a>
-							<div class="shocklogic_synclogic_exhibitors_wrapper_speakers_speaker_name">
-								<?= $title ?>
+				if ($exhibitors_array):
+					foreach ($exhibitors_array as $key => $item) {
+						$Person_Id = $item->Person_Id ?? null;
+
+						if ($Person_Id):
+							$image_url = get_freefield_by_type_and_personId("Company_Logo", $Person_Id)[0]->Value ?? $avatar;
+							?>
+							<div class="shocklogic_synclogic_exhibitors_wrapper_exhibitorss_exhibitors">
+								<a data-bs-toggle="modal" data-bs-target="#exhibitors-<?= $Person_Id ?>">
+									<img src="<?= $image_url ?>" alt="">
+								</a>
 							</div>
-						</div>
-						<?php
+							<?php
+						endif;
 					} //foreach
 				else:
 					echo "No posts were found";
 				endif;
 				?>
 			</div>
-			<?php if ($shocklogic_synclogic_exhibitors_group['bottom_text']): ?>
-				<div class="shocklogic_synclogic_exhibitors_wrapper_bottom_text">
-					<?= $shocklogic_synclogic_exhibitors_group['bottom_text'] ?>
-				</div>
-			<?php endif; ?>
 		</div>
 	</div>
 	<?php
