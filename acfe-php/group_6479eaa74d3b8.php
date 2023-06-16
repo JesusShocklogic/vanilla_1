@@ -7,7 +7,7 @@ acf_add_local_field_group(array(
 	'title' => 'Shocklogic Synclogic Exhibitors',
 	'fields' => array(
 		array(
-			'key' => 'field_6479eaa7601ec',
+			'key' => 'field_64835583a3d3a',
 			'label' => 'Shocklogic Synclogic Exhibitors Group',
 			'name' => 'shocklogic_synclogic_exhibitors_group',
 			'aria-label' => '',
@@ -25,7 +25,7 @@ acf_add_local_field_group(array(
 			'acfe_seamless_style' => 1,
 			'sub_fields' => array(
 				array(
-					'key' => 'field_6479eaa77323a',
+					'key' => 'field_64835583a3d3e',
 					'label' => 'Title tab',
 					'name' => '',
 					'aria-label' => '',
@@ -43,7 +43,7 @@ acf_add_local_field_group(array(
 					'endpoint' => 0,
 				),
 				array(
-					'key' => 'field_6479eaa776da8',
+					'key' => 'field_64835583a3d3f',
 					'label' => 'title',
 					'name' => 'title',
 					'aria-label' => '',
@@ -56,6 +56,7 @@ acf_add_local_field_group(array(
 						'class' => '',
 						'id' => '',
 					),
+					'acfe_save_meta' => 0,
 					'default_value' => '',
 					'tabs' => 'all',
 					'toolbar' => 'full',
@@ -63,7 +64,7 @@ acf_add_local_field_group(array(
 					'delay' => 0,
 				),
 				array(
-					'key' => 'field_6479eaa77a732',
+					'key' => 'field_64835583a3d40',
 					'label' => 'Settings',
 					'name' => '',
 					'aria-label' => '',
@@ -81,89 +82,60 @@ acf_add_local_field_group(array(
 					'endpoint' => 0,
 				),
 				array(
-					'key' => 'field_6479eaa77e2f8',
-					'label' => 'Content select',
-					'name' => 'content_select',
+					'key' => 'field_64835583a3d41',
+					'label' => 'Stand page',
+					'name' => 'stand_page',
 					'aria-label' => '',
-					'type' => 'select',
-					'instructions' => '',
-					'required' => 0,
+					'type' => 'page_link',
+					'instructions' => 'This is the page used to render the stand',
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
-					'choices' => array(
-						'all' => 'All speakers',
-						'categories' => 'Categories of speakers',
+					'acfe_save_meta' => 0,
+					'post_type' => array(
+						0 => 'post',
+						1 => 'page',
 					),
-					'default_value' => 'all',
-					'return_format' => '',
+					'post_status' => array(
+						0 => 'publish',
+					),
+					'taxonomy' => '',
+					'allow_archives' => 0,
 					'multiple' => 0,
 					'allow_null' => 0,
-					'ui' => 0,
-					'ajax' => 0,
-					'placeholder' => '',
-					'allow_custom' => 0,
-					'search_placeholder' => '',
 				),
 				array(
-					'key' => 'field_6479eaa781ede',
-					'label' => 'Categories',
-					'name' => 'categories',
+					'key' => 'field_64835583a3d42',
+					'label' => 'Minimal column size',
+					'name' => 'minimal_column_size',
 					'aria-label' => '',
-					'type' => 'repeater',
-					'instructions' => '',
+					'type' => 'text',
+					'instructions' => 'Add the minimal size all items will take on screen.
+You can place any available size.
+Eg.
+250px
+20rem
+20em',
 					'required' => 1,
-					'conditional_logic' => array(
-						array(
-							array(
-								'field' => 'field_6479eaa77e2f8',
-								'operator' => '==',
-								'value' => 'categories',
-							),
-						),
-					),
+					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
-					'acfe_repeater_stylised_button' => 1,
-					'layout' => 'table',
-					'pagination' => 0,
-					'min' => 1,
-					'max' => 0,
-					'collapsed' => '',
-					'button_label' => 'Add Category',
-					'rows_per_page' => 20,
-					'sub_fields' => array(
-						array(
-							'key' => 'field_6479eaa7e8a93',
-							'label' => 'Category',
-							'name' => 'category',
-							'aria-label' => '',
-							'type' => 'text',
-							'instructions' => '',
-							'required' => 1,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '33',
-								'class' => '',
-								'id' => '',
-							),
-							'default_value' => '',
-							'maxlength' => '',
-							'placeholder' => '',
-							'prepend' => '',
-							'append' => '',
-							'parent_repeater' => 'field_6479eaa781ede',
-						),
-					),
+					'acfe_save_meta' => 0,
+					'default_value' => '18rem',
+					'maxlength' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
 				),
 				array(
-					'key' => 'field_6479eaa785ca0',
+					'key' => 'field_64835583a3d43',
 					'label' => 'Bottom tab',
 					'name' => '',
 					'aria-label' => '',
@@ -181,7 +153,7 @@ acf_add_local_field_group(array(
 					'endpoint' => 0,
 				),
 				array(
-					'key' => 'field_6479eaa7898dc',
+					'key' => 'field_64835583a3d44',
 					'label' => 'Bottom text',
 					'name' => 'bottom_text',
 					'aria-label' => '',
@@ -194,6 +166,7 @@ acf_add_local_field_group(array(
 						'class' => '',
 						'id' => '',
 					),
+					'acfe_save_meta' => 0,
 					'default_value' => '',
 					'tabs' => 'all',
 					'toolbar' => 'full',
@@ -236,7 +209,7 @@ acf_add_local_field_group(array(
 	'acfe_categories' => array(
 		'synclogic' => 'Synclogic',
 	),
-	'modified' => 1685715983,
+	'modified' => 1686328933,
 ));
 
 endif;

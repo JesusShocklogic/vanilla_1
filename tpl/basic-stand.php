@@ -2,9 +2,8 @@
 /*
  * Template name: Stand basic
  */
-//$temp_person_id = $_GET['person_id'];
-$temp_person_id = 5301190;
-$exhibitor = get_exhibitors_by_person_id_sl($temp_person_id)[0] ?? null;
+$Person_Id = $_GET['Person_Id'];
+$exhibitor = get_exhibitors_by_person_id_sl($Person_Id)[0] ?? null;
 
 if ($exhibitor):
 
@@ -242,9 +241,11 @@ get_header(); ?>
                             allowfullscreen></iframe>
                     </div>
                 <?php endif; ?>
-                <div class="stand_basic_wrapper_left_biography">
-                    <?= $company_info['companyBio'] ?>
-                </div>
+                <?php if ($company_info['companyBio']): ?>
+                    <div class="stand_basic_wrapper_left_biography">
+                        <?= $company_info['companyBio'] ?>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="stand_basic_wrapper_right">
                 <div class="list-group list-group-horizontal list-group-flush" id="list-tab" role="tablist">
