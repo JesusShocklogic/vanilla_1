@@ -136,6 +136,32 @@ Eg.
 					'append' => '',
 				),
 				array(
+					'key' => 'field_64834e0d1ab05',
+					'label' => 'Minimal column size-2',
+					'name' => 'minimal_column_size-2',
+					'aria-label' => '',
+					'type' => 'text',
+					'instructions' => 'Add the minimal size all items will take on screen.
+You can place any available size.
+Eg.
+250px
+20rem
+20em',
+					'required' => 1,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'acfe_save_meta' => 0,
+					'default_value' => '18rem',
+					'maxlength' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+				),
+				array(
 					'key' => 'field_63c97f9ccc001',
 					'label' => 'Click behaviour',
 					'name' => 'click_behaviour',
@@ -259,7 +285,7 @@ Eg.
 	'acfe_categories' => array(
 		'shocklogic' => 'Shocklogic',
 	),
-	'modified' => 1685709777,
+	'modified' => 1686326828,
 ));
 
 endif;
