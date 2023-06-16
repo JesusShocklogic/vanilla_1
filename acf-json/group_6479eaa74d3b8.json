@@ -3,7 +3,7 @@
     "title": "Shocklogic Synclogic Exhibitors",
     "fields": [
         {
-            "key": "field_6479eaa7601ec",
+            "key": "field_64835583a3d3a",
             "label": "Shocklogic Synclogic Exhibitors Group",
             "name": "shocklogic_synclogic_exhibitors_group",
             "aria-label": "",
@@ -21,7 +21,7 @@
             "acfe_seamless_style": 1,
             "sub_fields": [
                 {
-                    "key": "field_6479eaa77323a",
+                    "key": "field_64835583a3d3e",
                     "label": "Title tab",
                     "name": "",
                     "aria-label": "",
@@ -39,7 +39,7 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_6479eaa776da8",
+                    "key": "field_64835583a3d3f",
                     "label": "title",
                     "name": "title",
                     "aria-label": "",
@@ -52,6 +52,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "acfe_save_meta": 0,
                     "default_value": "",
                     "tabs": "all",
                     "toolbar": "full",
@@ -59,7 +60,7 @@
                     "delay": 0
                 },
                 {
-                    "key": "field_6479eaa77a732",
+                    "key": "field_64835583a3d40",
                     "label": "Settings",
                     "name": "",
                     "aria-label": "",
@@ -77,89 +78,55 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_6479eaa77e2f8",
-                    "label": "Content select",
-                    "name": "content_select",
+                    "key": "field_64835583a3d41",
+                    "label": "Stand page",
+                    "name": "stand_page",
                     "aria-label": "",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
+                    "type": "page_link",
+                    "instructions": "This is the page used to render the stand",
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "choices": {
-                        "all": "All speakers",
-                        "categories": "Categories of speakers"
-                    },
-                    "default_value": "all",
-                    "return_format": "",
+                    "acfe_save_meta": 0,
+                    "post_type": [
+                        "post",
+                        "page"
+                    ],
+                    "post_status": [
+                        "publish"
+                    ],
+                    "taxonomy": "",
+                    "allow_archives": 0,
                     "multiple": 0,
-                    "allow_null": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "allow_custom": 0,
-                    "search_placeholder": ""
+                    "allow_null": 0
                 },
                 {
-                    "key": "field_6479eaa781ede",
-                    "label": "Categories",
-                    "name": "categories",
+                    "key": "field_64835583a3d42",
+                    "label": "Minimal column size",
+                    "name": "minimal_column_size",
                     "aria-label": "",
-                    "type": "repeater",
-                    "instructions": "",
+                    "type": "text",
+                    "instructions": "Add the minimal size all items will take on screen.\r\nYou can place any available size.\r\nEg.\r\n250px\r\n20rem\r\n20em",
                     "required": 1,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_6479eaa77e2f8",
-                                "operator": "==",
-                                "value": "categories"
-                            }
-                        ]
-                    ],
+                    "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "acfe_repeater_stylised_button": 1,
-                    "layout": "table",
-                    "pagination": 0,
-                    "min": 1,
-                    "max": 0,
-                    "collapsed": "",
-                    "button_label": "Add Category",
-                    "rows_per_page": 20,
-                    "sub_fields": [
-                        {
-                            "key": "field_6479eaa7e8a93",
-                            "label": "Category",
-                            "name": "category",
-                            "aria-label": "",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "33",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "parent_repeater": "field_6479eaa781ede"
-                        }
-                    ]
+                    "acfe_save_meta": 0,
+                    "default_value": "18rem",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
                 },
                 {
-                    "key": "field_6479eaa785ca0",
+                    "key": "field_64835583a3d43",
                     "label": "Bottom tab",
                     "name": "",
                     "aria-label": "",
@@ -177,7 +144,7 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_6479eaa7898dc",
+                    "key": "field_64835583a3d44",
                     "label": "Bottom text",
                     "name": "bottom_text",
                     "aria-label": "",
@@ -190,6 +157,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "acfe_save_meta": 0,
                     "default_value": "",
                     "tabs": "all",
                     "toolbar": "full",
@@ -229,7 +197,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1685715983,
+    "modified": 1686328933,
     "acfe_categories": {
         "synclogic": "Synclogic"
     }
